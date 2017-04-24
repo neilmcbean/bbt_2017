@@ -20,13 +20,23 @@ public class SentenceRowContainer : MonoBehaviour
         rt = GetComponent<RectTransform>();
         layoutGroup = GetComponent<VerticalLayoutGroup>();
         sentenceRowPrefab.gameObject.SetActive(false);
-        CreateRow();
+    }
 
+    public void Clear()
+    {
+        StopAllCoroutines();
+        foreach (SentenceRow row in rows)
+        {
+            Destroy(row.gameObject);
+        }
+        rows.Clear();
+        texts.Clear();
+        rowIndex = 0;
+        CreateRow();
     }
 
     public void AddText(WordGroupObject wordGroup)
     {
-        
         string[] words = wordGroup.text.Split(' ');
         for (int i = 0; i < words.Length; i++)
         {

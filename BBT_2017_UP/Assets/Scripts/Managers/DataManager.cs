@@ -21,8 +21,8 @@ public class DataManager : Singleton<DataManager>
         {
             AudioObject audioObj = new AudioObject()
             {
-                clip = Resources.LoadAll<AudioClip>(currentFolder)[0],
-                sentence = GetSentence(Resources.LoadAll<TextAsset>(currentFolder)[0].text)
+                clip = Resources.LoadAll<AudioClip>(currentFolder)[i],
+                sentence = GetSentence(Resources.LoadAll<TextAsset>(currentFolder)[i].text)
             };
             obj.audioObjects.Add(audioObj);
            
