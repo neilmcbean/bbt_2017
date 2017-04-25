@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 public class DataManager : Singleton<DataManager>
 {
-    public Language language;
+    public static Language language;
 
     public SceneAudioObject LoadSceneData()
     {
@@ -56,5 +56,6 @@ public class DataManager : Singleton<DataManager>
 public enum Language
 {
     English,
-    Spanish
+    Spanish,
+    French
 }
