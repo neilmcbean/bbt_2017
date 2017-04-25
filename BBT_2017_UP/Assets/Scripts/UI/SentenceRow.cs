@@ -9,14 +9,11 @@ public class SentenceRow : MonoBehaviour
 
     internal RectTransform rt;
 
-    private HorizontalLayoutGroup layoutGroup;
-
     private Stack<WordText> textStack = new Stack<WordText>();
 
     void Awake()
     {
         rt = GetComponent<RectTransform>();
-        layoutGroup = GetComponent<HorizontalLayoutGroup>();
         wordPrefab.gameObject.SetActive(false);
     }
 
