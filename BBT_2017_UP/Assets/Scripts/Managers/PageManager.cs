@@ -8,8 +8,19 @@ using UnityEngine.SceneManagement;
 
 public class PageManager : MonoBehaviour
 {
+    public static event Action<string,string> onSentenceChange;
 
-    private SceneAudioObject sceneObj;
+    private StoryObject currentStory;
+
+    private PageObject currentPage
+    {
+        get
+        {
+            return currentStory.pageObjects[pageIndex];
+        }
+    }
+
+    private int pageIndex;
     private int audioIndex;
 
     private AudioSource audioSource;
@@ -20,13 +31,12 @@ public class PageManager : MonoBehaviour
     {
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
-
     }
 
     // Use this for initialization
     void Start()
     {
-        sceneObj = DataManager.instance.LoadSceneData();
+        currentStory = DataManager.instance.LoadStory();
         NextSentence();
     }
 
@@ -40,17 +50,31 @@ public class PageManager : MonoBehaviour
 
     void NextSentence()
     {
+        StopAllCoroutines();
         sentenceContainer.Clear();
-        if (audioIndex < sceneObj.audioObjects.Count)
+
+        if (audioIndex >= currentPage.audioObjects.Count)
         {
-            AudioObject currentAudio = sceneObj.audioObjects[audioIndex];
-            audioIndex++;
-            StartCoroutine(RunSequence(currentAudio));
+            pageIndex++;
+            audioIndex = 0;
         }
-        else
+
+        if (pageIndex >= currentStory.pageObjects.Count)
         {
-            SceneManager.LoadScene(0);
+            Debug.Log("Story ended! Restarting...");
+
+            //We have to unload our asset, since we can't load it twice
+            DataManager.instance.UnloadStory();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
         }
+
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        audioIndex++;
+        if (onSentenceChange != null)
+            onSentenceChange(currentPage.name, currentAudio.name);
+        StartCoroutine(RunSequence(currentAudio));
+
     }
 
     IEnumerator RunSequence(AudioObject obj)
