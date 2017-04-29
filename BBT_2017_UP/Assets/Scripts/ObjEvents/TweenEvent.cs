@@ -5,13 +5,11 @@ using DG.Tweening;
 
 public class TweenEvent : BaseEvent
 {
+    public DOTweenAnimation tween;
 
     protected override void OnActivation()
     {
-        DOTweenAnimation[] animations = GetComponents<DOTweenAnimation>();
-        foreach (DOTweenAnimation anim in animations)
-        {
-            anim.DOPlayForward();
-        }
+      
+        tween.DOPlayForward();
     }
 }
