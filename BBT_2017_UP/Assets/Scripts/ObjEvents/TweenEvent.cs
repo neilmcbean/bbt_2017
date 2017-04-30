@@ -9,7 +9,6 @@ public class TweenEvent : BaseEvent
 
     protected override void OnActivation()
     {
-      
         tween.DOPlayForward();
     }
 }
