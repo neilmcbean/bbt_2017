@@ -5,9 +5,11 @@ using UnityEditor;
 using System.Runtime.InteropServices;
 using System.Text;
 using UnityEngine.SceneManagement;
+using DG.DOTweenEditor;
+using System;
 
-[CustomEditor(typeof(BaseEvent), true)]
-public class EventEditor : Editor
+[CustomEditor(typeof(TweenEvent), true)]
+public class TweenEventEditor : DOTweenAnimationInspector
 {
 
     private static StoryObject story;
@@ -15,7 +17,8 @@ public class EventEditor : Editor
     public override void OnInspectorGUI()
     {
         
-        BaseEvent baseEvent = (BaseEvent)target;
+        TweenEvent baseEvent = (TweenEvent)target;
+
 
         if (DataManager.instance == null)
         {
@@ -65,6 +68,12 @@ public class EventEditor : Editor
         index = EditorGUILayout.Popup("Audio", index, audioNames); 
 
         baseEvent.audioName = audioNames[index];
-        base.OnInspectorGUI();
+
+        //This is quite hacky. Every event is a DOTweenAnimation, but things like ActivationEvents simple don't show that.
+        if (baseEvent.GetType() == typeof(TweenEvent))
+        {
+            base.OnInspectorGUI();
+        }
+
     }
 }

@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivationEvent : BaseEvent
+public class ActivationEvent : TweenEvent
 {
-    public GameObject obj;
     public bool activate;
 
 
-    protected override void OnActivation()
+    public override void Activate()
     {
-        obj.SetActive(activate);
+        gameObject.SetActive(activate);
     }
 
 }

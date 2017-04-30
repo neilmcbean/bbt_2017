@@ -5,10 +5,11 @@ using System;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using NUnit.Framework;
 
-public class PageManager : MonoBehaviour
+public class PageManager : Singleton<PageManager>
 {
-    public static event Action<string,string> onSentenceChange;
+    //public static event Action<string,string> onSentenceChange;
 
     private StoryObject currentStory;
 
@@ -25,6 +26,8 @@ public class PageManager : MonoBehaviour
 
     private AudioSource audioSource;
     private SentenceRowContainer sentenceContainer;
+
+    private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
 
     void Awake()
@@ -46,6 +49,12 @@ public class PageManager : MonoBehaviour
         {
             NextSentence();
         }
+    }
+
+    public void Register(TweenEvent evt)
+    {
+        tweenEvents.Add(evt);
+        evt.id = tweenEvents.Count.ToString();
     }
 
     void NextSentence()
@@ -71,8 +80,16 @@ public class PageManager : MonoBehaviour
 
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         audioIndex++;
-        if (onSentenceChange != null)
-            onSentenceChange(currentPage.name, currentAudio.name);
+
+        //Actiavte tweens
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.Activate();
+            }
+        }
+       
         StartCoroutine(RunSequence(currentAudio));
 
     }
