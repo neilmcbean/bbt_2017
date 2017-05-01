@@ -5,7 +5,6 @@ using System;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using NUnit.Framework;
 
 public class PageManager : Singleton<PageManager>
 {
@@ -30,8 +29,10 @@ public class PageManager : Singleton<PageManager>
     private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+    
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
     }

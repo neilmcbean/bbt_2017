@@ -27,6 +27,7 @@ public class DataManager : Singleton<DataManager>
         }
         StoryObject story = new StoryObject();
 
+        
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
         foreach (string file in files)
         {
