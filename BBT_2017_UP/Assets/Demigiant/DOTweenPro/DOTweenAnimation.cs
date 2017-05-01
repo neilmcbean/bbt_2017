@@ -31,7 +31,7 @@ namespace DG.Tweening
         public bool isRelative;
         public bool isFrom;
         public bool isIndependentUpdate = false;
-        public bool autoKill = true;
+        public bool autoKill = false;
 
         public bool isActive = true;
         public bool isValid;
@@ -40,7 +40,7 @@ namespace DG.Tweening
         public TargetType targetType;
         public TargetType forcedTargetType;
         // Used when choosing between multiple targets
-        public bool autoPlay = true;
+        public bool autoPlay = false;
         public bool useTargetAsV3;
 
         public float endValueFloat;
