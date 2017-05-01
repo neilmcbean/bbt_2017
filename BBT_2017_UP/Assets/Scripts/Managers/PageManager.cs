@@ -6,27 +6,41 @@ using System.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PageManager : MonoBehaviour
+public class PageManager : Singleton<PageManager>
 {
+    //public static event Action<string,string> onSentenceChange;
 
-    private SceneAudioObject sceneObj;
+    private StoryObject currentStory;
+
+    private PageObject currentPage
+    {
+        get
+        {
+            return currentStory.pageObjects[pageIndex];
+        }
+    }
+
+    private int pageIndex;
     private int audioIndex;
 
     private AudioSource audioSource;
     private SentenceRowContainer sentenceContainer;
 
+    private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
-    void Awake()
+
+    protected override void Awake()
     {
+        base.Awake();
+    
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
-
     }
 
     // Use this for initialization
     void Start()
     {
-        sceneObj = DataManager.instance.LoadSceneData();
+        currentStory = DataManager.instance.LoadStory();
         NextSentence();
     }
 
@@ -38,19 +52,47 @@ public class PageManager : MonoBehaviour
         }
     }
 
+    public void Register(TweenEvent evt)
+    {
+        tweenEvents.Add(evt);
+        evt.id = tweenEvents.Count.ToString();
+    }
+
     void NextSentence()
     {
+        StopAllCoroutines();
         sentenceContainer.Clear();
-        if (audioIndex < sceneObj.audioObjects.Count)
+
+        if (audioIndex >= currentPage.audioObjects.Count)
         {
-            AudioObject currentAudio = sceneObj.audioObjects[audioIndex];
-            audioIndex++;
-            StartCoroutine(RunSequence(currentAudio));
+            pageIndex++;
+            audioIndex = 0;
         }
-        else
+
+        if (pageIndex >= currentStory.pageObjects.Count)
         {
-            SceneManager.LoadScene(0);
+            Debug.Log("Story ended! Restarting...");
+
+            //We have to unload our asset, since we can't load it twice
+            DataManager.instance.UnloadStory();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
         }
+
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        audioIndex++;
+
+        //Actiavte tweens
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.Activate();
+            }
+        }
+       
+        StartCoroutine(RunSequence(currentAudio));
+
     }
 
     IEnumerator RunSequence(AudioObject obj)

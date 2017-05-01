@@ -11,28 +11,98 @@ public class DataManager : Singleton<DataManager>
 {
     public static Language language;
 
-    public SceneAudioObject LoadSceneData()
+    public AssetBundle myLoadedAssetBundle;
+    public string storyName;
+
+    public StoryObject LoadStory()
     {
-        string sceneName = gameObject.scene.name;
-        SceneAudioObject obj = new SceneAudioObject();
+        UnloadStory();
+        myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "english/" + storyName));
 
-        string currentFolder = language.ToString() + "/" + sceneName;
 
-        string[] folders = Directory.GetDirectories(Application.dataPath + "/Resources/" + currentFolder);
-        for (int i = 0; i < folders.Length; i++)
+        if (myLoadedAssetBundle == null)
         {
-            AudioObject audioObj = new AudioObject()
-            {
-                clip = Resources.LoadAll<AudioClip>(currentFolder)[i],
-                sentence = GetSentence(Resources.LoadAll<TextAsset>(currentFolder)[i].text)
-            };
-            obj.audioObjects.Add(audioObj);
-           
+            Debug.LogErrorFormat("Failed to load AssetBundle from story {0}", storyName);
+            return null;
         }
-        return obj;
+        StoryObject story = new StoryObject();
+
+        
+        string[] files = myLoadedAssetBundle.GetAllAssetNames();
+        foreach (string file in files)
+        {
+            AddFileToStory(story, file); 
+        }
+
+        return story;
     }
 
-    public SentenceObject GetSentence(string dataString)
+    public void UnloadStory()
+    {
+        if (myLoadedAssetBundle != null)
+        {
+            myLoadedAssetBundle.Unload(true);
+            myLoadedAssetBundle = null;
+        }
+    }
+
+    private  void AddFileToStory(StoryObject story, string file)
+    {
+        string[] splitPath = file.Split('/');
+        for (int i = 0; i < splitPath.Length; i++)
+        {
+            if (splitPath[i] == storyName)
+            {
+                if (i + 2 >= splitPath.Length)
+                {
+                    Debug.LogWarningFormat("Can't add file to story {0}", file);
+                    return;
+                }
+                string pageName = splitPath[i + 1];
+                //Get the page from the story
+                PageObject page = story.GetPage(pageName);
+                //If the page wasn't in the story yet, create a new object
+                if (page == null)
+                {
+                    page = new PageObject()
+                    {
+                        name = pageName
+                    };
+                    story.pageObjects.Add(page);  
+                }
+                //Get the audio from the page. The name is actually the foldername, not the file name of the audio
+                string audioName = splitPath[i + 2];
+                //If the audio doesn't exist, craete a new one
+                AudioObject audioObj = page.GetAudio(audioName);
+                if (audioObj == null)
+                {
+                    audioObj = new AudioObject()
+                    {
+                        name = audioName
+                    };
+                    page.audioObjects.Add(audioObj);
+                }
+                Object fileObj = myLoadedAssetBundle.LoadAsset(file);
+                AudioClip clip = fileObj as AudioClip;
+                if (clip != null)
+                {
+                    audioObj.clip = clip;
+                    return;
+                }
+                TextAsset txt = fileObj as TextAsset;
+                if (txt != null)
+                {
+                    audioObj.sentence = GetSentence(txt.text);
+                    return;
+                }
+                Debug.LogErrorFormat("File of type {0} detected inside the AssetBundle. It only supports AudioClips and TextAssets!", fileObj.GetType());
+
+                return;
+            }
+        }
+    }
+
+    private SentenceObject GetSentence(string dataString)
     {
         SentenceObject so = new SentenceObject();
         string[] lines = Regex.Split(dataString, "\\n");
