@@ -14,12 +14,14 @@ public class TweenEvent : DOTweenAnimation
 
     protected virtual void Awake()
     {
-        PageManager.instance.Register(this);
-
+        // Registring is now done though PageManager Awake
+        // PageManager.instance.Register(this);
+        enabled = false;
     }
 
     public virtual void Activate()
     {
         DOPlayForward();
+        print("XX");
     }
 }

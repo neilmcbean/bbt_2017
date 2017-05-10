@@ -11,7 +11,7 @@ public class DataManager : Singleton<DataManager>
 {
     public static Language language;
 
-    public AssetBundle myLoadedAssetBundle;
+    internal AssetBundle myLoadedAssetBundle;
     public string storyName;
 
     public StoryObject LoadStory()
