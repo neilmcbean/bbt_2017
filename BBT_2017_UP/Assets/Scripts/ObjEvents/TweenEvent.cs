@@ -19,9 +19,13 @@ public class TweenEvent : DOTweenAnimation
         enabled = false;
     }
 
-    public virtual void Activate()
+    public virtual void OnNextStep()
+    {
+        
+    }
+
+    public virtual void OnActivate()
     {
         DOPlayForward();
-        print("XX");
     }
 }

@@ -104,9 +104,10 @@ public class PageManager : Singleton<PageManager>
         //Actiavte tweens
         foreach (TweenEvent evt in tweenEvents)
         {
+            evt.OnNextStep();
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
             {
-                evt.Activate();
+                evt.OnActivate();
             }
         }
        

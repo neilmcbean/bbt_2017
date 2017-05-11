@@ -6,8 +6,6 @@ using UnityEditor;
 [CustomEditor(typeof(ActivationEvent), true)]
 public class ActivationEventEditor : TweenEventEditor
 {
-    
-
 
     public override void OnInspectorGUI()
     {

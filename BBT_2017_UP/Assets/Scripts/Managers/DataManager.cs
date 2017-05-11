@@ -17,6 +17,7 @@ public class DataManager : Singleton<DataManager>
     public StoryObject LoadStory()
     {
         UnloadStory();
+
         myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "english/" + storyName));
 
 
@@ -25,6 +26,7 @@ public class DataManager : Singleton<DataManager>
             Debug.LogErrorFormat("Failed to load AssetBundle from story {0}", storyName);
             return null;
         }
+
         StoryObject story = new StoryObject();
 
         
@@ -37,11 +39,17 @@ public class DataManager : Singleton<DataManager>
         return story;
     }
 
+    void OnDestroy()
+    {
+        UnloadStory();
+    }
+
     public void UnloadStory()
     {
         if (myLoadedAssetBundle != null)
         {
-            myLoadedAssetBundle.Unload(true);
+            myLoadedAssetBundle.Unload(false);
+
             myLoadedAssetBundle = null;
         }
     }

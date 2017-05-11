@@ -26,7 +26,10 @@ public class TweenEventEditor : DOTweenAnimationInspector
             return;
         }
         if (story == null)
+        {
             story = DataManager.instance.LoadStory();
+            DataManager.instance.UnloadStory();
+        }
 
         if (story == null)
         {
