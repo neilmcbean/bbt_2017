@@ -92,8 +92,7 @@ public class PageManager : Singleton<PageManager>
         {
             Debug.Log("Story ended! Restarting...");
 
-            //We have to unload our asset, since we can't load it twice
-            DataManager.instance.UnloadStory();
+            // DataManager.instance.UnloadAssetBundle();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }

@@ -16,8 +16,6 @@ public class DataManager : Singleton<DataManager>
 
     public StoryObject LoadStory()
     {
-        UnloadStory();
-
         myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "english/" + storyName));
 
 
@@ -35,16 +33,17 @@ public class DataManager : Singleton<DataManager>
         {
             AddFileToStory(story, file); 
         }
-
+        UnloadAssetBundle();
         return story;
     }
 
     void OnDestroy()
     {
-        UnloadStory();
+        //   UnloadAssetBundle();
     }
 
-    public void UnloadStory()
+    //We have to unload our asset, since we can't load it twice
+    public void UnloadAssetBundle()
     {
         if (myLoadedAssetBundle != null)
         {
