@@ -21,7 +21,7 @@ public class TransformMoveEvent : TweenEvent
     public override void OnActivate()
     {
         targetObj.DOMove(transform.position, tweenDuration);
-        targetObj.DORotate(transform.position, tweenDuration);
+        targetObj.DORotate(transform.eulerAngles, tweenDuration);
     }
 
    
