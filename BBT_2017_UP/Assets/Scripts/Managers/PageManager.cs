@@ -11,7 +11,13 @@ public class PageManager : Singleton<PageManager>
 {
     //public static event Action<string,string> onSentenceChange;
 
-    private StoryObject currentStory;
+    private StoryObject currentStory
+    {
+        get
+        {
+            return DataManager.instance.currentStory;
+        }
+    }
 
     private PageObject currentPage
     {
@@ -58,7 +64,7 @@ public class PageManager : Singleton<PageManager>
             evt.enabled = true;
         }
 
-        currentStory = DataManager.instance.LoadStory();
+        DataManager.instance.LoadStory();
         NextSentence();
         yield return null;
     }

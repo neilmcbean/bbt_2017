@@ -23,6 +23,6 @@ public class TransformMoveEvent : TweenEvent
         targetObj.DOMove(transform.position, tweenDuration);
         targetObj.DORotate(transform.eulerAngles, tweenDuration);
     }
-
+        
    
 }
