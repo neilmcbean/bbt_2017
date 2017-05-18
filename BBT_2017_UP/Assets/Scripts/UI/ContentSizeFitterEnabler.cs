@@ -11,7 +11,7 @@ public class ContentSizeFitterEnabler : MonoBehaviour
 {
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         GetComponent<ContentSizeFitter>().enabled = true;
     }
