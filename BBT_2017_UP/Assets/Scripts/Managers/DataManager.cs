@@ -11,12 +11,11 @@ public class DataManager : Singleton<DataManager>
 {
     public static Language language;
 
-    public AssetBundle myLoadedAssetBundle;
+    internal AssetBundle myLoadedAssetBundle;
     public string storyName;
 
     public StoryObject LoadStory()
     {
-        UnloadStory();
         myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "english/" + storyName));
 
 
@@ -25,6 +24,7 @@ public class DataManager : Singleton<DataManager>
             Debug.LogErrorFormat("Failed to load AssetBundle from story {0}", storyName);
             return null;
         }
+
         StoryObject story = new StoryObject();
 
         
@@ -33,15 +33,22 @@ public class DataManager : Singleton<DataManager>
         {
             AddFileToStory(story, file); 
         }
-
+        UnloadAssetBundle();
         return story;
     }
 
-    public void UnloadStory()
+    void OnDestroy()
+    {
+        //   UnloadAssetBundle();
+    }
+
+    //We have to unload our asset, since we can't load it twice
+    public void UnloadAssetBundle()
     {
         if (myLoadedAssetBundle != null)
         {
-            myLoadedAssetBundle.Unload(true);
+            myLoadedAssetBundle.Unload(false);
+
             myLoadedAssetBundle = null;
         }
     }

@@ -5,6 +5,7 @@ using System;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PageManager : Singleton<PageManager>
 {
@@ -35,13 +36,31 @@ public class PageManager : Singleton<PageManager>
     
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
+
     }
 
     // Use this for initialization
-    void Start()
+    IEnumerator Start()
     {
+        //Wait a frame for all scenes to be loaded
+
+        List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent>();
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            Register(evt);
+        }
+
+        DOTween.Init();
+
+        //The tweens should be only be enabled AFTER DOTween has been initialized
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            evt.enabled = true;
+        }
+
         currentStory = DataManager.instance.LoadStory();
         NextSentence();
+        yield return null;
     }
 
     void Update()
@@ -73,8 +92,7 @@ public class PageManager : Singleton<PageManager>
         {
             Debug.Log("Story ended! Restarting...");
 
-            //We have to unload our asset, since we can't load it twice
-            DataManager.instance.UnloadStory();
+            // DataManager.instance.UnloadAssetBundle();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
@@ -85,9 +103,10 @@ public class PageManager : Singleton<PageManager>
         //Actiavte tweens
         foreach (TweenEvent evt in tweenEvents)
         {
+            evt.OnNextStep();
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
             {
-                evt.Activate();
+                evt.OnActivate();
             }
         }
        
@@ -97,8 +116,24 @@ public class PageManager : Singleton<PageManager>
 
     IEnumerator RunSequence(AudioObject obj)
     {
-        audioSource.clip = obj.clip;
-        audioSource.Play();
+        if (obj.clip != null)
+        {
+            audioSource.clip = obj.clip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogErrorFormat("Unable to read the audio from folder {0}. " +
+                "Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.instance.storyName);
+        }
+
+        if (obj.sentence == null)
+        {
+            Debug.LogErrorFormat("Unable to read the text from folder {0}. " +
+                "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.instance.storyName);
+            yield break;
+        }
+            
         //Displaying all words in the bottom
         foreach (WordGroupObject wordGroup in obj.sentence.wordGroups)
         {
@@ -126,6 +161,25 @@ public class PageManager : Singleton<PageManager>
         sentenceContainer.HighlightWordGroup(null);
 
 
+    }
+
+    public static List<T> FindObjectsOfTypeAll<T>()
+    {
+        List<T> results = new List<T>();
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            var s = SceneManager.GetSceneAt(i);
+            if (s.isLoaded)
+            {
+                var allGameObjects = s.GetRootGameObjects();
+                for (int j = 0; j < allGameObjects.Length; j++)
+                {
+                    var go = allGameObjects[j];
+                    results.AddRange(go.GetComponentsInChildren<T>(true));
+                }
+            }
+        }
+        return results;
     }
 	
 }

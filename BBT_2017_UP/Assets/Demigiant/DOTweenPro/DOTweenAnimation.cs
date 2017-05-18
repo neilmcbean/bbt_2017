@@ -453,7 +453,7 @@ namespace DG.Tweening
 
         public override void DOPlayForward()
         {
-            DOTween.PlayForward(this.gameObject, this.id);
+            DOTween.PlayForward(this.id);
         }
 
         public override void DOPause()
