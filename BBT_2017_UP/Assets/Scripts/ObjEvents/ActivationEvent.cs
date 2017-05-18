@@ -6,8 +6,7 @@ public class ActivationEvent : TweenEvent
 {
     public bool activate;
 
-
-    public override void Activate()
+    public override void OnActivate()
     {
         gameObject.SetActive(activate);
     }
