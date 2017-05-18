@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Purchasing;
+using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
 {
-    
-    public void OnFrenchButton()
+    public Dropdown languageDropdown;
+
+    void Awake()
     {
-        DataManager.language = Language.French;
-        StartGame();
+        languageDropdown.onValueChanged.AddListener(OnDropDownChanged);
     }
 
-    public void OnEnglishButton()
+    void OnDropDownChanged(int i)
     {
-        DataManager.language = Language.English;
-        StartGame();
+        DataManager.currentLanguage = languageDropdown.options[i].text;
     }
 
-    void StartGame()
+    public void StartGame()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("MainNav");
     }
 
     public void OnPurchaseSuccess(Product p)

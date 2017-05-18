@@ -9,14 +9,32 @@ using System.Text.RegularExpressions;
 
 public class DataManager : Singleton<DataManager>
 {
-    public static Language language;
+    public static string currentLanguage = "english";
+
+    public StoryObject currentStory;
+    public string[] additionalScenes;
 
     internal AssetBundle myLoadedAssetBundle;
     public string storyName;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    
+        foreach (string sceneName in additionalScenes)
+        {
+            Scene s = SceneManager.GetSceneByName(sceneName);
+            if (!s.isLoaded)
+            {
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            }
+
+        }
+    }
+
     public StoryObject LoadStory()
     {
-        myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "english/" + storyName));
+        myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, Path.Combine(currentLanguage.ToLower(), storyName)));
 
 
         if (myLoadedAssetBundle == null)
@@ -34,7 +52,8 @@ public class DataManager : Singleton<DataManager>
             AddFileToStory(story, file); 
         }
         UnloadAssetBundle();
-        return story;
+        currentStory = story;
+        return currentStory;
     }
 
     void OnDestroy()
@@ -128,11 +147,4 @@ public class DataManager : Singleton<DataManager>
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);
     }
-}
-
-public enum Language
-{
-    English,
-    Spanish,
-    French
 }
