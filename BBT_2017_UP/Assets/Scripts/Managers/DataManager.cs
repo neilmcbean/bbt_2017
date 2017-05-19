@@ -6,40 +6,31 @@ using System.IO;
 using UnityEngine.Networking;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
+using System.Reflection.Emit;
 
-public class DataManager : Singleton<DataManager>
+public class DataManager
 {
     public static string currentLanguage = "english";
+    public static string storyName = "sasquatch";
 
-    public StoryObject currentStory;
-    public string[] additionalScenes;
+    public static StoryObject currentStory;
 
-    internal AssetBundle myLoadedAssetBundle;
-    public string storyName;
+    private static AssetBundle myLoadedAssetBundle;
 
-    protected override void Awake()
+
+    public static StoryObject LoadStory(string storyName)
     {
-        base.Awake();
-    
-        foreach (string sceneName in additionalScenes)
-        {
-            Scene s = SceneManager.GetSceneByName(sceneName);
-            if (!s.isLoaded)
-            {
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-            }
-
-        }
-    }
-
-    public StoryObject LoadStory()
-    {
-        myLoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, Path.Combine(currentLanguage.ToLower(), storyName)));
+        
+        myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
+                Application.streamingAssetsPath, 
+                storyName,
+                currentLanguage.ToLower()
+            ));
 
 
         if (myLoadedAssetBundle == null)
         {
-            Debug.LogErrorFormat("Failed to load AssetBundle from story {0}", storyName);
+            Debug.LogErrorFormat("Failed to load {0} assetbundle from story {1}", currentLanguage.ToLower(), storyName);
             return null;
         }
 
@@ -62,7 +53,7 @@ public class DataManager : Singleton<DataManager>
     }
 
     //We have to unload our asset, since we can't load it twice
-    public void UnloadAssetBundle()
+    public static void UnloadAssetBundle()
     {
         if (myLoadedAssetBundle != null)
         {
@@ -72,19 +63,20 @@ public class DataManager : Singleton<DataManager>
         }
     }
 
-    private  void AddFileToStory(StoryObject story, string file)
+    private static void AddFileToStory(StoryObject story, string file)
     {
+        int pathDepth = 2;
         string[] splitPath = file.Split('/');
         for (int i = 0; i < splitPath.Length; i++)
         {
             if (splitPath[i] == storyName)
             {
-                if (i + 2 >= splitPath.Length)
+                if (i + pathDepth + 2 >= splitPath.Length)
                 {
                     Debug.LogWarningFormat("Can't add file to story {0}", file);
                     return;
                 }
-                string pageName = splitPath[i + 1];
+                string pageName = splitPath[i + pathDepth + 1];
                 //Get the page from the story
                 PageObject page = story.GetPage(pageName);
                 //If the page wasn't in the story yet, create a new object
@@ -97,7 +89,7 @@ public class DataManager : Singleton<DataManager>
                     story.pageObjects.Add(page);  
                 }
                 //Get the audio from the page. The name is actually the foldername, not the file name of the audio
-                string audioName = splitPath[i + 2];
+                string audioName = splitPath[i + pathDepth + 2];
                 //If the audio doesn't exist, craete a new one
                 AudioObject audioObj = page.GetAudio(audioName);
                 if (audioObj == null)
@@ -128,7 +120,7 @@ public class DataManager : Singleton<DataManager>
         }
     }
 
-    private SentenceObject GetSentence(string dataString)
+    private static SentenceObject GetSentence(string dataString)
     {
         SentenceObject so = new SentenceObject();
         string[] lines = Regex.Split(dataString, "\\n");
@@ -146,5 +138,19 @@ public class DataManager : Singleton<DataManager>
         }
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);
+    }
+
+    static string CombinePaths(params string[] paths)
+    {
+        if (paths == null)
+        {
+            return null;
+        }
+        string currentPath = paths[0];
+        for (int i = 1; i < paths.Length; i++)
+        {
+            currentPath = Path.Combine(currentPath, paths[i]);
+        }
+        return currentPath;
     }
 }

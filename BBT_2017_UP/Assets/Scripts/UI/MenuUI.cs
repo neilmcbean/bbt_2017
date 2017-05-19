@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Purchasing;
 using UnityEngine.UI;
+using DG.Tweening.Plugins.Options;
 
 public class MenuUI : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class MenuUI : MonoBehaviour
 
     void Awake()
     {
+        for (int i = 0; i < languageDropdown.options.Count; i++)
+        {
+            if (languageDropdown.options[i].text == DataManager.currentLanguage)
+            {
+                languageDropdown.value = i;
+            }
+        }
         languageDropdown.onValueChanged.AddListener(OnDropDownChanged);
     }
 
@@ -21,7 +29,7 @@ public class MenuUI : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("MainNav");
+        SceneManager.LoadScene("MainStory");
     }
 
     public void OnPurchaseSuccess(Product p)

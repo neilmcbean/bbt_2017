@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class PageManager : Singleton<PageManager>
 {
@@ -15,7 +16,7 @@ public class PageManager : Singleton<PageManager>
     {
         get
         {
-            return DataManager.instance.currentStory;
+            return DataManager.currentStory;
         }
     }
 
@@ -64,14 +65,14 @@ public class PageManager : Singleton<PageManager>
             evt.enabled = true;
         }
 
-        DataManager.instance.LoadStory();
+        DataManager.LoadStory(DataManager.storyName);
         NextSentence();
         yield return null;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             NextSentence();
         }
@@ -130,13 +131,13 @@ public class PageManager : Singleton<PageManager>
         else
         {
             Debug.LogErrorFormat("Unable to read the audio from folder {0}. " +
-                "Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.instance.storyName);
+                "Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.storyName);
         }
 
         if (obj.sentence == null)
         {
             Debug.LogErrorFormat("Unable to read the text from folder {0}. " +
-                "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.instance.storyName);
+                "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.storyName);
             yield break;
         }
             

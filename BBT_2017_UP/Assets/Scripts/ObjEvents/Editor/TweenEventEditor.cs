@@ -20,20 +20,19 @@ public class TweenEventEditor : DOTweenAnimationInspector
         TweenEvent baseEvent = (TweenEvent)target;
 
 
-        if (DataManager.instance == null)
+        if (StoryNameManager.instance == null)
         {
-            GUILayout.Label("No DataManager Singleton found in scene");
+            GUILayout.Label("No StoryNameManager Singleton found in scene");
             return;
         }
         if (story == null)
         {
-            story = DataManager.instance.LoadStory();
-            DataManager.instance.UnloadAssetBundle();
+            story = DataManager.LoadStory(StoryNameManager.instance.storyName);
         }
 
         if (story == null)
         {
-            Debug.LogErrorFormat("Story with the name {0} could not be loaded!", DataManager.instance.storyName);
+            Debug.LogErrorFormat("Story with the name {0} could not be loaded!", DataManager.storyName);
             return;
         }
 
