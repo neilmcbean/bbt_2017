@@ -11,7 +11,7 @@ using System.Reflection.Emit;
 public class DataManager
 {
     public static string currentLanguage = "english";
-    public static string storyName = "sasquatch";
+    public static string currentStoryName = "sasquatch";
 
     public static StoryObject currentStory;
 
@@ -69,7 +69,7 @@ public class DataManager
         string[] splitPath = file.Split('/');
         for (int i = 0; i < splitPath.Length; i++)
         {
-            if (splitPath[i] == storyName)
+            if (splitPath[i] == currentStoryName)
             {
                 if (i + pathDepth + 2 >= splitPath.Length)
                 {

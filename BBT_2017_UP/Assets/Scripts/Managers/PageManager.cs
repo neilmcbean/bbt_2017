@@ -65,7 +65,7 @@ public class PageManager : Singleton<PageManager>
             evt.enabled = true;
         }
 
-        DataManager.LoadStory(DataManager.storyName);
+        DataManager.LoadStory(DataManager.currentStoryName);
         NextSentence();
         yield return null;
     }
@@ -97,10 +97,10 @@ public class PageManager : Singleton<PageManager>
 
         if (pageIndex >= currentStory.pageObjects.Count)
         {
-            Debug.Log("Story ended! Restarting...");
+            Debug.Log("Story ended! Back to menu...");
 
             // DataManager.instance.UnloadAssetBundle();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Menu");
             return;
         }
 
@@ -131,13 +131,13 @@ public class PageManager : Singleton<PageManager>
         else
         {
             Debug.LogErrorFormat("Unable to read the audio from folder {0}. " +
-                "Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.storyName);
+                "Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);
         }
 
         if (obj.sentence == null)
         {
             Debug.LogErrorFormat("Unable to read the text from folder {0}. " +
-                "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.storyName);
+                "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);
             yield break;
         }
             

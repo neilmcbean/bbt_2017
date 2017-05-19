@@ -32,7 +32,7 @@ public class TweenEventEditor : DOTweenAnimationInspector
 
         if (story == null)
         {
-            Debug.LogErrorFormat("Story with the name {0} could not be loaded!", DataManager.storyName);
+            Debug.LogErrorFormat("Story with the name {0} could not be loaded!", DataManager.currentStoryName);
             return;
         }
 

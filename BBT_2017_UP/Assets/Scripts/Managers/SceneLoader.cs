@@ -22,8 +22,10 @@ public class SceneLoader : MonoBehaviour
     {
         foreach (string scenePath in scenePaths)
         {
-            string sceneName = DataManager.storyName + scenePath;
-            if (!SceneManager.GetSceneByName(sceneName).isLoaded)
+            string sceneName = DataManager.currentStoryName + scenePath;
+            Scene s = SceneManager.GetSceneByName(sceneName);
+                
+            if (!s.isLoaded)
                 SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
     }

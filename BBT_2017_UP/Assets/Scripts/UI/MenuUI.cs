@@ -9,22 +9,38 @@ using DG.Tweening.Plugins.Options;
 public class MenuUI : MonoBehaviour
 {
     public Dropdown languageDropdown;
+    public Dropdown storyDropdown;
 
+    //TODO Dry this code up
     void Awake()
     {
         for (int i = 0; i < languageDropdown.options.Count; i++)
         {
-            if (languageDropdown.options[i].text == DataManager.currentLanguage)
+            if (languageDropdown.options[i].text.ToLower() == DataManager.currentLanguage)
             {
                 languageDropdown.value = i;
             }
         }
-        languageDropdown.onValueChanged.AddListener(OnDropDownChanged);
+        languageDropdown.onValueChanged.AddListener(OnLanguageDropdownChanged);
+
+        for (int i = 0; i < storyDropdown.options.Count; i++)
+        {
+            if (storyDropdown.options[i].text.ToLower() == DataManager.currentStoryName)
+            {
+                storyDropdown.value = i;
+            }
+        }
+        storyDropdown.onValueChanged.AddListener(OnStoryDropdownChanged);
     }
 
-    void OnDropDownChanged(int i)
+    void OnLanguageDropdownChanged(int i)
     {
-        DataManager.currentLanguage = languageDropdown.options[i].text;
+        DataManager.currentLanguage = languageDropdown.options[i].text.ToLower();
+    }
+
+    void OnStoryDropdownChanged(int i)
+    {
+        DataManager.currentStoryName = storyDropdown.options[i].text.ToLower();
     }
 
     public void StartGame()
