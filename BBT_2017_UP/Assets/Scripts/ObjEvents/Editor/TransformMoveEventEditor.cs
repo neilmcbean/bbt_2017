@@ -17,7 +17,9 @@ public class TransformMoveEventEditor : TweenEventEditor
         cast.targetObj = (Transform)EditorGUILayout.ObjectField("Target", cast.targetObj, typeof(Transform), true);
 
         targetCam = cast.targetObj.GetComponent<Camera>();
-        previewCam = cast.GetComponent<Camera>();
+
+        if (previewCam == null)
+            previewCam = cast.GetComponent<Camera>();
 
         if (previewCam != null)
         {
