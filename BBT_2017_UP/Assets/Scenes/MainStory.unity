@@ -582,7 +582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.399994, y: -191.6}
+  m_AnchoredPosition: {x: -340.8, y: 149.2}
   m_SizeDelta: {x: 151, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &150500963
@@ -808,7 +808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.899994, y: -191.6}
+  m_AnchoredPosition: {x: -352.4, y: 90.4}
   m_SizeDelta: {x: 115, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377018645
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 471916662}
   - component: {fileID: 471916664}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 'Image: Birch Bark Text Holder'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,7 +1022,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 958440951}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1507,15 +1507,15 @@ RectTransform:
   m_GameObject: {fileID: 579044286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 958440951}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -762.7, y: -38.9}
-  m_SizeDelta: {x: 50, y: 100}
+  m_AnchoredPosition: {x: -743, y: -52.3}
+  m_SizeDelta: {x: 109, y: 104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &579044288
 MonoBehaviour:
@@ -1629,7 +1629,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d295471a3c1034966addc63aa7d046fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fae48dd39253a49c082f24b1fdb7456e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2160,7 +2160,7 @@ RectTransform:
   - {fileID: 548768469}
   - {fileID: 150500962}
   m_Father: {fileID: 958440951}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2540,9 +2540,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 471916661}
   - {fileID: 919223767}
   - {fileID: 579044287}
-  - {fileID: 471916661}
   - {fileID: 145263466}
   - {fileID: 2060286737}
   m_Father: {fileID: 0}
@@ -4993,12 +4993,12 @@ GameObject:
   - component: {fileID: 2060286739}
   - component: {fileID: 2060286738}
   m_Layer: 5
-  m_Name: Button
+  m_Name: 'Button: Exit Story'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2060286737
 RectTransform:
   m_ObjectHideFlags: 0
