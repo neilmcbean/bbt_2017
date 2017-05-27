@@ -76,12 +76,73 @@ public class PageManager : Singleton<PageManager>
         {
             NextSentence();
         }
+
+        //DEBUG only
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PreviousSentence(true);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            PreviousSentence(false);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeLanguage("Spanish");
+        }
+    }
+
+    public void ChangeLanguage(string newLanguage)
+    {
+        DataManager.currentLanguage = newLanguage;
+        DataManager.LoadStory(DataManager.currentStoryName);
+        PreviousSentence(true);
     }
 
     public void Register(TweenEvent evt)
     {
         tweenEvents.Add(evt);
         evt.id = tweenEvents.Count.ToString();
+    }
+
+    void GoToSentence(int i)
+    {
+
+    }
+
+    void PreviousSentence(bool playFromLast)
+    {
+        StopAllCoroutines();
+        sentenceContainer.Clear();
+        audioIndex--;
+
+        if (audioIndex < 0)
+        {
+            audioIndex = 0;
+
+            if (pageIndex > 0)
+            {
+                pageIndex--;
+                audioIndex = currentPage.audioObjects.Count - 1;
+            }
+            else
+            {
+                Debug.LogError("Page index can't go under 0!");
+            }
+
+        }
+
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.OnDeactivate();
+            }
+        }
+
+        if (playFromLast)
+            NextSentence();
     }
 
     void NextSentence()
@@ -99,7 +160,6 @@ public class PageManager : Singleton<PageManager>
         {
             Debug.Log("Story ended! Back to menu...");
 
-            // DataManager.instance.UnloadAssetBundle();
             SceneManager.LoadScene("Menu");
             return;
         }

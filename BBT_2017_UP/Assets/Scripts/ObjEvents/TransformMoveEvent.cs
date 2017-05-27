@@ -8,6 +8,9 @@ public class TransformMoveEvent : TweenEvent
     public Transform targetObj;
     public float tweenDuration;
 
+    Tweener moveTween;
+    Tweener rotateTween;
+
     protected override void Awake()
     {
         base.Awake();
@@ -18,10 +21,20 @@ public class TransformMoveEvent : TweenEvent
         
     }
 
-    public override void OnActivate()
+    public override void OnActivate(bool instant)
     {
-        targetObj.DOMove(transform.position, tweenDuration);
-        targetObj.DORotate(transform.eulerAngles, tweenDuration);
+        moveTween = targetObj.DOMove(transform.position, tweenDuration);
+        rotateTween = targetObj.DORotate(transform.eulerAngles, tweenDuration);
+        if (instant)
+        {
+            targetObj.DOComplete(true);
+        }
+    }
+
+    public override void OnDeactivate()
+    {
+        moveTween.Rewind(false);
+        rotateTween.Rewind(false);
     }
         
    
