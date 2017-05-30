@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
-
+    //The scenes that get added to the MainStory scene, are the currentStoryName + these paths.
+    //We need to call our scenes EXACTLY this, in order for this system to work.
+    //The reason to have multiple scenes, is that now people can work on their own scene, without interfering with other peoples work
     string[] scenePaths = new string[]
     {
         "_characters",

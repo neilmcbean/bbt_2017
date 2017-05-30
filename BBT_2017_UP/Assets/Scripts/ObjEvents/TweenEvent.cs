@@ -24,8 +24,23 @@ public class TweenEvent : DOTweenAnimation
         
     }
 
-    public virtual void OnActivate()
+    /// <summary>
+    /// This method should be overriden without calling the base-method. 
+    /// </summary>
+    public virtual void OnActivate(bool instant = false)
     {
         DOPlayForward();
+        if (instant)
+        {
+            DOTween.Complete(id, true);
+        }
+    }
+
+    /// <summary>
+    /// This method should be overriden without calling the base-method. 
+    /// </summary>
+    public virtual void OnDeactivate()
+    {
+        DORewind();
     }
 }
