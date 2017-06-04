@@ -111,24 +111,24 @@ QualitySettings:
     asyncUploadBufferSize: 4
     excludedTargetPlatforms: []
   - serializedVersion: 2
-    name: Beautiful
+    name: Fast
     pixelLightCount: 3
     shadows: 2
-    shadowResolution: 2
+    shadowResolution: 3
     shadowProjection: 1
-    shadowCascades: 4
-    shadowDistance: 5
-    shadowNearPlaneOffset: 2
+    shadowCascades: 1
+    shadowDistance: 10
+    shadowNearPlaneOffset: 1
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     blendWeights: 4
     textureQuality: 0
-    anisotropicTextures: 2
-    antiAliasing: 2
-    softParticles: 1
+    anisotropicTextures: 0
+    antiAliasing: 8
+    softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 1
-    billboardsFaceCameraPosition: 1
+    billboardsFaceCameraPosition: 0
     vSyncCount: 1
     lodBias: 1.5
     maximumLODLevel: 0
