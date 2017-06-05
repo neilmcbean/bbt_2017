@@ -1,0 +1,795 @@
+fileFormatVersion: 2
+guid: aa151296a6d164454ab449be63f86088
+timeCreated: 1496554669
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bind_JNT_Template_Head
+    100002: bind_JNT_Template_Hips1
+    100004: bind_JNT_Template_LeftArm
+    100006: bind_JNT_Template_LeftFoot
+    100008: bind_JNT_Template_LeftForeArm
+    100010: bind_JNT_Template_LeftHand
+    100012: bind_JNT_Template_LeftHandIndex1
+    100014: bind_JNT_Template_LeftHandIndex2
+    100016: bind_JNT_Template_LeftHandIndex3
+    100018: bind_JNT_Template_LeftHandMiddle1
+    100020: bind_JNT_Template_LeftHandMiddle2
+    100022: bind_JNT_Template_LeftHandMiddle3
+    100024: bind_JNT_Template_LeftHandPinky1
+    100026: bind_JNT_Template_LeftHandPinky2
+    100028: bind_JNT_Template_LeftHandPinky3
+    100030: bind_JNT_Template_LeftHandRing1
+    100032: bind_JNT_Template_LeftHandRing2
+    100034: bind_JNT_Template_LeftHandRing3
+    100036: bind_JNT_Template_LeftHandThumb1
+    100038: bind_JNT_Template_LeftHandThumb2
+    100040: bind_JNT_Template_LeftHandThumb3
+    100042: bind_JNT_Template_LeftLeg
+    100044: bind_JNT_Template_LeftShoulder
+    100046: bind_JNT_Template_LeftToeBase
+    100048: bind_JNT_Template_LeftUpLeg
+    100050: bind_JNT_Template_Neck
+    100052: bind_JNT_Template_RightArm
+    100054: bind_JNT_Template_RightFoot
+    100056: bind_JNT_Template_RightForeArm
+    100058: bind_JNT_Template_RightHand
+    100060: bind_JNT_Template_RightHandIndex1
+    100062: bind_JNT_Template_RightHandIndex2
+    100064: bind_JNT_Template_RightHandIndex3
+    100066: bind_JNT_Template_RightHandMiddle1
+    100068: bind_JNT_Template_RightHandMiddle2
+    100070: bind_JNT_Template_RightHandMiddle3
+    100072: bind_JNT_Template_RightHandPinky1
+    100074: bind_JNT_Template_RightHandPinky2
+    100076: bind_JNT_Template_RightHandPinky3
+    100078: bind_JNT_Template_RightHandRing1
+    100080: bind_JNT_Template_RightHandRing2
+    100082: bind_JNT_Template_RightHandRing3
+    100084: bind_JNT_Template_RightHandThumb1
+    100086: bind_JNT_Template_RightHandThumb2
+    100088: bind_JNT_Template_RightHandThumb3
+    100090: bind_JNT_Template_RightLeg
+    100092: bind_JNT_Template_RightShoulder
+    100094: bind_JNT_Template_RightToeBase
+    100096: bind_JNT_Template_RightUpLeg
+    100098: bind_JNT_Template_Spine
+    100100: bind_JNT_Template_Spine1
+    100102: bind_JNT_Template_Spine2
+    100104: Left_ear_end
+    100106: Left_ear_JNT
+    100108: Right_ear_end
+    100110: Right_ear_JNT
+    100112: sasauqtch_mama_JNT
+    100114: sasquatch_mama_GEO
+    100116: //RootNode
+    100118: sasquatch_momma
+    100120: spike_JNT
+    400000: bind_JNT_Template_Head
+    400002: bind_JNT_Template_Hips1
+    400004: bind_JNT_Template_LeftArm
+    400006: bind_JNT_Template_LeftFoot
+    400008: bind_JNT_Template_LeftForeArm
+    400010: bind_JNT_Template_LeftHand
+    400012: bind_JNT_Template_LeftHandIndex1
+    400014: bind_JNT_Template_LeftHandIndex2
+    400016: bind_JNT_Template_LeftHandIndex3
+    400018: bind_JNT_Template_LeftHandMiddle1
+    400020: bind_JNT_Template_LeftHandMiddle2
+    400022: bind_JNT_Template_LeftHandMiddle3
+    400024: bind_JNT_Template_LeftHandPinky1
+    400026: bind_JNT_Template_LeftHandPinky2
+    400028: bind_JNT_Template_LeftHandPinky3
+    400030: bind_JNT_Template_LeftHandRing1
+    400032: bind_JNT_Template_LeftHandRing2
+    400034: bind_JNT_Template_LeftHandRing3
+    400036: bind_JNT_Template_LeftHandThumb1
+    400038: bind_JNT_Template_LeftHandThumb2
+    400040: bind_JNT_Template_LeftHandThumb3
+    400042: bind_JNT_Template_LeftLeg
+    400044: bind_JNT_Template_LeftShoulder
+    400046: bind_JNT_Template_LeftToeBase
+    400048: bind_JNT_Template_LeftUpLeg
+    400050: bind_JNT_Template_Neck
+    400052: bind_JNT_Template_RightArm
+    400054: bind_JNT_Template_RightFoot
+    400056: bind_JNT_Template_RightForeArm
+    400058: bind_JNT_Template_RightHand
+    400060: bind_JNT_Template_RightHandIndex1
+    400062: bind_JNT_Template_RightHandIndex2
+    400064: bind_JNT_Template_RightHandIndex3
+    400066: bind_JNT_Template_RightHandMiddle1
+    400068: bind_JNT_Template_RightHandMiddle2
+    400070: bind_JNT_Template_RightHandMiddle3
+    400072: bind_JNT_Template_RightHandPinky1
+    400074: bind_JNT_Template_RightHandPinky2
+    400076: bind_JNT_Template_RightHandPinky3
+    400078: bind_JNT_Template_RightHandRing1
+    400080: bind_JNT_Template_RightHandRing2
+    400082: bind_JNT_Template_RightHandRing3
+    400084: bind_JNT_Template_RightHandThumb1
+    400086: bind_JNT_Template_RightHandThumb2
+    400088: bind_JNT_Template_RightHandThumb3
+    400090: bind_JNT_Template_RightLeg
+    400092: bind_JNT_Template_RightShoulder
+    400094: bind_JNT_Template_RightToeBase
+    400096: bind_JNT_Template_RightUpLeg
+    400098: bind_JNT_Template_Spine
+    400100: bind_JNT_Template_Spine1
+    400102: bind_JNT_Template_Spine2
+    400104: Left_ear_end
+    400106: Left_ear_JNT
+    400108: Right_ear_end
+    400110: Right_ear_JNT
+    400112: sasauqtch_mama_JNT
+    400114: sasquatch_mama_GEO
+    400116: //RootNode
+    400118: sasquatch_momma
+    400120: spike_JNT
+    4300000: sasquatch_momma
+    9500000: //RootNode
+    13700000: sasquatch_momma
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: bind_JNT_Template_Hips1
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_Neck
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Left_ear_JNT
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Right_ear_JNT
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Template_Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: sasquatch_mama_rig(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sasauqtch_mama_JNT
+      parentName: sasquatch_mama_rig(Clone)
+      position: {x: -0, y: 0, z: 0.18122074}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.7433121, y: 2.7433121, z: 2.7433121}
+    - name: bind_JNT_Template_Hips1
+      parentName: sasauqtch_mama_JNT
+      position: {x: 0, y: 0.13288853, z: -0.050023478}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftUpLeg
+      parentName: bind_JNT_Template_Hips1
+      position: {x: -0.07551167, y: 0.0011596184, z: -0.016035626}
+      rotation: {x: -0.53934413, y: -0.4572832, z: 0.5393442, w: 0.4572832}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000004}
+    - name: bind_JNT_Template_LeftLeg
+      parentName: bind_JNT_Template_LeftUpLeg
+      position: {x: -0.058052514, y: 4.615812e-19, z: 5.761488e-18}
+      rotation: {x: 0.98786664, y: -0.15530477, z: -0.000000044703484, w: 0.000000044703484}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000002}
+    - name: bind_JNT_Template_LeftFoot
+      parentName: bind_JNT_Template_LeftLeg
+      position: {x: -0.05684379, y: 4.5439195e-17, z: -4.2855283e-10}
+      rotation: {x: 0.6851918, y: -0.7283627, z: 0.000000114357405, w: 0.00000016700277}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftToeBase
+      parentName: bind_JNT_Template_LeftFoot
+      position: {x: -0.10605452, y: 1.790125e-17, z: 1.3659249e-17}
+      rotation: {x: 0.70644563, y: 0.03057393, z: -0.70644534, w: 0.030573942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightUpLeg
+      parentName: bind_JNT_Template_Hips1
+      position: {x: 0.07551164, y: 0.001159651, z: -0.01603563}
+      rotation: {x: 0.4572832, y: -0.53934413, z: -0.4572832, w: 0.5393442}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000004}
+    - name: bind_JNT_Template_RightLeg
+      parentName: bind_JNT_Template_RightUpLeg
+      position: {x: 0.058052387, y: -0.00000007404456, z: -4.4408918e-17}
+      rotation: {x: -0.98786664, y: 0.15530476, z: -0.000000014901161, w: 0.000000029802322}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000002}
+    - name: bind_JNT_Template_RightFoot
+      parentName: bind_JNT_Template_RightLeg
+      position: {x: 0.056843936, y: 0.0000000025002582, z: 1.1546319e-16}
+      rotation: {x: 0.68519187, y: -0.7283626, z: 0.00000012466467, w: 0.00000018012499}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1.0000004}
+    - name: bind_JNT_Template_RightToeBase
+      parentName: bind_JNT_Template_RightFoot
+      position: {x: 0.10605459, y: 0.00000000663342, z: 0.000000043460705}
+      rotation: {x: 0.70644563, y: 0.03057393, z: -0.70644534, w: 0.030573942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_Spine
+      parentName: bind_JNT_Template_Hips1
+      position: {x: -0, y: 0.08455285, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_Spine1
+      parentName: bind_JNT_Template_Spine
+      position: {x: -0, y: 0.10803938, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_Spine2
+      parentName: bind_JNT_Template_Spine1
+      position: {x: -0, y: 0.103039205, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftShoulder
+      parentName: bind_JNT_Template_Spine2
+      position: {x: -0.13547496, y: 0.07795704, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftArm
+      parentName: bind_JNT_Template_LeftShoulder
+      position: {x: -0.0495044, y: 0.000001, z: 1.08754e-30}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftForeArm
+      parentName: bind_JNT_Template_LeftArm
+      position: {x: -0.09062263, y: 0, z: -0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHand
+      parentName: bind_JNT_Template_LeftForeArm
+      position: {x: -0.11491572, y: 1.4210854e-16, z: 2.5900906e-17}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHandIndex1
+      parentName: bind_JNT_Template_LeftHand
+      position: {x: -0.08087247, y: -0.023088733, z: 0.018499885}
+      rotation: {x: 0.9617458, y: 0.26975682, z: -0.045938358, w: -0.012885092}
+      scale: {x: 1.0000002, y: 1.0000013, z: 1.0000013}
+    - name: bind_JNT_Template_LeftHandIndex2
+      parentName: bind_JNT_Template_LeftHandIndex1
+      position: {x: -0.027750256, y: -3.2387287e-17, z: -6.6058267e-17}
+      rotation: {x: -0.014337631, y: 0.027202232, z: 0.061778337, w: 0.9976162}
+      scale: {x: 0.99999976, y: 1.0000006, z: 1.0000007}
+    - name: bind_JNT_Template_LeftHandIndex3
+      parentName: bind_JNT_Template_LeftHandIndex2
+      position: {x: -0.04420777, y: -1.9146474e-16, z: -1.918604e-17}
+      rotation: {x: 0.9999189, y: 0.012553184, z: -0.0019673854, w: 0.000881389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHandMiddle1
+      parentName: bind_JNT_Template_LeftHand
+      position: {x: -0.103746004, y: -0.017149612, z: -0.00866039}
+      rotation: {x: 0.9876794, y: 0.15232822, z: 0.035518415, w: -0.00488943}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000012}
+    - name: bind_JNT_Template_LeftHandMiddle2
+      parentName: bind_JNT_Template_LeftHandMiddle1
+      position: {x: -0.022484843, y: 8.640943e-17, z: -1.9828561e-16}
+      rotation: {x: 0.007109765, y: -0.007093995, z: 0.021600962, w: 0.9997163}
+      scale: {x: 0.9999999, y: 1.0000008, z: 1.0000008}
+    - name: bind_JNT_Template_LeftHandMiddle3
+      parentName: bind_JNT_Template_LeftHandMiddle2
+      position: {x: -0.03826012, y: 2.5086062e-17, z: -3.6816955e-17}
+      rotation: {x: 0.98769766, y: -0.021193748, z: -0.0033341933, w: -0.15489715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHandPinky1
+      parentName: bind_JNT_Template_LeftHand
+      position: {x: -0.077227, y: -0.030245999, z: -0.05506102}
+      rotation: {x: 0.98517936, y: 0.1478031, z: 0.07616312, w: 0.042132284}
+      scale: {x: 0.9999999, y: 1.000001, z: 1.000001}
+    - name: bind_JNT_Template_LeftHandPinky2
+      parentName: bind_JNT_Template_LeftHandPinky1
+      position: {x: -0.021229584, y: 9.135054e-17, z: 4.440892e-18}
+      rotation: {x: 0.023998866, y: -0.013531577, z: -0.036781114, w: 0.9989435}
+      scale: {x: 0.99999994, y: 0.9999997, z: 0.99999964}
+    - name: bind_JNT_Template_LeftHandPinky3
+      parentName: bind_JNT_Template_LeftHandPinky2
+      position: {x: -0.024947915, y: 1.7624356e-16, z: -5.4539704e-17}
+      rotation: {x: 0.9660124, y: 0.25732753, z: 0.021688005, w: -0.011498024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHandRing1
+      parentName: bind_JNT_Template_LeftHand
+      position: {x: -0.093430996, y: -0.014625, z: -0.033400323}
+      rotation: {x: 0.98726636, y: 0.15204455, z: 0.044881977, w: 0.013162089}
+      scale: {x: 1.0000001, y: 1.000001, z: 1.000001}
+    - name: bind_JNT_Template_LeftHandRing2
+      parentName: bind_JNT_Template_LeftHandRing1
+      position: {x: -0.038346827, y: 5.2909066e-17, z: 1.2823076e-16}
+      rotation: {x: 0.016399518, y: -0.017313566, z: 0.016796708, w: 0.99957454}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000005}
+    - name: bind_JNT_Template_LeftHandRing3
+      parentName: bind_JNT_Template_LeftHandRing2
+      position: {x: -0.038183212, y: -4.3923198e-17, z: 6.938894e-18}
+      rotation: {x: 0.9743498, y: 0.22263516, z: 0.028520027, w: -0.016210413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_LeftHandThumb1
+      parentName: bind_JNT_Template_LeftHand
+      position: {x: -0.050753325, y: -0.036034737, z: 0.04638527}
+      rotation: {x: 0.94325614, y: 0.14023845, z: -0.29630226, w: 0.052971628}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000007}
+    - name: bind_JNT_Template_LeftHandThumb2
+      parentName: bind_JNT_Template_LeftHandThumb1
+      position: {x: -0.0275073, y: 0, z: -1.7763568e-17}
+      rotation: {x: -0.01153722, y: 0.032218326, z: 0.021904916, w: 0.99917424}
+      scale: {x: 0.99999994, y: 1.0000011, z: 1.0000007}
+    - name: bind_JNT_Template_LeftHandThumb3
+      parentName: bind_JNT_Template_LeftHandThumb2
+      position: {x: -0.027472692, y: 0, z: 2.6645352e-17}
+      rotation: {x: 0.97269374, y: 0.12582473, z: -0.19333208, w: -0.02564718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_Neck
+      parentName: bind_JNT_Template_Spine2
+      position: {x: -0, y: 0.088715725, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_Head
+      parentName: bind_JNT_Template_Neck
+      position: {x: -0, y: 0.34479707, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Left_ear_JNT
+      parentName: bind_JNT_Template_Neck
+      position: {x: -0.145461, y: 0.1056473, z: -0.05108071}
+      rotation: {x: -0, y: -0, z: 0.92052716, w: 0.39067864}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+    - name: Left_ear_end
+      parentName: Left_ear_JNT
+      position: {x: 0.119542345, y: 0.00000014711974, z: 0.0034013672}
+      rotation: {x: -0.39067867, y: 0.9205271, z: -1.07302994e-16, w: -0.000000005821566}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Right_ear_JNT
+      parentName: bind_JNT_Template_Neck
+      position: {x: 0.14546132, y: 0.10564744, z: -0.05108071}
+      rotation: {x: -0.39067855, y: 0.92052716, z: 0.0000000068584622, w: -0.0000000029107834}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: Right_ear_end
+      parentName: Right_ear_JNT
+      position: {x: -0.119542375, y: 3.5527136e-17, z: -0.0034013672}
+      rotation: {x: -0.39067867, y: 0.9205271, z: 0.00000000476485, w: -0.0000000020222384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightShoulder
+      parentName: bind_JNT_Template_Spine2
+      position: {x: 0.13547492, y: 0.07795538, z: 0.0000000940257}
+      rotation: {x: 1, y: -0, z: -0, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightArm
+      parentName: bind_JNT_Template_RightShoulder
+      position: {x: 0.049504388, y: -0.0000036452284, z: -8.881784e-18}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightForeArm
+      parentName: bind_JNT_Template_RightArm
+      position: {x: 0.09062257, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHand
+      parentName: bind_JNT_Template_RightForeArm
+      position: {x: 0.1149151, y: -7.105427e-17, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHandIndex1
+      parentName: bind_JNT_Template_RightHand
+      position: {x: 0.08087304, y: 0.023088876, z: -0.0184999}
+      rotation: {x: -0.96174574, y: -0.2697568, z: 0.045938354, w: 0.012885091}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: bind_JNT_Template_RightHandIndex2
+      parentName: bind_JNT_Template_RightHandIndex1
+      position: {x: 0.027751045, y: 0.0000008320078, z: -0.00000031672013}
+      rotation: {x: -0.014337632, y: 0.027202232, z: 0.061778326, w: 0.9976162}
+      scale: {x: 0.9999999, y: 1, z: 0.99999964}
+    - name: bind_JNT_Template_RightHandIndex3
+      parentName: bind_JNT_Template_RightHandIndex2
+      position: {x: 0.044207454, y: -0.0000007833019, z: 0.00000027007533}
+      rotation: {x: 0.9999189, y: 0.012553184, z: -0.0019673854, w: 0.000881389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHandMiddle1
+      parentName: bind_JNT_Template_RightHand
+      position: {x: 0.103746854, y: 0.0171508, z: 0.008660334}
+      rotation: {x: -0.98768014, y: -0.15232429, z: -0.035517335, w: 0.0048897658}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: bind_JNT_Template_RightHandMiddle2
+      parentName: bind_JNT_Template_RightHandMiddle1
+      position: {x: 0.022486657, y: -0.00000031513213, z: -0.000000030266243}
+      rotation: {x: 0.007109765, y: -0.007093995, z: 0.021600962, w: 0.9997163}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: bind_JNT_Template_RightHandMiddle3
+      parentName: bind_JNT_Template_RightHandMiddle2
+      position: {x: 0.038258944, y: -0.0000005645909, z: -0.00000020689961}
+      rotation: {x: 0.98769766, y: -0.021193748, z: -0.0033341933, w: -0.15489715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHandPinky1
+      parentName: bind_JNT_Template_RightHand
+      position: {x: 0.07722781, y: 0.030248107, z: 0.055061106}
+      rotation: {x: -0.9851744, y: -0.1478311, z: -0.076172516, w: -0.04213259}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: bind_JNT_Template_RightHandPinky2
+      parentName: bind_JNT_Template_RightHandPinky1
+      position: {x: 0.02123052, y: 0.0000009611298, z: 0.00000037512115}
+      rotation: {x: 0.023999104, y: -0.013536461, z: -0.036740154, w: 0.99894494}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
+    - name: bind_JNT_Template_RightHandPinky3
+      parentName: bind_JNT_Template_RightHandPinky2
+      position: {x: 0.024945604, y: -0.0000012337657, z: -0.00000054123365}
+      rotation: {x: 0.9660124, y: 0.25732753, z: 0.021688005, w: -0.011498024}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHandRing1
+      parentName: bind_JNT_Template_RightHand
+      position: {x: 0.093430854, y: 0.014624657, z: 0.033400428}
+      rotation: {x: -0.98726606, y: -0.15204625, z: -0.044883125, w: -0.013162788}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: bind_JNT_Template_RightHandRing2
+      parentName: bind_JNT_Template_RightHandRing1
+      position: {x: 0.038348988, y: -0.00000025636828, z: 0.00000014931581}
+      rotation: {x: 0.016399518, y: -0.017313566, z: 0.016796708, w: 0.99957454}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: bind_JNT_Template_RightHandRing3
+      parentName: bind_JNT_Template_RightHandRing2
+      position: {x: 0.038181283, y: 0.0000010953147, z: -0.000000035529077}
+      rotation: {x: 0.9743498, y: 0.22263516, z: 0.028520027, w: -0.016210413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Template_RightHandThumb1
+      parentName: bind_JNT_Template_RightHand
+      position: {x: 0.050752513, y: 0.03603673, z: -0.04638517}
+      rotation: {x: -0.9432516, y: -0.14027566, z: 0.29630336, w: -0.052948125}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: bind_JNT_Template_RightHandThumb2
+      parentName: bind_JNT_Template_RightHandThumb1
+      position: {x: 0.027506534, y: 0.0000024197757, z: -0.00000015554461}
+      rotation: {x: -0.011535232, y: 0.03223105, z: 0.021937253, w: 0.9991731}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: bind_JNT_Template_RightHandThumb3
+      parentName: bind_JNT_Template_RightHandThumb2
+      position: {x: 0.027472327, y: 0.00000007766251, z: 0.00000010711277}
+      rotation: {x: 0.97269374, y: 0.12582473, z: -0.19333208, w: -0.02564718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spike_JNT
+      parentName: bind_JNT_Template_Spine
+      position: {x: -0, y: 0.014688167, z: -0.2758086}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sasquatch_mama_GEO
+      parentName: sasquatch_mama_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sasquatch_momma
+      parentName: sasquatch_mama_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
