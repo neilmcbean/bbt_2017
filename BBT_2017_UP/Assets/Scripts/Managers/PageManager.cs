@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -90,6 +90,11 @@ public class PageManager : Singleton<PageManager>
         {
             ChangeLanguage("Spanish");
         }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GoToPage(3);
+        }
     }
 
     public void ChangeLanguage(string newLanguage)
@@ -105,11 +110,15 @@ public class PageManager : Singleton<PageManager>
         evt.id = tweenEvents.Count.ToString();
     }
 
-    void GoToSentence(int i)
+    public void GoToPage(int i)
     {
+	StopAllCoroutines();
+        sentenceContainer.Clear();
+	audioIndex = i;
+	PlayCurrentSentence();
 
     }
-
+    
     void PreviousSentence(bool playFromLast)
     {
         StopAllCoroutines();
@@ -164,22 +173,27 @@ public class PageManager : Singleton<PageManager>
             return;
         }
 
-        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        audioIndex++;
+       PlayCurrentSentence();
 
-        //Actiavte tweens
-        foreach (TweenEvent evt in tweenEvents)
-        {
-            evt.OnNextStep();
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
-            {
-                evt.OnActivate();
-            }
-        }
-       
-        StartCoroutine(RunSequence(currentAudio));
 
     }
+	void PlayCurrentSentence()
+	{
+ 		AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        	audioIndex++;
+
+        	//Actiavte tweens
+        	foreach (TweenEvent evt in tweenEvents)
+        	{
+          	  evt.OnNextStep();
+          	  if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+           	 {
+             	   evt.OnActivate();
+            	}
+       	 }
+      	 
+      	  StartCoroutine(RunSequence(currentAudio));
+	}
 
     IEnumerator RunSequence(AudioObject obj)
     {
