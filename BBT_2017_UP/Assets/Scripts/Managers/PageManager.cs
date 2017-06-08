@@ -72,10 +72,15 @@ public class PageManager : Singleton<PageManager>
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
         {
             NextSentence();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			PreviousSentence(true);
+		}
 
         //DEBUG only
         if (Input.GetKeyDown(KeyCode.Q))
@@ -93,7 +98,7 @@ public class PageManager : Singleton<PageManager>
         
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GoToPage(3);
+            GoToPage(16);
         }
     }
 
