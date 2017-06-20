@@ -17,6 +17,8 @@ public class DataManager
 
     private static AssetBundle myLoadedAssetBundle;
 
+    public static string[] languageManager;
+
 
     public static StoryObject LoadStory(string storyName)
     {

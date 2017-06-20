@@ -40,7 +40,7 @@ public class PageManager : Singleton<PageManager>
     protected override void Awake()
     {
         base.Awake();
-    
+
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
 
@@ -68,6 +68,8 @@ public class PageManager : Singleton<PageManager>
         DataManager.LoadStory(DataManager.currentStoryName);
         NextSentence();
         yield return null;
+
+
     }
 
     void Update()
@@ -75,12 +77,14 @@ public class PageManager : Singleton<PageManager>
         if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
         {
             NextSentence();
+            //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			PreviousSentence(true);
-		}
+        {
+            PreviousSentence(false);
+            //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
+        }
 
         //DEBUG only
         if (Input.GetKeyDown(KeyCode.Q))
@@ -93,13 +97,97 @@ public class PageManager : Singleton<PageManager>
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ChangeLanguage("Spanish");
+            LanguageMenuDeploy();
+            //ChangeLanguage("Spanish");
         }
-        
+
         if (Input.GetKeyDown(KeyCode.R))
-        {
-            GoToPage(16);
+        {//DEBUG
+            MenuSetup();
         }
+    }
+
+    private void LanguageMenuDeploy()
+    {
+        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject text = GameObject.FindGameObjectWithTag("DebugText");
+        //Canvas Positions
+        Vector3 OGPosition = text.transform.position;
+        Vector3 Position = text.transform.position;
+        //GoToPage(2);
+        //currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count;
+        for (int languageCount = 0; languageCount < DataManager.languageManager.Length; languageCount++)
+        {
+            GameObject LanguageButton = Instantiate(text) as GameObject;
+            //Attributes
+            LanguageButton.GetComponent<Button>().GetComponentInChildren<Text>().text = DataManager.languageManager[languageCount];
+            LanguageButton.GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+            LanguageButton.transform.SetParent(Canvas.transform, false);
+            Position = new Vector3(Position.x + 100, Position.y, Position.z);
+            LanguageButton.transform.position = Position;
+            LanguageButton.GetComponent<Button>().onClick.AddListener(() => OnUIButtonClick_Language(LanguageButton.GetComponent<Button>()));
+        }
+    }
+
+    private void OnUIButtonClick_Language(Button button)
+    {//when the player clicks a button
+        Debug.Log("OnUIButtonClick_Language: " + button.gameObject.GetComponentInChildren<Text>().text);
+        ChangeLanguage(button.gameObject.GetComponentInChildren<Text>().text);
+        //int Page = int.Parse(button.gameObject.GetComponentInChildren<Text>().text);
+        //GoToPage(Page);
+    }
+
+    private void MenuSetup()
+    {
+        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject text = GameObject.FindGameObjectWithTag("DebugText");
+        //Canvas Positions
+        Vector3 OGPosition = text.transform.position;
+        Vector3 Position = text.transform.position;
+        //GoToPage(2);
+        //currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count;
+        for (int pageCount = 0; pageCount < currentStory.pageObjects.Count; pageCount++)
+        {//Cycle through all the pages.
+            GameObject ChapterButton = Instantiate(text) as GameObject;
+            ChapterButton.transform.SetParent(Canvas.transform, false);
+            //Positions
+            Position = OGPosition;
+            ChapterButton.transform.position = Position;
+            //Button Edit
+            Button button;
+            button = ChapterButton.GetComponent<Button>();
+            //Attributes 
+            ChapterButton.GetComponent<Image>().color = Color.red;
+            ChapterButton.GetComponentInChildren<Text>().text = "Chapter:" + (pageCount + 1);
+            //Debug.Log("page" + pageCount);
+            for (int audio = 0; audio < currentStory.pageObjects[pageCount].audioObjects.Count; audio++)
+            {//Cycle through all the audio clips. 
+                GameObject AudioPoint = Instantiate(text) as GameObject;
+                AudioPoint.transform.SetParent(Canvas.transform, false);
+                Position = new Vector3(Position.x + 100, Position.y, Position.z);
+                AudioPoint.transform.position = Position;
+                button = AudioPoint.GetComponent<Button>();
+                //Attributes 
+                //Debug.Log(audio);
+                AudioPoint.GetComponent<Button>().onClick.AddListener(() => OnUIButtonClick_Menu(AudioPoint.GetComponent<Button>()));
+                AudioPoint.GetComponent<Button>().GetComponent<Image>().color = Color.green;
+                AudioPoint.GetComponent<Button>().GetComponentInChildren<Text>().text = audio.ToString();
+            }
+            OGPosition = new Vector3(OGPosition.x, OGPosition.y - 30.0f, OGPosition.z);
+        }
+        text.gameObject.SetActive(false);
+    }
+
+    private void OnUIButtonClick_Menu(Button button)
+    {//when the player clicks a button
+        Debug.Log("OnUIButtonClick_Menu: " + button.gameObject.GetComponentInChildren<Text>().text);
+        int Page = int.Parse(button.gameObject.GetComponentInChildren<Text>().text);
+        GoToPage(Page);
+    }
+
+    void TaskOnClick()
+    {
+        Debug.Log("You have clicked the button!");
     }
 
     public void ChangeLanguage(string newLanguage)
@@ -117,20 +205,43 @@ public class PageManager : Singleton<PageManager>
 
     public void GoToPage(int i)
     {
-	StopAllCoroutines();
+        //Debug.Log(i);
+        StopAllCoroutines();
         sentenceContainer.Clear();
-	audioIndex = i;
-	PlayCurrentSentence();
+        audioIndex = i;
+        PlayCurrentSentence();
 
     }
-    
+
     void PreviousSentence(bool playFromLast)
     {
+
+
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.OnDeactivate();
+            }
+        }
+
+        //Debug.Log("previous");        
         StopAllCoroutines();
         sentenceContainer.Clear();
         audioIndex--;
-
-        if (audioIndex < 0)
+        Debug.Log(audioIndex + "/" + pageIndex);
+        if (audioIndex < 1 && pageIndex > 0)
+        {//Switch to the previous page if can
+            Debug.Log("Reset to previous page");
+            pageIndex--;
+            audioIndex = currentStory.pageObjects.Count + 1;
+        }
+        if (audioIndex > 0)
+        {
+            audioIndex--;
+        }
+        /*if (audioIndex < 0)
         {
             audioIndex = 0;
 
@@ -144,19 +255,31 @@ public class PageManager : Singleton<PageManager>
                 Debug.LogError("Page index can't go under 0!");
             }
 
-        }
+        }*/
 
+
+
+        PlayPreviousSentence();
+        audioIndex++;
+         if (playFromLast)
+             NextSentence();
+    }
+
+    void PlayPreviousSentence()
+    {
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+
+        //Actiavte tweens
         foreach (TweenEvent evt in tweenEvents)
         {
+            evt.OnNextStep();
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
             {
-                evt.OnDeactivate();
+                evt.OnActivate();
             }
         }
 
-        if (playFromLast)
-            NextSentence();
+        StartCoroutine(RunSequence(currentAudio));
     }
 
     void NextSentence()
@@ -169,7 +292,7 @@ public class PageManager : Singleton<PageManager>
             pageIndex++;
             audioIndex = 0;
         }
-
+        Debug.Log(audioIndex + "/" + pageIndex);
         if (pageIndex >= currentStory.pageObjects.Count)
         {
             Debug.Log("Story ended! Back to menu...");
@@ -178,27 +301,38 @@ public class PageManager : Singleton<PageManager>
             return;
         }
 
-       PlayCurrentSentence();
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.OnDeactivate();
+            }
+        }
+
+        PlayCurrentSentence();
 
 
     }
-	void PlayCurrentSentence()
-	{
- 		AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        	audioIndex++;
 
-        	//Actiavte tweens
-        	foreach (TweenEvent evt in tweenEvents)
-        	{
-          	  evt.OnNextStep();
-          	  if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
-           	 {
-             	   evt.OnActivate();
-            	}
-       	 }
-      	 
-      	  StartCoroutine(RunSequence(currentAudio));
-	}
+
+    void PlayCurrentSentence()
+    {
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
+        audioIndex++;
+
+        //Actiavte tweens
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            evt.OnNextStep();
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.OnActivate();
+            }
+        }
+
+        StartCoroutine(RunSequence(currentAudio));
+    }
 
     IEnumerator RunSequence(AudioObject obj)
     {
@@ -219,7 +353,7 @@ public class PageManager : Singleton<PageManager>
                 "Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);
             yield break;
         }
-            
+
         //Displaying all words in the bottom
         foreach (WordGroupObject wordGroup in obj.sentence.wordGroups)
         {
@@ -267,5 +401,5 @@ public class PageManager : Singleton<PageManager>
         }
         return results;
     }
-	
+
 }

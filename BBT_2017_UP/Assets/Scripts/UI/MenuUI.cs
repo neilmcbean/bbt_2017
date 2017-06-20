@@ -14,8 +14,12 @@ public class MenuUI : MonoBehaviour
     //TODO Dry this code up
     void Awake()
     {
+        DataManager.languageManager = new string[languageDropdown.options.Count];
+
         for (int i = 0; i < languageDropdown.options.Count; i++)
         {
+            DataManager.languageManager[i] = languageDropdown.options[i].text.ToLower();
+            //Debug.Log(languageDropdown.options[i].text);
             if (languageDropdown.options[i].text.ToLower() == DataManager.currentLanguage)
             {
                 languageDropdown.value = i;
@@ -36,6 +40,7 @@ public class MenuUI : MonoBehaviour
     void OnLanguageDropdownChanged(int i)
     {
         DataManager.currentLanguage = languageDropdown.options[i].text.ToLower();
+        Debug.Log(DataManager.currentLanguage);
     }
 
     void OnStoryDropdownChanged(int i)
@@ -45,6 +50,7 @@ public class MenuUI : MonoBehaviour
 
     public void StartGame()
     {
+        //Debug.Log("Working");
         SceneManager.LoadScene("MainStory");
     }
 
