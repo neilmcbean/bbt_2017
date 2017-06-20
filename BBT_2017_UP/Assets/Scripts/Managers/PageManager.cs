@@ -215,8 +215,6 @@ public class PageManager : Singleton<PageManager>
 
     void PreviousSentence(bool playFromLast)
     {
-
-
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         foreach (TweenEvent evt in tweenEvents)
         {
@@ -225,11 +223,11 @@ public class PageManager : Singleton<PageManager>
                 evt.OnDeactivate();
             }
         }
-
         //Debug.Log("previous");        
         StopAllCoroutines();
         sentenceContainer.Clear();
-        audioIndex--;
+        //audioIndex--;
+
         Debug.Log(audioIndex + "/" + pageIndex);
         if (audioIndex < 1 && pageIndex > 0)
         {//Switch to the previous page if can
@@ -237,32 +235,25 @@ public class PageManager : Singleton<PageManager>
             pageIndex--;
             audioIndex = currentStory.pageObjects.Count + 1;
         }
+
+        currentAudio = currentPage.audioObjects[audioIndex];
+        foreach (TweenEvent evt in tweenEvents)
+        {
+            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
+            {
+                evt.OnDeactivate();
+            }
+        }
+
         if (audioIndex > 0)
         {
             audioIndex--;
         }
-        /*if (audioIndex < 0)
-        {
-            audioIndex = 0;
-
-            if (pageIndex > 0)
-            {
-                pageIndex--;
-                audioIndex = currentPage.audioObjects.Count - 1;
-            }
-            else
-            {
-                Debug.LogError("Page index can't go under 0!");
-            }
-
-        }*/
-
-
 
         PlayPreviousSentence();
-        audioIndex++;
-         if (playFromLast)
-             NextSentence();
+        //audioIndex++;
+        //if (playFromLast)
+        //NextSentence();
     }
 
     void PlayPreviousSentence()
