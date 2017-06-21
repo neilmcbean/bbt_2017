@@ -27,12 +27,14 @@ public class PageManager : Singleton<PageManager>
             return currentStory.pageObjects[pageIndex];
         }
     }
-
+    //PageKeepers
     private int pageIndex;
     private int audioIndex;
 
     private AudioSource audioSource;
     private SentenceRowContainer sentenceContainer;
+
+    private bool isForward = false;
 
     private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
@@ -66,7 +68,7 @@ public class PageManager : Singleton<PageManager>
         }
 
         DataManager.LoadStory(DataManager.currentStoryName);
-        NextSentence();
+        NextSentence(true);
         yield return null;
 
 
@@ -75,14 +77,16 @@ public class PageManager : Singleton<PageManager>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
-        {
-            NextSentence();
+        {//move to the next passage 
+            NextSentence(isForward);
+            isForward = true;
             //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            PreviousSentence(false);
+        {//move to the previous passage
+            PreviousSentence(isForward);
+            isForward = false;
             //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
         }
 
@@ -100,7 +104,6 @@ public class PageManager : Singleton<PageManager>
             LanguageMenuDeploy();
             //ChangeLanguage("Spanish");
         }
-
         if (Input.GetKeyDown(KeyCode.R))
         {//DEBUG
             MenuSetup();
@@ -168,7 +171,6 @@ public class PageManager : Singleton<PageManager>
                 AudioPoint.transform.position = Position;
                 button = AudioPoint.GetComponent<Button>();
                 //Attributes 
-                //Debug.Log(audio);
                 AudioPoint.GetComponent<Button>().onClick.AddListener(() => OnUIButtonClick_Menu(AudioPoint.GetComponent<Button>()));
                 AudioPoint.GetComponent<Button>().GetComponent<Image>().color = Color.green;
                 AudioPoint.GetComponent<Button>().GetComponentInChildren<Text>().text = audio.ToString();
@@ -214,29 +216,18 @@ public class PageManager : Singleton<PageManager>
     }
 
     void PreviousSentence(bool playFromLast)
-    {
-        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        foreach (TweenEvent evt in tweenEvents)
-        {
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
-            {
-                evt.OnDeactivate();
-            }
-        }
-        //Debug.Log("previous");        
+    {//Turn off the current passage and prep for the next passage
         StopAllCoroutines();
         sentenceContainer.Clear();
-        //audioIndex--;
 
-        Debug.Log(audioIndex + "/" + pageIndex);
         if (audioIndex < 1 && pageIndex > 0)
-        {//Switch to the previous page if can
+        {//Switch to the previous page if can(OBSELETE)
             Debug.Log("Reset to previous page");
             pageIndex--;
             audioIndex = currentStory.pageObjects.Count + 1;
         }
 
-        currentAudio = currentPage.audioObjects[audioIndex];
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         foreach (TweenEvent evt in tweenEvents)
         {
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
@@ -245,21 +236,23 @@ public class PageManager : Singleton<PageManager>
             }
         }
 
-        if (audioIndex > 0)
-        {
-            audioIndex--;
-        }
-
         PlayPreviousSentence();
-        //audioIndex++;
-        //if (playFromLast)
-        //NextSentence();
+
+        if (playFromLast == true)
+        {//If the player flips to a previous page after moving forward previously
+            PreviousSentence(false);
+        }
     }
 
     void PlayPreviousSentence()
     {
-        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
 
+        if (audioIndex > 0)
+        {//reduce the passage book mark
+            audioIndex--;
+        }
+
+        AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         //Actiavte tweens
         foreach (TweenEvent evt in tweenEvents)
         {
@@ -271,23 +264,17 @@ public class PageManager : Singleton<PageManager>
         }
 
         StartCoroutine(RunSequence(currentAudio));
+        Debug.Log(audioIndex + "/" + pageIndex);
     }
 
-    void NextSentence()
-    {
+    void NextSentence(bool playFromLast)
+    {//Move the narrative forward
         StopAllCoroutines();
         sentenceContainer.Clear();
 
-        if (audioIndex >= currentPage.audioObjects.Count)
-        {
-            pageIndex++;
-            audioIndex = 0;
-        }
-        Debug.Log(audioIndex + "/" + pageIndex);
         if (pageIndex >= currentStory.pageObjects.Count)
-        {
+        {//when the player reaches the end of the narrative
             Debug.Log("Story ended! Back to menu...");
-
             SceneManager.LoadScene("Menu");
             return;
         }
@@ -300,10 +287,11 @@ public class PageManager : Singleton<PageManager>
                 evt.OnDeactivate();
             }
         }
-
         PlayCurrentSentence();
-
-
+        if (playFromLast == false)
+        {
+            NextSentence(true);
+        }
     }
 
 
@@ -311,7 +299,6 @@ public class PageManager : Singleton<PageManager>
     {
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         audioIndex++;
-
         //Actiavte tweens
         foreach (TweenEvent evt in tweenEvents)
         {
@@ -323,6 +310,7 @@ public class PageManager : Singleton<PageManager>
         }
 
         StartCoroutine(RunSequence(currentAudio));
+        Debug.Log(audioIndex + "/" + pageIndex);
     }
 
     IEnumerator RunSequence(AudioObject obj)
