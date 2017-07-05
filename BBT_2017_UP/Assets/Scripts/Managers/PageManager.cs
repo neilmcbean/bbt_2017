@@ -194,6 +194,7 @@ public class PageManager : Singleton<PageManager>
 
     public void ChangeLanguage(string newLanguage)
     {
+        //Debug.Log(newLanguage);
         DataManager.currentLanguage = newLanguage;
         DataManager.LoadStory(DataManager.currentStoryName);
         PreviousSentence(true);
@@ -203,6 +204,8 @@ public class PageManager : Singleton<PageManager>
     {
         tweenEvents.Add(evt);
         evt.id = tweenEvents.Count.ToString();
+
+        //gameObject.GetComponent<Dropdown>().value
     }
 
     public void GoToPage(int i)
