@@ -38,6 +38,9 @@ public class PageManager : Singleton<PageManager>
 
     private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
+    private Vector3 cameraPreviousPosition;
+    public  Transform cameraTransformTracker;
+    private bool isCamMoving = false;
 
     protected override void Awake()
     {
@@ -48,10 +51,15 @@ public class PageManager : Singleton<PageManager>
 
     }
 
+    
     // Use this for initialization
     IEnumerator Start()
     {
         //Wait a frame for all scenes to be loaded
+        //Camera tracking variables
+        cameraTransformTracker = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        cameraPreviousPosition = cameraTransformTracker.position;
+        transform.hasChanged = false;
 
         List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent>();
         foreach (TweenEvent evt in tweenEvents)
@@ -66,28 +74,36 @@ public class PageManager : Singleton<PageManager>
         {
             evt.enabled = true;
         }
-
         DataManager.LoadStory(DataManager.currentStoryName);
         NextSentence(true);
         yield return null;
-
-
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
-        {//move to the next passage 
-            NextSentence(isForward);
-            isForward = true;
-            //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
+        if (cameraTransformTracker.hasChanged == false)
+        {//If the camera has completed moving in the specific page.
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
+            {//move to the next passage 
+                NextSentence(isForward);
+                isForward = true;
+                transform.hasChanged = false;
+                //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {//move to the previous passage
+                PreviousSentence(isForward);
+                isForward = false;
+                transform.hasChanged = false;
+                //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {//move to the previous passage
-            PreviousSentence(isForward);
-            isForward = false;
-            //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
+        if (cameraTransformTracker.hasChanged)
+        {
+            //print("The transform has changed!");
+            cameraTransformTracker.hasChanged = false;
         }
 
         //DEBUG only
@@ -136,12 +152,11 @@ public class PageManager : Singleton<PageManager>
     {//when the player clicks a button
         Debug.Log("OnUIButtonClick_Language: " + button.gameObject.GetComponentInChildren<Text>().text);
         ChangeLanguage(button.gameObject.GetComponentInChildren<Text>().text);
-        //int Page = int.Parse(button.gameObject.GetComponentInChildren<Text>().text);
-        //GoToPage(Page);
     }
 
-    private void MenuSetup()
-    {
+    private void MenuSetup()//OBSELETE 
+    {///
+        Debug.Log(currentStory.pageObjects.Count);
         GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
         GameObject text = GameObject.FindGameObjectWithTag("DebugText");
         //Canvas Positions
@@ -204,8 +219,6 @@ public class PageManager : Singleton<PageManager>
     {
         tweenEvents.Add(evt);
         evt.id = tweenEvents.Count.ToString();
-
-        //gameObject.GetComponent<Dropdown>().value
     }
 
     public void GoToPage(int i)
@@ -215,7 +228,6 @@ public class PageManager : Singleton<PageManager>
         sentenceContainer.Clear();
         audioIndex = i;
         PlayCurrentSentence();
-
     }
 
     void PreviousSentence(bool playFromLast)
@@ -287,7 +299,7 @@ public class PageManager : Singleton<PageManager>
         {
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
             {
-                evt.OnDeactivate();
+                evt.OnDeactivate();              
             }
         }
         PlayCurrentSentence();
@@ -308,12 +320,11 @@ public class PageManager : Singleton<PageManager>
             evt.OnNextStep();
             if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
             {
-                evt.OnActivate();
+                evt.OnActivate();               
             }
         }
-
         StartCoroutine(RunSequence(currentAudio));
-        Debug.Log(audioIndex + "/" + pageIndex);
+        //Debug.Log(audioIndex + "/" + pageIndex);
     }
 
     IEnumerator RunSequence(AudioObject obj)

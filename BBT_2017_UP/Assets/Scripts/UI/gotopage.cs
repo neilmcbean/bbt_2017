@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class gotopage : MonoBehaviour {
 
-	public void pageLoad (int page)
+    private int pageTarget = 0;
 
+	public void pageLoad ()
     {
-        PageManager.instance.GoToPage(page);
+        //Debug.Log(gameObject.name);
+        PageManager.instance.GoToPage(pageTarget);
     }
-
+    public void setPageTarget(int page)
+    {
+        pageTarget = page;
+    }
 }
