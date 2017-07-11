@@ -25,7 +25,12 @@ public class MenuChapterManager : MonoBehaviour {
 		
 	}
 
-    public void ChapterINI()
+    public void ReturnToMainMenu()
+    {
+        Application.LoadLevel("Menu");
+    }
+
+        public void ChapterINI()
     {
       
         if (IsMenuSetUp == false)
