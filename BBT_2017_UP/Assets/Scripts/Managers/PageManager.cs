@@ -42,6 +42,11 @@ public class PageManager : Singleton<PageManager>
     public  Transform cameraTransformTracker;
     private bool isCamMoving = false;
 
+
+	//Mouse Tracking Variabels 
+	private  Vector2 mouseStartPosition;
+	private  Vector2 mouseEndPosition;
+
     protected override void Awake()
     {
         base.Awake();
@@ -58,7 +63,7 @@ public class PageManager : Singleton<PageManager>
         //Wait a frame for all scenes to be loaded
         //Camera tracking variables
         cameraTransformTracker = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        cameraPreviousPosition = cameraTransformTracker.position;
+		cameraPreviousPosition = cameraTransformTracker.position;
         transform.hasChanged = false;
 
         List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent>();
@@ -83,7 +88,29 @@ public class PageManager : Singleton<PageManager>
     {
         if (cameraTransformTracker.hasChanged == false)
         {//If the camera has completed moving in the specific page.
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
+            
+			if (Input.GetMouseButtonDown(0))
+			{
+				mouseStartPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
+				Debug.Log (mouseStartPosition);
+			}
+			else if (Input.GetMouseButtonUp(0))
+			{
+				mouseEndPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
+				Debug.Log (mouseEndPosition);
+				if (mouseStartPosition.x < mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject()) {
+					NextSentence(isForward);
+					isForward = true;
+					transform.hasChanged = false;
+				} else {
+					PreviousSentence(isForward);
+					isForward = false;
+					transform.hasChanged = false;
+				}
+			}
+
+			/*
+			 * if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
             {//move to the next passage 
                 NextSentence(isForward);
                 isForward = true;
@@ -98,6 +125,7 @@ public class PageManager : Singleton<PageManager>
                 transform.hasChanged = false;
                 //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
             }
+            */
         }
 
         if (cameraTransformTracker.hasChanged)
@@ -106,7 +134,11 @@ public class PageManager : Singleton<PageManager>
             cameraTransformTracker.hasChanged = false;
         }
 
-        //DEBUG only
+
+
+		/*
+
+		//DEBUG only
         if (Input.GetKeyDown(KeyCode.Q))
         {
             PreviousSentence(true);
@@ -124,8 +156,9 @@ public class PageManager : Singleton<PageManager>
         {//DEBUG
             MenuSetup();
         }
-    }
 
+		*/
+    }
     private void LanguageMenuDeploy()
     {
         GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
