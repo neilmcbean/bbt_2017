@@ -32,20 +32,22 @@ public class PageManager : Singleton<PageManager>
     private int audioIndex;
 
     private AudioSource audioSource;
-    private SentenceRowContainer sentenceContainer;
+	private SentenceRowContainer sentenceContainer;
 
     private bool isForward = false;
 
-    private List<TweenEvent> tweenEvents = new List<TweenEvent>();
+	private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
+	//Camera Variables
     private Vector3 cameraPreviousPosition;
     public  Transform cameraTransformTracker;
     private bool isCamMoving = false;
-
-
+	//Menu Variables
+	public bool isMenuDeployed = false;
 	//Mouse Tracking Variabels 
 	private  Vector2 mouseStartPosition;
 	private  Vector2 mouseEndPosition;
+	private GameObject MountainTest;
 
     protected override void Awake()
     {
@@ -60,6 +62,8 @@ public class PageManager : Singleton<PageManager>
     // Use this for initialization
     IEnumerator Start()
     {
+		MountainTest = GameObject.FindGameObjectWithTag("MountainRange");
+
         //Wait a frame for all scenes to be loaded
         //Camera tracking variables
         cameraTransformTracker = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -86,9 +90,8 @@ public class PageManager : Singleton<PageManager>
 
     void Update()
     {
-        if (cameraTransformTracker.hasChanged == false)
-        {//If the camera has completed moving in the specific page.
-            
+		if (cameraTransformTracker.hasChanged == false)
+        {//If the camera has completed moving in the specific page.          
 			if (Input.GetMouseButtonDown(0))
 			{
 				mouseStartPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
@@ -97,15 +100,19 @@ public class PageManager : Singleton<PageManager>
 			else if (Input.GetMouseButtonUp(0))
 			{
 				mouseEndPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
-				Debug.Log (mouseEndPosition);
-				if (mouseStartPosition.x < mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject()) {
-					NextSentence(isForward);
-					isForward = true;
-					transform.hasChanged = false;
-				} else {
-					PreviousSentence(isForward);
-					isForward = false;
-					transform.hasChanged = false;
+				Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
+				//§Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
+				if (Vector2.Distance (mouseStartPosition, mouseEndPosition) > 300) 
+				{//If the drag distance is longer thank an arbitrary amount 
+					if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {
+						NextSentence (isForward);
+						isForward = true;
+						transform.hasChanged = false;
+					} else {
+						PreviousSentence (isForward);
+						isForward = false;
+						transform.hasChanged = false;
+					}
 				}
 			}
 
@@ -133,9 +140,7 @@ public class PageManager : Singleton<PageManager>
             //print("The transform has changed!");
             cameraTransformTracker.hasChanged = false;
         }
-
-
-
+			
 		/*
 
 		//DEBUG only
@@ -242,7 +247,10 @@ public class PageManager : Singleton<PageManager>
 
     public void ChangeLanguage(string newLanguage)
     {
+		StopAllCoroutines();
+		sentenceContainer.Clear();
         //Debug.Log(newLanguage);
+
         DataManager.currentLanguage = newLanguage;
         DataManager.LoadStory(DataManager.currentStoryName);
         PreviousSentence(true);
@@ -254,13 +262,28 @@ public class PageManager : Singleton<PageManager>
         evt.id = tweenEvents.Count.ToString();
     }
 
+	public void KillCurrentCoroutines()
+	{
+		//isMenuDeployed = true;
+		StopAllCoroutines();
+		sentenceContainer.Clear();
+	}
+
+	public void ReactivateCurrentCoroutine()
+	{
+		//isMenuDeployed = false;
+		StopAllCoroutines();
+		sentenceContainer.Clear();
+		StartCoroutine(RunSequence(currentPage.audioObjects[audioIndex]));
+	}
+
     public void GoToPage(int i)
     {
         //Debug.Log(i);
         StopAllCoroutines();
         sentenceContainer.Clear();
         audioIndex = i;
-        PlayCurrentSentence();
+		StartCoroutine(RunSequence(currentPage.audioObjects[audioIndex]));
     }
 
     void PreviousSentence(bool playFromLast)
@@ -315,6 +338,7 @@ public class PageManager : Singleton<PageManager>
         Debug.Log(audioIndex + "/" + pageIndex);
     }
 
+
     void NextSentence(bool playFromLast)
     {//Move the narrative forward
         StopAllCoroutines();
@@ -323,7 +347,7 @@ public class PageManager : Singleton<PageManager>
         if (pageIndex >= currentStory.pageObjects.Count)
         {//when the player reaches the end of the narrative
             Debug.Log("Story ended! Back to menu...");
-            SceneManager.LoadScene("Menu");
+            //SceneManager.LoadScene("Menu");
             return;
         }
 
@@ -362,6 +386,7 @@ public class PageManager : Singleton<PageManager>
 
     IEnumerator RunSequence(AudioObject obj)
     {
+
         if (obj.clip != null)
         {
             audioSource.clip = obj.clip;

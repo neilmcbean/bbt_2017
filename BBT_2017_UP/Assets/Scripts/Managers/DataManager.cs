@@ -21,15 +21,13 @@ public class DataManager
 
 
     public static StoryObject LoadStory(string storyName)
-    {
-        
+    {        
         myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
                 Application.streamingAssetsPath, 
                 storyName,
                 currentLanguage.ToLower()
             ));
-
-
+			
         if (myLoadedAssetBundle == null)
         {
             Debug.LogErrorFormat("Failed to load {0} assetbundle from story {1}", currentLanguage.ToLower(), storyName);
@@ -37,8 +35,7 @@ public class DataManager
         }
 
         StoryObject story = new StoryObject();
-
-        
+		       
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
         foreach (string file in files)
         {
@@ -71,6 +68,7 @@ public class DataManager
         string[] splitPath = file.Split('/');
         for (int i = 0; i < splitPath.Length; i++)
         {
+			
             if (splitPath[i] == currentStoryName)
             {
                 if (i + pathDepth + 2 >= splitPath.Length)
@@ -112,6 +110,7 @@ public class DataManager
                 TextAsset txt = fileObj as TextAsset;
                 if (txt != null)
                 {
+					//Debug.Log ("working");
                     audioObj.sentence = GetSentence(txt.text);
                     return;
                 }
@@ -137,6 +136,7 @@ public class DataManager
             //This is index 1 or 2 (dependend if the time is defined twice or not)
             obj.text = words[words.Length - 1];
             so.wordGroups.Add(obj);
+			//Debug.Log (words [words.Length - 1]);
         }
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);
