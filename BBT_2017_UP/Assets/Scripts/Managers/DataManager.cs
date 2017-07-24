@@ -25,21 +25,23 @@ public class DataManager
         myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
                 Application.streamingAssetsPath, 
                 storyName,
-                currentLanguage.ToLower()
+			currentLanguage.ToLower()
             ));
 			
         if (myLoadedAssetBundle == null)
         {
-            Debug.LogErrorFormat("Failed to load {0} assetbundle from story {1}", currentLanguage.ToLower(), storyName);
+            //Debug.LogErrorFormat("Failed to load {0} assetbundle from story {1}", currentLanguage.ToLower(), storyName);
             return null;
         }
 
         StoryObject story = new StoryObject();
 		       
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
+		//Debug.Log (files.Length);
         foreach (string file in files)
         {
             AddFileToStory(story, file); 
+			//Debug.Log (story+" "+ file);
         }
         UnloadAssetBundle();
         currentStory = story;
@@ -66,6 +68,7 @@ public class DataManager
     {
         int pathDepth = 2;
         string[] splitPath = file.Split('/');
+		//Debug.Log (splitPath.Length);
         for (int i = 0; i < splitPath.Length; i++)
         {
 			

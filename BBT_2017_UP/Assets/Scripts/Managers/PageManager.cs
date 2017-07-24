@@ -48,6 +48,8 @@ public class PageManager : Singleton<PageManager>
 	private  Vector2 mouseStartPosition;
 	private  Vector2 mouseEndPosition;
 	private GameObject MountainTest;
+	private GameObject CharacterCoin;
+	private string  Speaker;
 
     protected override void Awake()
     {
@@ -63,6 +65,7 @@ public class PageManager : Singleton<PageManager>
     IEnumerator Start()
     {
 		MountainTest = GameObject.FindGameObjectWithTag("MountainRange");
+		CharacterCoin = GameObject.FindGameObjectWithTag("CharacterCoin");
 
         //Wait a frame for all scenes to be loaded
         //Camera tracking variables
@@ -83,9 +86,12 @@ public class PageManager : Singleton<PageManager>
         {
             evt.enabled = true;
         }
+		//Debug.Log (DataManager.currentStoryName);
         DataManager.LoadStory(DataManager.currentStoryName);
-        NextSentence(true);
+		NextSentence(true);
         yield return null;
+
+
     }
 
     void Update()
@@ -95,12 +101,12 @@ public class PageManager : Singleton<PageManager>
 			if (Input.GetMouseButtonDown(0))
 			{
 				mouseStartPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
-				Debug.Log (mouseStartPosition);
+				//Debug.Log (mouseStartPosition);
 			}
 			else if (Input.GetMouseButtonUp(0))
 			{
 				mouseEndPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);	
-				Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
+				//Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
 				//§Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
 				if (Vector2.Distance (mouseStartPosition, mouseEndPosition) > 300) 
 				{//If the drag distance is longer thank an arbitrary amount 
@@ -114,6 +120,7 @@ public class PageManager : Singleton<PageManager>
 						transform.hasChanged = false;
 					}
 				}
+				CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
 			}
 
 			/*
@@ -188,13 +195,13 @@ public class PageManager : Singleton<PageManager>
 
     private void OnUIButtonClick_Language(Button button)
     {//when the player clicks a button
-        Debug.Log("OnUIButtonClick_Language: " + button.gameObject.GetComponentInChildren<Text>().text);
+        //Debug.Log("OnUIButtonClick_Language: " + button.gameObject.GetComponentInChildren<Text>().text);
         ChangeLanguage(button.gameObject.GetComponentInChildren<Text>().text);
     }
 
     private void MenuSetup()//OBSELETE 
     {///
-        Debug.Log(currentStory.pageObjects.Count);
+        //Debug.Log(currentStory.pageObjects.Count);
         GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
         GameObject text = GameObject.FindGameObjectWithTag("DebugText");
         //Canvas Positions
@@ -405,11 +412,31 @@ public class PageManager : Singleton<PageManager>
             yield break;
         }
 
-        //Displaying all words in the bottom
-        foreach (WordGroupObject wordGroup in obj.sentence.wordGroups)
-        {
-            sentenceContainer.AddText(wordGroup);
-        }
+
+
+
+		//Displaying all words in the bottom
+		foreach (WordGroupObject wordGroup in obj.sentence.wordGroups)
+		{
+			if (wordGroup.text.Contains("speaker"))
+			{//Get The Narrator
+				Speaker = wordGroup.text;
+				Speaker=Speaker.Remove (0,10);
+				//Debug.Log(Speaker);
+			}
+			else
+			{				
+				//Debug.Log (wordGroup.text);
+				sentenceContainer.AddText(wordGroup);
+			}
+		}
+
+		//GEWT BACK TO IT HERE
+
+
+
+
+
 
         //highlight the proper wordgroups
         int i = 0;
