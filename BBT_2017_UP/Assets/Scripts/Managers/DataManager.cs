@@ -22,11 +22,15 @@ public class DataManager
 
     public static StoryObject LoadStory(string storyName)
     {        
+
+		string diretorySpecification = "/s01_01";
         myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
                 Application.streamingAssetsPath, 
                 storyName,
 			currentLanguage.ToLower()
             ));
+
+		Debug.Log (myLoadedAssetBundle);
 			
         if (myLoadedAssetBundle == null)
         {
@@ -38,15 +42,29 @@ public class DataManager
 		       
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
-        foreach (string file in files)
+        
+
+		/*foreach (string file in files)
         {
             AddFileToStory(story, file); 
 			//Debug.Log (story+" "+ file);
-        }
+        }*/
+
+		for (int i = 0; i < files.Length; i++) {
+			//Debug.Log (files[i]);
+			AddFileToStory(story, files[i]);
+		}
+
         UnloadAssetBundle();
         currentStory = story;
         return currentStory;
     }
+
+	public void loadStory()
+	{
+
+	}
+
 
     void OnDestroy()
     {
@@ -66,9 +84,11 @@ public class DataManager
 
     private static void AddFileToStory(StoryObject story, string file)
     {
+		
+
         int pathDepth = 2;
         string[] splitPath = file.Split('/');
-		//Debug.Log (splitPath.Length);
+		Debug.Log (file);
         for (int i = 0; i < splitPath.Length; i++)
         {
 			
@@ -128,6 +148,7 @@ public class DataManager
     {
         SentenceObject so = new SentenceObject();
         string[] lines = Regex.Split(dataString, "\\n");
+		//Debug.Log ("words.Length"+lines.Length);
         foreach (string line in lines)
         {
             if (string.IsNullOrEmpty(line))
@@ -139,7 +160,7 @@ public class DataManager
             //This is index 1 or 2 (dependend if the time is defined twice or not)
             obj.text = words[words.Length - 1];
             so.wordGroups.Add(obj);
-			//Debug.Log (words [words.Length - 1]);
+
         }
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);

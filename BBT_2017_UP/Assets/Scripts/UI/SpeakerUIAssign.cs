@@ -12,7 +12,7 @@ public class SpeakerUIAssign : MonoBehaviour {
 	{		
 		foreach (Sprite image in Speakers) {			
 			if (FileName == image.name) {
-				Debug.Log (FileName);
+				//Debug.Log (FileName);
 				GetComponent<Image> ().sprite = image;
 			} 
 		}
