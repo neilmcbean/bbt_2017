@@ -51,10 +51,11 @@ public class PageManager : Singleton<PageManager>
 	private GameObject CharacterCoin;
 	private string  Speaker;
 
+	private int narrativeCounter = 0;
+
     protected override void Awake()
     {
         base.Awake();
-
         sentenceContainer = FindObjectOfType<SentenceRowContainer>();
         audioSource = GetComponent<AudioSource>();
 
@@ -90,8 +91,6 @@ public class PageManager : Singleton<PageManager>
         DataManager.LoadStory(DataManager.currentStoryName);
 		NextSentence(true);
         yield return null;
-
-
     }
 
     void Update()
@@ -121,55 +120,15 @@ public class PageManager : Singleton<PageManager>
 					}
 				}
 				CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
-			}
-
-			/*
-			 * if (Input.GetKeyDown(KeyCode.RightArrow) && !EventSystem.current.IsPointerOverGameObject())
-            {//move to the next passage 
-                NextSentence(isForward);
-                isForward = true;
-                transform.hasChanged = false;
-                //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
-            }
-
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {//move to the previous passage
-                PreviousSentence(isForward);
-                isForward = false;
-                transform.hasChanged = false;
-                //Debug.Log(currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count);
-            }
-            */
+			}				
         }
 
         if (cameraTransformTracker.hasChanged)
         {
             //print("The transform has changed!");
             cameraTransformTracker.hasChanged = false;
-        }
-			
-		/*
+        }			
 
-		//DEBUG only
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PreviousSentence(true);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            PreviousSentence(false);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            LanguageMenuDeploy();
-            //ChangeLanguage("Spanish");
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {//DEBUG
-            MenuSetup();
-        }
-
-		*/
     }
     private void LanguageMenuDeploy()
     {
@@ -351,12 +310,28 @@ public class PageManager : Singleton<PageManager>
         StopAllCoroutines();
         sentenceContainer.Clear();
 
-        if (pageIndex >= currentStory.pageObjects.Count)
+        
+		narrativeCounter++;
+		Debug.Log (narrativeCounter);
+		if(narrativeCounter == 6)
+		{
+
+			audioIndex = 0;
+			narrativeCounter = 0;
+			DataManager.NarrativeCounter += 12;
+			DataManager.LoadStory(DataManager.currentStoryName);
+		}
+
+
+
+		if (pageIndex >= currentStory.pageObjects.Count)
         {//when the player reaches the end of the narrative
             Debug.Log("Story ended! Back to menu...");
             //SceneManager.LoadScene("Menu");
             return;
         }
+
+		Debug.Log (currentPage.audioObjects + "/" + audioIndex);
 
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         foreach (TweenEvent evt in tweenEvents)
@@ -457,6 +432,8 @@ public class PageManager : Singleton<PageManager>
             prevWordGroup = wordGroup;
         }
         sentenceContainer.HighlightWordGroup(null);
+
+
 
 
     }
