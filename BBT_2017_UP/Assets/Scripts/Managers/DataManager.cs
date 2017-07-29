@@ -20,6 +20,10 @@ public class DataManager
     public static string[] languageManager;
 
 
+	public static int NarrativeCounter = 0;
+	private static int NarrativeCounterEnd = 12;
+
+
     public static StoryObject LoadStory(string storyName)
     {        
 
@@ -30,7 +34,7 @@ public class DataManager
 			currentLanguage.ToLower()
             ));
 
-		Debug.Log (myLoadedAssetBundle);
+		//Debug.Log (myLoadedAssetBundle);
 			
         if (myLoadedAssetBundle == null)
         {
@@ -50,7 +54,7 @@ public class DataManager
 			//Debug.Log (story+" "+ file);
         }*/
 
-		for (int i = 0; i < files.Length; i++) {
+		for (int i = NarrativeCounter; i < NarrativeCounter+NarrativeCounterEnd; i++) {//Multiply this by two
 			//Debug.Log (files[i]);
 			AddFileToStory(story, files[i]);
 		}
@@ -88,10 +92,10 @@ public class DataManager
 
         int pathDepth = 2;
         string[] splitPath = file.Split('/');
-		Debug.Log (file);
+
         for (int i = 0; i < splitPath.Length; i++)
         {
-			
+			//Debug.Log (splitPath[i]);
             if (splitPath[i] == currentStoryName)
             {
                 if (i + pathDepth + 2 >= splitPath.Length)
@@ -102,6 +106,7 @@ public class DataManager
                 string pageName = splitPath[i + pathDepth + 1];
                 //Get the page from the story
                 PageObject page = story.GetPage(pageName);
+				//page = null;
                 //If the page wasn't in the story yet, create a new object
                 if (page == null)
                 {
