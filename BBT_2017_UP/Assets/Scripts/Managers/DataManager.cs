@@ -116,6 +116,7 @@ public class DataManager
                     };
                     story.pageObjects.Add(page);  
                 }
+
                 //Get the audio from the page. The name is actually the foldername, not the file name of the audio
                 string audioName = splitPath[i + pathDepth + 2];
                 //If the audio doesn't exist, craete a new one
@@ -128,6 +129,7 @@ public class DataManager
                     };
                     page.audioObjects.Add(audioObj);
                 }
+
                 Object fileObj = myLoadedAssetBundle.LoadAsset(file);
                 AudioClip clip = fileObj as AudioClip;
                 if (clip != null)
@@ -135,6 +137,7 @@ public class DataManager
                     audioObj.clip = clip;
                     return;
                 }
+
                 TextAsset txt = fileObj as TextAsset;
                 if (txt != null)
                 {
@@ -142,6 +145,7 @@ public class DataManager
                     audioObj.sentence = GetSentence(txt.text);
                     return;
                 }
+
                 Debug.LogErrorFormat("File of type {0} detected inside the AssetBundle. It only supports AudioClips and TextAssets!", fileObj.GetType());
 
                 return;
