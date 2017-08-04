@@ -1,0 +1,711 @@
+fileFormatVersion: 2
+guid: ea875abe6c0af4068985e1c951c4841c
+timeCreated: 1501286537
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: backpack_body.001
+    100002: backpack_button.001
+    100004: backpack_handle.001
+    100006: backpack_JNT
+    100008: backpack_JNT1
+    100010: backpack_JNT1_end
+    100012: bind_JNT_Thomas_Head
+    100014: bind_JNT_Thomas_Head_end
+    100016: bind_JNT_Thomas_Hips1
+    100018: bind_JNT_Thomas_LeftArm
+    100020: bind_JNT_Thomas_LeftFoot
+    100022: bind_JNT_Thomas_LeftFoot_end
+    100024: bind_JNT_Thomas_LeftForeArm
+    100026: bind_JNT_Thomas_LeftForearm
+    100028: bind_JNT_Thomas_LeftHand
+    100030: bind_JNT_Thomas_LeftHandIndex1
+    100032: bind_JNT_Thomas_LeftHandIndex2
+    100034: bind_JNT_Thomas_LeftHandIndex2_end
+    100036: bind_JNT_Thomas_LeftHandMiddle1
+    100038: bind_JNT_Thomas_LeftHandMiddle2
+    100040: bind_JNT_Thomas_LeftHandMiddle2_end
+    100042: bind_JNT_Thomas_LeftHandPinky1
+    100044: bind_JNT_Thomas_LeftHandPinky2
+    100046: bind_JNT_Thomas_LeftHandPinky2_end
+    100048: bind_JNT_Thomas_LeftHandRing1
+    100050: bind_JNT_Thomas_LeftHandRing2
+    100052: bind_JNT_Thomas_LeftHandRing2_end
+    100054: bind_JNT_Thomas_LeftHandThumb1
+    100056: bind_JNT_Thomas_LeftHandThumb2
+    100058: bind_JNT_Thomas_LeftHandThumb2_end
+    100060: bind_JNT_Thomas_LeftLeg
+    100062: bind_JNT_Thomas_LeftShoulder
+    100064: bind_JNT_Thomas_LeftUpLeg
+    100066: bind_JNT_Thomas_Neck.001
+    100068: bind_JNT_Thomas_Neck_001
+    100070: bind_JNT_Thomas_RightArm
+    100072: bind_JNT_Thomas_RightFoot
+    100074: bind_JNT_Thomas_RightFoot_end
+    100076: bind_JNT_Thomas_RightForeArm
+    100078: bind_JNT_Thomas_RightHand
+    100080: bind_JNT_Thomas_RightHandIndex1
+    100082: bind_JNT_Thomas_RightHandIndex2
+    100084: bind_JNT_Thomas_RightHandIndex2_end
+    100086: bind_JNT_Thomas_RightHandMiddle1
+    100088: bind_JNT_Thomas_RightHandMiddle2
+    100090: bind_JNT_Thomas_RightHandMiddle2_end
+    100092: bind_JNT_Thomas_RightHandPinky1
+    100094: bind_JNT_Thomas_RightHandPinky2
+    100096: bind_JNT_Thomas_RightHandPinky2_end
+    100098: bind_JNT_Thomas_RightHandRing1
+    100100: bind_JNT_Thomas_RightHandRing2
+    100102: bind_JNT_Thomas_RightHandRing2_end
+    100104: bind_JNT_Thomas_RightHandThumb1
+    100106: bind_JNT_Thomas_RightHandThumb2
+    100108: bind_JNT_Thomas_RightHandThumb2_end
+    100110: bind_JNT_Thomas_RightLeg
+    100112: bind_JNT_Thomas_RightShoulder
+    100114: bind_JNT_Thomas_RightUpLeg
+    100116: bind_JNT_Thomas_Spine
+    100118: bind_JNT_Thomas_Spine1
+    100120: template_bind.001
+    100122: template_bind_002
+    100124: //RootNode
+    100126: thomas_body.001
+    100128: thomas_GEO
+    100130: thomas_outfit01.001
+    100132: Thomas_Rig
+    400000: backpack_body.001
+    400002: backpack_button.001
+    400004: backpack_handle.001
+    400006: backpack_JNT
+    400008: backpack_JNT1
+    400010: backpack_JNT1_end
+    400012: bind_JNT_Thomas_Head
+    400014: bind_JNT_Thomas_Head_end
+    400016: bind_JNT_Thomas_Hips1
+    400018: bind_JNT_Thomas_LeftArm
+    400020: bind_JNT_Thomas_LeftFoot
+    400022: bind_JNT_Thomas_LeftFoot_end
+    400024: bind_JNT_Thomas_LeftForeArm
+    400026: bind_JNT_Thomas_LeftForearm
+    400028: bind_JNT_Thomas_LeftHand
+    400030: bind_JNT_Thomas_LeftHandIndex1
+    400032: bind_JNT_Thomas_LeftHandIndex2
+    400034: bind_JNT_Thomas_LeftHandIndex2_end
+    400036: bind_JNT_Thomas_LeftHandMiddle1
+    400038: bind_JNT_Thomas_LeftHandMiddle2
+    400040: bind_JNT_Thomas_LeftHandMiddle2_end
+    400042: bind_JNT_Thomas_LeftHandPinky1
+    400044: bind_JNT_Thomas_LeftHandPinky2
+    400046: bind_JNT_Thomas_LeftHandPinky2_end
+    400048: bind_JNT_Thomas_LeftHandRing1
+    400050: bind_JNT_Thomas_LeftHandRing2
+    400052: bind_JNT_Thomas_LeftHandRing2_end
+    400054: bind_JNT_Thomas_LeftHandThumb1
+    400056: bind_JNT_Thomas_LeftHandThumb2
+    400058: bind_JNT_Thomas_LeftHandThumb2_end
+    400060: bind_JNT_Thomas_LeftLeg
+    400062: bind_JNT_Thomas_LeftShoulder
+    400064: bind_JNT_Thomas_LeftUpLeg
+    400066: bind_JNT_Thomas_Neck.001
+    400068: bind_JNT_Thomas_Neck_001
+    400070: bind_JNT_Thomas_RightArm
+    400072: bind_JNT_Thomas_RightFoot
+    400074: bind_JNT_Thomas_RightFoot_end
+    400076: bind_JNT_Thomas_RightForeArm
+    400078: bind_JNT_Thomas_RightHand
+    400080: bind_JNT_Thomas_RightHandIndex1
+    400082: bind_JNT_Thomas_RightHandIndex2
+    400084: bind_JNT_Thomas_RightHandIndex2_end
+    400086: bind_JNT_Thomas_RightHandMiddle1
+    400088: bind_JNT_Thomas_RightHandMiddle2
+    400090: bind_JNT_Thomas_RightHandMiddle2_end
+    400092: bind_JNT_Thomas_RightHandPinky1
+    400094: bind_JNT_Thomas_RightHandPinky2
+    400096: bind_JNT_Thomas_RightHandPinky2_end
+    400098: bind_JNT_Thomas_RightHandRing1
+    400100: bind_JNT_Thomas_RightHandRing2
+    400102: bind_JNT_Thomas_RightHandRing2_end
+    400104: bind_JNT_Thomas_RightHandThumb1
+    400106: bind_JNT_Thomas_RightHandThumb2
+    400108: bind_JNT_Thomas_RightHandThumb2_end
+    400110: bind_JNT_Thomas_RightLeg
+    400112: bind_JNT_Thomas_RightShoulder
+    400114: bind_JNT_Thomas_RightUpLeg
+    400116: bind_JNT_Thomas_Spine
+    400118: bind_JNT_Thomas_Spine1
+    400120: template_bind.001
+    400122: template_bind_002
+    400124: //RootNode
+    400126: thomas_body.001
+    400128: thomas_GEO
+    400130: thomas_outfit01.001
+    400132: Thomas_Rig
+    4300000: thomas_body.001
+    4300002: backpack_handle.001
+    4300004: thomas_outfit01.001
+    4300006: backpack_body.001
+    4300008: backpack_button.001
+    7400000: sasq_s01_01
+    7400002: sasq_02_01
+    7400004: sasq_02_02
+    9500000: //RootNode
+    13700000: backpack_body.001
+    13700002: backpack_button.001
+    13700004: backpack_handle.001
+    13700006: thomas_body.001
+    13700008: thomas_outfit01.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: sasq_s01_01
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: backpack_body.001
+        weight: 1
+      - path: backpack_button.001
+        weight: 1
+      - path: backpack_handle.001
+        weight: 1
+      - path: thomas_body.001
+        weight: 1
+      - path: thomas_outfit01.001
+        weight: 1
+      - path: Thomas_Rig
+        weight: 1
+      - path: Thomas_Rig/template_bind.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot/bind_JNT_Thomas_LeftFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot/bind_JNT_Thomas_RightFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1/backpack_JNT1_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head/bind_JNT_Thomas_Head_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2/bind_JNT_Thomas_LeftHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2/bind_JNT_Thomas_LeftHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2/bind_JNT_Thomas_LeftHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2/bind_JNT_Thomas_LeftHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2/bind_JNT_Thomas_LeftHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2/bind_JNT_Thomas_RightHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2/bind_JNT_Thomas_RightHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2/bind_JNT_Thomas_RightHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2/bind_JNT_Thomas_RightHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2/bind_JNT_Thomas_RightHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/thomas_GEO
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sasq_02_01
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: backpack_body.001
+        weight: 1
+      - path: backpack_button.001
+        weight: 1
+      - path: backpack_handle.001
+        weight: 1
+      - path: thomas_body.001
+        weight: 1
+      - path: thomas_outfit01.001
+        weight: 1
+      - path: Thomas_Rig
+        weight: 1
+      - path: Thomas_Rig/template_bind.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot/bind_JNT_Thomas_LeftFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot/bind_JNT_Thomas_RightFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1/backpack_JNT1_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head/bind_JNT_Thomas_Head_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2/bind_JNT_Thomas_LeftHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2/bind_JNT_Thomas_LeftHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2/bind_JNT_Thomas_LeftHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2/bind_JNT_Thomas_LeftHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2/bind_JNT_Thomas_LeftHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2/bind_JNT_Thomas_RightHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2/bind_JNT_Thomas_RightHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2/bind_JNT_Thomas_RightHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2/bind_JNT_Thomas_RightHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2/bind_JNT_Thomas_RightHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/thomas_GEO
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sasq_02_02
+      takeName: Take 001
+      firstFrame: 3
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: backpack_body.001
+        weight: 1
+      - path: backpack_button.001
+        weight: 1
+      - path: backpack_handle.001
+        weight: 1
+      - path: thomas_body.001
+        weight: 1
+      - path: thomas_outfit01.001
+        weight: 1
+      - path: Thomas_Rig
+        weight: 1
+      - path: Thomas_Rig/template_bind.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_LeftUpLeg/bind_JNT_Thomas_LeftLeg/bind_JNT_Thomas_LeftFoot/bind_JNT_Thomas_LeftFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_RightUpLeg/bind_JNT_Thomas_RightLeg/bind_JNT_Thomas_RightFoot/bind_JNT_Thomas_RightFoot_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/backpack_JNT/backpack_JNT1/backpack_JNT1_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck.001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_Head/bind_JNT_Thomas_Head_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandIndex1/bind_JNT_Thomas_LeftHandIndex2/bind_JNT_Thomas_LeftHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandMiddle1/bind_JNT_Thomas_LeftHandMiddle2/bind_JNT_Thomas_LeftHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandPinky1/bind_JNT_Thomas_LeftHandPinky2/bind_JNT_Thomas_LeftHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandRing1/bind_JNT_Thomas_LeftHandRing2/bind_JNT_Thomas_LeftHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForearm/bind_JNT_Thomas_LeftHand/bind_JNT_Thomas_LeftHandThumb1/bind_JNT_Thomas_LeftHandThumb2/bind_JNT_Thomas_LeftHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_LeftShoulder/bind_JNT_Thomas_LeftArm/bind_JNT_Thomas_LeftForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandIndex1/bind_JNT_Thomas_RightHandIndex2/bind_JNT_Thomas_RightHandIndex2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandMiddle1/bind_JNT_Thomas_RightHandMiddle2/bind_JNT_Thomas_RightHandMiddle2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandPinky1/bind_JNT_Thomas_RightHandPinky2/bind_JNT_Thomas_RightHandPinky2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandRing1/bind_JNT_Thomas_RightHandRing2/bind_JNT_Thomas_RightHandRing2_end
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2
+        weight: 1
+      - path: Thomas_Rig/template_bind_002/bind_JNT_Thomas_Hips1/bind_JNT_Thomas_Spine/bind_JNT_Thomas_Spine1/bind_JNT_Thomas_Neck_001/bind_JNT_Thomas_RightShoulder/bind_JNT_Thomas_RightArm/bind_JNT_Thomas_RightForeArm/bind_JNT_Thomas_RightHand/bind_JNT_Thomas_RightHandThumb1/bind_JNT_Thomas_RightHandThumb2/bind_JNT_Thomas_RightHandThumb2_end
+        weight: 1
+      - path: Thomas_Rig/thomas_GEO
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
