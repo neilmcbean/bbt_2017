@@ -38,6 +38,8 @@ public class PageManager : Singleton<PageManager>
 
 	private List<TweenEvent> tweenEvents = new List<TweenEvent>();
 
+	public GameObject[] Characters;
+
 	//Camera Variables
     private Vector3 cameraPreviousPosition;
     public  Transform cameraTransformTracker;
@@ -67,7 +69,7 @@ public class PageManager : Singleton<PageManager>
     {
 		MountainTest = GameObject.FindGameObjectWithTag("MountainRange");
 		CharacterCoin = GameObject.FindGameObjectWithTag("CharacterCoin");
-
+		Characters = GameObject.FindGameObjectsWithTag("Characters");
         //Wait a frame for all scenes to be loaded
         //Camera tracking variables
         cameraTransformTracker = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -113,10 +115,23 @@ public class PageManager : Singleton<PageManager>
 						NextSentence (isForward);
 						isForward = true;
 						transform.hasChanged = false;
+						//Play the current animation
+						foreach (GameObject Child in Characters) {
+							if (Child.GetComponent<Animator> () != null) {
+								Child.GetComponent<Animator> ().SetTrigger ("advance");
+							}
+						}
+
 					} else {
 						PreviousSentence (isForward);
 						isForward = false;
 						transform.hasChanged = false;
+						//Play the current animation
+						foreach (GameObject Child in Characters) {
+							if (Child.GetComponent<Animator> () != null) {
+								Child.GetComponent<Animator> ().SetTrigger ("goback");
+							}
+						}
 					}
 				}
 				CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
@@ -346,6 +361,7 @@ public class PageManager : Singleton<PageManager>
         {
             NextSentence(true);
         }
+
     }
 
 
