@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d891e370ea3dd49a9b189103e55ec08a
-timeCreated: 1496592618
+timeCreated: 1502753663
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -68,29 +68,6 @@ ModelImporter:
     100120: thomas_GEO
     100122: thomas_outfit01
     100124: //RootNode
-    100126: backpack_body.001
-    100128: backpack_button.001
-    100130: backpack_handle.001
-    100132: backpack_JNT1_end
-    100134: bind_JNT_Thomas_LeftFoot_end
-    100136: bind_JNT_Thomas_LeftHandIndex2_end
-    100138: bind_JNT_Thomas_LeftHandMiddle2_end
-    100140: bind_JNT_Thomas_LeftHandPinky2_end
-    100142: bind_JNT_Thomas_LeftHandRing2_end
-    100144: bind_JNT_Thomas_LeftHandThumb2_end
-    100146: bind_JNT_Thomas_Neck_end
-    100148: bind_JNT_Thomas_RightFoot_end
-    100150: bind_JNT_Thomas_RightHandIndex2_end
-    100152: bind_JNT_Thomas_RightHandMiddle2_end
-    100154: bind_JNT_Thomas_RightHandPinky2_end
-    100156: bind_JNT_Thomas_RightHandRing2_end
-    100158: bind_JNT_Thomas_RightHandThumb2_end
-    100160: template_bind.001
-    100162: thomas_body.001
-    100164: thomas_outfit01.001
-    100166: Thomas_Rig
-    100168: bind_JNT_Thomas_Head_end
-    100170: bind_JNT_Thomas_Neck.001
     400000: backpack_body
     400002: backpack_button
     400004: backpack_end_JNT
@@ -154,50 +131,17 @@ ModelImporter:
     400120: thomas_GEO
     400122: thomas_outfit01
     400124: //RootNode
-    400126: backpack_body.001
-    400128: backpack_button.001
-    400130: backpack_handle.001
-    400132: backpack_JNT1_end
-    400134: bind_JNT_Thomas_LeftFoot_end
-    400136: bind_JNT_Thomas_LeftHandIndex2_end
-    400138: bind_JNT_Thomas_LeftHandMiddle2_end
-    400140: bind_JNT_Thomas_LeftHandPinky2_end
-    400142: bind_JNT_Thomas_LeftHandRing2_end
-    400144: bind_JNT_Thomas_LeftHandThumb2_end
-    400146: bind_JNT_Thomas_Neck_end
-    400148: bind_JNT_Thomas_RightFoot_end
-    400150: bind_JNT_Thomas_RightHandIndex2_end
-    400152: bind_JNT_Thomas_RightHandMiddle2_end
-    400154: bind_JNT_Thomas_RightHandPinky2_end
-    400156: bind_JNT_Thomas_RightHandRing2_end
-    400158: bind_JNT_Thomas_RightHandThumb2_end
-    400160: template_bind.001
-    400162: thomas_body.001
-    400164: thomas_outfit01.001
-    400166: Thomas_Rig
-    400168: bind_JNT_Thomas_Head_end
-    400170: bind_JNT_Thomas_Neck.001
     4300000: backpack_handle
     4300002: backpack_button
     4300004: backpack_body
     4300006: thomas_outfit01
     4300008: thomas_body
-    4300010: thomas_body.001
-    4300012: backpack_handle.001
-    4300014: thomas_outfit01.001
-    4300016: backpack_body.001
-    4300018: backpack_button.001
     9500000: //RootNode
     13700000: backpack_body
     13700002: backpack_button
     13700004: backpack_handle
     13700006: thomas_body
     13700008: thomas_outfit01
-    13700010: backpack_body.001
-    13700012: backpack_button.001
-    13700014: backpack_handle.001
-    13700016: thomas_body.001
-    13700018: thomas_outfit01.001
   materials:
     importMaterials: 1
     materialName: 0
@@ -314,6 +258,14 @@ ModelImporter:
         modified: 0
     - boneName: bind_JNT_Thomas_Spine1
       humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bind_JNT_Thomas_Neck
+      humanName: Neck
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -512,16 +464,8 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: bind_JNT_Thomas_Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: bind_JNT_Thomas_Neck.001
-      humanName: Neck
+    - boneName: bind_JNT_Thomas_Spine2
+      humanName: UpperChest
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -531,325 +475,319 @@ ModelImporter:
     skeleton:
     - name: Thomas_Rig(Clone)
       parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: backpack_body.001
-      parentName: Thomas_Rig(Clone)
-      position: {x: 3.6183393e-24, y: 0.000000007521025, z: -0.0000000050140145}
-      rotation: {x: 0.00000009636151, y: 2.4815422e-23, z: -3.30872e-24, w: 1}
-      scale: {x: 2.1030304, y: 2.1030307, z: 2.1030307}
-    - name: backpack_button.001
-      parentName: Thomas_Rig(Clone)
-      position: {x: 3.6183393e-24, y: 0.000000007521025, z: -0.0000000050140145}
-      rotation: {x: 0.00000009636151, y: 2.4815422e-23, z: -3.30872e-24, w: 1}
-      scale: {x: 2.1030304, y: 2.1030307, z: 2.1030307}
-    - name: backpack_handle.001
+    - name: template_bind
       parentName: Thomas_Rig(Clone)
       position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-      scale: {x: 2.1030304, y: 2.1030304, z: 2.1030304}
-    - name: thomas_body.001
-      parentName: Thomas_Rig(Clone)
-      position: {x: -0, y: 3.13376e-10, z: 4.7553184e-17}
-      rotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-      scale: {x: 2.1030304, y: 2.1030304, z: 2.1030304}
-    - name: thomas_outfit01.001
-      parentName: Thomas_Rig(Clone)
-      position: {x: -0, y: 0.0000000050524105, z: 1.9553544e-10}
-      rotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-      scale: {x: 2.1030304, y: 2.1030304, z: 2.1030304}
-    - name: Thomas_Rig
-      parentName: Thomas_Rig(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: template_bind.001
-      parentName: Thomas_Rig
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 0.026984803, y: 0.026984803, z: 0.026984803}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.2831389, y: 1.2831389, z: 1.2831389}
     - name: bind_JNT_Thomas_Hips1
-      parentName: template_bind.001
+      parentName: template_bind
       position: {x: -0, y: 0.055097084, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftUpLeg
       parentName: bind_JNT_Thomas_Hips1
-      position: {x: -0.011544551, y: -0.008810477, z: -1.8000101e-16}
-      rotation: {x: 1, y: -3.3001183e-15, z: -0.0000000754979, w: -0.00000004371139}
+      position: {x: -0.011544551, y: -0.008810478, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftLeg
       parentName: bind_JNT_Thomas_LeftUpLeg
-      position: {x: -3.4807676e-10, y: 0.020396614, z: -0.0023052082}
-      rotation: {x: 0, y: 0.000000031786513, z: -0, w: 1}
+      position: {x: -0, y: -0.020396614, z: 0.0023052082}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftFoot
       parentName: bind_JNT_Thomas_LeftLeg
-      position: {x: -0, y: 0.024220068, z: 0.0023052082}
-      rotation: {x: -0.7071068, y: 0.00000003090862, z: 0.00000003090863, w: 0.7071067}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: bind_JNT_Thomas_LeftFoot_end
-      parentName: bind_JNT_Thomas_LeftFoot
-      position: {x: -0, y: 0.0055236695, z: 0}
+      position: {x: 2.220446e-18, y: -0.024220068, z: -0.0023052082}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightUpLeg
-      parentName: bind_JNT_Thomas_Hips1
-      position: {x: 0.011544581, y: -0.008810462, z: -2.510553e-16}
-      rotation: {x: 1, y: 6.8249396e-15, z: 0.0000000754979, w: -0.0000000754979}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightLeg
-      parentName: bind_JNT_Thomas_RightUpLeg
-      position: {x: 3.4807626e-10, y: 0.020396594, z: -0.002305206}
-      rotation: {x: 0.000000018374141, y: -0.00000011920929, z: 0.0000000074505793,
-        w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightFoot
-      parentName: bind_JNT_Thomas_RightLeg
-      position: {x: -2.4883318e-11, y: 0.024220105, z: 0.0023052061}
-      rotation: {x: -0.7071068, y: 0.00000003617698, z: 0.000000025640272, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightFoot_end
-      parentName: bind_JNT_Thomas_RightFoot
-      position: {x: -0, y: 0.005523669, z: 0}
+    - name: bind_JNT_Thomas_LeftToeBase
+      parentName: bind_JNT_Thomas_LeftFoot
+      position: {x: -0.000000005960464, y: -0.001528641, z: 0.005307936}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_Spine
       parentName: bind_JNT_Thomas_Hips1
-      position: {x: -0, y: 0.012327022, z: 0}
+      position: {x: -0, y: 0.012327021, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_Spine1
       parentName: bind_JNT_Thomas_Spine
-      position: {x: -0, y: 0.010593819, z: 0}
+      position: {x: -0, y: 0.01059381, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: backpack_JNT
-      parentName: bind_JNT_Thomas_Spine1
-      position: {x: -5.984282e-17, y: 0.010981268, z: -0.0057848576}
-      rotation: {x: 0.5064776, y: -0.4934374, z: 0.50647765, w: -0.49343744}
-      scale: {x: 0.9999998, y: 0.99999964, z: 0.9999999}
-    - name: backpack_JNT1
-      parentName: backpack_JNT
-      position: {x: -0.000000004917383, y: 0.011947756, z: -5.5844215e-16}
-      rotation: {x: -0.00000001383554, y: -0.00000005514433, z: -0.57872474, w: 0.815523}
-      scale: {x: 0.99999994, y: 1, z: 0.99999994}
-    - name: backpack_JNT1_end
-      parentName: backpack_JNT1
-      position: {x: -0, y: 0.01734215, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_Neck.001
+    - name: bind_JNT_Thomas_Spine2
       parentName: bind_JNT_Thomas_Spine1
       position: {x: -0, y: 0.01059381, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_Head
-      parentName: bind_JNT_Thomas_Neck.001
+    - name: bind_JNT_Thomas_Neck
+      parentName: bind_JNT_Thomas_Spine2
       position: {x: -0, y: 0.010593805, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_Head_end
-      parentName: bind_JNT_Thomas_Head
-      position: {x: -0, y: 0.058902692, z: 0}
+    - name: bind_JNT_Thomas_Head
+      parentName: bind_JNT_Thomas_Neck
+      position: {x: -0, y: 0.05890269, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftShoulder
-      parentName: bind_JNT_Thomas_Neck.001
-      position: {x: -0.013608767, y: 0.0037583828, z: -1.4400081e-15}
-      rotation: {x: -0.70710677, y: 0.7071068, z: 0.000000053385076, w: 0.00000005338508}
+      parentName: bind_JNT_Thomas_Spine2
+      position: {x: -0.013608767, y: 0.0037583828, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftArm
       parentName: bind_JNT_Thomas_LeftShoulder
-      position: {x: -0, y: 0.0067469776, z: 3.031398e-16}
-      rotation: {x: 2.6429515e-13, y: 0.000000031786513, z: 0.0000022170686, w: 1}
+      position: {x: -0.0067469776, y: 0.000000085830685, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftForeArm
       parentName: bind_JNT_Thomas_LeftArm
-      position: {x: 0.0000000044294755, y: 0.01720604, z: -6.1506233e-16}
-      rotation: {x: -1.8049578e-13, y: -5.1947776e-28, z: -0.0000020646312, w: 1}
+      position: {x: -0.017206043, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftHand
       parentName: bind_JNT_Thomas_LeftForeArm
-      position: {x: -0.0000000024930158, y: 0.01682272, z: -9.503574e-18}
-      rotation: {x: -1.2033087e-14, y: 5.00641e-29, z: -0.00000013764232, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandIndex1
-      parentName: bind_JNT_Thomas_LeftHand
-      position: {x: 0.00027609983, y: 0.0079333, z: -0.0030265222}
-      rotation: {x: 0, y: 0, z: -9.117402e-28, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandIndex2
-      parentName: bind_JNT_Thomas_LeftHandIndex1
-      position: {x: 0.0005639379, y: 0.003730605, z: -0.0000989375}
-      rotation: {x: 0.0000053162294, y: 0.000000039234244, z: 2.0860082e-13, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandIndex2_end
-      parentName: bind_JNT_Thomas_LeftHandIndex2
-      position: {x: -0, y: 0.0032234, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandMiddle1
-      parentName: bind_JNT_Thomas_LeftHand
-      position: {x: 0.000032913198, y: 0.010577943, z: -0.00028110412}
-      rotation: {x: -0.004192662, y: 0.0010362033, z: 0.03849839, w: 0.99924934}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandMiddle2
-      parentName: bind_JNT_Thomas_LeftHandMiddle1
-      position: {x: 0.0007556077, y: 0.0030644871, z: -0.00000019064478}
-      rotation: {x: -0.000020091422, y: -0.000000077765435, z: -0.08321032, w: 0.9965321}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandMiddle2_end
-      parentName: bind_JNT_Thomas_LeftHandMiddle2
-      position: {x: -0, y: 0.0021693993, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandPinky1
-      parentName: bind_JNT_Thomas_LeftHand
-      position: {x: 0.0008296608, y: 0.010031693, z: 0.0042614248}
-      rotation: {x: -0.063586004, y: 0.0020542655, z: 0.069855675, w: 0.9955264}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandPinky2
-      parentName: bind_JNT_Thomas_LeftHandPinky1
-      position: {x: 0.0005153966, y: 0.0019181803, z: 0.00041274063}
-      rotation: {x: 0.08133632, y: 0.0000003557653, z: -0.10156798, w: 0.99149805}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandPinky2_end
-      parentName: bind_JNT_Thomas_LeftHandPinky2
-      position: {x: -0, y: 0.0018763447, z: 0}
+      position: {x: -0.01682272, y: -1.7763568e-17, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftHandRing1
       parentName: bind_JNT_Thomas_LeftHand
-      position: {x: 0.0005350324, y: 0.010809023, z: 0.0017935932}
-      rotation: {x: -0.023785071, y: 0.0006125647, z: 0.020265387, w: 0.9995115}
+      position: {x: -0.010809023, y: -0.0005350303, z: -0.0017935932}
+      rotation: {x: -0.0006125433, y: 0.023784624, z: -0.02026483, w: 0.99951154}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftHandRing2
       parentName: bind_JNT_Thomas_LeftHandRing1
-      position: {x: 0.00043334227, y: 0.0028593806, z: 0.00042217784}
-      rotation: {x: 0.045913387, y: 0.00000034895496, z: -0.047130916, w: 0.99783295}
+      position: {x: -0.0028593827, y: -0.00043334006, z: -0.0004221779}
+      rotation: {x: 0.007879185, y: 0.007192854, z: -0.06074837, w: 0.99809617}
       scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_LeftHandRing2_end
+    - name: bind_JNT_Thomas_LeftHandRing3
       parentName: bind_JNT_Thomas_LeftHandRing2
-      position: {x: -0, y: 0.0015677833, z: 0}
+      position: {x: -0.0014521551, y: -0.00053465844, z: -0.0002516526}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandPinky1
+      parentName: bind_JNT_Thomas_LeftHand
+      position: {x: -0.010031693, y: -0.0008296585, z: -0.0042614248}
+      rotation: {x: -0.00205416, y: 0.06358537, z: -0.06985221, w: 0.9955267}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandPinky2
+      parentName: bind_JNT_Thomas_LeftHandPinky1
+      position: {x: -0.0019181824, y: -0.0005153942, z: -0.0004127407}
+      rotation: {x: 0.006777636, y: -0.00817848, z: -0.021285947, w: 0.999717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandPinky3
+      parentName: bind_JNT_Thomas_LeftHandPinky2
+      position: {x: -0.001721735, y: -0.00069003104, z: -0.00028309107}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftHandThumb1
       parentName: bind_JNT_Thomas_LeftHand
-      position: {x: 0.0031876194, y: 0.004906609, z: -0.004737437}
-      rotation: {x: 0.034328904, y: 0.89822114, z: -0.43299812, w: 0.067327075}
-      scale: {x: 0.99999994, y: 1, z: 1}
+      position: {x: -0.004906614, y: -0.0031876182, z: 0.004737437}
+      rotation: {x: 0.8982205, y: 0.0343303, z: -0.43299928, w: -0.06732802}
+      scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_LeftHandThumb2
       parentName: bind_JNT_Thomas_LeftHandThumb1
-      position: {x: -0, y: 0.0016791475, z: -0.0000000010409666}
-      rotation: {x: -0.029171756, y: 0.06059689, z: -0.019438468, w: 0.9975466}
-      scale: {x: 1.0000001, y: 1, z: 1.0000002}
-    - name: bind_JNT_Thomas_LeftHandThumb2_end
+      position: {x: -0.0016791562, y: 1.4155343e-17, z: 3.4000579e-18}
+      rotation: {x: -0.060600463, y: 0.029172912, z: 0.019440575, w: 0.9975463}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandThumb3
       parentName: bind_JNT_Thomas_LeftHandThumb2
-      position: {x: -0, y: 0.0016025148, z: 0}
+      position: {x: -0.001602512, y: -3.0531133e-18, z: -5.8286707e-18}
+      rotation: {x: 0.89375097, y: 0.13824885, z: -0.42171234, w: 0.06523209}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandIndex1
+      parentName: bind_JNT_Thomas_LeftHand
+      position: {x: -0.007933302, y: -0.00027609823, z: 0.0030265222}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandIndex2
+      parentName: bind_JNT_Thomas_LeftHandIndex1
+      position: {x: -0.003730607, y: -0.00056393625, z: 0.00009893745}
+      rotation: {x: 0, y: -0.000005316577, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandIndex3
+      parentName: bind_JNT_Thomas_LeftHandIndex2
+      position: {x: -0.003158316, y: -0.00064184185, z: 0.00005829295}
+      rotation: {x: 0, y: 0.00006379892, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandMiddle1
+      parentName: bind_JNT_Thomas_LeftHand
+      position: {x: -0.010577944, y: -0.0000329113, z: 0.00028110412}
+      rotation: {x: -0.0010361581, y: 0.0041925777, z: -0.038499665, w: 0.9992493}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandMiddle2
+      parentName: bind_JNT_Thomas_LeftHandMiddle1
+      position: {x: -0.0030644892, y: -0.0007556057, z: 0.00000019058585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_LeftHandMiddle3
+      parentName: bind_JNT_Thomas_LeftHandMiddle2
+      position: {x: -0.0021104813, y: -0.0005021572, z: 0.00000010824762}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightShoulder
-      parentName: bind_JNT_Thomas_Neck.001
-      position: {x: 0.013608737, y: 0.0037586307, z: -9.8882295e-17}
-      rotation: {x: 0.70710677, y: 0.7071068, z: 0.000000053385076, w: -0.00000005338508}
+      parentName: bind_JNT_Thomas_Spine2
+      position: {x: 0.013608737, y: 0.00375863, z: 0}
+      rotation: {x: 1, y: -0, z: 0, w: 0.000000007450581}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightArm
       parentName: bind_JNT_Thomas_RightShoulder
-      position: {x: -0, y: 0.006746969, z: 9.8882295e-17}
-      rotation: {x: 0, y: -0.00000011920929, z: -0, w: 1}
+      position: {x: 0.00674697, y: -1.7763568e-17, z: -5.293956e-25}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightForeArm
       parentName: bind_JNT_Thomas_RightArm
-      position: {x: -0, y: 0.017206086, z: -4.322626e-17}
-      rotation: {x: 0, y: 0.000000007450581, z: -0, w: 1}
+      position: {x: 0.017206086, y: 0, z: 1.9852334e-25}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightHand
       parentName: bind_JNT_Thomas_RightForeArm
-      position: {x: -0, y: 0.01682273, z: 9.888228e-17}
-      rotation: {x: 0, y: 0.0000000074505815, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandIndex1
-      parentName: bind_JNT_Thomas_RightHand
-      position: {x: -0.0002758883, y: 0.007933278, z: -0.0030265232}
-      rotation: {x: 0, y: 0.000000007450584, z: -0, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: bind_JNT_Thomas_RightHandIndex2
-      parentName: bind_JNT_Thomas_RightHandIndex1
-      position: {x: -0.0005642412, y: 0.0037306212, z: -0.00009893706}
-      rotation: {x: 0.000005316072, y: 0.00000005888243, z: 3.4583857e-13, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandIndex2_end
-      parentName: bind_JNT_Thomas_RightHandIndex2
-      position: {x: -0, y: 0.0032234953, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandMiddle1
-      parentName: bind_JNT_Thomas_RightHand
-      position: {x: -0.00003273009, y: 0.010577965, z: -0.0002811044}
-      rotation: {x: -0.004197638, y: -0.0010378589, z: -0.03856561, w: 0.9992467}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandMiddle2
-      parentName: bind_JNT_Thomas_RightHandMiddle1
-      position: {x: -0.00075595855, y: 0.0030644368, z: -0.00000019008179}
-      rotation: {x: -0.00002068095, y: -0.000000062864274, z: 0.08326738, w: 0.99652725}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandMiddle2_end
-      parentName: bind_JNT_Thomas_RightHandMiddle2
-      position: {x: -0, y: 0.0021693802, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandPinky1
-      parentName: bind_JNT_Thomas_RightHand
-      position: {x: -0.0008299925, y: 0.010031647, z: 0.0042614248}
-      rotation: {x: -0.06357557, y: -0.002051937, z: -0.06981208, w: 0.9955301}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: bind_JNT_Thomas_RightHandPinky2
-      parentName: bind_JNT_Thomas_RightHandPinky1
-      position: {x: -0.00051514653, y: 0.0019181919, z: 0.0004127381}
-      rotation: {x: 0.08132971, y: 0.00000039394953, z: 0.10150542, w: 0.991505}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandPinky2_end
-      parentName: bind_JNT_Thomas_RightHandPinky2
-      position: {x: -0, y: 0.001876564, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandRing1
-      parentName: bind_JNT_Thomas_RightHand
-      position: {x: -0.0005354024, y: 0.01080904, z: 0.0017935938}
-      rotation: {x: -0.023787811, y: -0.00061223947, z: -0.020268379, w: 0.99951136}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandRing2
-      parentName: bind_JNT_Thomas_RightHandRing1
-      position: {x: -0.0004333116, y: 0.0028593158, z: 0.00042217574}
-      rotation: {x: 0.04591999, y: 0.0000006434275, z: 0.047126196, w: 0.9978329}
-      scale: {x: 1, y: 1, z: 1}
-    - name: bind_JNT_Thomas_RightHandRing2_end
-      parentName: bind_JNT_Thomas_RightHandRing2
-      position: {x: -0, y: 0.001567831, z: 0}
+      position: {x: 0.01682273, y: 0, z: 6.617445e-26}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightHandThumb1
       parentName: bind_JNT_Thomas_RightHand
-      position: {x: -0.003187494, y: 0.004906559, z: -0.004737437}
-      rotation: {x: -0.034325346, y: 0.89821637, z: -0.43300825, w: -0.06732823}
-      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+      position: {x: 0.004906561, y: 0.0031874957, z: -0.004737437}
+      rotation: {x: 0.89821655, y: 0.034328114, z: -0.43300766, w: -0.06732823}
+      scale: {x: 1, y: 1, z: 1}
     - name: bind_JNT_Thomas_RightHandThumb2
       parentName: bind_JNT_Thomas_RightHandThumb1
-      position: {x: -0.0000000035762786, y: 0.0016791689, z: -0.00000005047992}
-      rotation: {x: -0.029186208, y: -0.060601793, z: 0.019438269, w: 0.99754584}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
-    - name: bind_JNT_Thomas_RightHandThumb2_end
+      position: {x: 0.001679168, y: 0.000000006079995, z: -0.00000004163207}
+      rotation: {x: -0.060618848, y: 0.02921262, z: 0.019587932, w: 0.9975411}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandThumb3
       parentName: bind_JNT_Thomas_RightHandThumb2
-      position: {x: -0, y: 0.0016026989, z: 0}
+      position: {x: 0.0016026994, y: -0.00000053676973, z: -0.000000012843789}
+      rotation: {x: 0.89375097, y: 0.13824885, z: -0.42171234, w: 0.06523209}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandIndex1
+      parentName: bind_JNT_Thomas_RightHand
+      position: {x: 0.0079332795, y: 0.00027588592, z: -0.0030265232}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandIndex2
+      parentName: bind_JNT_Thomas_RightHandIndex1
+      position: {x: 0.003730617, y: 0.0005642413, z: -0.00009893707}
+      rotation: {x: 0.000000010536712, y: -0.0000053165777, z: 8.8834545e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandIndex3
+      parentName: bind_JNT_Thomas_RightHandIndex2
+      position: {x: 0.003158348, y: 0.0006421752, z: -0.000058289163}
+      rotation: {x: 0.000000010536712, y: 0.00006379892, z: -1.0331994e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandMiddle1
+      parentName: bind_JNT_Thomas_RightHand
+      position: {x: 0.0105779655, y: 0.00003273223, z: -0.0002811044}
+      rotation: {x: -0.0010378606, y: 0.0041974974, z: -0.03856588, w: 0.9992467}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandMiddle2
+      parentName: bind_JNT_Thomas_RightHandMiddle1
+      position: {x: 0.0030644382, y: 0.00075595867, z: -0.00000019016333}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandMiddle3
+      parentName: bind_JNT_Thomas_RightHandMiddle2
+      position: {x: 0.0021105274, y: 0.0005018942, z: -0.00000010833119}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandRing1
+      parentName: bind_JNT_Thomas_RightHand
+      position: {x: 0.01080904, y: 0.00053540576, z: 0.0017935938}
+      rotation: {x: -0.00061224046, y: 0.023787467, z: -0.020268353, w: 0.9995114}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandRing2
+      parentName: bind_JNT_Thomas_RightHandRing1
+      position: {x: 0.002859316, y: 0.00043331238, z: 0.00042217562}
+      rotation: {x: 0.007878953, y: 0.007190616, z: -0.060742874, w: 0.99809647}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandRing3
+      parentName: bind_JNT_Thomas_RightHandRing2
+      position: {x: 0.0014522199, y: 0.0005346264, z: 0.0002516563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandPinky1
+      parentName: bind_JNT_Thomas_RightHand
+      position: {x: 0.01003165, y: 0.00082999584, z: 0.0042614248}
+      rotation: {x: -0.0020519504, y: 0.06357404, z: -0.069811165, w: 0.9955303}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandPinky2
+      parentName: bind_JNT_Thomas_RightHandPinky1
+      position: {x: 0.0019181867, y: 0.000515143, z: 0.00041273783}
+      rotation: {x: 0.0068198107, y: -0.008214842, z: -0.021441635, w: 0.9997131}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightHandPinky3
+      parentName: bind_JNT_Thomas_RightHandPinky2
+      position: {x: 0.0017217932, y: 0.00069049414, z: 0.00028309482}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_JNT
+      parentName: bind_JNT_Thomas_Spine1
+      position: {x: -0, y: 0.010981263, z: -0.0057848576}
+      rotation: {x: -0.009220779, y: -0.7070467, z: 0.009220779, w: 0.7070467}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_JNT1
+      parentName: backpack_JNT
+      position: {x: -0.011947757, y: 1.7763568e-17, z: -6.632338e-18}
+      rotation: {x: 7.5570835e-33, y: -1.0935365e-16, z: 0.5787246, w: 0.815523}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_end_JNT
+      parentName: backpack_JNT1
+      position: {x: -0.017342145, y: 8.881784e-18, z: -3.0931594e-18}
+      rotation: {x: 0, y: -0, z: -0.65983886, w: 0.75140715}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightUpLeg
+      parentName: bind_JNT_Thomas_Hips1
+      position: {x: 0.011544581, y: -0.008810462, z: 3.1100052e-27}
+      rotation: {x: 1, y: -0, z: 0, w: 0.000000007450581}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightLeg
+      parentName: bind_JNT_Thomas_RightUpLeg
+      position: {x: 2.220446e-18, y: 0.020396594, z: -0.002305206}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightFoot
+      parentName: bind_JNT_Thomas_RightLeg
+      position: {x: -0, y: 0.024220105, z: 0.0023052061}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bind_JNT_Thomas_RightToeBase
+      parentName: bind_JNT_Thomas_RightFoot
+      position: {x: -0, y: 0.0015286373, z: -0.0053079366}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: thomas_GEO
-      parentName: Thomas_Rig
+      parentName: Thomas_Rig(Clone)
       position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 0.021030307, y: 0.021030307, z: 0.021030307}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_body
+      parentName: thomas_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_button
+      parentName: thomas_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack_handle
+      parentName: thomas_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thomas_body
+      parentName: thomas_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: thomas_outfit01
+      parentName: thomas_GEO
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -860,7 +798,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
