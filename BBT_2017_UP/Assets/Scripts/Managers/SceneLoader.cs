@@ -10,8 +10,8 @@ public class SceneLoader : MonoBehaviour
     //The reason to have multiple scenes, is that now people can work on their own scene, without interfering with other peoples work
     string[] scenePaths = new string[]
     {
-        "_characters",
-        "_environments"
+		"_environments"//,
+        //"_environments"
     };
 
     void Awake()
@@ -23,7 +23,8 @@ public class SceneLoader : MonoBehaviour
     {
         foreach (string scenePath in scenePaths)
         {
-            string sceneName = DataManager.currentStoryName + scenePath;
+			string sceneName = "1_11_sas_ext_cabin";//DataManager.currentStoryName + scenePath;
+			//Debug.Log (sceneName);
             Scene s = SceneManager.GetSceneByName(sceneName);
                 
             if (!s.isLoaded)
