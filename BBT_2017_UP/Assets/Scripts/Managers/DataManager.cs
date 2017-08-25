@@ -47,17 +47,16 @@ public class DataManager
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
         
-
-		/*foreach (string file in files)
+		foreach (string file in files)
         {
             AddFileToStory(story, file); 
 			//Debug.Log (story+" "+ file);
-        }*/
-
+        }
+		/*
 		for (int i = NarrativeCounter; i < NarrativeCounter+NarrativeCounterEnd; i++) {//Multiply this by two
 			//Debug.Log (files[i]);
 			AddFileToStory(story, files[i]);
-		}
+		}*/
 
         UnloadAssetBundle();
         currentStory = story;

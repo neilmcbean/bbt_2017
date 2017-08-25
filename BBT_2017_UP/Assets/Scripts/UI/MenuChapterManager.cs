@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuChapterManager : MonoBehaviour {
 
     private bool IsMenuSetUp = false;
+	public string[] ButtonDescription;
     private StoryObject currentStory
     {
         get
@@ -33,7 +34,7 @@ public class MenuChapterManager : MonoBehaviour {
         public void ChapterINI()
     {
       
-        if (IsMenuSetUp == false)
+       /* if (IsMenuSetUp == false)
         {//Set up the Chapter reference in the story
             RectTransform rt = gameObject.GetComponent<RectTransform>();
             float ScrollRoomHeight = 0;
@@ -42,34 +43,25 @@ public class MenuChapterManager : MonoBehaviour {
             float xCounter = 0;
             float yCounter = 0;
             Vector3 PositionTracker ;
-            for (int audio = 0; audio < currentStory.pageObjects[0].audioObjects.Count; audio++)
+			for (int audio = 0; audio < ButtonDescription.Length; audio++)
             {//Create a button for each page. 
                 GameObject LanguageButton = Instantiate(ButtonTemplate) as GameObject;
                 LanguageButton.transform.SetParent(gameObject.transform, false);
                 PositionTracker = new Vector3(LanguageButton.transform.position.x + xCounter, LanguageButton.transform.position.y - yCounter, LanguageButton.transform.position.z);
                 LanguageButton.transform.position = PositionTracker;
-                    if (rowCounter < 3)
-                    {//If the row is incomplete, add to it
-                        rowCounter++;
-                        xCounter += 75;
-                    }
-                        else
-                        {//Once the row is compelte, move down. 
-                            xCounter = 0;
-                            rowCounter = 0;
-                            yCounter += 75;
-                            ScrollRoomHeight += 115;
-                            rt.sizeDelta = new Vector2(0, ScrollRoomHeight);
-                        }
-                LanguageButton.GetComponent<Button>().onClick.AddListener(() => gameObject.GetComponent<gotopage>());
-                LanguageButton.GetComponent<gotopage>().setPageTarget(audio+1);
+				LanguageButton.GetComponentInChildren<Text> ().text = ButtonDescription [audio];
+				//Create Activity    
+                //LanguageButton.GetComponent<Button>().onClick.AddListener(() => gameObject.GetComponent<gotopage>());
+                //LanguageButton.GetComponent<gotopage>().setPageTarget(audio+1);
+
+
             }
             ButtonTemplate.SetActive(false);
         }
             else
             {//Set up which of the chapters is sellected. 
 
-            }
+            }*/
                 
     }
 }

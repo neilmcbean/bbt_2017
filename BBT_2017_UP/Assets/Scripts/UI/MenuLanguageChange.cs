@@ -10,7 +10,7 @@ public class MenuLanguageChange : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        
+        /*TODO:Create a system which will allow players to change languages on the fly
         dropdownMenu = GetComponent<Dropdown>();
         for (int languageCount = 0; languageCount < DataManager.languageManager.Length; languageCount++)
         {
@@ -19,7 +19,7 @@ public class MenuLanguageChange : MonoBehaviour {
             // dropdownMenu.value = languageCount;
             //dropdownMenu.value = languageCount;
             //dropdownMenu.options.Add(new Dropdown.OptionData(dropdownMenu.options[languageCount].text));
-        }
+        }*/
 
     }
 

@@ -321,6 +321,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 103291047}
   goback: 27
+--- !u!114 &103291050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103291046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 01010101000001010000
+  LastAnimation: 
 --- !u!1001 &105314282
 Prefab:
   m_ObjectHideFlags: 0
@@ -364,6 +378,21 @@ Prefab:
         type: 2}
       propertyPath: LevelName
       value: 12_21_sas_ext_forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: LastScene
+      value: 1_11_sas_ext_cabin
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: AudioIndexPosition
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: pagesPerScene
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffb969bfb20bf48c093e791703b74b05, type: 2}
@@ -996,6 +1025,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   goback: 27
+--- !u!114 &1045895940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045895935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 01010101010101010101
+  LastAnimation: 
 --- !u!1001 &1296162557
 Prefab:
   m_ObjectHideFlags: 0

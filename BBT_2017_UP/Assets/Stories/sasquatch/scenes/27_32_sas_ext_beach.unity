@@ -964,6 +964,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   goback: 27
+--- !u!114 &1045895940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045895935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 010101010101
+  LastAnimation: 
 --- !u!1001 &1295155586
 Prefab:
   m_ObjectHideFlags: 0
@@ -1065,6 +1079,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1295155588}
   advance: 9
+--- !u!114 &1295155591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295155587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 000101010101
+  LastAnimation: 
 --- !u!1001 &1296162557
 Prefab:
   m_ObjectHideFlags: 0
@@ -1222,6 +1250,16 @@ Prefab:
         type: 2}
       propertyPath: LevelName
       value: 27_32_sas_ext_beach
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: LastScene
+      value: 22_26_sas_ext_clearing
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: AudioIndexPosition
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffb969bfb20bf48c093e791703b74b05, type: 2}

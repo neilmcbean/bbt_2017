@@ -295,9 +295,48 @@ Prefab:
       propertyPath: m_TagString
       value: Characters
       objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: aa151296a6d164454ab449be63f86088, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100114, guid: aa151296a6d164454ab449be63f86088, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa151296a6d164454ab449be63f86088, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &99211389 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100116, guid: aa151296a6d164454ab449be63f86088, type: 3}
+  m_PrefabInternal: {fileID: 99211388}
+--- !u!114 &99211390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99211389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 000000000000000000000000000101010101010101010101
+  LastAnimation: 
+--- !u!114 &99211391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99211389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d92e4e3ce4b412cb9913837ec59eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1295155588}
+  goback: 27
 --- !u!1001 &157705821
 Prefab:
   m_ObjectHideFlags: 0
@@ -307,7 +346,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400124, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400124, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
       propertyPath: m_LocalScale.x
@@ -360,6 +399,18 @@ Prefab:
     - target: {fileID: 100124, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100124, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
+      propertyPath: m_TagString
+      value: Characters
+      objectReference: {fileID: 0}
+    - target: {fileID: 100120, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100122, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94220b2b48c154f0faa72dd009ca2a90, type: 3}
@@ -584,6 +635,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 360079944}
   advance: 9
+--- !u!114 &360079947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360079943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 000101010101010101010101010101010101010101010101
+  LastAnimation: 
 --- !u!1001 &415858057
 Prefab:
   m_ObjectHideFlags: 0
@@ -863,7 +928,7 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: pagesPerScene
-      value: 12
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
@@ -874,6 +939,16 @@ Prefab:
         type: 2}
       propertyPath: LevelName
       value: 33_57_sas_ext_beachclearing
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: LastScene
+      value: 27_32_sas_ext_beach
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: AudioIndexPosition
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffb969bfb20bf48c093e791703b74b05, type: 2}
@@ -1333,7 +1408,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400168, guid: c53c62080acca4f1d92f5cef13c2ff68, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: c53c62080acca4f1d92f5cef13c2ff68, type: 3}
       propertyPath: m_Controller
@@ -1501,6 +1576,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   goback: 27
+--- !u!114 &1045895940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045895935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 000000010101010101010101010101010101010101010101
+  LastAnimation: 
 --- !u!4 &1049876882 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
@@ -1632,7 +1721,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400124, guid: d891e370ea3dd49a9b189103e55ec08a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: d891e370ea3dd49a9b189103e55ec08a, type: 3}
       propertyPath: m_Controller
@@ -1712,6 +1801,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1295155588}
   advance: 9
+--- !u!114 &1295155591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295155587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDelay: 0
+  AnimationBool: 010101010101010101010101010101010101010101010101
+  LastAnimation: 
 --- !u!1001 &1296162557
 Prefab:
   m_ObjectHideFlags: 0

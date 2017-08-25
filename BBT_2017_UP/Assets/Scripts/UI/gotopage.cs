@@ -8,11 +8,12 @@ public class gotopage : MonoBehaviour {
 
 	public void pageLoad ()
     {
-        //Debug.Log(gameObject.name);
-        PageManager.instance.GoToPage(pageTarget);
+        Debug.Log(gameObject.name);
+        //PageManager.instance.GoToPage(pageTarget);
     }
     public void setPageTarget(int page)
     {
-        pageTarget = page;
+        //pageTarget = page;
+		Debug.Log("Working");
     }
 }

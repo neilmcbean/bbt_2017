@@ -27,11 +27,13 @@ public class PageManager : Singleton<PageManager>
 	private int pageIndex;
 	private int audioIndex;
 	private int sceneindex;
+	private int LastPageLoader;
+	private bool isGoingBack = false;
 
 	//Technicals
 	private AudioSource audioSource;
 	private SentenceRowContainer sentenceContainer;
-	private bool isForward = false;
+	private bool isForward = true;
 	private List<TweenEvent> tweenEvents = new List<TweenEvent> ();
 	public GameObject[] Characters;
 
@@ -71,14 +73,24 @@ public class PageManager : Singleton<PageManager>
 	// Use this for initialization
 	IEnumerator Start ()
 	{
-		//AssetAssigner ("1_11_sas_ext_cabin");
+		AssetAssigner ("1_11_sas_ext_cabin",11);
 		DataManager.LoadStory (DataManager.currentStoryName);
-		NextSentence (true);
+		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
+		foreach (TweenEvent evt in tweenEvents) {
+			Register (evt);
+		}
+		DOTween.Init ();
+		//The tweens should be only be enabled AFTER DOTween has been initialized
+		foreach (TweenEvent evt in tweenEvents) {
+			evt.enabled = true;
+		}
+		//NextSentence (true);
+
 		yield return null;
 	}
 
 
-	public void AssetAssigner(string CurrentLevel)
+	public void AssetAssigner(string CurrentLevel, int lastPage)
 	{
 		EnvironmentTracker = CurrentLevel;
 		MountainTest = GameObject.FindGameObjectWithTag ("MountainRange");
@@ -90,75 +102,94 @@ public class PageManager : Singleton<PageManager>
 		cameraTransformTracker = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 		cameraPreviousPosition = cameraTransformTracker.position;
 		transform.hasChanged = false;
-
-		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
-		foreach (TweenEvent evt in tweenEvents) {
-			Register (evt);
+		LastPageLoader = lastPage;
+		if (isGoingBack == true) {
+			sceneindex = LastPageLoader;
+			SetToLastPosition ();
 		}
-
-		DOTween.Init ();
-
-		//The tweens should be only be enabled AFTER DOTween has been initialized
-		foreach (TweenEvent evt in tweenEvents) {
-			evt.enabled = true;
-		}
-		//Debug.Log (DataManager.currentStoryName);
 	}
 
+
+	public void ChapterSkip(String LevelToLoad)
+	{
+		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+		SceneManager.UnloadScene (EnvironmentTracker);
+		isGoingBack = false;
+		sceneindex = 0;
+	}
 
 	void Update ()
 	{
 		if (cameraTransformTracker != null) {
+			
 			if (cameraTransformTracker.hasChanged == false) {//If the camera has completed moving in the specific page.          
 				if (Input.GetMouseButtonDown (0)) {
 					mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
 					//Debug.Log (mouseStartPosition);
 				} else if (Input.GetMouseButtonUp (0)) {
-					mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
-					//Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
-					//§Debug.Log (Vector2.Distance(mouseStartPosition,mouseEndPosition));
+				mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
+
 					if (Vector2.Distance (mouseStartPosition, mouseEndPosition) > 300) {//If the drag distance is longer thank an arbitrary amount 
-						if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {
-
+						if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) 
+						{//If the player swipes to the next page
 							sceneindex++;
-							//Debug.Log (sceneindex);
-
-							if (sceneindex == StoryManager.GetComponent<StoryManager> ().pagesPerScene) {
-								//Application.LoadLevel (StoryManager.GetComponent<StoryManager> ().NextScene);
-								//
+							if (sceneindex == StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
+							{
+								Debug.Log (audioIndex);
+								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
 								SceneManager.UnloadScene (EnvironmentTracker);
-								//StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");
-								//AssetAssigner ();
+								isGoingBack = false;
 								sceneindex = 0;
-							} else {
-								NextSentence (isForward);
-								isForward = true;
+							} 
+								else 
+								{
+								//Debug.Log ("working");
+									NextSentence (isForward);
+									isForward = true;
+									transform.hasChanged = false;
+										foreach (GameObject Child in Characters) 
+										{//Play the next animation on all the characters
+											if (Child.GetComponent<Animator> () != null) 
+											{
+											Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();
+											}
+										}
+								}
+
+						} 
+						else 
+						{
+							sceneindex--;
+							if (sceneindex == -1) 
+							{//TODO:Create a system which will allow you to go backwards through the scenes
+								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
+								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
+								SceneManager.UnloadScene (EnvironmentTracker);
+								isGoingBack = true;
+								PreviousSentence (isForward);
+								//sceneindex = LastPageLoader;
+								//SetToLastPosition ();
+								//Debug.Log(sceneindex);
+							}
+								else 
+								{
+								PreviousSentence (isForward);
+								isForward = false;
 								transform.hasChanged = false;
 								//Play the current animation
-								foreach (GameObject Child in Characters) {
-									if (Child.GetComponent<Animator> () != null) {
-										Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();
-										//Child.GetComponent<Animator> ().SetTrigger ("advance");
+									foreach (GameObject Child in Characters) 
+									{
+										if (Child.GetComponent<Animator> () != null) 
+										{
+										//Debug.Log("Launching Previous Anim");
+											Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
+										}
 									}
 								}
-							}
-
-						} else {
-							PreviousSentence (isForward);
-							isForward = false;
-							transform.hasChanged = false;
-							//Play the current animation
-							foreach (GameObject Child in Characters) {
-								if (Child.GetComponent<Animator> () != null) {
-									//Child.GetComponent<Animator> ().SetTrigger ("goback");
-								}
-							}
 						}
 					}
-					CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
-
-
+					CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);				
 				}				
 			}
 
@@ -168,6 +199,18 @@ public class PageManager : Singleton<PageManager>
 					//print("The transform has changed!");
 					cameraTransformTracker.hasChanged = false;
 				}			
+			}
+		}
+	}
+
+
+	private void SetToLastPosition ()
+	{
+		foreach (GameObject Child in Characters) 
+		{
+			if (Child.GetComponent<Animator> () != null) 
+			{
+				Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
 			}
 		}
 	}
@@ -242,7 +285,7 @@ public class PageManager : Singleton<PageManager>
 	{//when the player clicks a button
 		Debug.Log ("OnUIButtonClick_Menu: " + button.gameObject.GetComponentInChildren<Text> ().text);
 		int Page = int.Parse (button.gameObject.GetComponentInChildren<Text> ().text);
-		GoToPage (Page);
+		//GoToPage (Page);
 	}
 
 	void TaskOnClick ()
@@ -284,11 +327,14 @@ public class PageManager : Singleton<PageManager>
 
 	public void GoToPage (int i)
 	{
-		//Debug.Log(i);
-		StopAllCoroutines ();
-		sentenceContainer.Clear ();
-		audioIndex = i;
-		StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
+		//Debug.Log(isGoingBack);
+		if (isGoingBack == false) {
+			StopAllCoroutines ();
+			sentenceContainer.Clear ();
+			audioIndex = i;
+			StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
+		}
+
 	}
 
 	void PreviousSentence (bool playFromLast)
@@ -341,37 +387,24 @@ public class PageManager : Singleton<PageManager>
 	{//Move the narrative forward
 		StopAllCoroutines ();
 		sentenceContainer.Clear ();
-
-        
-		narrativeCounter++;
-		//Debug.Log (narrativeCounter);
-		if (narrativeCounter == 6) {
-
-			audioIndex = 0;
-			narrativeCounter = 0;
-			DataManager.NarrativeCounter += 12;
-			DataManager.LoadStory (DataManager.currentStoryName);
-		}
-
-
-
 		if (pageIndex >= currentStory.pageObjects.Count) {//when the player reaches the end of the narrative
 			Debug.Log ("Story ended! Back to menu...");
 			//SceneManager.LoadScene("Menu");
 			return;
 		}
 
-		Debug.Log (currentPage.audioObjects + "/" + audioIndex);
-
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
-		foreach (TweenEvent evt in tweenEvents) {
-			if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) {
-				evt.OnDeactivate ();              
+		foreach (TweenEvent evt in tweenEvents) 
+		{
+			if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) 
+			{
+			evt.OnDeactivate ();              
 			}
 		}
+
 		PlayCurrentSentence ();
 		if (playFromLast == false) {
-			//NextSentence (true);
+			NextSentence (true);
 		}
 
 	}
@@ -379,8 +412,9 @@ public class PageManager : Singleton<PageManager>
 
 	void PlayCurrentSentence ()
 	{
-		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 		audioIndex++;
+		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
+
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
 			evt.OnNextStep ();
@@ -408,10 +442,6 @@ public class PageManager : Singleton<PageManager>
 			"Please ensure a text file is in the folder, and it's  set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);
 			yield break;
 		}
-
-
-
-
 		//Displaying all words in the bottom
 		foreach (WordGroupObject wordGroup in obj.sentence.wordGroups) {
 			if (wordGroup.text.Contains ("speaker")) {//Get The Narrator
@@ -423,14 +453,6 @@ public class PageManager : Singleton<PageManager>
 				sentenceContainer.AddText (wordGroup);
 			}
 		}
-
-		//GEWT BACK TO IT HERE
-
-
-
-
-
-
 		//highlight the proper wordgroups
 		int i = 0;
 		WordGroupObject prevWordGroup = null;
@@ -448,10 +470,6 @@ public class PageManager : Singleton<PageManager>
 			prevWordGroup = wordGroup;
 		}
 		sentenceContainer.HighlightWordGroup (null);
-
-
-
-
 	}
 
 	public static List<T> FindObjectsOfTypeAll<T> ()
