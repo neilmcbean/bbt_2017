@@ -15,6 +15,7 @@ public class PageManager : Singleton<PageManager>
 	private StoryObject currentStory {
 		get {
 			return DataManager.currentStory;
+			Debug.Log (currentStory);
 		}
 	}
 
@@ -73,6 +74,8 @@ public class PageManager : Singleton<PageManager>
 	// Use this for initialization
 	IEnumerator Start ()
 	{
+
+		Debug.Log(DataManager.currentStoryName);
 		AssetAssigner ("1_11_sas_ext_cabin",11);
 		DataManager.LoadStory (DataManager.currentStoryName);
 		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
