@@ -17,6 +17,8 @@ public class SentenceRowContainer : MonoBehaviour
 
 	public string narrator;
 
+	public GameObject Definition;
+
     void Awake()
     {
         rt = GetComponent<RectTransform>();
@@ -45,10 +47,12 @@ public class SentenceRowContainer : MonoBehaviour
 		narrator = words [0];
         for (int i = 0; i < words.Length; i++)
         {			
+			string word = words [i];
 
-				string word = words [i];
 				SentenceRow currentRow = rows [rowIndex];
 				WordText newText = currentRow.AddText (word);
+
+				//wordClone.GetComponent<Button> ().color.normalColor = Color.cyan;
 
 				//To enforce the layout to rebuild, which makes the horizontal layoutgroup resize
 				LayoutRebuilder.ForceRebuildLayoutImmediate (rt);
@@ -73,6 +77,7 @@ public class SentenceRowContainer : MonoBehaviour
 
 					newText.wordGroup = wordGroup;
 					texts.Add (newText);
+
 				}
 		}
         
@@ -103,6 +108,11 @@ public class SentenceRowContainer : MonoBehaviour
 
     public void OnTextButton(WordText clickedText)
     {
+		Definition.GetComponent<Canvas> ().enabled = true;
+		//Definition.GetComponentInChildren<Text>().text = clickedText.text.text;
+		Definition.GetComponentInChildren<DefinitionRenderer> ().SetUpText (clickedText.text.text);
+		Debug.Log(clickedText.text.text);
+		//Definition.GetComponent<Canvas>().enable = true;
         foreach (WordText text in texts)
         {
             if (text.wordGroup == clickedText.wordGroup)

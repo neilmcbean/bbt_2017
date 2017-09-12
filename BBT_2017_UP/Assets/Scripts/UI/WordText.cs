@@ -15,6 +15,9 @@ public class WordText : MonoBehaviour
     {
         rt = GetComponent<RectTransform>();
         text = GetComponent<Text>();
+
+
+
     }
 	
 
