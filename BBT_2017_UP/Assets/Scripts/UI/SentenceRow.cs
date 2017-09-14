@@ -55,7 +55,7 @@ public class SentenceRow : MonoBehaviour
         textStack.Push(wordClone);
         return wordClone;
 
-		//wordPrefabDef.gameObject.SetActive(false);
+		wordPrefabDef.gameObject.SetActive(false);
     }
 
     public void PopText()

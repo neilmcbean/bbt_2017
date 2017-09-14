@@ -111,6 +111,7 @@ public class SentenceRowContainer : MonoBehaviour
 		Definition.GetComponent<Canvas> ().enabled = true;
 		//Definition.GetComponentInChildren<Text>().text = clickedText.text.text;
 		Definition.GetComponentInChildren<DefinitionRenderer> ().SetUpText (clickedText.text.text);
+
 		Debug.Log(clickedText.text.text);
 		//Definition.GetComponent<Canvas>().enable = true;
         foreach (WordText text in texts)

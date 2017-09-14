@@ -105,6 +105,7 @@ public class DataManager
                 string pageName = splitPath[i + pathDepth + 1];
                 //Get the page from the story
                 PageObject page = story.GetPage(pageName);
+				//Debug.Log (page.name);
 				//page = null;
                 //If the page wasn't in the story yet, create a new object
                 if (page == null)
@@ -168,7 +169,7 @@ public class DataManager
             //This is index 1 or 2 (dependend if the time is defined twice or not)
             obj.text = words[words.Length - 1];
             so.wordGroups.Add(obj);
-
+			Debug.Log (line);
         }
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);
