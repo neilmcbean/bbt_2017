@@ -75,8 +75,8 @@ public class PageManager : Singleton<PageManager>
 	IEnumerator Start ()
 	{
 
-		//Debug.Log(DataManager.currentStoryName);
-		AssetAssigner ("1_11_sas_ext_cabin",11);
+		Debug.Log(DataManager.currentStoryName);
+		AssetAssigner (DataManager.currentStoryName+"_start",11);
 		DataManager.LoadStory (DataManager.currentStoryName);
 		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
 		foreach (TweenEvent evt in tweenEvents) {
