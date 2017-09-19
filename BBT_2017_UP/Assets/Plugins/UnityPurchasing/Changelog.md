@@ -1,3 +1,87 @@
+## [1.13.3] - 2017-09-14
+### Fixed
+- Fixed a bug that caused some iOS 11 promoted in-app purchase attempts to fail when the app was not already running in the background
+
+## [1.13.2] - 2017-09-07
+### Added
+- Android Gradle - Optional Proguard configuration file to support Gradle release builds on Unity 2017.1+: "Assets/Plugins/Android/proguard-user.txt.OPTIONAL.txt". See contents of file for more detail.
+- Installer - Compatibility with Unity 2017.2's Build Settings > Android > Xiaomi Mi Game Center SDK package add button, avoiding duplicate class definitions if previously added to `Packages/manifest.json` (new Package Manager).
+
+### Fixed
+- Windows (UWP) Store - Updates error handling for failed purchases to correctly call `OnPurchaseFailed()` with an informative `PurchaseFailureReason`
+- Fixed prices that were incorrectly parsed when the device's culture specified a number format using a comma for the decimal separator.
+- XiaomiMiPay - Limit product identifier length to 40 characters in IAP Catalog, matching store requirements.
+- Receipt Validation - Address aggressive class stripping NullReferenceException when validating receipt with preservation in Assets/Plugins/UnityPurchasing/scripts/link.xml.
+
+## [1.13.1] - 2017-08-18
+### Fixed
+- Android platforms - Fix Unity crash by stack-overflow when using the `UnityPurchasingEditor.TargetAndroidStore(AndroidStore store)` method or the Window > Unity IAP > Android > Xiaomi Mi Game Pay targeting menu.
+
+## [1.13.0] - 2017-07-31
+### Added
+- iOS and tvOS - Added support for purchases initiated from the App Store using the new API in iOS 11 and tvOS 11. For more information about this feature, watch the ["What's New in StoreKit" video from WWDC 2017](https://developer.apple.com/videos/play/wwdc2017/303/). If you intend to support this feature in your app, it is important that you initialize Unity Purchasing and be prepared to handle purchases as soon as possible when your app is launched.
+- Apple platforms - The IAP Catalog tool will now export translations when exporting to the Apple Application Loader format.
+- Apple platforms - Add support for controlling promoted items in the App Store through IAppleExtensions. This feature is available on iOS and tvOS 11. Set the order of promoted items in the App Store with IAppleExtensions.SetStorePromotionOrder, or control visiblility with IAppleExtensions.SetStorePromotionVisibility.
+```csharp
+public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
+{
+	// Set the order of the promoted items
+	var appleExtensions = extensions.GetExtension<IAppleExtensions>();
+	appleExtensions.SetStorePromotionOrder(new List<Product>{
+		controller.products.WithID("sword"),
+		controller.products.WithID("subscription")
+	});
+}
+```
+```csharp
+public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
+{
+	// Set the visibility of promoted items
+	var appleExtensions = extensions.GetExtension<IAppleExtensions>();
+	appleExtensions.SetStorePromotionVisibility(controller.products.WithID("subscription"), AppleStorePromotionVisibility.Hide);
+	appleExtensions.SetStorePromotionVisibility(controller.products.WithID("100.gold.coins"), AppleStorePromotionVisibility.Default);
+}
+```
+
+### Changed
+- AndroidStore enum - Obsoleted by superset AppStore enum. Cleans up logging mentioning Android on non-Android platforms.
+- Codeless IAP - IAP Button notifies just one purchase button for purchase failure, logging additional detail.
+
+### Fixed
+- Apple platforms - Catch NullReferenceException thrown during initialization when the app receipt cannot be correctly parsed.
+- IAP Catalog - Fix GUI slowdown when typing details for large number of products on Windows.
+- Fix internal MiniJSON namespace exposure, regression introduced in 1.11.2.
+
+## [1.12.0] - 2017-07-25
+### Added
+- XiaomiMiPay - Add Xiaomi Mi Game Pay app store purchasing for Android devices in China. Add the "Unity Channel" support library and service. Unity Channel helps non-China developers access the Unity-supported Chinese app store market by featuring app store user login and payment management. Use Unity Channel directly for login to Xiaomi. Unity IAP internally uses Unity Channel for Xiaomi payment. [Preliminary documentation](https://docs.google.com/document/d/1VjKatN5ZAn6xZ1KT_PIvgylmAKcXvKvf4jgJqi3OuuY) is available. See also [Xiaomi's portal](https://unity.mi.com/) and [Unity's partner guide](https://unity3d.com/partners/xiaomi/guide).
+
+### Fixed
+- FacebookStore - Fix login and initialization corner-case abnormally calling RetrieveProducts internally
+- Tizen Store - Fix purchasing regression introduced after 1.11.1
+- Mac App Store - Fixes "libmono.0.dylib not found" errors at launch if built via Unity 2017.1. See also Known Issues, below.
+
+### Known Issues
+- Mac App Store - Incompatible with Unity 2017.1.0f3: exception will be thrown during purchasing. Fixed in Unity 2017.1.0p1.
+
+## [1.11.4] - 2017-06-21
+### Fixed
+- Apple platforms - Fix a blocking bug when building from Unity 5.3.
+
+## [1.11.3] - 2017-06-20
+### Fixed
+- Amazon - Purchase attempts for owned non-consumable products are now treated as successful purchases.
+
+## [1.11.2] - 2017-05-30
+### Added
+- Apple platforms - Parse the app receipt when retrieving product information and attempt to set receipt fields on Product. With this change the hasReceipt field on Apple platforms will work more like it does on non-Apple platforms.
+
+### Fixed
+- FacebookStore - Better error handling for cases where store configuration changes after purchases have already been made.
+- General - Better momentary memory performance for local receipt validation and other JSON parsing situations.
+- Editor menus - Targeted Android store menu checkmark are set and valid more often.
+- Installer - Fix error seen during install, `ReflectionTypeLoadException[...]UnityEditor.Purchasing.UnityIAPInstaller.<k_Purchasing>`.
+
 ## [1.11.1] - 2017-05-23
 ### Fixed
 - GooglePlay - Fix regression seen during purchasing where GooglePlay Activity forces screen orientation to portrait and turns background black. Restores neutral orientation and transparent background behavior.
