@@ -16,7 +16,7 @@ public class CharacterAnimationSystems : MonoBehaviour {
 		{			
 		foreach(Transform child in transform){child.gameObject.SetActive(true);}
 		GetComponent<Animator> ().SetTrigger ("advance");
-		Debug.Log (gameObject.name);
+		//Debug.Log (gameObject.name);
 		} else {
 		foreach(Transform child in transform){child.gameObject.SetActive(false);}
 		}

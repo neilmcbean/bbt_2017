@@ -138,9 +138,11 @@ public class PageManager : Singleton<PageManager>
 							sceneindex++;
 							if (sceneindex == StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
 							{
-								Debug.Log (audioIndex);
+								Debug.Log (EnvironmentTracker);
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
+
 								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
+								//EnvironmentTracker
 								SceneManager.UnloadScene (EnvironmentTracker);
 								isGoingBack = false;
 								sceneindex = 0;
@@ -159,7 +161,7 @@ public class PageManager : Singleton<PageManager>
 											}
 										}
 								}
-
+	
 						} 
 						else 
 						{

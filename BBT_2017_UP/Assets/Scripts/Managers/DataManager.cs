@@ -169,7 +169,7 @@ public class DataManager
             //This is index 1 or 2 (dependend if the time is defined twice or not)
             obj.text = words[words.Length - 1];
             so.wordGroups.Add(obj);
-			Debug.Log (line);
+			//Debug.Log (line);
         }
         return so;
         //return JsonUtility.FromJson<SentenceObject>(dataString);
