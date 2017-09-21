@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterAnimationSystems : MonoBehaviour {
 
 	private int AnimationDelayTracker=0;
-	public int AnimationDelay;
+	//public int AnimationDelay;
 	public bool[] AnimationBool;
 	public string LastAnimation;
 	// Use this for initialization
