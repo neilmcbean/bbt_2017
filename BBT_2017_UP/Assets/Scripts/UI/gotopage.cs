@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class gotopage : MonoBehaviour {
@@ -16,4 +17,11 @@ public class gotopage : MonoBehaviour {
         //pageTarget = page;
 		Debug.Log("Working");
     }
+
+	public void GoToChapter()
+	{
+		PageManager.instance.ChapterSkip (GetComponentInChildren<Text>().text);
+		//pageTarget = page;
+		Debug.Log(GetComponentInChildren<Text>().text);
+	}
 }
