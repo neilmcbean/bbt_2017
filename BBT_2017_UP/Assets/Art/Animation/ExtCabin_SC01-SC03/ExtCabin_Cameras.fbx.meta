@@ -16,9 +16,9 @@ ModelImporter:
     2000000: Camera_01_01
     2000002: Camera_02_01
     2000004: Camera_03_01
-    7400000: Camera_03_01|Camera_01_01
-    7400002: Camera_03_01|Camera_01_01_PanDown
-    7400004: Camera_03_01|Camera_02_01_Still
+    7400000: Camera_01_01_Still
+    7400002: Camera_01_01_PanDown
+    7400004: Camera_02_01_Still
     7400006: Camera_03_01|DELETE
     7400008: Camera_02_01|Camera_01_01
     7400010: Camera_02_01|Camera_01_01_PanDown
@@ -54,7 +54,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Camera_03_01|Camera_01_01
+      name: Camera_01_01_Still
       takeName: Camera_03_01|Camera_01_01
       firstFrame: 0
       lastFrame: 1
@@ -82,7 +82,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Camera_03_01|Camera_01_01_PanDown
+      name: Camera_01_01_PanDown
       takeName: Camera_03_01|Camera_01_01_PanDown
       firstFrame: 0
       lastFrame: 121
@@ -110,7 +110,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Camera_03_01|Camera_02_01_Still
+      name: Camera_02_01_Still
       takeName: Camera_03_01|Camera_02_01_Still
       firstFrame: 0
       lastFrame: 1
