@@ -2,56 +2,84 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAnimationSystems : MonoBehaviour {
+public class CharacterAnimationSystems : MonoBehaviour
+{
 
-	private int AnimationDelayTracker=0;
+	private int AnimationDelayTracker = 0;
 	//public int AnimationDelay;
 	public bool[] AnimationBool;
 	public string LastAnimation;
 	// Use this for initialization
-	public void InvokeNextAnimation()
+	public void InvokeNextAnimation ()
 	{	
 		AnimationDelayTracker++;	
-		if (AnimationBool[AnimationDelayTracker] == true) 
-		{			
-		foreach(Transform child in transform){child.gameObject.SetActive(true);}
-		GetComponent<Animator> ().SetTrigger ("advance");
-		//Debug.Log (gameObject.name);
+		if (AnimationBool [AnimationDelayTracker] == true) {			
+
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+			//Debug.Log(gameObject.name+"turn on");
+			gameObject.SetActive (true);
+			} 
+				else 
+				{
+					foreach (Transform child in transform) 
+					{
+					child.gameObject.SetActive (true);
+					}
+				GetComponent<Animator> ().SetTrigger ("advance");
+				}
+
 		} else {
-		foreach(Transform child in transform){child.gameObject.SetActive(false);}
+
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+			//Debug.Log(gameObject.name+"turn off");
+			gameObject.SetActive (false);
+			} 
+				else 
+				{
+					foreach (Transform child in transform) 
+					{
+					child.gameObject.SetActive (false);
+					}
+				}
 		}
+		Debug.Log(gameObject.name);
 
 	}
 
-	public void InvokePreviousAnimation()
+	public void InvokePreviousAnimation ()
 	{
-		if (AnimationDelayTracker > 0) 
-		{
+		if (AnimationDelayTracker > 0) {
 			AnimationDelayTracker--;
-			if (AnimationBool [AnimationDelayTracker] == true) 
-			{			
-				foreach (Transform child in transform) 
-				{child.gameObject.SetActive (true);}
+			if (AnimationBool [AnimationDelayTracker] == true) {			
+				foreach (Transform child in transform) {
+					child.gameObject.SetActive (true);
+				}
 				GetComponent<Animator> ().SetTrigger ("goback");
 				//Debug.Log ("turningon");
-			} else 
-			{
-			foreach (Transform child in transform) {child.gameObject.SetActive (false);}
+			} else {
+				foreach (Transform child in transform) {
+					child.gameObject.SetActive (false);
+				}
 			}
 
 		}
 	}
 
-	public void ResetToTheEnd()
+	public void ResetToTheEnd ()
 	{
-		AnimationDelayTracker=AnimationBool.Length-1;
+		AnimationDelayTracker = AnimationBool.Length - 1;
 
-		if (AnimationBool [AnimationDelayTracker] == true) 
-		{			
-		foreach (Transform child in transform) {child.gameObject.SetActive (true);}
+		if (AnimationBool [AnimationDelayTracker] == true) {			
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive (true);
+			}
+		} else {
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive (false);
+			}
 		}
-		else 
-		{foreach (Transform child in transform) {child.gameObject.SetActive (false);}}
 
 		GetComponent<Animator> ().Play (LastAnimation);
 	}

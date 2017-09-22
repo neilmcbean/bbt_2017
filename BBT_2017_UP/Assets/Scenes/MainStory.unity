@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &100917805
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1250,6 +1250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PageManagerRef: {fileID: 2054599089}
   dropdownMenu: {fileID: 0}
+  ChapterButtonGroup: []
+  SasquatchChapters: []
+  LittlePeopleChapters: []
 --- !u!114 &555656309
 MonoBehaviour:
   m_ObjectHideFlags: 0

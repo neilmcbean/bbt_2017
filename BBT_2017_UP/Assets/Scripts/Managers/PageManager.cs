@@ -155,7 +155,7 @@ public class PageManager : Singleton<PageManager>
 									transform.hasChanged = false;
 										foreach (GameObject Child in Characters) 
 										{//Play the next animation on all the characters
-											if (Child.GetComponent<Animator> () != null) 
+											if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null) 
 											{
 											Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();
 											}
