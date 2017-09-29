@@ -102,7 +102,14 @@ public class PageManager : Singleton<PageManager>
 		StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");
 		//Wait a frame for all scenes to be loaded
 		//Camera tracking variables
-		cameraTransformTracker = GameObject.FindGameObjectWithTag ("MainCamera").transform;
+
+		foreach (GameObject obj in Characters) {
+			if (obj.GetComponent<Camera> () != null) {
+				cameraTransformTracker = obj.transform;
+			}
+		}
+
+		//cameraTransformTracker = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 		cameraPreviousPosition = cameraTransformTracker.position;
 		transform.hasChanged = false;
 		LastPageLoader = lastPage;
