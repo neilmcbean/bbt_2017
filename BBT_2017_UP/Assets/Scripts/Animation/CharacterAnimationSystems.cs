@@ -44,8 +44,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 					}
 				}
 		}
-		Debug.Log(gameObject.name);
-
+		//Debug.Log(gameObject.name);
 	}
 
 	public void InvokePreviousAnimation ()
