@@ -311,6 +311,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: aa151296a6d164454ab449be63f86088, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9a68a8dab7e6a466092a669d423af890, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa151296a6d164454ab449be63f86088, type: 3}
   m_IsPrefabParent: 0
@@ -342,8 +346,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d92e4e3ce4b412cb9913837ec59eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1295155588}
+  anim: {fileID: 99211392}
   goback: 27
+--- !u!95 &99211392 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: aa151296a6d164454ab449be63f86088,
+    type: 3}
+  m_PrefabInternal: {fileID: 99211388}
 --- !u!4 &99211393 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400116, guid: aa151296a6d164454ab449be63f86088, type: 3}
@@ -393,8 +402,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100170, guid: 099ad30b7d8fa4e93ae2aecc18a68e26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 099ad30b7d8fa4e93ae2aecc18a68e26, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9a68a8dab7e6a466092a669d423af890, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 099ad30b7d8fa4e93ae2aecc18a68e26, type: 3}
   m_IsPrefabParent: 0
@@ -413,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000000000010101010101010101
+  AnimationBool: 00000000000000000000000101010101010101010101
   LastAnimation: 
 --- !u!114 &152081247
 MonoBehaviour:
@@ -426,8 +439,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d92e4e3ce4b412cb9913837ec59eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 579357572}
+  anim: {fileID: 152081248}
   goback: 27
+--- !u!95 &152081248 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 099ad30b7d8fa4e93ae2aecc18a68e26,
+    type: 3}
+  m_PrefabInternal: {fileID: 152081244}
+--- !u!114 &152081249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152081245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f800fbff508da422b930073828e7a109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 152081248}
+  advance: 9
 --- !u!1001 &157705821
 Prefab:
   m_ObjectHideFlags: 0
