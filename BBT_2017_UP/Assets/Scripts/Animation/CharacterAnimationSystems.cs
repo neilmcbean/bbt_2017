@@ -19,6 +19,11 @@ public class CharacterAnimationSystems : MonoBehaviour
 			{//if the thing to check has a camera.
 			//Debug.Log(gameObject.name+"turn on");
 			gameObject.SetActive (true);
+
+                if(GetComponent<Animator>() != null)
+                {
+                    GetComponent<Animator>().SetTrigger("advance");
+                }
 			} 
 				else 
 				{
