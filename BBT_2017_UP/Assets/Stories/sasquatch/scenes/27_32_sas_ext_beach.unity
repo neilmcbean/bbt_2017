@@ -879,9 +879,30 @@ Prefab:
       propertyPath: field of view
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_TagString
+      value: Characters
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &918611499 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+  m_PrefabInternal: {fileID: 918611498}
+--- !u!114 &918611500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918611499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationBool: 010101010101
+  LastAnimation: 
 --- !u!1001 &1045895934
 Prefab:
   m_ObjectHideFlags: 0
@@ -1153,11 +1174,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 410a4f031249f4e35bc0ca01b08cb508, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 410a4f031249f4e35bc0ca01b08cb508, type: 3}
       propertyPath: field of view
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 410a4f031249f4e35bc0ca01b08cb508, type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 410a4f031249f4e35bc0ca01b08cb508, type: 3}
@@ -1424,7 +1449,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 0c6468a63a59e42558c6a5009e65257a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 84e9f9b9ca13b4783b5cce123efddf02, type: 2}
+      objectReference: {fileID: 9100000, guid: dd28b71f5434247d4864524caa3539ed, type: 2}
     - target: {fileID: 100018, guid: 0c6468a63a59e42558c6a5009e65257a, type: 3}
       propertyPath: m_TagString
       value: Characters

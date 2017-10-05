@@ -113,8 +113,9 @@ public class PageManager : Singleton<PageManager>
 
 		//cameraTransformTracker = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 
-		cameraPreviousPosition = cameraTransformTracker.position;
-		transform.hasChanged = false;
+			cameraPreviousPosition = cameraTransformTracker.position;
+
+			transform.hasChanged = false;
 		LastPageLoader = lastPage;
 		if (isGoingBack == true) {
 			sceneindex = LastPageLoader;
@@ -167,7 +168,7 @@ public class PageManager : Singleton<PageManager>
 										{//Play the next animation on all the characters
 									if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null )) 
 											{
-											Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();
+												Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
 											}
 										}
 								}
