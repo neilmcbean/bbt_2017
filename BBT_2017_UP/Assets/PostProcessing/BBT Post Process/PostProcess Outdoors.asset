@@ -29,13 +29,13 @@ MonoBehaviour:
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      method: 1
+      method: 0
       fxaaSettings:
-        preset: 4
+        preset: 2
       taaSettings:
-        jitterSpread: 0.854
+        jitterSpread: 0.295
         sharpen: 3
         stationaryBlending: 0.95
         motionBlending: 0.85
@@ -71,10 +71,10 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 0.25
-      aperture: 12.8
+      focusDistance: 0.5
+      aperture: 5.6
       focalLength: 39
-      useCameraFov: 1
+      useCameraFov: 0
       kernelSize: 2
   motionBlur:
     m_Enabled: 0
