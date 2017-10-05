@@ -23,6 +23,8 @@ public class DataManager
 	public static int NarrativeCounter = 0;
 	private static int NarrativeCounterEnd = 12;
 
+	public static string[] SceneRef;
+	private static int SceneRefCounter = 0;
 
     public static StoryObject LoadStory(string storyName)
     {        
@@ -47,6 +49,8 @@ public class DataManager
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
         
+		SceneRef = new string[files.Length];
+
 		foreach (string file in files)
         {
             AddFileToStory(story, file); 
@@ -94,7 +98,7 @@ public class DataManager
 
         for (int i = 0; i < splitPath.Length; i++)
         {
-			//Debug.Log (splitPath[i]);
+			///Debug.Log (splitPath[i]);
             if (splitPath[i] == currentStoryName)
             {
                 if (i + pathDepth + 2 >= splitPath.Length)
@@ -105,7 +109,7 @@ public class DataManager
                 string pageName = splitPath[i + pathDepth + 1];
                 //Get the page from the story
                 PageObject page = story.GetPage(pageName);
-				//Debug.Log (page.name);
+				//Debug.Log (pageName);
 				//page = null;
                 //If the page wasn't in the story yet, create a new object
                 if (page == null)
@@ -119,6 +123,7 @@ public class DataManager
 
                 //Get the audio from the page. The name is actually the foldername, not the file name of the audio
                 string audioName = splitPath[i + pathDepth + 2];
+
                 //If the audio doesn't exist, craete a new one
                 AudioObject audioObj = page.GetAudio(audioName);
                 if (audioObj == null)
@@ -139,9 +144,16 @@ public class DataManager
                 }
 
                 TextAsset txt = fileObj as TextAsset;
+
                 if (txt != null)
                 {
-					//Debug.Log ("working");
+					
+
+					SceneRef[SceneRefCounter] = audioName;
+
+					Debug.Log (SceneRef[SceneRefCounter]);
+					SceneRefCounter ++;
+					//Debug.Log (txt.text);
                     audioObj.sentence = GetSentence(txt.text);
                     return;
                 }
