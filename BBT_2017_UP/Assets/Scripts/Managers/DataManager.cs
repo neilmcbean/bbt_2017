@@ -23,8 +23,8 @@ public class DataManager
 	public static int NarrativeCounter = 0;
 	private static int NarrativeCounterEnd = 12;
 
-	//public static string[] SceneRef;
-	//private static int SceneRefCounter = 0;
+	public static string[] SceneRef;
+	private static int SceneRefCounter = 0;
 
     public static StoryObject LoadStory(string storyName)
     {        
@@ -49,7 +49,7 @@ public class DataManager
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
         
-		//SceneRef = new string[files.Length];
+		SceneRef = new string[files.Length];
 
 		foreach (string file in files)
         {
@@ -148,11 +148,11 @@ public class DataManager
                 if (txt != null)
                 {
 					
-					/*
+
 					SceneRef[SceneRefCounter] = audioName;
 
 					Debug.Log (SceneRef[SceneRefCounter]);
-					SceneRefCounter ++;*/
+					SceneRefCounter ++;
 					//Debug.Log (txt.text);
                     audioObj.sentence = GetSentence(txt.text);
                     return;
