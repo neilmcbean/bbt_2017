@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000000001010101010101010101
+  AnimationBool: 000000000000000000000000000101010101010101010101000000
   LastAnimation: 
 --- !u!114 &152081247
 MonoBehaviour:
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 01010101010101010101010101010101010101010101
+  AnimationBool: 010101010101010101010101010101010101010101010101010101
   LastAnimation: 
 --- !u!114 &579357570
 MonoBehaviour:
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000000000000001010101010101
+  AnimationBool: 000000000000000000000000000000010101010101010101000000
   LastAnimation: 
 --- !u!1001 &747257237
 Prefab:
@@ -971,7 +971,7 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: pagesPerScene
-      value: 22
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
@@ -1397,6 +1397,69 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
   m_PrefabInternal: {fileID: 2027453610}
+--- !u!1001 &968968706
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b88f5b23c668f4c7b8b44571bd164179, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1 &968968707 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100256, guid: af36678ed46a1401a8868243a4fc40d2, type: 3}
+  m_PrefabInternal: {fileID: 968968706}
+--- !u!114 &968968708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968968707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationBool: 010101010101010101010101010101010101010101010101010101
+  LastAnimation: 
 --- !u!1 &984035616 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
@@ -1412,7 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 01010100000000000000000000000000000000000000
+  AnimationBool: 010101000000000000000000000000000000000000000000000000
   LastAnimation: 
 --- !u!1 &984925522 stripped
 GameObject:
@@ -1429,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000000000010100000000000000
+  AnimationBool: 000000000000000000000000000101000000000000000000000000
   LastAnimation: 
 --- !u!1001 &1045895934
 Prefab:
@@ -1680,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000001010101010101000000000000000000000000
+  AnimationBool: 000000010101010101000000000000000000000000000000000000
   LastAnimation: 
 --- !u!1001 &1179681467
 Prefab:
@@ -1821,7 +1884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000000001000000000000000000
+  AnimationBool: 000000000000000000000000010000000000000000000000000000
   LastAnimation: 
 --- !u!1001 &1295155586
 Prefab:
@@ -2112,7 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00010101010101010101010101010101010101010101
+  AnimationBool: 000101010101010101010101010101010101010101010101000000
   LastAnimation: 
 --- !u!114 &1382133148
 MonoBehaviour:
@@ -2551,7 +2614,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
       propertyPath: m_IsActive
@@ -2648,6 +2711,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1545945952 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100012, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+  m_PrefabInternal: {fileID: 1545945951}
+--- !u!114 &1545945953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545945952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationBool: 000000000000000000000000000000000000000000000000010101
+  LastAnimation: 
 --- !u!4 &1561044187 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
@@ -3389,7 +3469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7dfe3502e1c4e57abba89f8cf02e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationBool: 00000000000000000000010100000000000000000000
+  AnimationBool: 000000000000000000010101000000000000000000000000000000
   LastAnimation: 
 --- !u!4 &2026469000 stripped
 Transform:
