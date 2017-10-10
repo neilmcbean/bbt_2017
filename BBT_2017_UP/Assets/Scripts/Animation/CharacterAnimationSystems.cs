@@ -10,6 +10,43 @@ public class CharacterAnimationSystems : MonoBehaviour
 	public bool[] AnimationBool;
 	public string LastAnimation;
 	// Use this for initialization
+
+	void Start () {
+		if (AnimationBool [AnimationDelayTracker] == true) 
+		{			
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+				//Debug.Log(gameObject.name+"turn on");
+				gameObject.SetActive (true);
+
+
+			} 
+			else 
+			{
+				foreach (Transform child in transform) 
+				{
+					child.gameObject.SetActive (true);
+				}
+
+			}
+
+		} else {
+
+					if (GetComponent<Camera> () != null) 
+					{//if the thing to check has a camera.
+						Debug.Log(gameObject.name+"turn off");
+						gameObject.SetActive (false);
+					} 
+					else 
+					{
+						foreach (Transform child in transform) 
+						{
+							child.gameObject.SetActive (false);
+						}
+					}
+				}
+	}
+
 	public void InvokeNextAnimation ()
 	{	
 		AnimationDelayTracker++;	
@@ -49,7 +86,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 					}
 				}
 		}
-		//Debug.Log(gameObject.name);
+		Debug.Log(gameObject.name);
 	}
 
 	public void InvokePreviousAnimation ()

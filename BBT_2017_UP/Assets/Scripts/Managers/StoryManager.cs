@@ -15,9 +15,10 @@ public class StoryManager : MonoBehaviour {
 	void Start () {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene);
-
 		PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition);
-		
+
+
+
 	}
 	
 	// Update is called once per frame
