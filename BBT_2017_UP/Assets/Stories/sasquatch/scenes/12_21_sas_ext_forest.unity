@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -254,7 +254,7 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: LastScene
-      value: 1_11_sas_ext_cabin
+      value: Sasquatch_start
       objectReference: {fileID: 0}
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
@@ -329,7 +329,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &410067884 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 410067883}
 --- !u!1001 &416580473
 Prefab:
@@ -391,7 +391,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &416580474 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 416580473}
 --- !u!1001 &481936709
 Prefab:
@@ -523,7 +523,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &494250223 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 494250222}
 --- !u!1001 &612541193
 Prefab:
@@ -585,7 +585,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &612541194 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 612541193}
 --- !u!1001 &678677139
 Prefab:
@@ -647,7 +647,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &678677140 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 678677139}
 --- !u!1001 &745709101
 Prefab:
@@ -705,7 +705,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &745709102 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: a9689c8f2ac844866af2c071ea4ccc82, type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 745709101}
 --- !u!1 &876052528
 GameObject:
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationBool: 01010101010101010101
-  LastAnimation: 
+  LastAnimation: Lilly_SC06_05
 --- !u!95 &1139892709 stripped
 Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: af36678ed46a1401a8868243a4fc40d2,

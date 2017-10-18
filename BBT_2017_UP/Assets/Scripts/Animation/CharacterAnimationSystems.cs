@@ -17,31 +17,34 @@ public class CharacterAnimationSystems : MonoBehaviour
 			if (GetComponent<Camera> () != null) 
 			{//if the thing to check has a camera.
 				//Debug.Log(gameObject.name+"turn on");
-				gameObject.SetActive (true);
-
-
+				//gameObject.SetActive (true);
+				gameObject.GetComponent<Camera>().enabled = true;
 			} 
 			else 
 			{
+				GetComponent<Animator> ().enabled = true;
 				foreach (Transform child in transform) 
 				{
-					child.gameObject.SetActive (true);
+					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+					child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 				}
-
 			}
 
 		} else {
 
 					if (GetComponent<Camera> () != null) 
 					{//if the thing to check has a camera.
-						Debug.Log(gameObject.name+"turn off");
-						gameObject.SetActive (false);
+						//Debug.Log(gameObject.name+"turn off");
+						//gameObject.SetActive (false);
+						gameObject.GetComponent<Camera>().enabled = false;
 					} 
 					else 
-					{
+					{//Turn on the renderer
+						GetComponent<Animator> ().enabled = false;
 						foreach (Transform child in transform) 
 						{
-							child.gameObject.SetActive (false);
+							if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)	
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
 						}
 					}
 				}
@@ -54,20 +57,22 @@ public class CharacterAnimationSystems : MonoBehaviour
 
 			if (GetComponent<Camera> () != null) 
 			{//if the thing to check has a camera.
-			//Debug.Log(gameObject.name+"turn on");
-			gameObject.SetActive (true);
-
+			//gameObject.SetActive (true);
+			gameObject.GetComponent<Camera>().enabled = true;
                 if(GetComponent<Animator>() != null)
                 {
                     GetComponent<Animator>().SetTrigger("advance");
                 }
 			} 
 				else 
-				{
+				{//Turn on the renderer
+					GetComponent<Animator> ().enabled = true;
 					foreach (Transform child in transform) 
 					{
-					child.gameObject.SetActive (true);
+					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+					child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 					}
+				//Debug.Log(gameObject.name+"runing anim");
 				GetComponent<Animator> ().SetTrigger ("advance");
 				}
 
@@ -76,17 +81,20 @@ public class CharacterAnimationSystems : MonoBehaviour
 			if (GetComponent<Camera> () != null) 
 			{//if the thing to check has a camera.
 			//Debug.Log(gameObject.name+"turn off");
-			gameObject.SetActive (false);
+			//gameObject.SetActive (false);
+			gameObject.GetComponent<Camera>().enabled = false;
 			} 
 				else 
-				{
+				{//Turn on the renderer
+				gameObject.GetComponent<Animator> ().enabled = false;
 					foreach (Transform child in transform) 
 					{
-					child.gameObject.SetActive (false);
+						if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
 					}
 				}
 		}
-		Debug.Log(gameObject.name);
+		//Debug.Log(gameObject.name);
 	}
 
 	public void InvokePreviousAnimation ()
@@ -94,16 +102,45 @@ public class CharacterAnimationSystems : MonoBehaviour
 		if (AnimationDelayTracker > 0) {
 			AnimationDelayTracker--;
 			if (AnimationBool [AnimationDelayTracker] == true) {			
-				foreach (Transform child in transform) {
-					child.gameObject.SetActive (true);
+
+				if (GetComponent<Camera> () != null) 
+				{//if the thing to check has a camera.
+					//gameObject.SetActive (true);
+					gameObject.GetComponent<Camera>().enabled = true;
+					if(GetComponent<Animator>() != null)
+					{
+						GetComponent<Animator>().SetTrigger("goback");
+					}
+				} 
+				else 
+				{//Turn on the renderer
+					GetComponent<Animator> ().enabled = true;
+					foreach (Transform child in transform) 
+					{
+						if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+					}
+
+					GetComponent<Animator> ().SetTrigger ("goback");
 				}
-				GetComponent<Animator> ().SetTrigger ("goback");
-				//Debug.Log ("turningon");
 			} else {
-				foreach (Transform child in transform) {
-					child.gameObject.SetActive (false);
+
+				if (GetComponent<Camera> () != null) 
+				{//if the thing to check has a camera.
+					//Debug.Log(gameObject.name+"turn off");
+					//gameObject.SetActive (false);
+					gameObject.GetComponent<Camera>().enabled = false;
+				} 
+				else 
+				{//Turn on the renderer
+					gameObject.GetComponent<Animator> ().enabled = false;
+					foreach (Transform child in transform) 
+					{
+						if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+					}
 				}
-			}
+				}
 
 		}
 	}
@@ -111,17 +148,56 @@ public class CharacterAnimationSystems : MonoBehaviour
 	public void ResetToTheEnd ()
 	{
 		AnimationDelayTracker = AnimationBool.Length - 1;
-
-		if (AnimationBool [AnimationDelayTracker] == true) {			
-			foreach (Transform child in transform) {
-				child.gameObject.SetActive (true);
+		Debug.Log(gameObject.name+"turn on");	
+		if (AnimationBool [AnimationDelayTracker] == true) 
+		{		
+			
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+				
+				//gameObject.SetActive (true);
+				gameObject.GetComponent<Camera>().enabled = true;
+				if(GetComponent<Animator>() != null)
+				{
+					GetComponent<Animator>().SetTrigger(LastAnimation);
+				}
+			} 
+			else 
+			{
+				GetComponent<Animator> ().enabled = true;
+				foreach (Transform child in transform) 
+				{
+					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+				}
+				GetComponent<Animator> ().Play (LastAnimation);
 			}
+
 		} else {
-			foreach (Transform child in transform) {
-				child.gameObject.SetActive (false);
+
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+				//Debug.Log(gameObject.name+"turn off");
+				//gameObject.SetActive (false);
+				gameObject.GetComponent<Camera>().enabled = false;
+
+			} 
+			else 
+			{//Turn on the renderer
+				GetComponent<Animator> ().enabled = false;
+				foreach (Transform child in transform) 
+				{
+					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)	
+						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+				}
 			}
 		}
 
-		GetComponent<Animator> ().Play (LastAnimation);
+		//GetComponent<Animator> ().Play (LastAnimation);
+	}
+
+	private void CharacterTurnOff()
+	{
+		
 	}
 }

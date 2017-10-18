@@ -149,7 +149,7 @@ public class PageManager : Singleton<PageManager>
 							sceneindex++;
 							if (sceneindex == StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
 							{
-								Debug.Log (EnvironmentTracker);
+								//Debug.Log (EnvironmentTracker);
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 
 								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
@@ -224,10 +224,10 @@ public class PageManager : Singleton<PageManager>
 	{
 		foreach (GameObject Child in Characters) 
 		{
-			if (Child.GetComponent<Animator> () != null) 
-			{
+
 				Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
-			}
+			if (Child.GetComponent<Animator> () != null) 
+			{}
 		}
 	}
 
@@ -431,7 +431,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		//Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
+		Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
