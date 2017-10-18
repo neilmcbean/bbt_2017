@@ -9,5 +9,6 @@ public class MainStoryScreen : MonoBehaviour
     public void OnQuitButton()
     {
         SceneManager.LoadScene("Menu");
+
     }
 }

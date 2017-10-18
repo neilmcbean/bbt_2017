@@ -16,7 +16,7 @@ public class StoryManager : MonoBehaviour {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene);
 		PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition);
-
+	
 
 
 	}
