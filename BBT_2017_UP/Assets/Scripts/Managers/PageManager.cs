@@ -29,7 +29,7 @@ public class PageManager : Singleton<PageManager>
 	private int audioIndex;
 	private int sceneindex;
 	private int LastPageLoader;
-	private bool isGoingBack = false;
+	public bool isGoingBack = false;
 
 	//Technicals
 	private AudioSource audioSource;
@@ -132,6 +132,16 @@ public class PageManager : Singleton<PageManager>
 		sceneindex = 0;
 	}
 
+	public void ChapterSkipToTheEnd(String LevelToLoad)
+	{
+		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+		SceneManager.UnloadScene (EnvironmentTracker);
+		//StoryManager.GetComponent<StoryManager> ().StartFromEndOfLevel ();
+		//isGoingBack = false;
+		//sceneindex = 0;
+	}
+
+
 	void Update ()
 	{
 		if (cameraTransformTracker != null) {
@@ -147,11 +157,12 @@ public class PageManager : Singleton<PageManager>
 						if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) 
 						{//If the player swipes to the next page
 							sceneindex++;
-							if (sceneindex == StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
+							//Debug.Log (sceneindex);
+							//sceneindex
+							if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
 							{
-								//Debug.Log (EnvironmentTracker);
+								
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-
 								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
 								//EnvironmentTracker
 								SceneManager.UnloadScene (EnvironmentTracker);
@@ -160,13 +171,14 @@ public class PageManager : Singleton<PageManager>
 							} 
 								else 
 								{
-								//Debug.Log ("working");
+								//Debug.Log (sceneindex);
 									NextSentence (isForward);
+									isGoingBack = false;
 									isForward = true;
 									transform.hasChanged = false;
 										foreach (GameObject Child in Characters) 
 										{//Play the next animation on all the characters
-									if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null )) 
+											if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null )) 
 											{
 												Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
 											}
@@ -177,13 +189,16 @@ public class PageManager : Singleton<PageManager>
 						else 
 						{
 							sceneindex--;
-							if (sceneindex == -1) 
+							if (sceneindex <= -1) 
 							{//TODO:Create a system which will allow you to go backwards through the scenes
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
-								SceneManager.UnloadScene (EnvironmentTracker);
+								//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
+								//SceneManager.UnloadScene (EnvironmentTracker);
+								//isForward = false;
 								isGoingBack = true;
-								PreviousSentence (isForward);
+								ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager> ().LastScene);
+
+								//PreviousSentence (isForward);
 								//sceneindex = LastPageLoader;
 								//SetToLastPosition ();
 								//Debug.Log(sceneindex);
@@ -196,7 +211,7 @@ public class PageManager : Singleton<PageManager>
 								//Play the current animation
 									foreach (GameObject Child in Characters) 
 									{
-										if (Child.GetComponent<Animator> () != null) 
+									if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null )) 
 										{
 										//Debug.Log("Launching Previous Anim");
 											Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
@@ -222,12 +237,12 @@ public class PageManager : Singleton<PageManager>
 
 	private void SetToLastPosition ()
 	{
+		Characters = GameObject.FindGameObjectsWithTag ("Characters");
 		foreach (GameObject Child in Characters) 
 		{
 
 				Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
-			if (Child.GetComponent<Animator> () != null) 
-			{}
+
 		}
 	}
 
@@ -344,12 +359,12 @@ public class PageManager : Singleton<PageManager>
 	public void GoToPage (int i)
 	{
 		//Debug.Log(isGoingBack);
-		if (isGoingBack == false) {
+
 			StopAllCoroutines ();
 			sentenceContainer.Clear ();
 			audioIndex = i;
 			StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
-		}
+		if (isGoingBack == false) {}
 
 	}
 
