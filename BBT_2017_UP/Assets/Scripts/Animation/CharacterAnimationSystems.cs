@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class CharacterAnimationSystems : MonoBehaviour
@@ -22,11 +23,18 @@ public class CharacterAnimationSystems : MonoBehaviour
 			} 
 			else 
 			{
-				GetComponent<Animator> ().enabled = true;
-				foreach (Transform child in transform) 
+				if (GetComponent<Image> () != null) 
 				{
-					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-					child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+				GetComponent<Image> ().enabled = true;
+				} 
+				else
+				{//if(GetComponent.
+					GetComponent<Animator> ().enabled = true;
+					foreach (Transform child in transform) 
+					{
+						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+					}
 				}
 			}
 
@@ -38,15 +46,23 @@ public class CharacterAnimationSystems : MonoBehaviour
 						//gameObject.SetActive (false);
 						gameObject.GetComponent<Camera>().enabled = false;
 					} 
-					else 
-					{//Turn on the renderer
-						GetComponent<Animator> ().enabled = false;
-						foreach (Transform child in transform) 
+						else 
 						{
-							if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)	
-							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+							if (GetComponent<Image> () != null) 
+							{
+								GetComponent<Image> ().enabled = false;
+							} 
+								else 
+								{
+									//if(GetComponent.
+									GetComponent<Animator> ().enabled = false;
+									foreach (Transform child in transform) 
+									{
+										if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+											child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+									}
+								}
 						}
-					}
 				}
 	}
 
@@ -62,14 +78,23 @@ public class CharacterAnimationSystems : MonoBehaviour
 					if (GetComponent<Animator> () != null) {
 						GetComponent<Animator> ().SetTrigger ("advance");
 					}
-				} else {//Turn on the renderer
-					GetComponent<Animator> ().enabled = true;
-					foreach (Transform child in transform) {
-						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+				} 
+
+				else 
+				{//Turn on the renderer
+
+					if (GetComponent<Image> () != null) {
+						GetComponent<Image> ().enabled = true;
+					} else {
+
+						GetComponent<Animator> ().enabled = true;
+						foreach (Transform child in transform) {
+							if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+								child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+						}
+						//Debug.Log(gameObject.name+"runing anim");
+						GetComponent<Animator> ().SetTrigger ("advance");
 					}
-					//Debug.Log(gameObject.name+"runing anim");
-					GetComponent<Animator> ().SetTrigger ("advance");
 				}
 
 			} else {
@@ -78,11 +103,20 @@ public class CharacterAnimationSystems : MonoBehaviour
 					//Debug.Log(gameObject.name+"turn off");
 					//gameObject.SetActive (false);
 					gameObject.GetComponent<Camera> ().enabled = false;
-				} else {//Turn on the renderer
-					gameObject.GetComponent<Animator> ().enabled = false;
-					foreach (Transform child in transform) {
-						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+				} else {//Turn off the renderer
+
+					if (GetComponent<Image> () != null) 
+					{
+					GetComponent<Image> ().enabled = false;
+					} 
+					else 
+					{
+						gameObject.GetComponent<Animator> ().enabled = false;
+							foreach (Transform child in transform) 
+						{
+							if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+								child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+						}
 					}
 				}
 			}
@@ -107,14 +141,19 @@ public class CharacterAnimationSystems : MonoBehaviour
 				} 
 				else 
 				{//Turn on the renderer
-					GetComponent<Animator> ().enabled = true;
-					foreach (Transform child in transform) 
-					{
-						if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
-					}
 
-					GetComponent<Animator> ().SetTrigger ("goback");
+					if (GetComponent<Image> () != null) {
+						GetComponent<Image> ().enabled = true;
+					} else {
+
+						GetComponent<Animator> ().enabled = true;
+						foreach (Transform child in transform) {
+							if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+								child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+						}
+
+						GetComponent<Animator> ().SetTrigger ("goback");
+					}
 				}
 			} else {
 
@@ -126,11 +165,16 @@ public class CharacterAnimationSystems : MonoBehaviour
 				} 
 				else 
 				{//Turn on the renderer
-					gameObject.GetComponent<Animator> ().enabled = false;
-					foreach (Transform child in transform) 
-					{
-						if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+
+					if (GetComponent<Image> () != null) {
+						GetComponent<Image> ().enabled = false;
+					} else {
+
+						gameObject.GetComponent<Animator> ().enabled = false;
+						foreach (Transform child in transform) {
+							if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+								child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+						}
 					}
 				}
 				}
@@ -157,13 +201,16 @@ public class CharacterAnimationSystems : MonoBehaviour
 			} 
 			else 
 			{
-				GetComponent<Animator> ().enabled = true;
-				foreach (Transform child in transform) 
-				{
-					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+				if (GetComponent<Image> () != null) {
+					GetComponent<Image> ().enabled = true;
+				} else {
+					GetComponent<Animator> ().enabled = true;
+					foreach (Transform child in transform) {
+						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+					}
+					GetComponent<Animator> ().Play (LastAnimation);
 				}
-				GetComponent<Animator> ().Play (LastAnimation);
 			}
 
 		} else {
@@ -177,12 +224,16 @@ public class CharacterAnimationSystems : MonoBehaviour
 			} 
 			else 
 			{//Turn on the renderer
-				GetComponent<Animator> ().enabled = false;
 
-				foreach (Transform child in transform) 
-				{
-					if(child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)	
-						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+				if (GetComponent<Image> () != null) {
+					GetComponent<Image> ().enabled = true;
+				} else {
+
+					GetComponent<Animator> ().enabled = false;
+					foreach (Transform child in transform) {
+						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+					}
 				}
 			}
 		}

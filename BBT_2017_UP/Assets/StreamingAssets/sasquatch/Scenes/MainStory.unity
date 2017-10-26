@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 3
+    m_MixedBakeMode: 2
     m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 1913c250667c9401792323d9972020be,
     type: 2}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1204,6 +1204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nRows: 5
   sentenceRowPrefab: {fileID: 2016298155}
+  narrator: 
+  Definition: {fileID: 0}
 --- !u!1 &150500961
 GameObject:
   m_ObjectHideFlags: 0
@@ -15500,7 +15502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1551698169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18234,6 +18236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordPrefab: {fileID: 1210753399}
+  wordPrefabDef: {fileID: 0}
 --- !u!114 &2016298156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18587,6 +18590,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d745d5c2a90419c9b2b1279c43ffc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoingBack: 0
+  Characters: []
+  StoryManager: {fileID: 0}
+  cameraTransformTracker: {fileID: 0}
+  isMenuDeployed: 0
+  Scenetext: {fileID: 0}
 --- !u!4 &2054599092
 Transform:
   m_ObjectHideFlags: 0
