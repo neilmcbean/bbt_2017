@@ -59,7 +59,7 @@ public class PageManager : Singleton<PageManager>
 	private int narrativeCounter = 1;
 
 	//Debuging Vars
-	public GameObject Scenetext;
+	//public GameObject Scenetext;
 
 
 
@@ -165,7 +165,13 @@ public class PageManager : Singleton<PageManager>
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
 								//EnvironmentTracker
-								SceneManager.UnloadScene (EnvironmentTracker);
+									if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {
+
+										GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+										Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
+									} else {
+										SceneManager.UnloadScene (EnvironmentTracker);
+									}
 								isGoingBack = false;
 								sceneindex = 0;
 							} 
@@ -446,7 +452,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
+		//Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
