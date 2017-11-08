@@ -195,7 +195,7 @@ public class PageManager : Singleton<PageManager>
 						else 
 						{
 							sceneindex--;
-							if (sceneindex <= -1) 
+							if (sceneindex <= 0) 
 							{//TODO:Create a system which will allow you to go backwards through the scenes
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 								//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
@@ -225,6 +225,7 @@ public class PageManager : Singleton<PageManager>
 									}
 								}
 						}
+						Debug.Log (sceneindex);
 					}
 					CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);				
 				}				
