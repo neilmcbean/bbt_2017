@@ -10,6 +10,7 @@ public class StoryManager : MonoBehaviour {
 	public string NextScene;
 	public string LastScene;
 	public bool isLastscene;
+	public bool isFirstscene;
 	public GameObject PageManager;
 
 	// Use this for initialization

@@ -184,7 +184,7 @@ public class PageManager : Singleton<PageManager>
 									transform.hasChanged = false;
 										foreach (GameObject Child in Characters) 
 										{//Play the next animation on all the characters
-									if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null  || Child.GetComponent<Image> () != null )) 
+										if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null  || Child.GetComponent<Image> () != null ) 
 											{
 												Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
 											}
@@ -197,12 +197,20 @@ public class PageManager : Singleton<PageManager>
 							sceneindex--;
 							if (sceneindex <= 0) 
 							{//TODO:Create a system which will allow you to go backwards through the scenes
+
+								if (StoryManager.GetComponent<StoryManager> ().isFirstscene == true) {
+
+									GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+									Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
+								} else {
+									isGoingBack = true;
+									ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager> ().LastScene);
+								}
 								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 								//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
 								//SceneManager.UnloadScene (EnvironmentTracker);
 								//isForward = false;
-								isGoingBack = true;
-								ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager> ().LastScene);
+
 
 								//PreviousSentence (isForward);
 								//sceneindex = LastPageLoader;
@@ -217,15 +225,15 @@ public class PageManager : Singleton<PageManager>
 								//Play the current animation
 									foreach (GameObject Child in Characters) 
 									{
-									if (Child.GetComponent<Animator> () != null || (Child.GetComponent<Camera> () != null )) 
+										if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null  || Child.GetComponent<Image> () != null )  
 										{
 										//Debug.Log("Launching Previous Anim");
-											Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
+										Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
 										}
 									}
 								}
 						}
-						Debug.Log (sceneindex);
+						//Debug.Log (sceneindex);
 					}
 					CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);				
 				}				

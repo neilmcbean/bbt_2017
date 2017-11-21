@@ -231,7 +231,10 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: goback
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102806185829221458}
   m_Solo: 0
@@ -1552,7 +1555,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC18_02
+  m_Name: Lilly_SC18_02
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1577,7 +1580,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC18_04
+  m_Name: Lilly_SC18_04
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1652,7 +1655,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC19_03
+  m_Name: Lilly_SC19_03
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1801,7 +1804,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC18_03
+  m_Name: Lilly_SC18_03
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1875,7 +1878,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC19_02
+  m_Name: Lilly_SC19_02
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -2075,7 +2078,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Thomas_SC19_01
+  m_Name: Lilly_SC19_01
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

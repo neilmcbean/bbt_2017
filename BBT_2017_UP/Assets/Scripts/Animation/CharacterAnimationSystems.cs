@@ -185,7 +185,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 	public void ResetToTheEnd ()
 	{
 		AnimationDelayTracker = AnimationBool.Length - 1;
-		Debug.Log(gameObject.name+"turn on");	
+		//Debug.Log(gameObject.name+"turn on");	
 		if (AnimationBool [AnimationDelayTracker] == true) 
 		{		
 			
@@ -228,7 +228,14 @@ public class CharacterAnimationSystems : MonoBehaviour
 				if (GetComponent<Image> () != null) {
 					GetComponent<Image> ().enabled = true;
 				} else {
-
+					if(GetComponent<Animator>() != null)
+					{
+						GetComponent<Animator> ().enabled = true;
+						Debug.Log (gameObject.name);
+						GetComponent<Animator>().SetTrigger(LastAnimation);
+						GetComponent<Animator> ().Play (LastAnimation);
+						GetComponent<Animator> ().enabled = false;
+					}
 					GetComponent<Animator> ().enabled = false;
 					foreach (Transform child in transform) {
 						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
