@@ -289,6 +289,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -147.33
       objectReference: {fileID: 0}
+    - target: {fileID: 100274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
   m_IsPrefabParent: 0
@@ -339,6 +343,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7b21a5a48a1b44f2d9473e9db5f0dce7, type: 2}
+    - target: {fileID: 9500000, guid: db0f17d1549454198a2ae514c50c0276, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db0f17d1549454198a2ae514c50c0276, type: 3}
   m_IsPrefabParent: 0
@@ -407,6 +415,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 98bdcc7fbb6d0430bb43b5538466f7e9, type: 2}
+    - target: {fileID: 9500000, guid: 19e445949b3f04a91a6af8c02eb6ac79, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19e445949b3f04a91a6af8c02eb6ac79, type: 3}
   m_IsPrefabParent: 0

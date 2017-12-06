@@ -59,7 +59,7 @@ public class PageManager : Singleton<PageManager>
 	private int narrativeCounter = 1;
 
 	//Debuging Vars
-	//public GameObject Scenetext;
+	public GameObject Scenetext;
 
 
 
@@ -461,7 +461,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		//Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
+		Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
