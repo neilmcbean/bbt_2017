@@ -33,18 +33,18 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 2
+        preset: 1
       taaSettings:
-        jitterSpread: 0.295
-        sharpen: 3
-        stationaryBlending: 0.95
-        motionBlending: 0.85
+        jitterSpread: 0.678
+        sharpen: 0.991
+        stationaryBlending: 0.341
+        motionBlending: 0.406
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 1
-      radius: 0.3
-      sampleCount: 10
+      intensity: 1.158
+      radius: 0.37
+      sampleCount: 3
       downsampling: 1
       forceForwardCompatibility: 0
       ambientOnly: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       tonemapping:
         tonemapper: 2
