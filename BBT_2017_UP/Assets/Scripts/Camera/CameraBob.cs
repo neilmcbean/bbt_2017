@@ -3,15 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraBob : MonoBehaviour {
-	public float Strength;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	private float timer = 0.0f;
+	float bobbingSpeed = 0.08f;
+	float bobbingAmount = 0.002f;
+	float midpoint = 2.0f;
+
 	void Update () {
-		transform.position = new Vector3(Mathf.PingPong(Time.time/120, Strength), transform.position.y, transform.position.z);
+		float waveslice = 0.0f;
+		float horizontal = 0.01f;
+		float vertical = 0.01f;
+
+		Vector3 cSharpConversion = transform.position; 
+
+		float midpoint = transform.position.y; 
+
+		if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0) {
+			timer = 0.0f;
+		}
+		else {
+			waveslice = Mathf.Sin(timer);
+			timer = timer + bobbingSpeed;
+			if (timer > Mathf.PI * 2) {
+				timer = timer - (Mathf.PI * 2);
+			}
+		}
+		if (waveslice != 0) {
+			float translateChange = waveslice * bobbingAmount;
+			float totalAxes = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+			totalAxes = Mathf.Clamp (totalAxes, 0.0f, 1.0f);
+			translateChange = totalAxes * translateChange;
+			cSharpConversion.y = midpoint + translateChange;
+		}
+		else {
+			cSharpConversion.y = midpoint;
+		}
+
+		transform.localPosition = cSharpConversion;
 	}
 }
