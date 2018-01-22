@@ -602,6 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!114 &99211391
 MonoBehaviour:
@@ -1074,6 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 00010101010101
+  CamPos: []
   LastAnimation: sasq_s21_03
 --- !u!1 &172445113
 GameObject:
@@ -1766,6 +1768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &360079948 stripped
 Transform:
@@ -2399,6 +2402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01010101010101
+  CamPos: []
   LastAnimation: sasq_s21_03
 --- !u!114 &579357570
 MonoBehaviour:
@@ -2878,7 +2882,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000000010101010101010101000000
+  CamPos: []
   LastAnimation: 
+--- !u!114 &711895422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711895420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &726618642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,6 +3858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01010101010101
+  CamPos: []
   LastAnimation: sasq_s21_03
 --- !u!1 &984035616 stripped
 GameObject:
@@ -3859,7 +3877,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101000000000000000000000000000000000000000000000000
+  CamPos: []
   LastAnimation: 
+--- !u!114 &984035618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984035616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &984925522 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
@@ -3877,7 +3908,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000101000000000000000000000000
+  CamPos: []
   LastAnimation: 
+--- !u!114 &984925524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984925522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &994542573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,6 +4255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &1045895941 stripped
 Transform:
@@ -4387,7 +4432,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101000000000000000000000000000000000000
+  CamPos: []
   LastAnimation: 
+--- !u!114 &1126675007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126675005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &1130016973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,6 +5053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &1295155592 stripped
 Transform:
@@ -6085,7 +6144,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01010101010101
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -0.0866641, y: 0.1469465, z: 1.42}
+  - {x: 0, y: 0.1469465, z: 1.06}
+  - {x: 0, y: 0.09, z: 1.06}
+  - {x: 0.09, y: 0.09, z: 1.06}
+  - {x: 0.02, y: 0.19, z: 0.81}
   LastAnimation: 
+--- !u!114 &1545945954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545945952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &1546748918
 GameObject:
   m_ObjectHideFlags: 0
@@ -8253,7 +8332,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000010101000000000000000000000000000000
+  CamPos: []
   LastAnimation: 
+--- !u!114 &2019894925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019894923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!4 &2026469000 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}

@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: Thomas_SC07_06
 --- !u!95 &91802204 stripped
 Animator:
@@ -3004,7 +3005,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010001010101
+  CamPos:
+  - {x: -0.086664, y: 0.2278778, z: 2.496322}
+  - {x: 0, y: 0, z: 0}
+  - {x: -0.086664, y: 0.2278778, z: 2.496322}
+  - {x: -0.01, y: 0.13, z: 1.9}
+  - {x: -0.01, y: 0.13, z: 1.36}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: S03_06
+--- !u!114 &925048669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925048667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &929275428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5824,7 +5844,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000100000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: S03_06
+--- !u!114 &2062097860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062097858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &2128451341
 GameObject:
   m_ObjectHideFlags: 0

@@ -485,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!114 &99211391
 MonoBehaviour:
@@ -1076,6 +1077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000101010101010101010101000000
+  CamPos: []
   LastAnimation: sasMoma_End
 --- !u!114 &152081247
 MonoBehaviour:
@@ -1956,6 +1958,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.0010002
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
   m_IsPrefabParent: 0
@@ -2581,6 +2591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &360079948 stripped
 Transform:
@@ -4699,6 +4710,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a4a7d6d5130204c2a8f08895935ca21e, type: 2}
+    - target: {fileID: 9500000, guid: c36f0b8d4b53b4154bbf2ad64ed7eefb, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c36f0b8d4b53b4154bbf2ad64ed7eefb, type: 3}
   m_IsPrefabParent: 0
@@ -4719,6 +4734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: Thomas_SC19_03
 --- !u!114 &579357570
 MonoBehaviour:
@@ -5312,6 +5328,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10.437
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a5e6514f3881ad4282430c1a1315e60, type: 3}
   m_IsPrefabParent: 0
@@ -5691,7 +5715,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000000010101010101010101000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 2.79, y: 0.42, z: 0.62}
+  - {x: 1.1, y: 0.37, z: 0.75}
+  - {x: 2.3, y: 0.37, z: 0.75}
+  - {x: 2.95, y: 0.37, z: 0.75}
+  - {x: 2.69, y: 0.27, z: 0.48}
+  - {x: 2.89, y: 0.27, z: 0.83}
+  - {x: 3.06, y: 0.27, z: 0.81}
+  - {x: 2.56, y: 0.27, z: 0.59}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &711895422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711895420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1001 &747257237
 Prefab:
   m_ObjectHideFlags: 0
@@ -6788,6 +6852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: Lilly_SC19_03
 --- !u!1001 &972645976
 Prefab:
@@ -6868,7 +6933,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101000000000000000000000000000000000000000000000000
+  CamPos:
+  - {x: 0.24, y: 0.2278778, z: 1.92}
+  - {x: 0.24, y: 0.2278778, z: 2.92}
+  - {x: -0.086664, y: 0.16, z: 2.496322}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &984035618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984035616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &984925522 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
@@ -6886,7 +6991,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000001000000000000000000000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &984925524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984925522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1001 &986322177
 Prefab:
   m_ObjectHideFlags: 0
@@ -7309,6 +7454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &1045895941 stripped
 Transform:
@@ -7828,7 +7974,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101000000000000000000000000000000000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 2.904522, y: 0.19, z: -0.2661312}
+  - {x: 2.904522, y: 0.19, z: -0.17}
+  - {x: 2.36, y: 0.14, z: 0.07}
+  - {x: 2.09, y: 0.1, z: 0.22}
+  - {x: 1.18, y: 0.1, z: 0.31}
+  - {x: 2.15, y: 0.1, z: 0.24}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &1126675007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126675005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &1132036145
 GameObject:
   m_ObjectHideFlags: 0
@@ -8966,7 +9152,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000100000000000000000000000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &1294171149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294171147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1001 &1295155586
 Prefab:
   m_ObjectHideFlags: 0
@@ -9109,6 +9335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!4 &1295155592 stripped
 Transform:
@@ -9701,6 +9928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101010101010101010101000000
+  CamPos: []
   LastAnimation: sasbaby_end
 --- !u!114 &1382133148
 MonoBehaviour:
@@ -10994,7 +11222,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000000000000000000000000010101
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.13, y: 0.1469465, z: 2.496322}
+  - {x: 0.13, y: 0.06, z: 2.14}
   LastAnimation: 
+--- !u!114 &1545945954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545945952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &1551108268
 GameObject:
   m_ObjectHideFlags: 0
@@ -11686,8 +11954,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400656, guid: 1eb86a2653d8847e7a5da63ba9377e36, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622157870}
-  m_LocalRotation: {x: 0, y: 0.49894154, z: 0, w: 0.8666356}
-  m_LocalPosition: {x: -56.5, y: 12.4, z: -5.4}
+  m_LocalRotation: {x: -0, y: 0.68535286, z: -0, w: 0.7282112}
+  m_LocalPosition: {x: -46.2, y: 12.4, z: 1.7}
   m_LocalScale: {x: 1.59908, y: 1.59908, z: 1.59908}
   m_Children:
   - {fileID: 655578686}
@@ -11699,7 +11967,7 @@ Transform:
   - {fileID: 1079413935}
   m_Father: {fileID: 0}
   m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 59.86, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 86.527, z: 0}
 --- !u!1001 &1625703367
 Prefab:
   m_ObjectHideFlags: 0
@@ -14567,7 +14835,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000010101010000000000000000000000000000
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -0.7, y: 0.2278778, z: 2.77}
+  - {x: -0.77, y: 0.13, z: 2.46}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &2019894925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019894923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!4 &2026469000 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}

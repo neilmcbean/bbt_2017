@@ -151,6 +151,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3c617275249a94b64b25af24ba51c6c1, type: 2}
+    - target: {fileID: 9500000, guid: 84f753d9e27e64dd483e338cf5066f6a, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84f753d9e27e64dd483e338cf5066f6a, type: 3}
   m_IsPrefabParent: 0
@@ -170,7 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
-  AnimationBool: 000000000001
+  AnimationBool: 000000000101
+  CamPos: []
   LastAnimation: sasend
 --- !u!1001 &190706687
 Prefab:
@@ -378,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: sasq_s28_06
 --- !u!114 &579357570
 MonoBehaviour:
@@ -427,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000000010101010101010101000000
+  CamPos: []
   LastAnimation: 
 --- !u!1001 &747257237
 Prefab:
@@ -551,6 +558,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f04f1ef241fc34df1bf453d092135d15, type: 2}
+    - target: {fileID: 9500000, guid: 099ad30b7d8fa4e93ae2aecc18a68e26, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 099ad30b7d8fa4e93ae2aecc18a68e26, type: 3}
   m_IsPrefabParent: 0
@@ -570,7 +581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
-  AnimationBool: 000000000001
+  AnimationBool: 000000000101
+  CamPos: []
   LastAnimation: sasmomend
 --- !u!1 &984035616 stripped
 GameObject:
@@ -589,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101000000000000000000000000000000000000000000000000
+  CamPos: []
   LastAnimation: 
 --- !u!1 &984925522 stripped
 GameObject:
@@ -607,6 +620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000000000000101000000000000000000000000
+  CamPos: []
   LastAnimation: 
 --- !u!1 &1126675005 stripped
 GameObject:
@@ -625,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000010101010101000000000000000000000000000000000000
+  CamPos: []
   LastAnimation: 
 --- !u!1001 &1139374792
 Prefab:
@@ -969,6 +984,46 @@ Prefab:
       propertyPath: field of view
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.048562564
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.84558856
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.05299946
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5289733
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 8.106
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -116.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.508
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8da4bbc8387f4ee781fac5a5c539e79, type: 3}
   m_IsPrefabParent: 0
@@ -989,6 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01010101010101
+  CamPos: []
   LastAnimation: 
 --- !u!1 &1545945954 stripped
 GameObject:
@@ -1007,6 +1063,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010100
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.93, y: 0.41, z: 0.52}
+  - {x: 0.93, y: 0.41, z: 0.52}
+  - {x: 0.75, y: 0.35, z: 0.37}
+  - {x: 0.63, y: 0.35, z: 0.22}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
 --- !u!1 &1545945956 stripped
 GameObject:
@@ -1025,6 +1088,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000001
+  CamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   LastAnimation: 
 --- !u!1 &1796277163
 GameObject:
@@ -1182,6 +1252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: sasq_s28_06
 --- !u!1 &2019894923 stripped
 GameObject:
@@ -1200,4 +1271,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000000010101000000000000000000000000000000
+  CamPos: []
   LastAnimation: 

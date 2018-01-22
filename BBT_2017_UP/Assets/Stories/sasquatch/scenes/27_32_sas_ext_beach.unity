@@ -2991,7 +2991,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos:
+  - {x: -0.086664, y: 0.2278778, z: 2.496322}
+  - {x: -0.086664, y: 0.2278778, z: 1.86}
+  - {x: -0.086664, y: 0.08, z: 1.86}
+  - {x: -0.086664, y: 0.08, z: 1.56}
+  - {x: -0.16, y: 0.08, z: 0.64}
+  - {x: -0.22, y: 0.08, z: 0.64}
   LastAnimation: 
+--- !u!114 &918611501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918611499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 66f4df40c73db4a4eb862ac415131fc9, type: 2}
 --- !u!1 &925734868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,6 +4848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: Crab_08_06
 --- !u!95 &1346806961 stripped
 Animator:
@@ -5271,6 +5291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: Lilly_08_06
 --- !u!1 &1435697779
 GameObject:
@@ -6769,6 +6790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101
+  CamPos: []
   LastAnimation: Thomas_08_06
 --- !u!1 &1953206515
 GameObject:
