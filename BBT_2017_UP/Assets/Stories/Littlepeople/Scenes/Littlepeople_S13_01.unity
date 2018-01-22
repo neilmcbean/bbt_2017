@@ -207,6 +207,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.4733334
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f64b9dcaf690469dbd856e6d54557a9, type: 2}
+    - target: {fileID: 2300002, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68331ca06634a4b659f77ba3efc177bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
   m_IsPrefabParent: 0
@@ -285,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01
+  CamPos: []
   LastAnimation: Kookum_S05_02_Kookum
 --- !u!4 &420785892 stripped
 Transform:
@@ -455,6 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01
+  CamPos: []
   LastAnimation: Kookum_S05_02_Kookum
 --- !u!4 &688724567 stripped
 Transform:
@@ -613,6 +623,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.27861813
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f64b9dcaf690469dbd856e6d54557a9, type: 2}
+    - target: {fileID: 2300002, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68331ca06634a4b659f77ba3efc177bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
   m_IsPrefabParent: 0
@@ -814,6 +832,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.27861813
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f64b9dcaf690469dbd856e6d54557a9, type: 2}
+    - target: {fileID: 2300002, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68331ca06634a4b659f77ba3efc177bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
   m_IsPrefabParent: 0
@@ -1119,6 +1145,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.27861813
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f64b9dcaf690469dbd856e6d54557a9, type: 2}
+    - target: {fileID: 2300002, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68331ca06634a4b659f77ba3efc177bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
   m_IsPrefabParent: 0
@@ -1244,6 +1278,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5492966
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f64b9dcaf690469dbd856e6d54557a9, type: 2}
+    - target: {fileID: 2300002, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68331ca06634a4b659f77ba3efc177bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
   m_IsPrefabParent: 0
@@ -1314,4 +1356,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 01
+  CamPos: []
   LastAnimation: Kookum_S05_02_Kookum

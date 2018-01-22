@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101010101
+  CamPos: []
   LastAnimation: Lilly_S08_01_Lilly
 --- !u!1001 &667523288
 Prefab:
@@ -283,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000001010000000000
+  CamPos: []
   LastAnimation: Kookum_S05_02_Kookum
 --- !u!1001 &811549793
 Prefab:
@@ -375,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010101000000
+  CamPos: []
   LastAnimation: Thomas_S07_01_Thomas
 --- !u!1001 &865674422
 Prefab:
@@ -426,6 +429,10 @@ Prefab:
     - target: {fileID: 100274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400182, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
@@ -581,6 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 000000000000000001010101010101
+  CamPos: []
   LastAnimation: Lilly_S02_05_Lilly
 --- !u!114 &933090637
 MonoBehaviour:
@@ -595,6 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010100000000000000
+  CamPos: []
   LastAnimation: Lilly_S02_05_Lilly
 --- !u!1001 &1385258058
 Prefab:
@@ -675,6 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   AnimationBool: 010101010101010101010000000000
+  CamPos: []
   LastAnimation: Kookum_S05_02_Kookum
 --- !u!1 &1764124382
 GameObject:
