@@ -7,6 +7,7 @@ public class MenuChapterManager : MonoBehaviour {
 
     private bool IsMenuSetUp = false;
 	public string[] ButtonDescription;
+
     private StoryObject currentStory
     {
         get
@@ -33,6 +34,14 @@ public class MenuChapterManager : MonoBehaviour {
 
         public void ChapterINI()
     {
+		Debug.Log (DataManager.currentStoryName);
+		for (int i = 0; i < transform.GetChildCount(); i++) {
+			if(transform.GetChild(i).name == ("BookMarks_"+DataManager.currentStoryName))
+			{
+			transform.GetChild (i).gameObject.SetActive (true);
+			}
+			//Debug.Log (transform.GetChild(i).name);
+		}
       
        /* if (IsMenuSetUp == false)
         {//Set up the Chapter reference in the story

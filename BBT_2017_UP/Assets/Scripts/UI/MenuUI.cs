@@ -46,7 +46,7 @@ public class MenuUI : MonoBehaviour
     void OnStoryDropdownChanged(int i)
     {
         DataManager.currentStoryName = storyDropdown.options[i].text.ToLower();
-		//Debug.Log(DataManager.currentStoryName);
+		Debug.Log(DataManager.currentStoryName);
     }
 
     public void StartGame()
