@@ -40,7 +40,9 @@ public class PageManager : Singleton<PageManager>
 
 	//Narrative Manager vars
 	public GameObject StoryManager;
-	private string EnvironmentTracker ;
+	private string EnvironmentTracker;
+	public GameObject TextBody;
+	private Vector3 OG_PostitionTextBody;
 
 	//Camera Variables
 	private Vector3 cameraPreviousPosition;
@@ -52,6 +54,9 @@ public class PageManager : Singleton<PageManager>
 
 	//Mouse Tracking Variabels
 	private  Vector2 mouseStartPosition;
+	private  float mouseDistance;
+	private  float mouseoffset;
+	private  bool isMouseMoving;
 	private  Vector2 mouseEndPosition;
 	private GameObject MountainTest;
 	private GameObject CharacterCoin;
@@ -68,8 +73,6 @@ public class PageManager : Singleton<PageManager>
 		base.Awake ();
 		sentenceContainer = FindObjectOfType<SentenceRowContainer> ();
 		audioSource = GetComponent<AudioSource> ();
-
-
 	}
 
     
@@ -77,9 +80,12 @@ public class PageManager : Singleton<PageManager>
 	IEnumerator Start ()
 	{
 
-		//Debug.Log(DataManager.currentStoryName);
+		Debug.Log(DataManager.currentStoryName);
 		AssetAssigner (DataManager.currentStoryName+"_start",11);
-		DataManager.LoadStory (DataManager.currentStoryName);
+		DataManager.LoadStory(DataManager.currentStoryName);
+
+		OG_PostitionTextBody = TextBody.gameObject.transform.position;
+		/*
 		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
 		foreach (TweenEvent evt in tweenEvents) {
 			Register (evt);
@@ -90,7 +96,7 @@ public class PageManager : Singleton<PageManager>
 			evt.enabled = true;
 		}
 		//NextSentence (true);
-
+		*/
 		yield return null;
 	}
 
@@ -110,12 +116,8 @@ public class PageManager : Singleton<PageManager>
 				cameraTransformTracker = obj.transform;
 			}
 		}
-
-		//cameraTransformTracker = GameObject.FindGameObjectWithTag ("MainCamera").transform;
-
-			cameraPreviousPosition = cameraTransformTracker.position;
-
-			transform.hasChanged = false;
+		cameraPreviousPosition = cameraTransformTracker.position;
+		transform.hasChanged = false;
 		LastPageLoader = lastPage;
 		if (isGoingBack == true) {
 			sceneindex = LastPageLoader;
@@ -146,98 +148,33 @@ public class PageManager : Singleton<PageManager>
 	{
 		if (cameraTransformTracker != null) {
 			
-			if (cameraTransformTracker.hasChanged == false) {//If the camera has completed moving in the specific page.          
-				if (Input.GetMouseButtonDown (0)) {
-					mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
+			if (cameraTransformTracker.hasChanged == false) {}//If the camera has completed moving in the specific page.          
+				if (Input.GetMouseButtonDown (0)) {//If the player is holding down the mouse. 
+					isMouseMoving = true;
+					mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+
+					mouseoffset = Vector2.Distance (
+						new Vector2 (TextBody.gameObject.transform.position.x, TextBody.gameObject.transform.position.y),
+						mouseStartPosition);
+
 					//Debug.Log (mouseStartPosition);
 				} else if (Input.GetMouseButtonUp (0)) {
-				mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
+					isMouseMoving = false;	
+					SetChanger ();
+				} 
 
-					if (Vector2.Distance (mouseStartPosition, mouseEndPosition) > 300) {//If the drag distance is longer thank an arbitrary amount 
-						if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) 
-						{//If the player swipes to the next page
-							sceneindex++;
-							//Debug.Log (sceneindex);
-							//sceneindex
-							if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) 
-							{
-								
-								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-								SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
-								//EnvironmentTracker
-									if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {
+				if (isMouseMoving == true) {
 
-										GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-										Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
-									} else {
-										SceneManager.UnloadScene (EnvironmentTracker);
-									}
-								isGoingBack = false;
-								sceneindex = 0;
-							} 
-								else 
-								{
-								//Debug.Log (sceneindex);
-									NextSentence (isForward);
-									isGoingBack = false;
-									isForward = true;
-									transform.hasChanged = false;
-										foreach (GameObject Child in Characters) 
-										{//Play the next animation on all the characters
-										if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null  || Child.GetComponent<Image> () != null ) 
-											{
-												Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
-											}
-										}
-								}
-	
-						} 
-						else 
-						{
-							sceneindex--;
-							if (sceneindex <= 0) 
-							{//TODO:Create a system which will allow you to go backwards through the scenes
+					mouseDistance = Vector2.Distance (
+						new Vector2 (TextBody.gameObject.transform.position.x, TextBody.gameObject.transform.position.y),
+						new Vector2 (Input.mousePosition.x, Input.mousePosition.y));
 
-								if (StoryManager.GetComponent<StoryManager> ().isFirstscene == true) {
-
-									GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-									Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
-								} else {
-									isGoingBack = true;
-									ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager> ().LastScene);
-								}
-								//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-								//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
-								//SceneManager.UnloadScene (EnvironmentTracker);
-								//isForward = false;
-
-
-								//PreviousSentence (isForward);
-								//sceneindex = LastPageLoader;
-								//SetToLastPosition ();
-								//Debug.Log(sceneindex);
-							}
-								else 
-								{
-								PreviousSentence (isForward);
-								isForward = false;
-								transform.hasChanged = false;
-								//Play the current animation
-									foreach (GameObject Child in Characters) 
-									{
-										if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null  || Child.GetComponent<Image> () != null )  
-										{
-										//Debug.Log("Launching Previous Anim");
-										Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
-										}
-									}
-								}
-						}
-						//Debug.Log (sceneindex);
-					}
-					CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);				
-				}				
-			}
+					TextBody.gameObject.transform.position = new Vector3 (
+						TextBody.gameObject.transform.position.x+(mouseDistance-mouseoffset),
+						TextBody.gameObject.transform.position.y,
+						TextBody.gameObject.transform.position.z);
+				}
+			
 
 
 			if (cameraTransformTracker != null) {
@@ -247,6 +184,85 @@ public class PageManager : Singleton<PageManager>
 				}			
 			}
 		}
+	}
+
+
+	private void SetChanger ()
+	{
+		mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
+		TextBody.gameObject.transform.position = OG_PostitionTextBody;
+
+		Debug.Log (mouseStartPosition.x - mouseEndPosition.x);
+
+		if((mouseStartPosition.x - mouseEndPosition.x)>300 ||(mouseStartPosition.x - mouseEndPosition.x)<-300){
+			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
+				sceneindex++;
+				//Debug.Log (sceneindex);
+				//sceneindex
+				if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) {
+
+					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
+					SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
+					//EnvironmentTracker
+					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {
+						GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
+					} else {
+						SceneManager.UnloadScene (EnvironmentTracker);
+					}
+					isGoingBack = false;
+					sceneindex = 0;
+				} else {
+					//Debug.Log (sceneindex);
+					NextSentence (isForward);
+					isGoingBack = false;
+					isForward = true;
+					transform.hasChanged = false;
+					foreach (GameObject Child in Characters) {//Play the next animation on all the characters
+						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
+							Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
+						}
+					}
+				}
+
+			} else {
+				sceneindex--;
+				if (sceneindex <= 0) {//TODO:Create a system which will allow you to go backwards through the scenes
+
+					if (StoryManager.GetComponent<StoryManager> ().isFirstscene == true) {
+
+						GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
+					} else {
+						isGoingBack = true;
+						ChapterSkipToTheEnd (StoryManager.GetComponent<StoryManager> ().LastScene);
+					}
+					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
+					//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
+					//SceneManager.UnloadScene (EnvironmentTracker);
+					//isForward = false;
+
+
+					//PreviousSentence (isForward);
+					//sceneindex = LastPageLoader;
+					//SetToLastPosition ();
+					//Debug.Log(sceneindex);
+				} else {
+					PreviousSentence (isForward);
+					isForward = false;
+					transform.hasChanged = false;
+					//Play the current animation
+					foreach (GameObject Child in Characters) {
+						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
+							//Debug.Log("Launching Previous Anim");
+							Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
+						}
+					}
+				}
+			}
+			//Debug.Log (sceneindex);
+		}
+		CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);	
 	}
 
 
@@ -431,6 +447,7 @@ public class PageManager : Singleton<PageManager>
 
 	void NextSentence (bool playFromLast)
 	{//Move the narrative forward
+		Debug.Log("working");
 		StopAllCoroutines ();
 		sentenceContainer.Clear ();
 		if (pageIndex >= currentStory.pageObjects.Count) {//when the player reaches the end of the narrative
@@ -476,7 +493,7 @@ public class PageManager : Singleton<PageManager>
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
-
+		Debug.Log ("sequence running");
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;
 			audioSource.Play ();

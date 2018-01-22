@@ -28,13 +28,9 @@ public class DataManager
 
     public static StoryObject LoadStory(string storyName)
     {        
-		
-		string diretorySpecification = "/s01_01";
-        myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
-                Application.streamingAssetsPath, 
-                storyName,
-			currentLanguage.ToLower()
-            ));
+		SceneRefCounter = 0;
+ 		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
+        Application.streamingAssetsPath,storyName,currentLanguage.ToLower()));
 
 		//Debug.Log (myLoadedAssetBundle);
 			
@@ -45,16 +41,16 @@ public class DataManager
         }
 
         StoryObject story = new StoryObject();
-		       
+		//files.Clear();
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
-        
+		//SceneRef.Clear();
 		SceneRef = new string[files.Length];
 
 		foreach (string file in files)
         {
             AddFileToStory(story, file); 
-			//Debug.Log (story+" "+ file);
+			//Debug.Log (story+"//"+ file);
         }
 		/*
 		for (int i = NarrativeCounter; i < NarrativeCounter+NarrativeCounterEnd; i++) {//Multiply this by two
@@ -66,11 +62,7 @@ public class DataManager
         currentStory = story;
         return currentStory;
     }
-
-	public void loadStory()
-	{
-
-	}
+		
 
 
     void OnDestroy()
@@ -147,10 +139,7 @@ public class DataManager
 
                 if (txt != null)
                 {
-					
-
 					SceneRef[SceneRefCounter] = audioName;
-
 					//Debug.Log (SceneRef[SceneRefCounter]);
 					SceneRefCounter ++;
 					//Debug.Log (txt.text);
