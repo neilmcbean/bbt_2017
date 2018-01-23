@@ -5,14 +5,14 @@ using UnityEngine;
 public class CameraBob : MonoBehaviour {
 
 	private float timer = 0.0f;
-	float bobbingSpeed = 0.08f;
+	float bobbingSpeed = 0.02f;
 	float bobbingAmount = 0.002f;
 	float midpoint = 2.0f;
 
 	void Update () {
 		float waveslice = 0.0f;
-		float horizontal = 0.01f;
-		float vertical = 0.01f;
+		float horizontal = 0.03f;
+		float vertical = 0.03f;
 
 		Vector3 cSharpConversion = transform.position; 
 
@@ -20,6 +20,7 @@ public class CameraBob : MonoBehaviour {
 
 		if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0) {
 			timer = 0.0f;
+
 		}
 		else {
 			waveslice = Mathf.Sin(timer);
