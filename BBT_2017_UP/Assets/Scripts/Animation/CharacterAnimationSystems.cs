@@ -8,7 +8,9 @@ public class CharacterAnimationSystems : MonoBehaviour
 
 	public int AnimationDelayTracker = 0;
 	//public int AnimationDelay;
+	public int InstancesToActivate;
 	public bool[] AnimationBool;
+	public Vector3[] CamPos;
 	public string LastAnimation;
 	// Use this for initialization
 
@@ -16,10 +18,9 @@ public class CharacterAnimationSystems : MonoBehaviour
 		if (AnimationBool [AnimationDelayTracker] == true) 
 		{			
 			if (GetComponent<Camera> () != null) 
-			{//if the thing to check has a camera.
-				//Debug.Log(gameObject.name+"turn on");
-				//gameObject.SetActive (true);
+			{//if I have a camera.
 				gameObject.GetComponent<Camera>().enabled = true;
+
 			} 
 			else 
 			{
@@ -74,10 +75,18 @@ public class CharacterAnimationSystems : MonoBehaviour
 
 				if (GetComponent<Camera> () != null) {//if the thing to check has a camera.
 					//gameObject.SetActive (true);
+					Debug.Log (AnimationDelayTracker +"///"+InstancesToActivate);
+					if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
+						GetComponent<CameraShake> ().activate ();
+						Debug.Log ("camera shakes");
+					}
+
 					gameObject.GetComponent<Camera> ().enabled = true;
 					if (GetComponent<Animator> () != null) {
 						GetComponent<Animator> ().SetTrigger ("advance");
 					}
+					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <CamPos.Length-1)
+					{gameObject.transform.position = CamPos [AnimationDelayTracker];}
 				} 
 
 				else 
@@ -132,6 +141,16 @@ public class CharacterAnimationSystems : MonoBehaviour
 
 				if (GetComponent<Camera> () != null) 
 				{//if the thing to check has a camera.
+
+
+					if (GetComponent<Camera> () != null) {//if the thing to check has a camera.
+						//gameObject.SetActive (true);
+						Debug.Log (AnimationDelayTracker +"///"+InstancesToActivate);
+						if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
+							GetComponent<CameraShake> ().activate ();
+							Debug.Log ("camera shakes");
+						}
+
 					//gameObject.SetActive (true);
 					gameObject.GetComponent<Camera>().enabled = true;
 					if(GetComponent<Animator>() != null)
@@ -191,7 +210,15 @@ public class CharacterAnimationSystems : MonoBehaviour
 			
 			if (GetComponent<Camera> () != null) 
 			{//if the thing to check has a camera.
-				
+
+				if (GetComponent<Camera> () != null) {//if the thing to check has a camera.
+					//gameObject.SetActive (true);
+					Debug.Log (AnimationDelayTracker +"///"+InstancesToActivate);
+					if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
+						GetComponent<CameraShake> ().activate ();
+						Debug.Log ("camera shakes");
+					}
+
 				//gameObject.SetActive (true);
 				gameObject.GetComponent<Camera>().enabled = true;
 				if(GetComponent<Animator>() != null)
