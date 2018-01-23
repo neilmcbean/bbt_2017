@@ -80,7 +80,7 @@ public class PageManager : Singleton<PageManager>
 	IEnumerator Start ()
 	{
 
-		Debug.Log(DataManager.currentStoryName);
+		//Debug.Log(DataManager.currentStoryName);
 		AssetAssigner (DataManager.currentStoryName+"_start",11);
 		DataManager.LoadStory(DataManager.currentStoryName);
 
@@ -192,7 +192,7 @@ public class PageManager : Singleton<PageManager>
 		mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
 		TextBody.gameObject.transform.position = OG_PostitionTextBody;
 
-		Debug.Log (mouseStartPosition.x - mouseEndPosition.x);
+		//Debug.Log (mouseStartPosition.x - mouseEndPosition.x);
 
 		if((mouseStartPosition.x - mouseEndPosition.x)>300 ||(mouseStartPosition.x - mouseEndPosition.x)<-300){
 			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
@@ -447,7 +447,7 @@ public class PageManager : Singleton<PageManager>
 
 	void NextSentence (bool playFromLast)
 	{//Move the narrative forward
-		Debug.Log("working");
+		//Debug.Log("working");
 		StopAllCoroutines ();
 		sentenceContainer.Clear ();
 		if (pageIndex >= currentStory.pageObjects.Count) {//when the player reaches the end of the narrative
@@ -493,7 +493,7 @@ public class PageManager : Singleton<PageManager>
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
-		Debug.Log ("sequence running");
+		//Debug.Log ("sequence running");
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;
 			audioSource.Play ();
