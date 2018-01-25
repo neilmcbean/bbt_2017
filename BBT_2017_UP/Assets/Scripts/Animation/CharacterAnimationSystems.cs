@@ -80,7 +80,6 @@ public class CharacterAnimationSystems : MonoBehaviour
 						GetComponent<CameraShake> ().activate ();
 						Debug.Log ("camera shakes");
 					}
-
 					gameObject.GetComponent<Camera> ().enabled = true;
 					if (GetComponent<Animator> () != null) {
 						GetComponent<Animator> ().SetTrigger ("advance");
@@ -143,13 +142,14 @@ public class CharacterAnimationSystems : MonoBehaviour
 				{//if the thing to check has a camera.
 
 
-					if (GetComponent<Camera> () != null) {//if the thing to check has a camera.
-						//gameObject.SetActive (true);
-						Debug.Log (AnimationDelayTracker +"///"+InstancesToActivate);
-						if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
-							GetComponent<CameraShake> ().activate ();
-							Debug.Log ("camera shakes");
-						}
+					if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
+						GetComponent<CameraShake> ().activate ();
+						//Debug.Log ("camera shakes");
+					}
+					/*for (int i = 0; i < InstancesToActivate.Length-1; i++) {
+
+
+					}*/
 
 					//gameObject.SetActive (true);
 					gameObject.GetComponent<Camera>().enabled = true;
@@ -210,15 +210,10 @@ public class CharacterAnimationSystems : MonoBehaviour
 			
 			if (GetComponent<Camera> () != null) 
 			{//if the thing to check has a camera.
-
-				if (GetComponent<Camera> () != null) {//if the thing to check has a camera.
-					//gameObject.SetActive (true);
-					Debug.Log (AnimationDelayTracker +"///"+InstancesToActivate);
-					if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
-						GetComponent<CameraShake> ().activate ();
-						Debug.Log ("camera shakes");
-					}
-
+				if (GetComponent<CameraShake> () != null && AnimationDelayTracker == InstancesToActivate) {
+					GetComponent<CameraShake> ().activate ();
+					//Debug.Log ("camera shakes");
+				}
 				//gameObject.SetActive (true);
 				gameObject.GetComponent<Camera>().enabled = true;
 				if(GetComponent<Animator>() != null)
