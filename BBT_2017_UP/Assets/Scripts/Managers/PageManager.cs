@@ -63,6 +63,9 @@ public class PageManager : Singleton<PageManager>
 	private string Speaker;
 	private int narrativeCounter = 1;
 
+	//UI Assets
+	public GameObject UIDots;
+
 	//Debuging Vars
 	public GameObject Scenetext;
 
@@ -200,16 +203,18 @@ public class PageManager : Singleton<PageManager>
 				//Debug.Log (sceneindex);
 				//sceneindex
 				if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) {
-
+					GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
 					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
 					SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
 					//EnvironmentTracker
-					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {
-						GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {				
 						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
 					} else {
 						SceneManager.UnloadScene (EnvironmentTracker);
 					}
+
+
+
 					isGoingBack = false;
 					sceneindex = 0;
 				} else {
@@ -223,6 +228,9 @@ public class PageManager : Singleton<PageManager>
 							Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
 						}
 					}
+					UIDots.GetComponent<DotGenerator> ().updateDots (sceneindex);
+					//updateDots
+					//sceneindex
 				}
 
 			} else {
@@ -258,6 +266,7 @@ public class PageManager : Singleton<PageManager>
 							Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
 						}
 					}
+					UIDots.GetComponent<DotGenerator> ().updateDots (sceneindex);
 				}
 			}
 			//Debug.Log (sceneindex);

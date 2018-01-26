@@ -12,10 +12,20 @@ public class StoryManager : MonoBehaviour {
 	public bool isLastscene;
 	public bool isFirstscene;
 	public GameObject PageManager;
+	private GameObject Canvas;
 
 	// Use this for initialization
 	void Start () {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
+		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+
+		for(int i = 0; i < Canvas.transform.GetChildCount(); i++)
+		{
+			if (Canvas.transform.GetChild (i).name == "UI Dots") {
+				Canvas.transform.GetChild (i).GetComponent<DotGenerator> ().GenrateTheDots (pagesPerScene);
+			}
+			//GameObject Go = this.gameobject.transform.GetChild(i);
+		}
 
 		if (PageManager.GetComponent<PageManager> ().isGoingBack == false) {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
