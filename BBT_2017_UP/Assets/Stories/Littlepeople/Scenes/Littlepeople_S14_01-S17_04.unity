@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 343454706}
   - component: {fileID: 343454707}
   - component: {fileID: 343454704}
+  - component: {fileID: 343454710}
   m_Layer: 0
   m_Name: S17_02_Cam
   m_TagString: Characters
@@ -135,6 +136,7 @@ GameObject:
   - component: {fileID: 343454708}
   - component: {fileID: 343454709}
   - component: {fileID: 343454705}
+  - component: {fileID: 343454711}
   m_Layer: 0
   m_Name: S14_01_Cam
   m_TagString: Characters
@@ -167,8 +169,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -1.141, y: 0.589, z: 1.119}
+  - {x: -1.145, y: 0.449, z: 1.123}
   LastAnimation: Kookum_S05_02_Kookum
 --- !u!114 &343454705
 MonoBehaviour:
@@ -186,14 +188,14 @@ MonoBehaviour:
   AnimationBool: 010101010101010101000000
   CamPos:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -1.284, y: 0.068, z: 1.521}
+  - {x: -1.32, y: 0.101, z: 1.563}
+  - {x: -1.198, y: 0.101, z: 1.667}
+  - {x: -1.09, y: 0.124, z: 1.763}
+  - {x: -1.172, y: 0.089, z: 1.53}
+  - {x: -1.306, y: 0.068, z: 1.686}
+  - {x: -1.55, y: 0.117, z: 1.527}
+  - {x: -1.09, y: 0.093, z: 1.561}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -298,6 +300,28 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &343454710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 343454702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &343454711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 343454703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1416257210
 Prefab:
   m_ObjectHideFlags: 0
@@ -307,31 +331,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.41
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.005
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21940845
+      value: -0.52547354
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6723101
+      value: -0.4731377
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.67207545
+      value: -0.47297257
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.21948506
+      value: 0.525657
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_RootOrder
@@ -343,7 +367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -216.16
+      value: -83.98
       objectReference: {fileID: 0}
     - target: {fileID: 100274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_IsActive

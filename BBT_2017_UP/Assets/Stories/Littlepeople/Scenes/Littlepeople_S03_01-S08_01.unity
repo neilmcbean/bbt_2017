@@ -480,6 +480,8 @@ GameObject:
   - component: {fileID: 933090638}
   - component: {fileID: 933090639}
   - component: {fileID: 933090636}
+  - component: {fileID: 933090642}
+  - component: {fileID: 933090644}
   m_Layer: 0
   m_Name: S05_01_Cam
   m_TagString: Characters
@@ -497,6 +499,7 @@ GameObject:
   - component: {fileID: 933090640}
   - component: {fileID: 933090641}
   - component: {fileID: 933090637}
+  - component: {fileID: 933090643}
   m_Layer: 0
   m_Name: S03_01_Cam
   m_TagString: Characters
@@ -516,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
-  InstancesToActivate: 0
+  InstancesToActivate: 14
   AnimationBool: 000000000000000001010101010101
   CamPos:
   - {x: 0, y: 0, z: 0}
@@ -528,12 +531,12 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.487, y: 0.658, z: 2.411}
+  - {x: -0.664, y: 0.427, z: 1.842}
+  - {x: -0.551, y: 0.427, z: 1.899}
+  - {x: -0.919, y: 0.526, z: 0.924}
+  - {x: -1.047, y: 0.486, z: 0.585}
+  - {x: -1.082, y: 0.414, z: 0.907}
   LastAnimation: Lilly_S02_05_Lilly
 --- !u!114 &933090637
 MonoBehaviour:
@@ -551,13 +554,13 @@ MonoBehaviour:
   AnimationBool: 010101010101010100000000000000
   CamPos:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 1.375, y: 0.145, z: 1.094}
+  - {x: 1.375, y: 0.145, z: 1.126}
+  - {x: 1.31, y: 0.145, z: 1.193}
+  - {x: 1.314, y: 0.191, z: 1.196}
+  - {x: 1.415, y: 0.191, z: 1.044}
+  - {x: 1.33, y: 0.272, z: 1.19}
+  - {x: 1.299, y: 0.321, z: 1.247}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -666,6 +669,39 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &933090642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933090634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &933090643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933090635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &933090644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933090634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b74a7fe81a243c59f630f53f0b867b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1385258058
 Prefab:
   m_ObjectHideFlags: 0

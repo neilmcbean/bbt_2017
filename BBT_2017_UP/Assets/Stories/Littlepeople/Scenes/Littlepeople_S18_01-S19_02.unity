@@ -740,6 +740,7 @@ GameObject:
   - component: {fileID: 1656217027}
   - component: {fileID: 1656217028}
   - component: {fileID: 1656217026}
+  - component: {fileID: 1656217029}
   m_Layer: 0
   m_Name: S18_01_Cam
   m_TagString: Characters
@@ -763,13 +764,13 @@ MonoBehaviour:
   AnimationBool: 0101010101010101
   CamPos:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0.103, z: 2.77}
+  - {x: 0, y: 0.119, z: 3.102}
+  - {x: -0.204, y: 0.199, z: 3.102}
+  - {x: -0.418, y: 0.088, z: 2.611}
+  - {x: 0.017, y: 0.143, z: 2.13}
+  - {x: 0.022, y: 0.082, z: 2.666}
+  - {x: -0.156, y: 0.082, z: 2.666}
   LastAnimation: Thomas_S17_01_Thomas
 --- !u!4 &1656217027
 Transform:
@@ -821,6 +822,17 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &1656217029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656217025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1659604176
 Prefab:
   m_ObjectHideFlags: 0

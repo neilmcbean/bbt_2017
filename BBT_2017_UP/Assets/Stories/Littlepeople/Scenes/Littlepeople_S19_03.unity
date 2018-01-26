@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 976390499}
   - component: {fileID: 976390500}
   - component: {fileID: 976390498}
+  - component: {fileID: 976390501}
   m_Layer: 0
   m_Name: S19_03_Cam
   m_TagString: Characters
@@ -311,6 +312,17 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &976390501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976390497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1764124382
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +464,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.571
+      value: -0.627
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.y
@@ -460,7 +472,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.475
+      value: 0.477
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalRotation.x

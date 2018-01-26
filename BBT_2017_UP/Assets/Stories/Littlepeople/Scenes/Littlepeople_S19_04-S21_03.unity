@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 985051807}
   - component: {fileID: 985051808}
   - component: {fileID: 985051806}
+  - component: {fileID: 985051809}
   m_Layer: 0
   m_Name: S19_04_Cam
   m_TagString: Characters
@@ -672,17 +673,17 @@ MonoBehaviour:
   AnimationBool: 010101010101010101010101
   CamPos:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.239, y: 0.086, z: 2.744}
+  - {x: 0.04, y: 0.086, z: 2.744}
+  - {x: 0.04, y: 0.123, z: 2.418}
+  - {x: 0.162, y: 0.143, z: 2.233}
+  - {x: 0.162, y: 0.079, z: 1.906}
+  - {x: 0.104, y: 0.039, z: 1.791}
+  - {x: 0.104, y: 0.063, z: 1.578}
+  - {x: 0.156, y: 0.054, z: 1.431}
+  - {x: 0.243, y: 0.054, z: 1.431}
+  - {x: 0.369, y: 0.054, z: 1.431}
+  - {x: 0.369, y: 0.054, z: 1.431}
   LastAnimation: Thomas_S21_03_Thomas
 --- !u!4 &985051807
 Transform:
@@ -734,6 +735,17 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &985051809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985051805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &993942482 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}

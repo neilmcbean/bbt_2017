@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 1040116784}
   - component: {fileID: 1040116785}
   - component: {fileID: 1040116783}
+  - component: {fileID: 1040116786}
   m_Layer: 0
   m_Name: S01_01_Cam
   m_TagString: Characters
@@ -576,8 +577,8 @@ MonoBehaviour:
   CamPos:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.029, y: 0.152, z: 2.111}
+  - {x: -0.029, y: 0.091, z: 1.293}
   LastAnimation: Lilly_S02_05_Lilly
 --- !u!4 &1040116784
 Transform:
@@ -629,6 +630,17 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &1040116786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040116782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1345363690
 Prefab:
   m_ObjectHideFlags: 0
