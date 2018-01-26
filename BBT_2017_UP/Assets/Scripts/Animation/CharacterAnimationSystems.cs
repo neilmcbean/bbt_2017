@@ -84,7 +84,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 					if (GetComponent<Animator> () != null) {
 						GetComponent<Animator> ().SetTrigger ("advance");
 					}
-					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <CamPos.Length-1)
+					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <=CamPos.Length-1)
 					{gameObject.transform.position = CamPos [AnimationDelayTracker];}
 				} 
 
