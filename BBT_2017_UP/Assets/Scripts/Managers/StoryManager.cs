@@ -24,7 +24,6 @@ public class StoryManager : MonoBehaviour {
 			if (Canvas.transform.GetChild (i).name == "UI Dots") {
 				Canvas.transform.GetChild (i).GetComponent<DotGenerator> ().GenrateTheDots (pagesPerScene);
 			}
-			//GameObject Go = this.gameobject.transform.GetChild(i);
 		}
 
 		if (PageManager.GetComponent<PageManager> ().isGoingBack == false) {
