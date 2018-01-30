@@ -65,6 +65,7 @@ public class PageManager : Singleton<PageManager>
 
 	//UI Assets
 	public GameObject UIDots;
+	public GameObject ScentenceContainer;
 
 	//Debuging Vars
 	public GameObject Scenetext;
@@ -560,6 +561,25 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		return results;
+	}
+
+	public void ChangeMusic(Slider newMusicVolume)
+	{
+		Debug.Log ("newMusicVolume" + newMusicVolume.value);
+		audioSource.volume = newMusicVolume.value;
+	}
+
+	public void ChangeNarrative(Slider newNarrativeVolume)
+	{
+		Debug.Log ("newNarrativeVolume"+newNarrativeVolume.value);
+		audioSource.volume = newNarrativeVolume.value;
+	}
+
+	public void ChangeTextStyle(Slider newTextStyle)
+	{
+		Debug.Log ("newTextStyle"+newTextStyle.value);
+		//audioSource.volume = newTextStyle.value;
+		ScentenceContainer.GetComponent<SentenceRowContainer>().ReadAlongOn = newTextStyle.value;
 	}
 
 }

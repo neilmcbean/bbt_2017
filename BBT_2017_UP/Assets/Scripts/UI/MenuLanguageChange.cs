@@ -6,17 +6,17 @@ using UnityEngine;
 public class MenuLanguageChange : MonoBehaviour {
 
     public GameObject PageManagerRef;
-    public Dropdown dropdownMenu;
+    //public Dropdown dropdownMenu;
 
-	public GameObject[] ChapterButtonGroup;
+	//public GameObject[] ChapterButtonGroup;
 
-	public string[] SasquatchChapters;
+	//public string[] SasquatchChapters;
 
-	public string[] LittlePeopleChapters;
+	//public string[] LittlePeopleChapters;
 
     // Use this for initialization
     void Start() {
-		
+		/*
 		SasquatchChapters = new string[5];
 		SasquatchChapters [0] = "1_11_sas_ext_cabin";
 		SasquatchChapters [1] = "12_21_sas_ext_forest";
@@ -55,7 +55,7 @@ public class MenuLanguageChange : MonoBehaviour {
             //dropdownMenu.value = languageCount;
             //dropdownMenu.options.Add(new Dropdown.OptionData(dropdownMenu.options[languageCount].text));
         }
-
+		*/
     }
 
     // Update is called once per frame
@@ -63,9 +63,9 @@ public class MenuLanguageChange : MonoBehaviour {
 
     }
 
-    public void LanguageUpdate()
+	public void LanguageUpdate(string Language)
     {
-        PageManagerRef.GetComponent<PageManager>().ChangeLanguage(GetComponentInChildren<Text>().text);
+		PageManagerRef.GetComponent<PageManager>().ChangeLanguage(Language);
         //Debug.Log(GetComponentInChildren<Text>().text);
     }
 }

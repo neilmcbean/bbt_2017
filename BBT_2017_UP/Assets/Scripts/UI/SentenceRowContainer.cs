@@ -19,6 +19,8 @@ public class SentenceRowContainer : MonoBehaviour
 
 	public GameObject Definition;
 
+	public float ReadAlongOn =1;
+
     void Awake()
     {
         rt = GetComponent<RectTransform>();
@@ -95,9 +97,9 @@ public class SentenceRowContainer : MonoBehaviour
     {
         foreach (WordText text in texts)
         {
-            if (text.wordGroup == wordGroup)
+			if (text.wordGroup == wordGroup && ReadAlongOn ==0)
             {
-                text.text.color = Color.blue;
+				text.text.color = Color.blue;
             }
             else
             {
