@@ -19,6 +19,8 @@ public class StoryManager : MonoBehaviour {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
 
+		int chapterOffset = PageManager.GetComponent<PageManager> ().ChapterOffSet;
+
 		for(int i = 0; i < Canvas.transform.GetChildCount(); i++)
 		{
 			if (Canvas.transform.GetChild (i).name == "UI Dots") {
@@ -28,8 +30,9 @@ public class StoryManager : MonoBehaviour {
 
 		if (PageManager.GetComponent<PageManager> ().isGoingBack == false) {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
-			PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName, AudioIndexPosition);
-			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition);	
+			PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName, AudioIndexPosition+chapterOffset);
+			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+chapterOffset);
+			PageManager.GetComponent<PageManager> ().ChapterskipSetCharacters(chapterOffset);
 		} else {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
 			PageManager = GameObject.FindGameObjectWithTag ("PageManager");
@@ -37,6 +40,7 @@ public class StoryManager : MonoBehaviour {
 			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+pagesPerScene);	
 			PageManager.GetComponent<PageManager> ().isGoingBack = false;
 		}
+	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;
 	}
 
 	public void StartFromEndOfLevel () {

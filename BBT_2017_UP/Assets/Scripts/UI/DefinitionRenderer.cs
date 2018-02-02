@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class DefinitionRenderer : MonoBehaviour {
 
-	public string[] def_word;
-	public string[] def_Body;
+	public Image RenderPlacement;
 
+	public string[] def_wordSas;
+	public Sprite [] def_wordSasPhotos;
+	public string[] def_BodySasEnglish;
+
+
+	public string[] def_wordLilPpl;
+	public Sprite [] def_wordLilPplPhotos;
+	public string[] def_BodyLilPplEnglish;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,13 +25,20 @@ public class DefinitionRenderer : MonoBehaviour {
 		
 	}
 
-	public void SetUpText (string Definition) 
+	public void SetUpText (Text Definition) 
 	{
-		for (int i = 0; i < def_word.Length; i++) 
-		{	
-			//Debug.Log (def_word [i]+"///"+Definition);
-			if ( Definition == def_word [i]) {
-				GetComponentInChildren<Text> ().text = def_Body [i];
+		Debug.Log (Definition.text);
+		for (int i = 0; i < def_wordSas.Length; i++) 
+		{
+			//Debug.Log (Definition.text.ToLower()+"///"+def_wordSas[i].ToLower());
+
+			if (Definition.text.ToLower().Equals(def_wordSas[i].ToLower())) {
+			//if(String.Compare(Definition.text.ToLower() , def_wordSas[i].ToLower()) == 1){
+			//if ( Definition.text.ToLower() == def_wordSas[i].ToLower()) {
+				GetComponentInChildren<Text> ().text = def_BodySasEnglish [i];
+				RenderPlacement.sprite = def_wordSasPhotos [i];
+
+				Debug.Log (Definition.text.ToLower()+"///"+def_wordSas [i]);
 			} 
 		}
 	}

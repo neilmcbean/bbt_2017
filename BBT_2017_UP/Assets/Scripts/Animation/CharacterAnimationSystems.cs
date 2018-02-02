@@ -15,6 +15,13 @@ public class CharacterAnimationSystems : MonoBehaviour
 	// Use this for initialization
 
 	void Start () {
+		setUpCharacters (AnimationDelayTracker);
+	}
+
+	public void setUpCharacters(int trackerPosition)
+	{
+
+		AnimationDelayTracker = trackerPosition;
 		if (AnimationBool [AnimationDelayTracker] == true) 
 		{			
 			if (GetComponent<Camera> () != null) 
@@ -26,7 +33,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 			{
 				if (GetComponent<Image> () != null) 
 				{
-				GetComponent<Image> ().enabled = true;
+					GetComponent<Image> ().enabled = true;
 				} 
 				else
 				{//if(GetComponent.
@@ -34,37 +41,37 @@ public class CharacterAnimationSystems : MonoBehaviour
 					foreach (Transform child in transform) 
 					{
 						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-						child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 					}
 				}
 			}
 
 		} else {
 
-					if (GetComponent<Camera> () != null) 
-					{//if the thing to check has a camera.
-						//Debug.Log(gameObject.name+"turn off");
-						//gameObject.SetActive (false);
-						gameObject.GetComponent<Camera>().enabled = false;
-					} 
-						else 
-						{
-							if (GetComponent<Image> () != null) 
-							{
-								GetComponent<Image> ().enabled = false;
-							} 
-								else 
-								{
-									//if(GetComponent.
-									GetComponent<Animator> ().enabled = false;
-									foreach (Transform child in transform) 
-									{
-										if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
-											child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
-									}
-								}
-						}
+			if (GetComponent<Camera> () != null) 
+			{//if the thing to check has a camera.
+				//Debug.Log(gameObject.name+"turn off");
+				//gameObject.SetActive (false);
+				gameObject.GetComponent<Camera>().enabled = false;
+			} 
+			else 
+			{
+				if (GetComponent<Image> () != null) 
+				{
+					GetComponent<Image> ().enabled = false;
+				} 
+				else 
+				{
+					//if(GetComponent.
+					GetComponent<Animator> ().enabled = false;
+					foreach (Transform child in transform) 
+					{
+						if (child.gameObject.GetComponent<SkinnedMeshRenderer> () != null)
+							child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = false;
+					}
 				}
+			}
+		}
 	}
 
 	public void InvokeNextAnimation ()

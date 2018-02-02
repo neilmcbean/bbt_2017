@@ -27,9 +27,10 @@ public class PageManager : Singleton<PageManager>
 	//PageKeepers
 	private int pageIndex;
 	private int audioIndex;
-	private int sceneindex;
+	public int sceneindex; /// <summary>/// /////TURN THIS PRIVATE/// </summary>
 	private int LastPageLoader;
 	public bool isGoingBack = false;
+	public int ChapterOffSet = 0;
 
 	//Technicals
 	private AudioSource audioSource;
@@ -129,7 +130,20 @@ public class PageManager : Singleton<PageManager>
 		}
 	}
 
+	public void ChapterskipSetCharacters(int StartingPosition)
+	{
+		foreach (GameObject Child in Characters) {//Play the next animation on all the characters
+			if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) 
+			{
+			Child.GetComponent<CharacterAnimationSystems> ().setUpCharacters (StartingPosition);									
+			}
+		}
+	}
 
+	public void ChapterSkipAddOffset(int offset)
+	{
+		ChapterOffSet = offset;
+	}
 	public void ChapterSkip(String LevelToLoad)
 	{
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
