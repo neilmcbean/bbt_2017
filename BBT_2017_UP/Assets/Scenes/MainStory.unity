@@ -2124,7 +2124,7 @@ RectTransform:
   m_LocalScale: {x: 3.2181222, y: 3.2181222, z: 3.2181222}
   m_Children: []
   m_Father: {fileID: 1189380911}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.539}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.6, y: 0.5}
@@ -4760,6 +4760,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712775878}
+--- !u!1 &745036959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 745036960}
+  - component: {fileID: 745036962}
+  - component: {fileID: 745036961}
+  m_Layer: 5
+  m_Name: Translation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &745036960
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745036959}
+  m_LocalRotation: {x: -0, y: -0, z: 0.041086264, w: 0.99915564}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1189380911}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.709}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -225.5, y: 200}
+  m_SizeDelta: {x: 257.2, y: 63.8}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &745036961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745036959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.86274517, g: 0.15294118, b: 0.058823533, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: TEST
+--- !u!222 &745036962
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745036959}
 --- !u!1 &758451612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,7 +5048,7 @@ RectTransform:
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0}
   m_Children: []
   m_Father: {fileID: 1189380911}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5813,6 +5887,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 851630251}
+--- !u!1 &870799356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 870799357}
+  - component: {fileID: 870799359}
+  - component: {fileID: 870799358}
+  m_Layer: 5
+  m_Name: Halq'emeylem Word
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &870799357
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870799356}
+  m_LocalRotation: {x: -0, y: -0, z: 0.041086264, w: 0.99915564}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1189380911}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.709}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -227, y: 218}
+  m_SizeDelta: {x: 172.5, y: 63.8}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &870799358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870799356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.86274517, g: 0.15294118, b: 0.058823533, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Halq'emeylem Word
+--- !u!222 &870799359
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870799356}
 --- !u!1 &874491752
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,10 +8278,13 @@ RectTransform:
   m_Children:
   - {fileID: 1453404122}
   - {fileID: 1711682775}
-  - {fileID: 1399097030}
   - {fileID: 758859353}
   - {fileID: 1726811948}
   - {fileID: 388879095}
+  - {fileID: 870799357}
+  - {fileID: 745036960}
+  - {fileID: 1399097030}
+  - {fileID: 1235614559}
   m_Father: {fileID: 958440951}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8173,6 +8324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8204610eb253f4a40a5cd19445890de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 1235614560}
+  TextTranslation: {fileID: 745036961}
+  TextBody: {fileID: 1399097031}
   RenderPlacement: {fileID: 388879096}
   def_wordSas:
   - mountains
@@ -8196,6 +8350,28 @@ MonoBehaviour:
   - help
   - salmon
   - bed
+  def_wordSasTranslation:
+  - Smelmilt
+  - "Sth\u2019akwe_x seplil"
+  - imex
+  - "spakw\u2019ematexw"
+  - Shoyus
+  - Spath
+  - s_xeyltel
+  - smelmalt
+  - smeyeth
+  - Helem
+  - "hikw stl\u2019aleqem"
+  - "sts\u2019alext"
+  - tetestol
+  - "shxweqw\u2019ellhelh"
+  - "se\u2019wolem"
+  - "Sasq\u2019ets"
+  - "sxixets\u2019 "
+  - Stolo
+  - mayt
+  - "sth\u2019oqwi"
+  - "Shxwe\u2019a_xeth"
   def_wordSasPhotos:
   - {fileID: 21300000, guid: 1260e8a4ae9ac448bb6b86107679a85a, type: 3}
   - {fileID: 21300000, guid: 894b1f03ad6154161bd92892f0a80549, type: 3}
@@ -8219,27 +8395,69 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fefe7c122e31d4679bedad5dd4626dc1, type: 3}
   - {fileID: 21300000, guid: bbd6f84d7f15849abbf9cb7ca135d00f, type: 3}
   def_BodySasEnglish:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Each mountain you see has a name and a story. Some are spirits or longhouses for
+    spirits. I have always admired the mountains for their patience watching over
+    the land.
+  - "It\u2019s a treat whenever Kookum makes her famous bannock, a tasty fry bread
+    made with flour, salt, water and then rendered in fat. I love when she uses a
+    bit of bacon grease too."
+  - I enjoy going on morning walks by the river. It clears the mind, and in these
+    areas you never know what you might see. I keep my eye out for Sasq'ets though.
+  - "Our smokehouse is made from local pine trees, and this is where we hang our salmon
+    to give it that smoky flavour. We need to be careful about the type of wood used
+    because it can change the taste of the fish. It took me many days to build that
+    smokehouse but Kookum\u2019s delicious salmon was well worth the work!"
+  - 'Regalia is our traditional clothing. It''s different for different territories
+    and for men and women. People also use different colors and cloths. The clothing
+    tells a story that goes with the dance. '
+  - Bears are very strong. To spot them, you should watch for broken branches, claw
+    marks or giant feet and steer clear. Children should never walk alone in the woods.
+    Even in the day.
+  - What could make such a giant footprint, in the sand? Could it be a bear, or one
+    of the gentle giants? This summer I'm going to do an art project with Thomas and
+    Lily and show them how to save the footprint in a cement casting, and then when
+    it dries they can paint it.
+  - If you ask elders in your community, they can tell you different stories. Some
+    rocks are sacred. Some rocks are spirits. Even rocks you have to respect.
+  - 'Animals are sacred. They provide us food, clothing and will also tell us things
+    if we are paying attention. '
+  - 'When I was a teenager, I was quite clumsy and fell down a lot, tripping over
+    my long legs. I fell on Kookum once too. I told her I had fallen for her, and
+    even though she knew that was silly she still laughed. '
+  - "A giant is someone really, really big. Compared to Thomas and Lily, I might seem
+    like a giant. If they ever see a Sasq'et, they\u2019ll find out the true meaning
+    of giant!"
+  - Branches are secondary limbs that grow from the trunk of the tree. And from the
+    branches, leaves grow out of them. The way that energy is transferred from the
+    earth, to the tips of the branches and vice versa has always amazed me!
+  - "What is the sound of one hand clapping? If a tree falls in the forest and there\u2019s
+    no one to hear it, does it make any sound? I\u2019ve always wondered."
+  - Long ago, when Kookum and I got married, I gave her a necklace made of tusk shells
+    and beautiful bird feathers that I had collected. Little did I know that she had
+    made a similar necklace for me. It just goes to show that birds of a feather really
+    do flock together.
+  - When she was a little girl, Kookum had to sew her own clothes for her dolls. Her
+    parents knew that sewing each set of clothes was so much work that Kookum would
+    always take good care of her toys.
+  - "Even when I was young, I\u2019d always hear tales speaking of the Sasq'et and
+    I\u2019ve heard people call them Bigfoot, too.  I thought they were speaking of
+    me, because I have very big feet myself."
+  - When I was young, I would play in the woods for hours at a time. My grandparents
+    always warned me not to wander off, or else some dark creature in the forest would
+    get me!
+  - 'Your Kookum and I love the Rocky Mountains because there are so many wonderful
+    things to see. This small river for example, joins into a larger one further down,
+    which then connects to a beautifully majestic waterfall. '
+  - "It\u2019s important to help others whenever possible I love to help others, especially
+    when it comes to helping Kookum eat all that bannock. It\u2019s a hard task, but
+    someone needs to do it."
+  - "Sometimes Kookum jokes that I married her for her candied salmon.  She wouldn\u2019t
+    tell me her secret recipe otherwise! Did you know, these fish are born in freshwater
+    but live as adults in the ocean. When they\u2019re ready to have children, they
+    journey home to where they were born."
+  - "A bed is a place for rest and contemplation. I know excited young children don\u2019t
+    sleep very easily, especially Lily and Thomas. Sometimes, I have to read a little
+    bedtime story so they can fall asleep."
   def_wordLilPpl:
   - Birds
   - sister
@@ -8270,37 +8488,155 @@ MonoBehaviour:
   - day
   - gift
   - mocassin
-  def_wordLilPplPhotos: []
+  def_wordLilPplTranslation:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  def_wordLilPplPhotos:
+  - {fileID: 21300000, guid: e48d9454204a04ff3b3009f59da43e05, type: 3}
+  - {fileID: 21300000, guid: 15abc1f16da43432f832f6be97bd394a, type: 3}
+  - {fileID: 21300000, guid: 815a6f8d9f8524060bb0d6f994476bb9, type: 3}
+  - {fileID: 21300000, guid: 114cb8ac4c7534be0b6346b48e853984, type: 3}
+  - {fileID: 21300000, guid: a8abdf78c1a8c4fd288b7f8cad50266d, type: 3}
+  - {fileID: 21300000, guid: 8a510b8f5fc01488a98ea6770d1fec3c, type: 3}
+  - {fileID: 21300000, guid: d2cd5f4d420c848098f7f308bfca218d, type: 3}
+  - {fileID: 21300000, guid: 783c4b43e62874c3090dfbe2a2398e88, type: 3}
+  - {fileID: 21300000, guid: b8e0eab9ebd294c5e916d6c50351763d, type: 3}
+  - {fileID: 21300000, guid: a731146d42f0a49f1a719b4caea2970d, type: 3}
+  - {fileID: 21300000, guid: 07e8da8e810d740348135443a3defcd7, type: 3}
+  - {fileID: 21300000, guid: c9919dc931c9348dc85f2c1721ea34f3, type: 3}
+  - {fileID: 21300000, guid: b2cc0aae8c8de42a4aa4dce13b7a5589, type: 3}
+  - {fileID: 21300000, guid: ebcbf3ae938614e8dbe825f9cb0d8b8c, type: 3}
+  - {fileID: 21300000, guid: c24fbaa0f1229414fb23d5395f6c1a6d, type: 3}
+  - {fileID: 21300000, guid: ac29479cbb16a4b67a991a2e4076ad6b, type: 3}
+  - {fileID: 21300000, guid: 323148bbe2a27447d83597e9751fa6bc, type: 3}
+  - {fileID: 21300000, guid: 44335c109331949eba98d1e294f676f2, type: 3}
+  - {fileID: 21300000, guid: e89435cf6f7714a89812af6f7a504126, type: 3}
+  - {fileID: 21300000, guid: 7a9530e5751e64ff3a9b45eba0bc6d03, type: 3}
+  - {fileID: 21300000, guid: 2451240766bb94cb18ebb55bc66ec930, type: 3}
+  - {fileID: 21300000, guid: cb4f4b26f81194f94805683e2da4198e, type: 3}
+  - {fileID: 21300000, guid: 1e760a4d75c9e4e0a837793817df6f8d, type: 3}
+  - {fileID: 21300000, guid: 88eac4ca3e1ee422dbc05dd317929c7d, type: 3}
+  - {fileID: 21300000, guid: be57a703b44cb464f83efa957da412c2, type: 3}
+  - {fileID: 21300000, guid: ce0d4a38135904fd187ddf57754b0e23, type: 3}
+  - {fileID: 21300000, guid: ddfa1b3b7cd254deabc7b1965bbfa894, type: 3}
+  - {fileID: 21300000, guid: 7be1a2e39ac6749ea8ff57922ff23a53, type: 3}
+  - {fileID: 21300000, guid: a9f18f54e752c42ad99e076e0d573937, type: 3}
   def_BodyLilPplEnglish:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "My grandparents before me often hunted geese and ducks. Spring is when many birds
+    start returning from the south. Tomorrow, I\u2019ll take Lily and Thomas to go
+    bird watching. There is plenty to see, as there is more than 280 types of birds
+    in the Rocky Mountains. done"
+  - Thomas might not admit it, but having a little sister is one of the greatest things
+    in the world. Thomas loves being a big brother, and with being a big brother comes
+    big responsibility.done
+  - 'Bags were made from soften hide. Even today we use these for drum bags or our
+    medicine pouches. Lily also has a small hide purse for her trinkets.done '
+  - "It\u2019s a treat whenever Kookum makes her famous bannock, a tasty fry bread
+    made with flour, salt, water and then rendered in fat. I love when she uses a
+    bit of bacon grease too.done "
+  - Kookum grew up on the prairies where she ate lots of Saskatoon berries. But I
+    love my British Columbia blackberries.
+  - Kookum grew up eating pickeral but she learned how to make the best candied salmon
+    when she tried to woo me. And it worked!
+  - "The frozen, sugary ice cream that most people think of is quite different from
+    soapberry ice cream. It\u2019s a froth that we make from soapberries and some
+    sweetener. It might be a bit more sour than what Thomas and Lily are used to,
+    but it\u2019s healthier."
+  - Thomas and Lily use old ice cream buckets to carry all their berries but Kookum
+    used to make pouches out of birch bark or cotton. I grew up with cedar baskets
+    that my aunties would weave together.
+  - This old, wooden stool was one of the first things I made for this home. This
+    sturdy stool may not look like much, but I believe something made from your own
+    hands is always more meaningful.
+  - "Lily said one day that she wished she had more arms so she could beat Thomas
+    at juggling. I told her life would be very confusing if you had many arms like
+    an octopus. I\u2019d rather have an extra mouth, to help me eat more of Kookum\u2019s
+    candied salmon. done"
+  - "I\u2019ve always wondered what lives under the ground. Could there be Little
+    People, living in their secret underground caves? One day I would like to take
+    a shovel and dig as far as I can go. I wonder if we\u2019d end up in a faraway
+    land. "
+  - I thought it was odd the first time I saw a Little Person as he had no nose. I
+    can't imagine not having a nose as I love smelling the great woods and all the
+    bounty the land has to offer. Not to mention, I love smelling Kookum's cooking.
+  - "We have many shiny bowls in our home, don\u2019t we? My ancestors liked to use
+    alder wood for making bowls, because that type of wood doesn\u2019t affect the
+    flavours of the food."
+  - 'Lily learned to use a spoon here when she was little. She made quite a racket
+    with that little spoon! Long ago, before these shiny spoons, our people used to
+    make them from animal horns and other types of bones. '
+  - What would we do, without flour? Our ancestors made bannock a little differently,
+    using corn meal and a flour made from.
+  - "They say fibs are harmless little lies, but even small lies can grow big and
+    harmful. Lily knows it\u2019s wrong to lie, but even Thomas has a hard time believing
+    that she saw the Little People because the Little People only show themselves
+    to special people so many people don't believe in them. "
+  - "A window is for looking outside,  this is a way we stay connected with the outside
+    even when we are inside. They say eyes are a window to your soul but I say they\u2019re
+    windows for my stomach. When I see Kookum\u2019s baked goodies cooling by the
+    window, my stomach grumbles. "
+  - 'What makes popcorn pop? When you make pressure build inside the kernel, the kernel
+    will explode into a POP!  The Little People are fond of teasing, by throwing berries
+    at people like popcorn from a popper.  '
+  - "The Little People are having fun playing tricks on Thomas, but Thomas doesn\u2019t
+    find it funny. Pranks are tricks which are meant to be playful but you should
+    be careful because it can end up being harmful."
+  - The kichen is where we have meals together, where Kookum does her wonderful cooking,
+    and where Lily gets into a lot of mischief! To me, it is a wonderful space where
+    much creativity takes place!
+  - Kookum has all these crafts made out of birch bark. Some are little baskets that
+    she keeps all her rings in. In the old days, they were made airtight to carry
+    water, and much bigger.
+  - "A mysterious little man appears to Lily in the kitchen. Do you think he\u2019s
+    one of the Little People? He seems to really like shiny things, especially the
+    spoons we got from our travels last year. "
+  - Tree roots are a sign of the tree being grounded to the earth. We need to do that
+    ourselves sometimes. Roots also have medicinal purposes and can be used for salves.
+  - All Indigenous cultures use traditional medicine using what Mother Earth provides
+    us. Medicine is in the foods we eat, the herbs around us and even for cleansing
+    we use sweetgrass and sage as well as water.
+  - 'The drum beat is like the heartbeat of Mother Earth. It''s in our blood. Drums
+    can be made in all sizes and are still made from animal hides today. At powwows
+    you''ll usually see on big drum with many drummers sitting around it. You shouldn''t
+    sit at these drums unless you are given permission by the drummers.  '
+  - Women are held very highly in our culture as they are the givers of life. Without
+    women, none of us would be here!
+  - The day belongs to the sun, as it gives off its radiant light, it brings much
+    joy to all that live under its glow. Not a day goes by that I think about how
+    lucky I am to be with wonderful grandchildren like Thomas and Lily.
+  - "When the Little People help someone, it\u2019s customary to offer them a gift
+    in return. The Little People are very mischievous, so it would be best not to
+    anger them. We also give each other gifts if someone helps us, or as an offering
+    to either a person or to mother earth. "
+  - Back in the old days, we made moccasins from animal hides like      rabbit and
+    elk. In the winter months, fur-lined moccasins will keep the feet warm.
 --- !u!1 &1210753393
 GameObject:
   m_ObjectHideFlags: 0
@@ -8492,6 +8828,80 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!1 &1235614558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1235614559}
+  - component: {fileID: 1235614561}
+  - component: {fileID: 1235614560}
+  m_Layer: 5
+  m_Name: Text Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1235614559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235614558}
+  m_LocalRotation: {x: -0, y: -0, z: 0.016863734, w: 0.99985784}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1189380911}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.9330001}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -145.2, y: 137.4}
+  m_SizeDelta: {x: 287.87, y: 42.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1235614560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235614558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Title
+--- !u!222 &1235614561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235614558}
 --- !u!1 &1274272239
 GameObject:
   m_ObjectHideFlags: 0
@@ -9097,7 +9507,7 @@ GameObject:
   - component: {fileID: 1399097032}
   - component: {fileID: 1399097031}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9114,12 +9524,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1189380911}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.9330001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138.72998, y: -5.5999947}
-  m_SizeDelta: {x: 277.45, y: 344.8}
+  m_AnchoredPosition: {x: -138.72998, y: -44.55}
+  m_SizeDelta: {x: 287.87, y: 329.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399097031
 MonoBehaviour:
@@ -9147,13 +9557,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TEST TEST TEST '
+  m_Text: 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+    TEST TEST TEST TEST TEST TEST TEST TEST TEST '
 --- !u!222 &1399097032
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11484,7 +11895,7 @@ RectTransform:
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0}
   m_Children: []
   m_Father: {fileID: 1189380911}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.709}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
