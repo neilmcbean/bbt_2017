@@ -27,7 +27,8 @@ public class PageManager : Singleton<PageManager>
 	//PageKeepers
 	private int pageIndex;
 	private int audioIndex;
-	public int sceneindex; /// <summary>/// /////TURN THIS PRIVATE/// </summary>
+	public int sceneindex;
+	/// <summary>/// /////TURN THIS PRIVATE/// </summary>
 	private int LastPageLoader;
 	public bool isGoingBack = false;
 	public int ChapterOffSet = 0;
@@ -38,6 +39,7 @@ public class PageManager : Singleton<PageManager>
 	private bool isForward = true;
 	private List<TweenEvent> tweenEvents = new List<TweenEvent> ();
 	public GameObject[] Characters;
+	public GameObject[] DynamicProps;
 
 	//Narrative Manager vars
 	public GameObject StoryManager;
@@ -54,6 +56,7 @@ public class PageManager : Singleton<PageManager>
 	public bool isMenuDeployed = false;
 
 	//Mouse Tracking Variabels
+	private bool CanSwipe = true;
 	private  Vector2 mouseStartPosition;
 	private  float mouseDistance;
 	private  float mouseoffset;
@@ -86,8 +89,8 @@ public class PageManager : Singleton<PageManager>
 	{
 
 		//Debug.Log(DataManager.currentStoryName);
-		AssetAssigner (DataManager.currentStoryName+"_start",11);
-		DataManager.LoadStory(DataManager.currentStoryName);
+		AssetAssigner (DataManager.currentStoryName + "_start", 11);
+		DataManager.LoadStory (DataManager.currentStoryName);
 
 		OG_PostitionTextBody = TextBody.gameObject.transform.position;
 		/*
@@ -106,13 +109,14 @@ public class PageManager : Singleton<PageManager>
 	}
 
 
-	public void AssetAssigner(string CurrentLevel, int lastPage)
+	public void AssetAssigner (string CurrentLevel, int lastPage)
 	{
 		EnvironmentTracker = CurrentLevel;
 		MountainTest = GameObject.FindGameObjectWithTag ("MountainRange");
 		CharacterCoin = GameObject.FindGameObjectWithTag ("CharacterCoin");
 		Characters = GameObject.FindGameObjectsWithTag ("Characters");
 		StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");
+		DynamicProps = GameObject.FindGameObjectsWithTag ("DynamicProps");
 		//Wait a frame for all scenes to be loaded
 		//Camera tracking variables
 
@@ -130,21 +134,21 @@ public class PageManager : Singleton<PageManager>
 		}
 	}
 
-	public void ChapterskipSetCharacters(int StartingPosition)
+	public void ChapterskipSetCharacters (int StartingPosition)
 	{
 		foreach (GameObject Child in Characters) {//Play the next animation on all the characters
-			if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) 
-			{
-			Child.GetComponent<CharacterAnimationSystems> ().setUpCharacters (StartingPosition);									
+			if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
+				Child.GetComponent<CharacterAnimationSystems> ().setUpCharacters (StartingPosition);									
 			}
 		}
 	}
 
-	public void ChapterSkipAddOffset(int offset)
+	public void ChapterSkipAddOffset (int offset)
 	{
 		ChapterOffSet = offset;
 	}
-	public void ChapterSkip(String LevelToLoad)
+
+	public void ChapterSkip (String LevelToLoad)
 	{
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
 		SceneManager.UnloadScene (EnvironmentTracker);
@@ -152,7 +156,7 @@ public class PageManager : Singleton<PageManager>
 		sceneindex = 0;
 	}
 
-	public void ChapterSkipToTheEnd(String LevelToLoad)
+	public void ChapterSkipToTheEnd (String LevelToLoad)
 	{
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
 		SceneManager.UnloadScene (EnvironmentTracker);
@@ -164,55 +168,43 @@ public class PageManager : Singleton<PageManager>
 
 	void Update ()
 	{
-		if (cameraTransformTracker != null) {
+		if (cameraTransformTracker != null && CanSwipe == true) {
 			
-			if (cameraTransformTracker.hasChanged == false) {}//If the camera has completed moving in the specific page.          
-				if (Input.GetMouseButtonDown (0)) {//If the player is holding down the mouse. 
-					isMouseMoving = true;
-					mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
 
-					mouseoffset = Vector2.Distance (
-						new Vector2 (TextBody.gameObject.transform.position.x, TextBody.gameObject.transform.position.y),
-						mouseStartPosition);
+			if (Input.GetMouseButtonDown (0)) {//If the player is holding down the mouse. 
+				isMouseMoving = true;
+				mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+				Debug.Log(mouseStartPosition);
+			} else if (Input.GetMouseButtonUp (0)) {
+				mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
+				isMouseMoving = false;	
+				SetChanger ();
+			} 
 
-					//Debug.Log (mouseStartPosition);
-				} else if (Input.GetMouseButtonUp (0)) {
-					isMouseMoving = false;	
-					SetChanger ();
-				} 
-
-				if (isMouseMoving == true) {
-
-					mouseDistance = Vector2.Distance (
-						new Vector2 (TextBody.gameObject.transform.position.x, TextBody.gameObject.transform.position.y),
-						new Vector2 (Input.mousePosition.x, Input.mousePosition.y));
-
-					TextBody.gameObject.transform.position = new Vector3 (
-						TextBody.gameObject.transform.position.x+(mouseDistance-mouseoffset),
-						TextBody.gameObject.transform.position.y,
-						TextBody.gameObject.transform.position.z);
+			/*if (Input.GetMouseButtonDown (0)) 
+				{
+				mouseoffset = Vector2.Distance( 
+					new Vector2(Input.mousePosition.x, TextBody.transform.position.y),
+					new Vector2(TextBody.transform.position.x, TextBody.transform.position.y)
+				);
 				}
-			
-
-
-			if (cameraTransformTracker != null) {
+			else if (Input.GetMouseButton (0)) {
+				TextBody.transform.position = new Vector2 (Input.mousePosition.x+mouseoffset, TextBody.transform.position.y);
+			}
+			/*if (cameraTransformTracker != null) {
 				if (cameraTransformTracker.hasChanged) {
 					//print("The transform has changed!");
 					cameraTransformTracker.hasChanged = false;
 				}			
-			}
+			}*/
 		}
 	}
 
 
 	private void SetChanger ()
 	{
-		mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
-		TextBody.gameObject.transform.position = OG_PostitionTextBody;
 
-		//Debug.Log (mouseStartPosition.x - mouseEndPosition.x);
-
-		if((mouseStartPosition.x - mouseEndPosition.x)>300 ||(mouseStartPosition.x - mouseEndPosition.x)<-300){
+		if ((mouseStartPosition.x - mouseEndPosition.x) > 300 || (mouseStartPosition.x - mouseEndPosition.x) < -300) {
 			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
 				sceneindex++;
 				//Debug.Log (sceneindex);
@@ -228,8 +220,6 @@ public class PageManager : Singleton<PageManager>
 						SceneManager.UnloadScene (EnvironmentTracker);
 					}
 
-
-
 					isGoingBack = false;
 					sceneindex = 0;
 				} else {
@@ -238,19 +228,25 @@ public class PageManager : Singleton<PageManager>
 					isGoingBack = false;
 					isForward = true;
 					transform.hasChanged = false;
-					foreach (GameObject Child in Characters) {//Play the next animation on all the characters
+
+					foreach (GameObject Mesh in DynamicProps) 
+					{
+						Mesh.GetComponent<DynamicStaticMeshSystem> ().MoveMeshForward ();
+					}
+
+					foreach (GameObject Child in Characters) 
+					{//Play the next animation on all the characters
 						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
 							Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
 						}
 					}
 					UIDots.GetComponent<DotGenerator> ().updateDots (sceneindex);
-					//updateDots
-					//sceneindex
+
 				}
 
 			} else {
 				sceneindex--;
-				if (sceneindex <= 0) {//TODO:Create a system which will allow you to go backwards through the scenes
+				if (sceneindex <= 0) {
 
 					if (StoryManager.GetComponent<StoryManager> ().isFirstscene == true) {
 
@@ -260,20 +256,16 @@ public class PageManager : Singleton<PageManager>
 						isGoingBack = true;
 						ChapterSkipToTheEnd (StoryManager.GetComponent<StoryManager> ().LastScene);
 					}
-					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-					//SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().LastScene, LoadSceneMode.Additive);
-					//SceneManager.UnloadScene (EnvironmentTracker);
-					//isForward = false;
-
-
-					//PreviousSentence (isForward);
-					//sceneindex = LastPageLoader;
-					//SetToLastPosition ();
-					//Debug.Log(sceneindex);
 				} else {
 					PreviousSentence (isForward);
 					isForward = false;
 					transform.hasChanged = false;
+
+					foreach (GameObject Mesh in DynamicProps) 
+					{
+						Mesh.GetComponent<DynamicStaticMeshSystem> ().MoveMeshBackward ();
+					}
+
 					//Play the current animation
 					foreach (GameObject Child in Characters) {
 						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
@@ -292,13 +284,20 @@ public class PageManager : Singleton<PageManager>
 
 	private void SetToLastPosition ()
 	{
-		Characters = GameObject.FindGameObjectsWithTag ("Characters");
-		foreach (GameObject Child in Characters) 
-		{
+		
+	Characters = GameObject.FindGameObjectsWithTag ("Characters");
+		foreach (GameObject Child in Characters) {
 
-				Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
+			Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
 
 		}
+
+	DynamicProps = GameObject.FindGameObjectsWithTag ("DynamicProps");
+		foreach (GameObject Mesh in DynamicProps) 
+		{
+			Mesh.GetComponent<DynamicStaticMeshSystem> ().ResetToTheEnd ();
+		}
+
 	}
 
 	private void LanguageMenuDeploy ()
@@ -415,11 +414,12 @@ public class PageManager : Singleton<PageManager>
 	{
 		//Debug.Log(isGoingBack);
 
-			StopAllCoroutines ();
-			sentenceContainer.Clear ();
-			audioIndex = i;
-			StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
-		if (isGoingBack == false) {}
+		StopAllCoroutines ();
+		sentenceContainer.Clear ();
+		audioIndex = i;
+		StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
+		if (isGoingBack == false) {
+		}
 
 	}
 
@@ -481,11 +481,9 @@ public class PageManager : Singleton<PageManager>
 		}
 
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
-		foreach (TweenEvent evt in tweenEvents) 
-		{
-			if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) 
-			{
-			evt.OnDeactivate ();              
+		foreach (TweenEvent evt in tweenEvents) {
+			if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) {
+				evt.OnDeactivate ();              
 			}
 		}
 
@@ -502,7 +500,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		Scenetext.GetComponent<Text>().text = DataManager.SceneRef[audioIndex];
+		Scenetext.GetComponent<Text> ().text = DataManager.SceneRef [audioIndex];
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
@@ -577,23 +575,28 @@ public class PageManager : Singleton<PageManager>
 		return results;
 	}
 
-	public void ChangeMusic(Slider newMusicVolume)
+	public void ChangeMusic (Slider newMusicVolume)
 	{
 		Debug.Log ("newMusicVolume" + newMusicVolume.value);
 		audioSource.volume = newMusicVolume.value;
 	}
 
-	public void ChangeNarrative(Slider newNarrativeVolume)
+	public void ChangeNarrative (Slider newNarrativeVolume)
 	{
-		Debug.Log ("newNarrativeVolume"+newNarrativeVolume.value);
+		Debug.Log ("newNarrativeVolume" + newNarrativeVolume.value);
 		audioSource.volume = newNarrativeVolume.value;
 	}
 
-	public void ChangeTextStyle(Slider newTextStyle)
+	public void ChangeTextStyle (Slider newTextStyle)
 	{
-		Debug.Log ("newTextStyle"+newTextStyle.value);
+		Debug.Log ("newTextStyle" + newTextStyle.value);
 		//audioSource.volume = newTextStyle.value;
-		ScentenceContainer.GetComponent<SentenceRowContainer>().ReadAlongOn = newTextStyle.value;
+		ScentenceContainer.GetComponent<SentenceRowContainer> ().ReadAlongOn = newTextStyle.value;
+	}
+
+	public void changeClickDragFunctionality (bool state)
+	{
+		CanSwipe = state;
 	}
 
 }
