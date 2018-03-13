@@ -28,7 +28,7 @@ public class DataManager
 
     public static StoryObject LoadStory(string storyName)
     {        
-		SceneRefCounter = 0;
+		//SceneRefCounter = 0;
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
         Application.streamingAssetsPath,storyName,currentLanguage.ToLower()));
 
@@ -45,7 +45,7 @@ public class DataManager
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
 		//Debug.Log (files.Length);
 		//SceneRef.Clear();
-		SceneRef = new string[files.Length];
+		//SceneRef = new string[files.Length];
 
 		foreach (string file in files)
         {
@@ -139,9 +139,9 @@ public class DataManager
 
                 if (txt != null)
                 {
-					SceneRef[SceneRefCounter] = audioName;
+					//SceneRef[SceneRefCounter] = audioName;
 					//Debug.Log (SceneRef[SceneRefCounter]);
-					SceneRefCounter ++;
+					//SceneRefCounter ++;
 					//Debug.Log (txt.text);
                     audioObj.sentence = GetSentence(txt.text);
                     return;
