@@ -150,16 +150,20 @@ public class PageManager : Singleton<PageManager>
 
 	public void ChapterSkip (String LevelToLoad)
 	{
-		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
+		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+
 		isGoingBack = false;
 		sceneindex = 0;
 	}
 
 	public void ChapterSkipToTheEnd (String LevelToLoad)
 	{
-		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
+		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+
 		//StoryManager.GetComponent<StoryManager> ().StartFromEndOfLevel ();
 		//isGoingBack = false;
 		//sceneindex = 0;
@@ -209,16 +213,21 @@ public class PageManager : Singleton<PageManager>
 				sceneindex++;
 				//Debug.Log (sceneindex);
 				//sceneindex
+				string NextScene;
+				NextScene = StoryManager.GetComponent<StoryManager> ().NextScene;
 				if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) {
 					GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-					SceneManager.LoadScene (StoryManager.GetComponent<StoryManager> ().NextScene, LoadSceneMode.Additive);
+
 					//EnvironmentTracker
 					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {				
 						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
 					} else {
+						Resources.UnloadUnusedAssets ();
 						SceneManager.UnloadScene (EnvironmentTracker);
 					}
+
+					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
+					SceneManager.LoadScene (NextScene, LoadSceneMode.Additive);
 
 					isGoingBack = false;
 					sceneindex = 0;
