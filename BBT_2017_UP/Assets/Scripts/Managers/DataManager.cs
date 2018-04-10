@@ -10,7 +10,7 @@ using System.Reflection.Emit;
 
 public class DataManager
 {
-    public static string currentLanguage = "english";
+    public static string currentLanguage = "english_";
     public static string currentStoryName = "sasquatch";
 
     public static StoryObject currentStory;
@@ -26,11 +26,12 @@ public class DataManager
 	public static string[] SceneRef;
 	private static int SceneRefCounter = 0;
 
+	public static int streamingAsset = 0;
     public static StoryObject LoadStory(string storyName)
     {        
 		//SceneRefCounter = 0;
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
-        Application.streamingAssetsPath,storyName,currentLanguage.ToLower()));
+			Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+streamingAsset.ToString()));//+streamingAsset
 
 		//Debug.Log (myLoadedAssetBundle);
 			
@@ -58,6 +59,7 @@ public class DataManager
 			AddFileToStory(story, files[i]);
 		}*/
 
+		streamingAsset++;
         UnloadAssetBundle();
         currentStory = story;
         return currentStory;

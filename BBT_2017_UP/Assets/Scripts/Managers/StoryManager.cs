@@ -6,6 +6,7 @@ public class StoryManager : MonoBehaviour {
 
 	public int AudioIndexPosition; 
 	public string LevelName;
+	public string AssetFileToLoad;
 	public int pagesPerScene;
 	public string NextScene;
 	public string LastScene;
@@ -31,13 +32,13 @@ public class StoryManager : MonoBehaviour {
 		if (PageManager.GetComponent<PageManager> ().isGoingBack == false) {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
 			PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName, AudioIndexPosition+chapterOffset);
-			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+chapterOffset);
+			PageManager.GetComponent<PageManager> ().GoToPage (0);
 			PageManager.GetComponent<PageManager> ().ChapterskipSetCharacters(chapterOffset);
 		} else {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
 			PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 			PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene);
-			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+pagesPerScene);	
+			PageManager.GetComponent<PageManager> ().GoToPage (0);	
 			PageManager.GetComponent<PageManager> ().isGoingBack = false;
 		}
 	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;

@@ -145,22 +145,25 @@ public class PageManager : Singleton<PageManager>
 
 	public void ChapterSkipAddOffset (int offset)
 	{
-		ChapterOffSet = offset;
+		DataManager.streamingAsset = offset;
 	}
 
 	public void ChapterSkip (String LevelToLoad)
 	{
 		Resources.UnloadUnusedAssets ();
+		DataManager.LoadStory (DataManager.currentStoryName);
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
-
+		audioIndex = 0;
 		isGoingBack = false;
 		sceneindex = 0;
 	}
 
 	public void ChapterSkipToTheEnd (String LevelToLoad)
 	{
+		audioIndex = 0;
 		Resources.UnloadUnusedAssets ();
+		DataManager.LoadStory (DataManager.currentStoryName);
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
 
@@ -168,6 +171,8 @@ public class PageManager : Singleton<PageManager>
 		//isGoingBack = false;
 		//sceneindex = 0;
 	}
+
+
 
 
 	void Update ()
@@ -222,7 +227,9 @@ public class PageManager : Singleton<PageManager>
 					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {				
 						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
 					} else {
+						audioIndex = 0;
 						Resources.UnloadUnusedAssets ();
+						DataManager.LoadStory (DataManager.currentStoryName);
 						SceneManager.UnloadScene (EnvironmentTracker);
 					}
 
@@ -524,7 +531,7 @@ public class PageManager : Singleton<PageManager>
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
-		//Debug.Log ("sequence running");
+		Debug.Log (obj.clip);
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;
 			audioSource.Play ();
