@@ -210,88 +210,114 @@ public class PageManager : Singleton<PageManager>
 
 		if ((mouseStartPosition.x - mouseEndPosition.x) > 300 || (mouseStartPosition.x - mouseEndPosition.x) < -300) {
 			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
-				sceneindex++;
-				//Debug.Log (sceneindex);
-				//sceneindex
-				string NextScene;
-				NextScene = StoryManager.GetComponent<StoryManager> ().NextScene;
-				if (sceneindex >= StoryManager.GetComponent<StoryManager> ().pagesPerScene) {
-					GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-
-					//EnvironmentTracker
-					if (StoryManager.GetComponent<StoryManager> ().isLastscene == true) {				
-						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
-					} else {
-						Resources.UnloadUnusedAssets ();
-						SceneManager.UnloadScene (EnvironmentTracker);
-					}
-
-					//Check if the player has reached the end of this scene, Once reached, go to the next scene.
-					SceneManager.LoadScene (NextScene, LoadSceneMode.Additive);
-
-					isGoingBack = false;
-					sceneindex = 0;
-				} else {
-					//Debug.Log (sceneindex);
-					NextSentence (isForward);
-					isGoingBack = false;
-					isForward = true;
-					transform.hasChanged = false;
-
-					foreach (GameObject Mesh in DynamicProps) 
-					{
-						Mesh.GetComponent<DynamicStaticMeshSystem> ().MoveMeshForward ();
-					}
-
-					foreach (GameObject Child in Characters) 
-					{//Play the next animation on all the characters
-						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
-							Child.GetComponent<CharacterAnimationSystems> ().InvokeNextAnimation ();									
-						}
-					}
-					UIDots.GetComponent<DotGenerator> ().updateDots (sceneindex);
-
-				}
-
-			} else {
-				sceneindex--;
-				if (sceneindex <= 0) {
-
-					if (StoryManager.GetComponent<StoryManager> ().isFirstscene == true) {
-
-						GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-						Canvas.GetComponent<MainStoryScreen> ().OnQuitButton ();
-					} else {
-						isGoingBack = true;
-						ChapterSkipToTheEnd (StoryManager.GetComponent<StoryManager> ().LastScene);
-					}
-				} else {
-					PreviousSentence (isForward);
-					isForward = false;
-					transform.hasChanged = false;
-
-					foreach (GameObject Mesh in DynamicProps) 
-					{
-						Mesh.GetComponent<DynamicStaticMeshSystem> ().MoveMeshBackward ();
-					}
-
-					//Play the current animation
-					foreach (GameObject Child in Characters) {
-						if (Child.GetComponent<Animator> () != null || Child.GetComponent<Camera> () != null || Child.GetComponent<Image> () != null) {
-							//Debug.Log("Launching Previous Anim");
-							Child.GetComponent<CharacterAnimationSystems> ().InvokePreviousAnimation ();
-						}
-					}
-					UIDots.GetComponent<DotGenerator> ().updateDots (sceneindex);
-				}
-			}
+                GotoNext();
+            }
+                else
+                {
+                GotoPrevious();
+                }
 			//Debug.Log (sceneindex);
 		}
 		CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);	
 	}
 
+    public void GotoNext()
+    {
+        sceneindex++;
+        //Debug.Log (sceneindex);
+        //sceneindex
+        string NextScene;
+        NextScene = StoryManager.GetComponent<StoryManager>().NextScene;
+        if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
+        {
+            GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
 
-	private void SetToLastPosition ()
+            //EnvironmentTracker
+            if (StoryManager.GetComponent<StoryManager>().isLastscene == true)
+            {
+                Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
+            }
+            else
+            {
+                Resources.UnloadUnusedAssets();
+                SceneManager.UnloadScene(EnvironmentTracker);
+            }
+
+            //Check if the player has reached the end of this scene, Once reached, go to the next scene.
+            SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
+
+            isGoingBack = false;
+            sceneindex = 0;
+        }
+        else
+        {
+            //Debug.Log (sceneindex);
+            NextSentence(isForward);
+            isGoingBack = false;
+            isForward = true;
+            transform.hasChanged = false;
+
+            foreach (GameObject Mesh in DynamicProps)
+            {
+                Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshForward();
+            }
+
+            foreach (GameObject Child in Characters)
+            {//Play the next animation on all the characters
+                if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
+                {
+                    Child.GetComponent<CharacterAnimationSystems>().InvokeNextAnimation();
+                }
+            }
+            UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
+
+        }
+
+    }
+
+    public void GotoPrevious()
+    {
+        sceneindex--;
+        if (sceneindex <= 0)
+        {
+
+            if (StoryManager.GetComponent<StoryManager>().isFirstscene == true)
+            {
+
+                GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+                Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
+            }
+            else
+            {
+                isGoingBack = true;
+                ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager>().LastScene);
+            }
+        }
+        else
+        {
+            PreviousSentence(isForward);
+            isForward = false;
+            transform.hasChanged = false;
+
+            foreach (GameObject Mesh in DynamicProps)
+            {
+                Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshBackward();
+            }
+
+            //Play the current animation
+            foreach (GameObject Child in Characters)
+            {
+                if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
+                {
+                    //Debug.Log("Launching Previous Anim");
+                    Child.GetComponent<CharacterAnimationSystems>().InvokePreviousAnimation();
+                }
+            }
+            UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
+        }
+    }
+
+        private void SetToLastPosition ()
 	{
 		
 	Characters = GameObject.FindGameObjectsWithTag ("Characters");
