@@ -30,7 +30,7 @@ public class DataManager
     {        
 		//SceneRefCounter = 0;
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
-        Application.streamingAssetsPath,storyName,currentLanguage.ToLower()));
+        Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+"_0"));
 
 		//Debug.Log (myLoadedAssetBundle);
 			

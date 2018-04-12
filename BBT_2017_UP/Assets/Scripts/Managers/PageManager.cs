@@ -545,7 +545,7 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		StartCoroutine (RunSequence (currentAudio));
-		//Debug.Log(audioIndex + "/" + pageIndex);
+		Debug.Log(currentPage.name + "/" + currentAudio.name);
 	}
 
 	IEnumerator RunSequence (AudioObject obj)
