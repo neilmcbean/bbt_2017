@@ -160,16 +160,13 @@ public class PageManager : Singleton<PageManager>
 	}
 
 	public void ChapterSkipToTheEnd (String LevelToLoad)
-	{
-		audioIndex = 0;
+	{		
 		Resources.UnloadUnusedAssets ();
+		DataManager.isGoingBack = true;
 		DataManager.LoadStory (DataManager.currentStoryName);
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
-
-		//StoryManager.GetComponent<StoryManager> ().StartFromEndOfLevel ();
-		//isGoingBack = false;
-		//sceneindex = 0;
+		audioIndex = 11;
 	}
 
 
@@ -593,19 +590,19 @@ public class PageManager : Singleton<PageManager>
 
 	public void ChangeMusic (Slider newMusicVolume)
 	{
-		Debug.Log ("newMusicVolume" + newMusicVolume.value);
+		//Debug.Log ("newMusicVolume" + newMusicVolume.value);
 		audioSource.volume = newMusicVolume.value;
 	}
 
 	public void ChangeNarrative (Slider newNarrativeVolume)
 	{
-		Debug.Log ("newNarrativeVolume" + newNarrativeVolume.value);
+		//Debug.Log ("newNarrativeVolume" + newNarrativeVolume.value);
 		audioSource.volume = newNarrativeVolume.value;
 	}
 
 	public void ChangeTextStyle (Slider newTextStyle)
 	{
-		Debug.Log ("newTextStyle" + newTextStyle.value);
+		//Debug.Log ("newTextStyle" + newTextStyle.value);
 		//audioSource.volume = newTextStyle.value;
 		ScentenceContainer.GetComponent<SentenceRowContainer> ().ReadAlongOn = newTextStyle.value;
 	}

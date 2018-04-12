@@ -27,9 +27,16 @@ public class DataManager
 	private static int SceneRefCounter = 0;
 
 	public static int streamingAsset = 0;
+	public static bool isGoingBack = false;
+
     public static StoryObject LoadStory(string storyName)
     {        
 		//SceneRefCounter = 0;
+
+		if (isGoingBack == true) {
+			streamingAsset--;	        
+		}
+
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
 			Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+streamingAsset.ToString()));//+streamingAsset
 
@@ -58,9 +65,14 @@ public class DataManager
 			//Debug.Log (files[i]);
 			AddFileToStory(story, files[i]);
 		}*/
+		if (isGoingBack == false) {
+			streamingAsset++;	        
+		} else {
+			streamingAsset--;
+			isGoingBack = false;
+		}
 
-		streamingAsset++;
-        UnloadAssetBundle();
+		UnloadAssetBundle();
         currentStory = story;
         return currentStory;
     }
