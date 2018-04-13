@@ -12,27 +12,28 @@ public class DataManager
 {
     public static string currentLanguage = "english";
     public static string currentStoryName = "sasquatch";
-
     public static StoryObject currentStory;
-
-    private static AssetBundle myLoadedAssetBundle;
-
     public static string[] languageManager;
-
-
-	public static int NarrativeCounter = 0;
-	private static int NarrativeCounterEnd = 12;
-
 	public static string[] SceneRef;
-	private static int SceneRefCounter = 0;
+	public static int NarrativeCounter = 0;
+	public static string CurrentAssetPackage;
 
-    public static StoryObject LoadStory(string storyName)
+	private static int NarrativeCounterEnd = 12;
+	private static AssetBundle myLoadedAssetBundle;
+	private static int SceneRefCounter = 0;
+	//private static int AssetStreamingCounter = 0;
+
+
+	public static StoryObject LoadStory(string storyName, string packageToLoad)
     {        
 		//SceneRefCounter = 0;
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
-        Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+"_0"));
+			Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+"_"+packageToLoad.ToString()));
 
-		//Debug.Log (myLoadedAssetBundle);
+		CurrentAssetPackage = packageToLoad.ToString ();
+
+		//AssetStreamingCounter++;
+		Debug.Log ((currentLanguage.ToLower()+"_"+packageToLoad.ToString()).ToString());
 			
         if (myLoadedAssetBundle == null)
         {
@@ -41,23 +42,14 @@ public class DataManager
         }
 
         StoryObject story = new StoryObject();
-		//files.Clear();
+
         string[] files = myLoadedAssetBundle.GetAllAssetNames();
-		//Debug.Log (files.Length);
-		//SceneRef.Clear();
-		//SceneRef = new string[files.Length];
 
 		foreach (string file in files)
         {
             AddFileToStory(story, file); 
 			//Debug.Log (story+"//"+ file);
         }
-		/*
-		for (int i = NarrativeCounter; i < NarrativeCounter+NarrativeCounterEnd; i++) {//Multiply this by two
-			//Debug.Log (files[i]);
-			AddFileToStory(story, files[i]);
-		}*/
-
         UnloadAssetBundle();
         currentStory = story;
         return currentStory;

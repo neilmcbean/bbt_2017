@@ -26,7 +26,7 @@ public class PageManager : Singleton<PageManager>
 	}
 	//PageKeepers
 	private int pageIndex;
-	private int audioIndex;
+	public int audioIndex;
 	public int sceneindex;
 	/// <summary>/// /////TURN THIS PRIVATE/// </summary>
 	private int LastPageLoader;
@@ -90,7 +90,7 @@ public class PageManager : Singleton<PageManager>
 
 		//Debug.Log(DataManager.currentStoryName);
 		AssetAssigner (DataManager.currentStoryName + "_start", 11);
-		DataManager.LoadStory (DataManager.currentStoryName);
+		DataManager.LoadStory (DataManager.currentStoryName,"0");
 
 		OG_PostitionTextBody = TextBody.gameObject.transform.position;
 		/*
@@ -143,9 +143,14 @@ public class PageManager : Singleton<PageManager>
 		}
 	}
 
-	public void ChapterSkipAddOffset (int offset)
+	public void CheckLoadedStreamingAssets (string assetpackageNumber)
 	{
-		ChapterOffSet = offset;
+		/*if (assetpackageNumber != DataManager.CurrentAssetPackage) 
+		{
+			//DataManager.LoadStory (DataManager.currentStoryName, assetpackageNumber.ToString());
+		}
+		//ChapterOffSet = offset;
+		*/
 	}
 
 	public void ChapterSkip (String LevelToLoad)
@@ -245,6 +250,10 @@ public class PageManager : Singleton<PageManager>
 
             //Check if the player has reached the end of this scene, Once reached, go to the next scene.
             SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
+			/*if (StoryManager.GetComponent<StoryManager> ().isLoadingLevel == true) {
+				audioIndex = 0;
+				DataManager.LoadStory (DataManager.currentStoryName, "1");
+			}*/
 
             isGoingBack = false;
             sceneindex = 0;
@@ -420,7 +429,7 @@ public class PageManager : Singleton<PageManager>
 		//Debug.Log(newLanguage);
 
 		DataManager.currentLanguage = newLanguage;
-		DataManager.LoadStory (DataManager.currentStoryName);
+		DataManager.LoadStory (DataManager.currentStoryName,"0");
 		PreviousSentence (true);
 	}
 

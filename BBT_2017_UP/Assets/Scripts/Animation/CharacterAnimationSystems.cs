@@ -178,6 +178,9 @@ public class CharacterAnimationSystems : MonoBehaviour
 					{
 						GetComponent<Animator>().SetTrigger("goback");
 					}
+
+					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <=CamPos.Length-1)
+					{gameObject.transform.position = CamPos [AnimationDelayTracker];}
 				} 
 				else 
 				{//Turn on the renderer
@@ -217,6 +220,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 						}
 					}
 				}
+				GetComponent<Animator> ().SetTrigger ("goback");
 				}
 
 		}

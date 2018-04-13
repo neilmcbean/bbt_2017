@@ -1473,7 +1473,7 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: AudioIndexPosition
-      value: 78
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1509430223649092, guid: ffb969bfb20bf48c093e791703b74b05, type: 2}
       propertyPath: m_IsActive
@@ -1482,6 +1482,11 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: isLastscene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: StreamingAssetsCounter
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

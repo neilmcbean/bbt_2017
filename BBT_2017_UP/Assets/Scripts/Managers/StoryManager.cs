@@ -11,6 +11,8 @@ public class StoryManager : MonoBehaviour {
 	public string LastScene;
 	public bool isLastscene;
 	public bool isFirstscene;
+	public bool isLoadingLevel;
+	public int StreamingAssetsCounter;
 	public GameObject PageManager;
 	private GameObject Canvas;
 
@@ -18,6 +20,17 @@ public class StoryManager : MonoBehaviour {
 	void Start () {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+
+		if (isLoadingLevel == true) {
+			PageManager.GetComponent<PageManager>().audioIndex = 0;
+			DataManager.LoadStory (DataManager.currentStoryName, StreamingAssetsCounter.ToString());
+		}
+			else if (StreamingAssetsCounter.ToString() != DataManager.CurrentAssetPackage.ToString()) 
+			{
+			DataManager.LoadStory (DataManager.currentStoryName, StreamingAssetsCounter.ToString());
+			}
+
+		Debug.Log (StreamingAssetsCounter.ToString() +"/"+ DataManager.CurrentAssetPackage.ToString());
 
 		int chapterOffset = PageManager.GetComponent<PageManager> ().ChapterOffSet;
 
@@ -37,7 +50,7 @@ public class StoryManager : MonoBehaviour {
 			//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
 			PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 			PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene);
-			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+pagesPerScene);	
+			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+(pagesPerScene-1));	
 			PageManager.GetComponent<PageManager> ().isGoingBack = false;
 		}
 	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;

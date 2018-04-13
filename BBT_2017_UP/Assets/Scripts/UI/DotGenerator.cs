@@ -23,7 +23,7 @@ public class DotGenerator : MonoBehaviour {
 		if (Dots [0] != null) {
 			for (int i = 0; i <= Dots.Length-1; i++) 
 			{
-				Debug.Log ("nuts");
+				//Debug.Log ("nuts");
 
 					Destroy (Dots [i]);
 
