@@ -544,7 +544,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		//Scenetext.GetComponent<Text> ().text = DataManager.SceneRef [audioIndex];
+		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
