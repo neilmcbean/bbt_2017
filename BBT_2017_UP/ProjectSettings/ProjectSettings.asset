@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: BBT Test
+  companyName: Rival Schools
+  productName: Bramble Berry Tales
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -122,7 +122,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.1.5
+  bundleVersion: 1.1.7
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -148,7 +148,7 @@ PlayerSettings:
     iOS: com.rivalschools.BBT
     tvOS: com.rs.bbtscenetest
   buildNumber:
-    iOS: 1.4
+    iOS: 1.6
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
@@ -238,9 +238,83 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: f3996677ecb584a96ba2f76d6b30ef47, type: 3}
+      m_Icon: {fileID: 2800000, guid: 62aec57c9129f41acb7162406b4e053c, type: 3}
       m_Width: 128
       m_Height: 128
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 4926441a9dc054095874984164c25b2e, type: 3}
+      m_Width: 180
+      m_Height: 180
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 204b44aa24ff14dc39e47e270119f28d, type: 3}
+      m_Width: 167
+      m_Height: 167
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 4378710625d0c43a7b2878a5f45820f5, type: 3}
+      m_Width: 152
+      m_Height: 152
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 27e502f2289e6475389649dd895208af, type: 3}
+      m_Width: 144
+      m_Height: 144
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: e7feec161cdee43448f6177d842f7cc5, type: 3}
+      m_Width: 120
+      m_Height: 120
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 9c2ed8592567e493c9a4dfa8b884c39e, type: 3}
+      m_Width: 114
+      m_Height: 114
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 5a56f83603e884660a79796055ee5b29, type: 3}
+      m_Width: 76
+      m_Height: 76
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: a750ccc238a6d40bab0c4522c04a5229, type: 3}
+      m_Width: 72
+      m_Height: 72
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 74a4bb7412a0c43fb84eed3718a9ded4, type: 3}
+      m_Width: 57
+      m_Height: 57
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: e514bca7352c248b19c0753930be44c8, type: 3}
+      m_Width: 120
+      m_Height: 120
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6989da0d452eb4aec9404c14d80e1b91, type: 3}
+      m_Width: 80
+      m_Height: 80
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 7af6024bce06f46c8a5a721774285b03, type: 3}
+      m_Width: 40
+      m_Height: 40
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b53a126a044c147fcbfe9efca9f922f7, type: 3}
+      m_Width: 87
+      m_Height: 87
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: da950d4440e3e4d2caf6bd28e398a8b5, type: 3}
+      m_Width: 58
+      m_Height: 58
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 7947c7be269e346b1aec3b9b54124dc7, type: 3}
+      m_Width: 29
+      m_Height: 29
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: c3afef481ad7940228f5f53a6b17f99a, type: 3}
+      m_Width: 60
+      m_Height: 60
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 7af6024bce06f46c8a5a721774285b03, type: 3}
+      m_Width: 40
+      m_Height: 40
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 67d89fd0d98dd418badb41fa8efbe322, type: 3}
+      m_Width: 20
+      m_Height: 20
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:

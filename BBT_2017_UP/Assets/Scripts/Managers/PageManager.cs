@@ -275,7 +275,7 @@ public class PageManager : Singleton<PageManager>
             {//Play the next animation on all the characters
                 if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
                 {
-                    Child.GetComponent<CharacterAnimationSystems>().InvokeNextAnimation();
+					Child.GetComponent<CharacterAnimationSystems>().InvokeNextAnimation(Scenetext.GetComponent<Text> ().text);
                 }
             }
             UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
@@ -319,7 +319,7 @@ public class PageManager : Singleton<PageManager>
                 if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
                 {
                     //Debug.Log("Launching Previous Anim");
-                    Child.GetComponent<CharacterAnimationSystems>().InvokePreviousAnimation();
+					Child.GetComponent<CharacterAnimationSystems>().InvokePreviousAnimation(Scenetext.GetComponent<Text> ().text);
                 }
             }
             UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
@@ -510,6 +510,7 @@ public class PageManager : Singleton<PageManager>
 
 		StartCoroutine (RunSequence (currentAudio));
 		//Debug.Log(audioIndex + "/" + pageIndex);
+		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
 
@@ -544,7 +545,7 @@ public class PageManager : Singleton<PageManager>
 		audioIndex++;
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 
-		Scenetext.GetComponent<Text> ().text =currentAudio.name;
+
 
 		//Actiavte tweens
 		foreach (TweenEvent evt in tweenEvents) {
@@ -555,10 +556,14 @@ public class PageManager : Singleton<PageManager>
 		}
 		StartCoroutine (RunSequence (currentAudio));
 		Debug.Log(currentPage.name + "/" + currentAudio.name);
+		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
+
+
+
 		//Debug.Log ("sequence running");
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;

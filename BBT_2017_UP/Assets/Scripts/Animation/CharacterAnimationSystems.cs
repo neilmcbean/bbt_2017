@@ -86,7 +86,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 		}*/
 	}
 
-	public void InvokeNextAnimation ()
+	public void InvokeNextAnimation (string AnimToSet)
 	{	
 		if (AnimationDelayTracker < AnimationBool.Length-1) 
 		{
@@ -106,7 +106,8 @@ public class CharacterAnimationSystems : MonoBehaviour
 
 					if (GetComponent<Animator> () != null) 
 					{
-					GetComponent<Animator> ().SetTrigger ("advance");
+					//GetComponent<Animator> ().SetTrigger ("advance");
+					GetComponent<Animator>().Play(AnimToSet, -1, 0f);
 					}
 
 					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <=CamPos.Length-1)
@@ -125,7 +126,8 @@ public class CharacterAnimationSystems : MonoBehaviour
 										child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 								}
 								//Debug.Log(gameObject.name+"runing anim");
-								GetComponent<Animator> ().SetTrigger ("advance");
+								//GetComponent<Animator> ().SetTrigger ("advance");
+								GetComponent<Animator>().Play(AnimToSet, -1, 0f);
 							}
 						}
 
@@ -157,7 +159,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 		//Debug.Log(gameObject.name);
 	}
 
-	public void InvokePreviousAnimation ()
+	public void InvokePreviousAnimation (string AnimToSet)
 	{
 		if (AnimationDelayTracker > 0) {
 			AnimationDelayTracker--;
@@ -176,11 +178,12 @@ public class CharacterAnimationSystems : MonoBehaviour
 					gameObject.GetComponent<Camera>().enabled = true;
 					if(GetComponent<Animator>() != null)
 					{
-						GetComponent<Animator>().SetTrigger("goback");
+						//GetComponent<Animator>().SetTrigger("goback");
+						GetComponent<Animator>().Play(AnimToSet, -1, 0f);
 					}
-
 					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <=CamPos.Length-1)
 					{gameObject.transform.position = CamPos [AnimationDelayTracker];}
+
 				} 
 				else 
 				{//Turn on the renderer
@@ -195,7 +198,8 @@ public class CharacterAnimationSystems : MonoBehaviour
 								child.gameObject.GetComponent<SkinnedMeshRenderer> ().enabled = true;
 						}
 
-						GetComponent<Animator> ().SetTrigger ("goback");
+						//GetComponent<Animator> ().SetTrigger ("goback");
+						GetComponent<Animator>().Play(AnimToSet, -1, 0f);
 					}
 				}
 			} else {
@@ -220,7 +224,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 						}
 					}
 				}
-				GetComponent<Animator> ().SetTrigger ("goback");
+				//GetComponent<Animator> ().SetTrigger ("goback");
 				}
 
 		}
