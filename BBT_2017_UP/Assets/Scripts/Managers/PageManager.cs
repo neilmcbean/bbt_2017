@@ -86,41 +86,27 @@ public class PageManager : Singleton<PageManager>
     
 	// Use this for initialization
 	IEnumerator Start ()
-	{
-
-		//Debug.Log(DataManager.currentStoryName);
+	{//Initiage the story
 		AssetAssigner (DataManager.currentStoryName + "_start", 11);
 		DataManager.LoadStory (DataManager.currentStoryName,"0");
-
 		OG_PostitionTextBody = TextBody.gameObject.transform.position;
-		/*
-		List<TweenEvent> tweenEvents = FindObjectsOfTypeAll<TweenEvent> ();
-		foreach (TweenEvent evt in tweenEvents) {
-			Register (evt);
-		}
-		DOTween.Init ();
-		//The tweens should be only be enabled AFTER DOTween has been initialized
-		foreach (TweenEvent evt in tweenEvents) {
-			evt.enabled = true;
-		}
-		//NextSentence (true);
-		*/
 		yield return null;
 	}
 
 
 	public void AssetAssigner (string CurrentLevel, int lastPage)
-	{
+	{//when ever a level is loaded, this code will run to store all of the relative data
 		EnvironmentTracker = CurrentLevel;
 		MountainTest = GameObject.FindGameObjectWithTag ("MountainRange");
 		CharacterCoin = GameObject.FindGameObjectWithTag ("CharacterCoin");
-		Characters = GameObject.FindGameObjectsWithTag ("Characters");
-		StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");
+		Characters = GameObject.FindGameObjectsWithTag ("Characters");//Stores the characters for animation
+		StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");//Find the story manager found in every level
 		DynamicProps = GameObject.FindGameObjectsWithTag ("DynamicProps");
 		//Wait a frame for all scenes to be loaded
 		//Camera tracking variables
 
-		foreach (GameObject obj in Characters) {
+		foreach (GameObject obj in Characters) 
+		{//Find the first camera and store its transform info 
 			if (obj.GetComponent<Camera> () != null) {
 				cameraTransformTracker = obj.transform;
 			}
@@ -143,18 +129,8 @@ public class PageManager : Singleton<PageManager>
 		}
 	}
 
-	public void CheckLoadedStreamingAssets (string assetpackageNumber)
-	{
-		/*if (assetpackageNumber != DataManager.CurrentAssetPackage) 
-		{
-			//DataManager.LoadStory (DataManager.currentStoryName, assetpackageNumber.ToString());
-		}
-		//ChapterOffSet = offset;
-		*/
-	}
-
 	public void ChapterSkip (String LevelToLoad)
-	{
+	{//Launches when the player skips to a chapter through clicking on the book mark
 		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
@@ -168,18 +144,12 @@ public class PageManager : Singleton<PageManager>
 		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
-
-		//StoryManager.GetComponent<StoryManager> ().StartFromEndOfLevel ();
-		//isGoingBack = false;
-		//sceneindex = 0;
 	}
 
 
 	void Update ()
 	{
-		if (cameraTransformTracker != null && CanSwipe == true) {
-			
-
+		/*if (cameraTransformTracker != null && CanSwipe == true) {
 			if (Input.GetMouseButtonDown (0)) {//If the player is holding down the mouse. 
 				isMouseMoving = true;
 				mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
@@ -189,31 +159,13 @@ public class PageManager : Singleton<PageManager>
 				isMouseMoving = false;	
 				SetChanger ();
 			} 
-
-			/*if (Input.GetMouseButtonDown (0)) 
-				{
-				mouseoffset = Vector2.Distance( 
-					new Vector2(Input.mousePosition.x, TextBody.transform.position.y),
-					new Vector2(TextBody.transform.position.x, TextBody.transform.position.y)
-				);
-				}
-			else if (Input.GetMouseButton (0)) {
-				TextBody.transform.position = new Vector2 (Input.mousePosition.x+mouseoffset, TextBody.transform.position.y);
-			}
-			/*if (cameraTransformTracker != null) {
-				if (cameraTransformTracker.hasChanged) {
-					//print("The transform has changed!");
-					cameraTransformTracker.hasChanged = false;
-				}			
-			}*/
-		}
+		}*/
 	}
 
 
 	private void SetChanger ()
 	{
-
-		if ((mouseStartPosition.x - mouseEndPosition.x) > 300 || (mouseStartPosition.x - mouseEndPosition.x) < -300) {
+		/*if ((mouseStartPosition.x - mouseEndPosition.x) > 300 || (mouseStartPosition.x - mouseEndPosition.x) < -300) {
 			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
                 GotoNext();
             }
@@ -223,117 +175,100 @@ public class PageManager : Singleton<PageManager>
                 }
 			//Debug.Log (sceneindex);
 		}
-		CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);	
+		//CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);	
+		*/
 	}
 
     public void GotoNext()
-    {
+    {		
         sceneindex++;
-        //Debug.Log (sceneindex);
-        //sceneindex
         string NextScene;
         NextScene = StoryManager.GetComponent<StoryManager>().NextScene;
         if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
-        {
-            GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
-
-            //EnvironmentTracker
+        {//If the player is at the last page of the scene
+        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
             if (StoryManager.GetComponent<StoryManager>().isLastscene == true)
-            {
-                Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
+            {//If this is the last scene in the story
+            Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
             }
-            else
-            {
+	            else
+	            {//Unlaod the level and all unused assets
                 Resources.UnloadUnusedAssets();
                 SceneManager.UnloadScene(EnvironmentTracker);
-            }
+	            }
+        //Check if the player has reached the end of this scene, Once reached, go to the next scene.
+        SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
+        isGoingBack = false;
+        sceneindex = 0;
+	}
+		else
+		{// is the scene has a pages it can show. 
+		NextSentence(isForward);
+		isGoingBack = false;
+		isForward = true;
+		transform.hasChanged = false;
+			foreach (GameObject Mesh in DynamicProps)
+			{//Go through all the dynamic meshes and see if there are any that need to be moved or activated. 
+			    Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshForward();
+			}
 
-            //Check if the player has reached the end of this scene, Once reached, go to the next scene.
-            SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
-			/*if (StoryManager.GetComponent<StoryManager> ().isLoadingLevel == true) {
-				audioIndex = 0;
-				DataManager.LoadStory (DataManager.currentStoryName, "1");
-			}*/
-
-            isGoingBack = false;
-            sceneindex = 0;
-        }
-        else
-        {
-            //Debug.Log (sceneindex);
-            NextSentence(isForward);
-            isGoingBack = false;
-            isForward = true;
-            transform.hasChanged = false;
-
-            foreach (GameObject Mesh in DynamicProps)
-            {
-                Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshForward();
-            }
-
-            foreach (GameObject Child in Characters)
-            {//Play the next animation on all the characters
-                if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
-                {
+			foreach (GameObject Child in Characters)
+			{//Play the next animation on all the characters
+			    if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
+			    {
 					Child.GetComponent<CharacterAnimationSystems>().InvokeNextAnimation(Scenetext.GetComponent<Text> ().text);
-                }
-            }
-            UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
-
-        }
-
+			    }
+			}
+		UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
+		}
+	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
     }
 
     public void GotoPrevious()
     {
         sceneindex--;
         if (sceneindex <= 0)
-        {
-
+        {// if the player has reached the end of a bookmark. 
             if (StoryManager.GetComponent<StoryManager>().isFirstscene == true)
-            {
-
+            {//This condition handels what the player can do when they playe goes backwards from the first passage
                 GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
                 Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
             }
-            else
-            {
-                isGoingBack = true;
-                ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager>().LastScene);
-            }
+	            else
+	            {//otherwise, go to the last scene
+	                isGoingBack = true;
+	                ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager>().LastScene);
+	            }
         }
-        else
-        {
+	        else
+	        {//If the player is still working their way backwards through the scene.
             PreviousSentence(isForward);
             isForward = false;
             transform.hasChanged = false;
+	            foreach (GameObject Mesh in DynamicProps)
+				{//Go through all the dynamic meshes and see if there are any that need to be moved or activated. 
+	                Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshBackward();
+	            }
 
-            foreach (GameObject Mesh in DynamicProps)
-            {
-                Mesh.GetComponent<DynamicStaticMeshSystem>().MoveMeshBackward();
-            }
-
-            //Play the current animation
-            foreach (GameObject Child in Characters)
-            {
-                if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
-                {
-                    //Debug.Log("Launching Previous Anim");
-					Child.GetComponent<CharacterAnimationSystems>().InvokePreviousAnimation(Scenetext.GetComponent<Text> ().text);
-                }
-            }
+	            foreach (GameObject Child in Characters)
+				{//Play the next animation on all the characters
+	                if (Child.GetComponent<Animator>() != null || Child.GetComponent<Camera>() != null || Child.GetComponent<Image>() != null)
+	                {
+	                    //Debug.Log("Launching Previous Anim");
+						Child.GetComponent<CharacterAnimationSystems>().InvokePreviousAnimation(Scenetext.GetComponent<Text> ().text);
+	                }
+	            }
             UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
-        }
+	        }
+	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
     }
 
-        private void SetToLastPosition ()
-	{
-		
+    private void SetToLastPosition ()
+	{//This function goes through all the dynamic instances in the scene and sets their location to the last memeber of the array
 	Characters = GameObject.FindGameObjectsWithTag ("Characters");
-		foreach (GameObject Child in Characters) {
-
-			Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
-
+		foreach (GameObject Child in Characters) 
+		{
+		Child.GetComponent<CharacterAnimationSystems> ().ResetToTheEnd ();
 		}
 
 	DynamicProps = GameObject.FindGameObjectsWithTag ("DynamicProps");
@@ -371,7 +306,7 @@ public class PageManager : Singleton<PageManager>
 		ChangeLanguage (button.gameObject.GetComponentInChildren<Text> ().text);
 	}
 
-	private void MenuSetup ()//OBSELETE 
+	/*private void MenuSetup ()//OBSELETE 
 	{///
 		//Debug.Log(currentStory.pageObjects.Count);
 		GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
@@ -408,7 +343,7 @@ public class PageManager : Singleton<PageManager>
 			OGPosition = new Vector3 (OGPosition.x, OGPosition.y - 30.0f, OGPosition.z);
 		}
 		text.gameObject.SetActive (false);
-	}
+	}*/
 
 	private void OnUIButtonClick_Menu (Button button)
 	{//when the player clicks a button
@@ -429,8 +364,12 @@ public class PageManager : Singleton<PageManager>
 		//Debug.Log(newLanguage);
 
 		DataManager.currentLanguage = newLanguage;
-		DataManager.LoadStory (DataManager.currentStoryName,"0");
-		PreviousSentence (true);
+		DataManager.LoadStory (DataManager.currentStoryName,DataManager.CurrentAssetPackage);
+		//PreviousSentence (true);
+		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
+		StartCoroutine (RunSequence (currentAudio));
+		//Debug.Log(audioIndex + "/" + pageIndex);
+		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
 	public void Register (TweenEvent evt)

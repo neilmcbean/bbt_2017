@@ -30,7 +30,7 @@ public class StoryManager : MonoBehaviour {
 			DataManager.LoadStory (DataManager.currentStoryName, StreamingAssetsCounter.ToString());
 			}
 
-		Debug.Log (StreamingAssetsCounter.ToString() +"/"+ DataManager.CurrentAssetPackage.ToString());
+		//Debug.Log (StreamingAssetsCounter.ToString() +"/"+ DataManager.CurrentAssetPackage.ToString());
 
 		int chapterOffset = PageManager.GetComponent<PageManager> ().ChapterOffSet;
 
