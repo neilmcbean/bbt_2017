@@ -227,7 +227,7 @@ public class PageManager : Singleton<PageManager>
     public void GotoPrevious()
     {
         sceneindex--;
-        if (sceneindex <= 0)
+        if (sceneindex < 0)
         {// if the player has reached the end of a bookmark. 
             if (StoryManager.GetComponent<StoryManager>().isFirstscene == true)
             {//This condition handels what the player can do when they playe goes backwards from the first passage
@@ -414,7 +414,7 @@ public class PageManager : Singleton<PageManager>
 		if (audioIndex < 1 && pageIndex > 0) {//Switch to the previous page if can(OBSELETE)
 			Debug.Log ("Reset to previous page");
 			pageIndex--;
-			audioIndex = currentStory.pageObjects.Count + 1;
+			//audioIndex = currentStory.pageObjects.Count;
 		}
 
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
@@ -434,9 +434,7 @@ public class PageManager : Singleton<PageManager>
 	void PlayPreviousSentence ()
 	{
 
-		if (audioIndex > 0) {//reduce the passage book mark
-			audioIndex--;
-		}
+
 
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 		//Actiavte tweens
@@ -450,6 +448,10 @@ public class PageManager : Singleton<PageManager>
 		StartCoroutine (RunSequence (currentAudio));
 		//Debug.Log(audioIndex + "/" + pageIndex);
 		Scenetext.GetComponent<Text> ().text =currentAudio.name;
+
+		if (audioIndex > 0) {//reduce the passage book mark
+			audioIndex--;
+		}
 	}
 
 
