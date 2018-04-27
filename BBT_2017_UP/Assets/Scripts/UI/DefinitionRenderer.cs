@@ -11,11 +11,13 @@ public class DefinitionRenderer : MonoBehaviour {
 
 
 	public Image RenderPlacement;
+	public AudioSource audioEmitter;
 
 	public string[] def_wordSas;
 	public string[] def_wordSasTranslation;
 	public Sprite [] def_wordSasPhotos;
 	public string[] def_BodySasEnglish;
+	public AudioClip[] def_WordSas_Audio; 
 
 
 	public string[] def_wordLilPpl;
@@ -37,17 +39,14 @@ public class DefinitionRenderer : MonoBehaviour {
 
 		Debug.Log (DataManager.currentStoryName);
 		if (DataManager.currentStoryName == "sasquatch") {
-			//Debug.Log (Definition.text);
 			for (int i = 0; i < def_wordSas.Length; i++) {
-				//Debug.Log (Definition.text.ToLower()+"///"+def_wordSas[i].ToLower());
-
 				if (Definition.text.ToLower ().Equals (def_wordSas [i].ToLower ())) {
-
 					title.text = def_wordSas [i];
 					TextTranslation.text = def_wordSasTranslation [i];
 					RenderPlacement.sprite = def_wordSasPhotos [i];
 					TextBody.text = def_BodySasEnglish [i];
-					//Debug.Log (Definition.text.ToLower()+"///"+def_wordSas [i]);
+					audioEmitter.clip = def_WordSas_Audio [i];
+					//audioEmitter.Play ();
 				} 
 			}
 		} else {

@@ -276,7 +276,7 @@ public class PageManager : Singleton<PageManager>
 		{
 			Mesh.GetComponent<DynamicStaticMeshSystem> ().ResetToTheEnd ();
 		}
-
+	UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
 	}
 
 	private void LanguageMenuDeploy ()
