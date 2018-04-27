@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 23125226}
   - component: {fileID: 23125225}
   - component: {fileID: 23125224}
+  - component: {fileID: 23125227}
   m_Layer: 5
   m_Name: 'Button: Forward'
   m_TagString: Untagged
@@ -185,8 +186,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054599091}
-        m_MethodName: GotoNext
+      - m_Target: {fileID: 23125227}
+        m_MethodName: GoToNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -231,6 +232,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23125222}
+--- !u!114 &23125227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 23125222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46fc79e2a2724b7b8b366301308d4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pagemanager: {fileID: 2054599089}
 --- !u!1 &60149865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9364,6 +9377,7 @@ RectTransform:
   - {fileID: 745036960}
   - {fileID: 1399097030}
   - {fileID: 1235614559}
+  - {fileID: 2052867980}
   m_Father: {fileID: 958440951}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9407,6 +9421,7 @@ MonoBehaviour:
   TextTranslation: {fileID: 745036961}
   TextBody: {fileID: 1399097031}
   RenderPlacement: {fileID: 388879096}
+  audioEmitter: {fileID: 2052867981}
   def_wordSas:
   - mountains
   - bannock
@@ -9537,6 +9552,28 @@ MonoBehaviour:
   - "A bed is a place for rest and contemplation. I know excited young children don\u2019t
     sleep very easily, especially Lily and Thomas. Sometimes, I have to read a little
     bedtime story so they can fall asleep."
+  def_WordSas_Audio:
+  - {fileID: 8300000, guid: d3ed43e60c1304e71815402e3f9ff5fd, type: 3}
+  - {fileID: 8300000, guid: aa032294a48304fceaf3a0453cd81193, type: 3}
+  - {fileID: 8300000, guid: 9fe0a99257c404d0b81ea055d36e299a, type: 3}
+  - {fileID: 8300000, guid: bf1c29d3d9526422495c2ec7629421cd, type: 3}
+  - {fileID: 8300000, guid: a11224a2db96d4c0fa867c86cf233fa7, type: 3}
+  - {fileID: 8300000, guid: 76797286af41e4f36be529024e230660, type: 3}
+  - {fileID: 8300000, guid: b8064edd6be0f44faa74876a97cebdb6, type: 3}
+  - {fileID: 8300000, guid: 3b9acc2aa18594872a21f32b79927532, type: 3}
+  - {fileID: 8300000, guid: 4699ae743990642f4834c79afd686c31, type: 3}
+  - {fileID: 8300000, guid: 5b044a28f063348d98ef1549ea456689, type: 3}
+  - {fileID: 8300000, guid: 8ec180d5f58214b949bd42991739a4fa, type: 3}
+  - {fileID: 8300000, guid: 653ba58dcee7c473caa6f0719f8b06fa, type: 3}
+  - {fileID: 8300000, guid: 59b2b07efad864d2bad8f01c83f1db15, type: 3}
+  - {fileID: 8300000, guid: bf5f58d7649c34172b184510719bef28, type: 3}
+  - {fileID: 8300000, guid: 5dee80a4e91cb4b879f20f268e4052b1, type: 3}
+  - {fileID: 8300000, guid: 22681d1510f1445b28d65ddb6f275fc1, type: 3}
+  - {fileID: 8300000, guid: c2adf87f604974dee8c3a120d9c46864, type: 3}
+  - {fileID: 8300000, guid: 31c468a141d264e29929ea1e3a0eaa5f, type: 3}
+  - {fileID: 8300000, guid: fdfb89369550e477eb637cba60101481, type: 3}
+  - {fileID: 8300000, guid: 05d8006b3e8de4b56bde897a02b1d27d, type: 3}
+  - {fileID: 8300000, guid: 008721e56b368402cbf9748fb34d14a4, type: 3}
   def_wordLilPpl:
   - Birds
   - sister
@@ -10597,6 +10634,7 @@ GameObject:
   - component: {fileID: 1362191587}
   - component: {fileID: 1362191586}
   - component: {fileID: 1362191585}
+  - component: {fileID: 1362191588}
   m_Layer: 5
   m_Name: 'Button: Back'
   m_TagString: Untagged
@@ -10662,8 +10700,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2054599091}
-        m_MethodName: GotoPrevious
+      - m_Target: {fileID: 1362191588}
+        m_MethodName: GoTolast
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10708,6 +10746,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1362191583}
+--- !u!114 &1362191588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362191583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46fc79e2a2724b7b8b366301308d4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pagemanager: {fileID: 2054599089}
 --- !u!1 &1399097029
 GameObject:
   m_ObjectHideFlags: 0
@@ -13287,7 +13337,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1726811952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2052867981}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1726811952
@@ -15153,6 +15214,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6f838b3ff4143388620ed7e869434a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2052867979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2052867980}
+  - component: {fileID: 2052867981}
+  m_Layer: 5
+  m_Name: DefenitionAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052867980
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052867979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1189380911}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2052867981
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052867979}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &2054599089
 GameObject:
   m_ObjectHideFlags: 0
