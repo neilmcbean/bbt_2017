@@ -149,34 +149,12 @@ public class PageManager : Singleton<PageManager>
 
 	void Update ()
 	{
-		/*if (cameraTransformTracker != null && CanSwipe == true) {
-			if (Input.GetMouseButtonDown (0)) {//If the player is holding down the mouse. 
-				isMouseMoving = true;
-				mouseStartPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
-				Debug.Log(mouseStartPosition);
-			} else if (Input.GetMouseButtonUp (0)) {
-				mouseEndPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);	
-				isMouseMoving = false;	
-				SetChanger ();
-			} 
-		}*/
+
 	}
 
 
 	private void SetChanger ()
 	{
-		/*if ((mouseStartPosition.x - mouseEndPosition.x) > 300 || (mouseStartPosition.x - mouseEndPosition.x) < -300) {
-			if (mouseStartPosition.x > mouseEndPosition.x && !EventSystem.current.IsPointerOverGameObject ()) {//If the player swipes to the next page
-                GotoNext();
-            }
-                else
-                {
-                GotoPrevious();
-                }
-			//Debug.Log (sceneindex);
-		}
-		//CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);	
-		*/
 	}
 
     public void GotoNext()
@@ -184,18 +162,15 @@ public class PageManager : Singleton<PageManager>
         sceneindex++;
         string NextScene;
         NextScene = StoryManager.GetComponent<StoryManager>().NextScene;
-        if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
+
+ if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
         {//If the player is at the last page of the scene
+			Debug.Log(sceneindex+"///"+StoryManager.GetComponent<StoryManager>().pagesPerScene);
         GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
-            if (StoryManager.GetComponent<StoryManager>().isLastscene == true)
-            {//If this is the last scene in the story
-            Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
-            }
-	            else
-	            {//Unlaod the level and all unused assets
+
                 Resources.UnloadUnusedAssets();
                 SceneManager.UnloadScene(EnvironmentTracker);
-	            }
+	            
         //Check if the player has reached the end of this scene, Once reached, go to the next scene.
         SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
         isGoingBack = false;
@@ -221,6 +196,16 @@ public class PageManager : Singleton<PageManager>
 			}
 		UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
 		}
+
+		if (sceneindex == StoryManager.GetComponent<StoryManager>().pagesPerScene-1 
+			&& StoryManager.GetComponent<StoryManager>().isLastscene == true)
+		{//If this is the last scene in the story
+			//Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
+			GameObject EndindCard = GameObject.FindGameObjectWithTag("EndingCard");
+			EndindCard.GetComponentInChildren<FadeScript> ().enabled = true;
+
+		}
+
 	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
     }
 
@@ -496,7 +481,7 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		StartCoroutine (RunSequence (currentAudio));
-		Debug.Log(currentPage.name + "/" + currentAudio.name);
+		//Debug.Log(currentPage.name + "/" + currentAudio.name);
 		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
