@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class FadeScript : MonoBehaviour {
 	private bool isActive = false;
+	private bool isDelay = false;
 	private bool isFadding = false;
 	private bool isloaded = false;
 	private bool isFaddingOut = false;
 	private float timeCounter;
-	private int duration = 2;
+	private int Delayduration = 10;
+	private int Fadeduration = 2;
+	private int LoadedDuration = 3;
+	private int FadeToBlackDuration = 2;
 	//ForestRef
 	private GameObject GM;
 	public Color colorStart;
@@ -22,7 +26,7 @@ public class FadeScript : MonoBehaviour {
 		//colorStart = renderer.material.color;
 		//colorEnd = Color(colorStart.r, colorStart.g, colorStart.b, 0.0f);
 		//FadeOut ();
-		isFadding = true;
+		isDelay = true;
 		isActive = true;
 	}
 
@@ -32,33 +36,49 @@ public class FadeScript : MonoBehaviour {
 		{
 			timeCounter += Time.deltaTime;
 			//Debug.Log (timeCounter);
-			if (isFadding == true) {
-				//timeCounter += Time.deltaTime;
-				//timeCounter = Mathf.Floor(timeCounter);
-				GetComponent<Image> ().color = Color.Lerp (colorStart, colorMid, timeCounter / duration);
-				if (timeCounter >= duration) {
-					Debug.Log (" fade in done");
-					isFadding = false;
-					isloaded = true;
+			if (isDelay == true) 
+			{
+				if (timeCounter >= Delayduration) {
+					//Debug.Log (" fade in done");
+					isDelay = false;
+					isFadding = true;
 					timeCounter = 0;
-				}
-			} else if (isloaded == true) {
-				//timeCounter += Time.deltaTime;
-				//timeCounter = Mathf.Floor(timeCounter);
-				if (timeCounter >= duration) {
-					Debug.Log (" duration done");
-					isloaded = false;
-					isFaddingOut = true;
-					timeCounter = 0;
-				}
-			} else if (isFaddingOut == true) {
-				//timeCounter += Time.deltaTime;
-				//timeCounter = Mathf.Floor(timeCounter);
-				GetComponent<Image> ().color = Color.Lerp (colorMid, colorEnd, timeCounter / duration);
-				if (timeCounter >= duration) {
-					SceneManager.LoadScene ("Menu");
 				}
 			}
+				else if (isFadding == true) 
+				{
+					//timeCounter += Time.deltaTime;
+					//timeCounter = Mathf.Floor(timeCounter);
+				GetComponent<Image> ().color = Color.Lerp (colorStart, colorMid, timeCounter / Fadeduration);
+				if (timeCounter >= Fadeduration) {
+						Debug.Log (" fade in done");
+						isFadding = false;
+						isloaded = true;
+						timeCounter = 0;
+					}
+				} 
+					else if (isloaded == true) 
+					{
+						//timeCounter += Time.deltaTime;
+						//timeCounter = Mathf.Floor(timeCounter);
+						if (timeCounter >= LoadedDuration) 
+						{
+							Debug.Log (" duration done");
+							isloaded = false;
+							isFaddingOut = true;
+							timeCounter = 0;
+						}
+					} 
+						else if (isFaddingOut == true) 
+						{
+							//timeCounter += Time.deltaTime;
+							//timeCounter = Mathf.Floor(timeCounter);
+							GetComponent<Image> ().color = Color.Lerp (colorMid, colorEnd, timeCounter / FadeToBlackDuration);
+							if (timeCounter >= FadeToBlackDuration) 
+							{
+								SceneManager.LoadScene ("Menu");
+							}
+						}
 		}
 	}
 

@@ -87,7 +87,7 @@ public class PageManager : Singleton<PageManager>
 	// Use this for initialization
 	IEnumerator Start ()
 	{//Initiage the story
-		AssetAssigner (DataManager.currentStoryName + "_start", 11);
+		//AssetAssigner (DataManager.currentStoryName + "_start", 11);
 		DataManager.LoadStory (DataManager.currentStoryName,"0");
 		OG_PostitionTextBody = TextBody.gameObject.transform.position;
 		yield return null;
@@ -96,28 +96,26 @@ public class PageManager : Singleton<PageManager>
 
 	public void AssetAssigner (string CurrentLevel, int lastPage)
 	{//when ever a level is loaded, this code will run to store all of the relative data
+		Resources.UnloadUnusedAssets ();
 		EnvironmentTracker = CurrentLevel;
 		MountainTest = GameObject.FindGameObjectWithTag ("MountainRange");
 		CharacterCoin = GameObject.FindGameObjectWithTag ("CharacterCoin");
 		Characters = GameObject.FindGameObjectsWithTag ("Characters");//Stores the characters for animation
 		StoryManager = GameObject.FindGameObjectWithTag ("StoryManager");//Find the story manager found in every level
 		DynamicProps = GameObject.FindGameObjectsWithTag ("DynamicProps");
-		//Wait a frame for all scenes to be loaded
-		//Camera tracking variables
-
-		foreach (GameObject obj in Characters) 
-		{//Find the first camera and store its transform info 
-			if (obj.GetComponent<Camera> () != null) {
-				cameraTransformTracker = obj.transform;
+			foreach (GameObject obj in Characters) 
+			{//Find the first camera and store its transform info 
+				if (obj.GetComponent<Camera> () != null) {
+					cameraTransformTracker = obj.transform;
+				}
 			}
-		}
 		cameraPreviousPosition = cameraTransformTracker.position;
 		transform.hasChanged = false;
 		LastPageLoader = lastPage;
-		if (isGoingBack == true) {
-			sceneindex = LastPageLoader;
-			SetToLastPosition ();
-		}
+			if (isGoingBack == true) {
+				sceneindex = LastPageLoader;
+				SetToLastPosition ();
+			}
 	}
 
 	public void ChapterskipSetCharacters (int StartingPosition)
@@ -151,11 +149,7 @@ public class PageManager : Singleton<PageManager>
 	{
 
 	}
-
-
-	private void SetChanger ()
-	{
-	}
+		
 
     public void GotoNext()
     {		
@@ -203,7 +197,7 @@ public class PageManager : Singleton<PageManager>
 			//Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
 			GameObject EndindCard = GameObject.FindGameObjectWithTag("EndingCard");
 			EndindCard.GetComponentInChildren<FadeScript> ().enabled = true;
-
+			EndindCard.GetComponentInChildren<Image> ().raycastTarget = true;
 		}
 
 	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
@@ -386,8 +380,6 @@ public class PageManager : Singleton<PageManager>
 		sentenceContainer.Clear ();
 		audioIndex = i;
 		StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
-		if (isGoingBack == false) {
-		}
 
 	}
 
@@ -492,8 +484,8 @@ public class PageManager : Singleton<PageManager>
 
 		//Debug.Log ("sequence running");
 		if (obj.clip != null) {
-			audioSource.clip = obj.clip;
-			audioSource.Play ();
+			//audioSource.clip = obj.clip;
+			//audioSource.Play ();
 		} else {
 			Debug.LogErrorFormat ("Unable to read the audio from folder {0}. " +
 			"Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);
