@@ -231,6 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38448105}
   - component: {fileID: 38448106}
+  - component: {fileID: 38448107}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -293,6 +294,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &38448107
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 38448104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9116b8e0e616f457ab9dbd7be122adb0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &52154829
 Prefab:
   m_ObjectHideFlags: 0
@@ -9053,6 +9071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1481760500}
   - component: {fileID: 1481760501}
+  - component: {fileID: 1481760502}
   m_Layer: 0
   m_Name: Clouds (1)
   m_TagString: Untagged
@@ -9115,6 +9134,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1481760502
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481760499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18dfe62746b47466c92460d70cd4681d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1485943563
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499084531}
   - component: {fileID: 1499084532}
+  - component: {fileID: 1499084533}
   m_Layer: 0
   m_Name: Clouds (2)
   m_TagString: Untagged
@@ -9399,6 +9436,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1499084533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499084530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4605e097835e94a16b1c8cc98a73b208, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1528457007
 GameObject:
   m_ObjectHideFlags: 0
