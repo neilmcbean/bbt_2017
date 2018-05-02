@@ -70,6 +70,7 @@ public class PageManager : Singleton<PageManager>
 	//UI Assets
 	public GameObject UIDots;
 	public GameObject ScentenceContainer;
+	public Image LoadingScreen;
 
 	//Debuging Vars
 	public GameObject Scenetext;
@@ -154,14 +155,17 @@ public class PageManager : Singleton<PageManager>
     public void GotoNext()
     {		
         sceneindex++;
+		bool isloadingScene;
+
         string NextScene;
         NextScene = StoryManager.GetComponent<StoryManager>().NextScene;
 
  if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
         {//If the player is at the last page of the scene
-			Debug.Log(sceneindex+"///"+StoryManager.GetComponent<StoryManager>().pagesPerScene);
-        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
-
+			isloadingScene = true;
+			//Debug.Log(sceneindex+"///"+StoryManager.GetComponent<StoryManager>().pagesPerScene);
+        	GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+			LoadingScreen.GetComponent<Image> ().enabled = true;
                 Resources.UnloadUnusedAssets();
                 SceneManager.UnloadScene(EnvironmentTracker);
 	            
@@ -169,9 +173,11 @@ public class PageManager : Singleton<PageManager>
         SceneManager.LoadScene(NextScene, LoadSceneMode.Additive);
         isGoingBack = false;
         sceneindex = 0;
+		LoadingScreen.GetComponent<Image> ().enabled = false;
 	}
 		else
-		{// is the scene has a pages it can show. 
+		{// is the scene has a pages it can show.
+		isloadingScene = false;
 		NextSentence(isForward);
 		isGoingBack = false;
 		isForward = true;
@@ -190,16 +196,17 @@ public class PageManager : Singleton<PageManager>
 			}
 		UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
 		}
-
-		if (sceneindex == StoryManager.GetComponent<StoryManager>().pagesPerScene-1 
-			&& StoryManager.GetComponent<StoryManager>().isLastscene == true)
-		{//If this is the last scene in the story
-			//Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
-			GameObject EndindCard = GameObject.FindGameObjectWithTag("EndingCard");
-			EndindCard.GetComponentInChildren<FadeScript> ().enabled = true;
-			EndindCard.GetComponentInChildren<Image> ().raycastTarget = true;
+		if(isloadingScene == false)
+		{
+			if (sceneindex == StoryManager.GetComponent<StoryManager>().pagesPerScene-1 
+				&& StoryManager.GetComponent<StoryManager>().isLastscene == true)
+			{//If this is the last scene in the story
+				//Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
+				GameObject EndindCard = GameObject.FindGameObjectWithTag("EndingCard");
+				EndindCard.GetComponentInChildren<FadeScript> ().enabled = true;
+				EndindCard.GetComponentInChildren<Image> ().raycastTarget = true;
+			}
 		}
-
 	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
     }
 
@@ -284,45 +291,6 @@ public class PageManager : Singleton<PageManager>
 		//Debug.Log("OnUIButtonClick_Language: " + button.gameObject.GetComponentInChildren<Text>().text);
 		ChangeLanguage (button.gameObject.GetComponentInChildren<Text> ().text);
 	}
-
-	/*private void MenuSetup ()//OBSELETE 
-	{///
-		//Debug.Log(currentStory.pageObjects.Count);
-		GameObject Canvas = GameObject.FindGameObjectWithTag ("Canvas");
-		GameObject text = GameObject.FindGameObjectWithTag ("DebugText");
-		//Canvas Positions
-		Vector3 OGPosition = text.transform.position;
-		Vector3 Position = text.transform.position;
-		//GoToPage(2);
-		//currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count;
-		for (int pageCount = 0; pageCount < currentStory.pageObjects.Count; pageCount++) {//Cycle through all the pages.
-			GameObject ChapterButton = Instantiate (text) as GameObject;
-			ChapterButton.transform.SetParent (Canvas.transform, false);
-			//Positions
-			Position = OGPosition;
-			ChapterButton.transform.position = Position;
-			//Button Edit
-			//Button button;
-			//button = ChapterButton.GetComponent<Button>();
-			//Attributes 
-			ChapterButton.GetComponent<Image> ().color = Color.red;
-			ChapterButton.GetComponentInChildren<Text> ().text = "Chapter:" + (pageCount + 1);
-			//Debug.Log("page" + pageCount);
-			for (int audio = 0; audio < currentStory.pageObjects [pageCount].audioObjects.Count; audio++) {//Cycle through all the audio clips. 
-				GameObject AudioPoint = Instantiate (text) as GameObject;
-				AudioPoint.transform.SetParent (Canvas.transform, false);
-				Position = new Vector3 (Position.x + 100, Position.y, Position.z);
-				AudioPoint.transform.position = Position;
-				//button = AudioPoint.GetComponent<Button>();
-				//Attributes 
-				AudioPoint.GetComponent<Button> ().onClick.AddListener (() => OnUIButtonClick_Menu (AudioPoint.GetComponent<Button> ()));
-				AudioPoint.GetComponent<Button> ().GetComponent<Image> ().color = Color.green;
-				AudioPoint.GetComponent<Button> ().GetComponentInChildren<Text> ().text = audio.ToString ();
-			}
-			OGPosition = new Vector3 (OGPosition.x, OGPosition.y - 30.0f, OGPosition.z);
-		}
-		text.gameObject.SetActive (false);
-	}*/
 
 	private void OnUIButtonClick_Menu (Button button)
 	{//when the player clicks a button
