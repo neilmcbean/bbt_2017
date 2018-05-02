@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5374623}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0009, y: -0.0194, z: -0.0005}
+  m_LocalPosition: {x: 0.00123, y: -0.0194, z: -0.0005}
   m_LocalScale: {x: 0.002, y: 0.002, z: 1.9999981}
   m_Children: []
   m_Father: {fileID: 1022054329}
@@ -5858,8 +5858,9 @@ GameObject:
   m_Component:
   - component: {fileID: 997233729}
   - component: {fileID: 997233730}
+  - component: {fileID: 997233731}
   m_Layer: 0
-  m_Name: Cloud (1)
+  m_Name: Mooshum Cloud 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5920,6 +5921,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &997233731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997233728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c97d7fea490d94f1a802ab6fb50c1c43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1014122406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,7 +6154,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035437987}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0039, y: -0.0074, z: 0.0008}
+  m_LocalPosition: {x: -0.00614, y: -0.0074, z: 0.00012}
   m_LocalScale: {x: 0.0019999999, y: 0.0019999994, z: 1.9999987}
   m_Children: []
   m_Father: {fileID: 1022054329}
@@ -8452,8 +8470,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1541616023}
   - component: {fileID: 1541616024}
+  - component: {fileID: 1541616025}
   m_Layer: 0
-  m_Name: Cloud
+  m_Name: Mooshum Cloud 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8514,6 +8533,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1541616025
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541616022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41efa6602d6ff4312bd3929023341527, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1544197431
 GameObject:
   m_ObjectHideFlags: 0
