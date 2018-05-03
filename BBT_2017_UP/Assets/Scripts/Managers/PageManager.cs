@@ -130,19 +130,23 @@ public class PageManager : Singleton<PageManager>
 
 	public void ChapterSkip (String LevelToLoad)
 	{//Launches when the player skips to a chapter through clicking on the book mark
+		LoadingScreen.GetComponent<LoadingScript> ().LoadingScreenAssigner ();
+		LoadingScreen.GetComponent<Image> ().enabled = true;
 		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
-
+		//LoadingScreen.GetComponent<Image> ().enabled = false;
 		isGoingBack = false;
 		sceneindex = 0;
 	}
 
 	public void ChapterSkipToTheEnd (String LevelToLoad)
 	{
+
 		Resources.UnloadUnusedAssets ();
 		SceneManager.UnloadScene (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
+
 	}
 
 
@@ -452,8 +456,8 @@ public class PageManager : Singleton<PageManager>
 
 		//Debug.Log ("sequence running");
 		if (obj.clip != null) {
-			//audioSource.clip = obj.clip;
-			//audioSource.Play ();
+			audioSource.clip = obj.clip;
+			audioSource.Play ();
 		} else {
 			Debug.LogErrorFormat ("Unable to read the audio from folder {0}. " +
 			"Please ensure an audio file is in the folder, and it's set to the assetbundle {1}.", obj.name, DataManager.currentStoryName);

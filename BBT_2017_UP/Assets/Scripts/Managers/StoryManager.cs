@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,6 +59,7 @@ public class StoryManager : MonoBehaviour {
 				PageManager.GetComponent<PageManager> ().isGoingBack = false;
 				}
 	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;
+	PageManager.GetComponent<PageManager> ().LoadingScreen.GetComponent<Image> ().enabled = false;
 	}
 
 	// Update is called once per frame
