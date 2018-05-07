@@ -33,14 +33,14 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 1
+        preset: 0
       taaSettings:
         jitterSpread: 0.678
         sharpen: 0.991
         stationaryBlending: 0.341
         motionBlending: 0.406
   ambientOcclusion:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       intensity: 1.158
       radius: 0.37
@@ -71,11 +71,11 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 0.5
-      aperture: 5.6
-      focalLength: 39
+      focusDistance: 111
+      aperture: 7.45
+      focalLength: 64.5
       useCameraFov: 0
-      kernelSize: 2
+      kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
