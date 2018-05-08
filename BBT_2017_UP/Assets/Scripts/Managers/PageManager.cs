@@ -480,7 +480,7 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		//highlight the proper wordgroups
-		int i = 0;
+		int i = 1;
 		WordGroupObject prevWordGroup = null;
 
 		while (i < obj.sentence.wordGroups.Count) {
