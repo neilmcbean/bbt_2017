@@ -484,7 +484,7 @@ public class PageManager : Singleton<PageManager>
 			i++;
 			//We calculate it like this because the times given are actually absolute times, not times per word
 			float waitTime = wordGroup.time;
-			if (prevWordGroup != null) {
+			if (prevWordGroup != null&& i>1) {
 				waitTime -= prevWordGroup.time;
 			}
 			yield return new WaitForSeconds (waitTime);
