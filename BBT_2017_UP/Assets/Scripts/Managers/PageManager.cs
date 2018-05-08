@@ -445,16 +445,11 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		StartCoroutine (RunSequence (currentAudio));
-		//Debug.Log(currentPage.name + "/" + currentAudio.name);
 		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
-
-
-
-		//Debug.Log ("sequence running");
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;
 			audioSource.Play ();
@@ -480,7 +475,7 @@ public class PageManager : Singleton<PageManager>
 			}
 		}
 		//highlight the proper wordgroups
-		int i = 1;
+		int i = 0;
 		WordGroupObject prevWordGroup = null;
 
 		while (i < obj.sentence.wordGroups.Count) {
