@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraBob : MonoBehaviour {
 
 	private float timer = 0.0f;
-	float bobbingSpeed = 0.02f;
-	float bobbingAmount = 0.002f;
-	float midpoint_Y = 2.0f;
-	float midpoint_X = 2.0f;
+	float bobbingSpeed = 0.001f;
+	float bobbingAmount = 0.001f;
+	float midpoint_Y = 0.2f;
+	float midpoint_X = 0.2f;
 	float waveslice = 0.0f;
 	float horizontal = 0.03f;
 	float vertical = 0.03f;
@@ -32,7 +32,7 @@ public class CameraBob : MonoBehaviour {
 				//timeLeft = 0;
 				if (isZoomed == false) 
 				{
-				GetComponent<Camera> ().fieldOfView -= Random.Range (2, 8);
+				GetComponent<Camera> ().fieldOfView -= Random.Range (1, 2);
 				isZoomed = true;
 				timeLeft = Random.Range (1, 2);
 				} 
