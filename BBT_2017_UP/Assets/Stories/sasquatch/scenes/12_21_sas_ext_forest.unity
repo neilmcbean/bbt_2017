@@ -7365,7 +7365,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4554938521081990, guid: 13d883179607a4b17bd0ecf95ca12535, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: 0.746
       objectReference: {fileID: 0}
     - target: {fileID: 4554938521081990, guid: 13d883179607a4b17bd0ecf95ca12535, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7420,7 +7420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationDelayTracker: 0
   InstancesToActivate: 0
-  AnimationBool: 00000100000000000000
+  AnimationBool: 00000101010101010101
   MeshPos:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -10333,6 +10333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction_Changer: 1
 --- !u!20 &1591527393
 Camera:
   m_ObjectHideFlags: 0
@@ -11257,6 +11258,20 @@ Light:
   m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
