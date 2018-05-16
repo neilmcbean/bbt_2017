@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: PostProcess Outdoors
+  m_Name: Interior
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -33,20 +33,20 @@ MonoBehaviour:
     m_Settings:
       method: 1
       fxaaSettings:
-        preset: 0
+        preset: 4
       taaSettings:
-        jitterSpread: 0.843
-        sharpen: 0.22
-        stationaryBlending: 0.599
-        motionBlending: 0
+        jitterSpread: 1
+        sharpen: 0
+        stationaryBlending: 0.99
+        motionBlending: 0.89
   ambientOcclusion:
     m_Enabled: 0
     m_Settings:
-      intensity: 1.158
-      radius: 0.37
-      sampleCount: 3
+      intensity: 1.23
+      radius: 0.3
+      sampleCount: 16
       downsampling: 1
-      forceForwardCompatibility: 0
+      forceForwardCompatibility: 1
       ambientOnly: 0
       highPrecision: 0
   screenSpaceReflection:
@@ -69,17 +69,17 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      focusDistance: 111
-      aperture: 32
-      focalLength: 215
+      focusDistance: 10
+      aperture: 12.7
+      focalLength: 161
       useCameraFov: 0
       kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
-      shutterAngle: 270
+      shutterAngle: 72
       sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
@@ -94,7 +94,7 @@ MonoBehaviour:
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -8
+      logMin: -16
       logMax: 4
   bloom:
     m_Enabled: 0
@@ -102,29 +102,29 @@ MonoBehaviour:
       bloom:
         intensity: 0.5
         threshold: 1.1
-        softKnee: 0.5
+        softKnee: 0
         radius: 4
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.0239
-        neutralWhiteIn: 8.53
-        neutralBlackOut: 0.0073
-        neutralWhiteOut: 10
-        neutralWhiteLevel: 3.92
-        neutralWhiteClip: 10
+        neutralBlackIn: 0.015
+        neutralWhiteIn: 8.7
+        neutralBlackOut: -0.014
+        neutralWhiteOut: 12.7
+        neutralWhiteLevel: 2.9
+        neutralWhiteClip: 7.43
       basic:
         postExposure: 0
-        temperature: 30.9
-        tint: 0
+        temperature: 0
+        tint: -45
         hueShift: 0
-        saturation: 1
+        saturation: 1.07
         contrast: 1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
@@ -134,13 +134,13 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: -0.017278617}
-          power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 0.8752257, g: 1, b: 0.17222065, a: 0}
+          power: {r: 0.9396413, g: 0.81611216, b: 1, a: 0}
+          offset: {r: 0.6938559, g: 0.3248561, b: 1, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       lut: {fileID: 0}
-      contribution: 1
+      contribution: 0.981
   chromaticAberration:
     m_Enabled: 0
     m_Settings:
@@ -288,18 +288,18 @@ MonoBehaviour:
   grain:
     m_Enabled: 0
     m_Settings:
-      colored: 1
-      intensity: 0.5
-      size: 1
-      luminanceContribution: 0.8
+      colored: 0
+      intensity: 0.08
+      size: 0.3
+      luminanceContribution: 0
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.24
-      smoothness: 0.126
+      intensity: 0.39
+      smoothness: 0.2
       roundness: 1
       mask: {fileID: 0}
       opacity: 1

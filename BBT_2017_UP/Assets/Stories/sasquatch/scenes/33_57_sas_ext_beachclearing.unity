@@ -12371,6 +12371,7 @@ GameObject:
   - component: {fileID: 711895425}
   - component: {fileID: 711895421}
   - component: {fileID: 711895424}
+  - component: {fileID: 711895422}
   m_Layer: 0
   m_Name: SC15_01_Still
   m_TagString: Characters
@@ -12421,6 +12422,18 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &711895422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711895420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!4 &711895423
 Transform:
   m_ObjectHideFlags: 0
@@ -12445,7 +12458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &711895425
 Camera:
   m_ObjectHideFlags: 0
@@ -21029,6 +21041,7 @@ GameObject:
   - component: {fileID: 984035621}
   - component: {fileID: 984035617}
   - component: {fileID: 984035620}
+  - component: {fileID: 984035618}
   m_Layer: 0
   m_Name: SC02_01_Still
   m_TagString: Characters
@@ -21079,6 +21092,18 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &984035618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984035616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!4 &984035619
 Transform:
   m_ObjectHideFlags: 0
@@ -21103,7 +21128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &984035621
 Camera:
   m_ObjectHideFlags: 0
@@ -21152,6 +21176,7 @@ GameObject:
   - component: {fileID: 984925527}
   - component: {fileID: 984925523}
   - component: {fileID: 984925526}
+  - component: {fileID: 984925524}
   m_Layer: 0
   m_Name: SC14_03_Still
   m_TagString: Characters
@@ -21202,6 +21227,18 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   LastAnimation: 
+--- !u!114 &984925524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984925522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!4 &984925525
 Transform:
   m_ObjectHideFlags: 0
@@ -21226,7 +21263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &984925527
 Camera:
   m_ObjectHideFlags: 0
@@ -23104,6 +23140,7 @@ GameObject:
   - component: {fileID: 1126675006}
   - component: {fileID: 1126675009}
   - component: {fileID: 1126675007}
+  - component: {fileID: 1126675011}
   m_Layer: 0
   m_Name: SC10_01_Still
   m_TagString: Characters
@@ -23189,7 +23226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &1126675010
 Camera:
   m_ObjectHideFlags: 0
@@ -23227,6 +23263,18 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &1126675011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126675005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!1 &1126790191
 GameObject:
   m_ObjectHideFlags: 0
@@ -30236,6 +30284,7 @@ GameObject:
   - component: {fileID: 1545945957}
   - component: {fileID: 1545945953}
   - component: {fileID: 1545945956}
+  - component: {fileID: 1545945954}
   m_Layer: 0
   m_Name: SC19_01_Still
   m_TagString: Characters
@@ -30286,6 +30335,18 @@ MonoBehaviour:
   - {x: 0.13, y: 0.1469465, z: 2.496322}
   - {x: 0.13, y: 0.06, z: 2.14}
   LastAnimation: 
+--- !u!114 &1545945954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545945952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!4 &1545945955
 Transform:
   m_ObjectHideFlags: 0
@@ -30310,7 +30371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &1545945957
 Camera:
   m_ObjectHideFlags: 0
@@ -38114,6 +38174,7 @@ GameObject:
   - component: {fileID: 2019894924}
   - component: {fileID: 2019894927}
   - component: {fileID: 2019894925}
+  - component: {fileID: 2019894929}
   m_Layer: 0
   m_Name: SC13_01_Still
   m_TagString: Characters
@@ -38199,7 +38260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction_Changer: 1
 --- !u!20 &2019894928
 Camera:
   m_ObjectHideFlags: 0
@@ -38237,6 +38297,18 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &2019894929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019894923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 590e094b0d8f94ef4b72c7934dcba9e1, type: 2}
 --- !u!4 &2026469000 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}
