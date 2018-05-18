@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class VideoManager : MonoBehaviour {
 
-
-	public VideoPlayer[] videoClips;
+	public GameObject Image;
+	public VideoClip[] videoClips;
+	public VideoPlayer vidRef;
 	private bool isSasOpen = false;
 	private bool isLiLOpen = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,22 +23,17 @@ public class VideoManager : MonoBehaviour {
 
 	public void ChangeSasSource()
 	{
-		foreach (VideoPlayer i in videoClips) {
-			
-			//i.GetComponent<VideoPlayer> ().enabled = false;
-		}
 
-		//videoClips.GetComponent<VideoPlayer> ().setActive
 		if (isSasOpen == true) {
 			isSasOpen = false;
-			videoClips [3].enabled = true;
-			videoClips [3].Play ();
-			//videoClips.enabled = true;
+			GetComponent<VideoPlayer>().clip = videoClips [3];
+			GetComponent<VideoPlayer> ().Play ();
 		} else {
 			isSasOpen = true;
-			videoClips [4].enabled = true;
-			videoClips [4].Play ();
+			GetComponent<VideoPlayer>().clip = videoClips [4];
+			GetComponent<VideoPlayer> ().Play ();
 		}
+		Image.SetActive (false);
 	}
 
 	public void ChangeLilSource()
