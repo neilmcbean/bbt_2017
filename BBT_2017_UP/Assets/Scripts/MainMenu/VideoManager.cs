@@ -7,6 +7,7 @@ using UnityEngine;
 public class VideoManager : MonoBehaviour {
 
 	public GameObject ImageRef;
+	private GameObject Container;
 	//public Sprite[] stills;
 	public VideoClip[] videoClips;
 	public VideoPlayer vidRef;
@@ -27,6 +28,14 @@ public class VideoManager : MonoBehaviour {
 	public void SetStatic(Sprite image)
 	{
 		ImageRef.GetComponent<Image>().sprite = image;
+	}
+
+	public void ActivateContainer(GameObject containerRef)
+	{
+		if (Container != null) {
+		Container.SetActive (false);
+		}
+		Container = containerRef;
 	}
 
 	public void ChangeSasSource()
@@ -80,5 +89,6 @@ public class VideoManager : MonoBehaviour {
 	{
 		print  ("Video Is Over");
 		ImageRef.SetActive (true);
+		Container.SetActive (true);
 	}
 }
