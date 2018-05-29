@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: c7b20b0f7a1964696bc866775d084e45, type: 2}
+  profile: {fileID: 0}
 --- !u!1 &1764124382
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +528,26 @@ Prefab:
     - target: {fileID: 400274, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -87.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100180, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100182, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400422, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400422, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1128
+      objectReference: {fileID: 0}
+    - target: {fileID: 400422, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1306
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a66c305d56ec94d66a6286c1746d4f40, type: 3}
