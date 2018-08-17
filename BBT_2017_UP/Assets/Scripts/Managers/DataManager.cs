@@ -82,7 +82,7 @@ public class DataManager
 
         for (int i = 0; i < splitPath.Length; i++)
         {
-			///Debug.Log (splitPath[i]);
+			//Debug.Log (splitPath[i]);
             if (splitPath[i] == currentStoryName)
             {
                 if (i + pathDepth + 2 >= splitPath.Length)

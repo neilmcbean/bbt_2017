@@ -34,7 +34,7 @@ public class MenuChapterManager : MonoBehaviour {
 
         public void ChapterINI()
     {
-		Debug.Log (DataManager.currentStoryName);
+		//Debug.Log (DataManager.currentStoryName);
 		for (int i = 0; i < transform.GetChildCount(); i++) {
 			if(transform.GetChild(i).name == ("BookMarks_"+DataManager.currentStoryName))
 			{

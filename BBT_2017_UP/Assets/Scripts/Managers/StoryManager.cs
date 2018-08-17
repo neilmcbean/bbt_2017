@@ -24,6 +24,8 @@ public class StoryManager : MonoBehaviour {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
 
+        Debug.Log(StreamingAssetsCounter.ToString() + "////" + DataManager.CurrentAssetPackage.ToString());
+
 		if (isLoadingLevel == true) {//If this is going to load a different streaming package, load it here. 
 			
 			PageManager.GetComponent<PageManager>().audioIndex = 0;

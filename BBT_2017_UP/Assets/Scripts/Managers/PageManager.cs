@@ -167,7 +167,7 @@ public class PageManager : Singleton<PageManager>
  if (sceneindex >= StoryManager.GetComponent<StoryManager>().pagesPerScene)
         {//If the player is at the last page of the scene
 			isloadingScene = true;
-			//Debug.Log(sceneindex+"///"+StoryManager.GetComponent<StoryManager>().pagesPerScene);
+			Debug.Log(sceneindex+"///"+StoryManager.GetComponent<StoryManager>().pagesPerScene);
         	GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
 			LoadingScreen.GetComponent<Image> ().enabled = true;
                 Resources.UnloadUnusedAssets();
@@ -319,7 +319,7 @@ public class PageManager : Singleton<PageManager>
 		//PreviousSentence (true);
 		AudioObject currentAudio = currentPage.audioObjects [audioIndex];
 		StartCoroutine (RunSequence (currentAudio));
-		//Debug.Log(audioIndex + "/" + pageIndex);
+		Debug.Log(audioIndex + "/" + pageIndex);
 		Scenetext.GetComponent<Text> ().text =currentAudio.name;
 	}
 
@@ -426,7 +426,7 @@ public class PageManager : Singleton<PageManager>
 		if (playFromLast == false) {
 			NextSentence (true);
 		}
-
+       //Debug.Log(audioIndex + "/" + pageIndex);
 	}
 
 
@@ -450,6 +450,7 @@ public class PageManager : Singleton<PageManager>
 
 	IEnumerator RunSequence (AudioObject obj)
 	{
+        //Debug.Log(obj.clip);
 		if (obj.clip != null) {
 			audioSource.clip = obj.clip;
 			audioSource.Play ();
