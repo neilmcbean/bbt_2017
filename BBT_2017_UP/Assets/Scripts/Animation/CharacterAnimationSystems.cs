@@ -284,7 +284,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 					if(GetComponent<Animator>() != null)
 					{
 						GetComponent<Animator> ().enabled = true;
-						Debug.Log (gameObject.name);
+						//Debug.Log (gameObject.name);
 						GetComponent<Animator>().SetTrigger(LastAnimation);
 						GetComponent<Animator> ().Play (LastAnimation);
 						GetComponent<Animator> ().enabled = false;

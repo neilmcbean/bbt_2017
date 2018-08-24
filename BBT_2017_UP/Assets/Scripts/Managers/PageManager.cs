@@ -112,11 +112,15 @@ public class PageManager : Singleton<PageManager>
 			}
 		cameraPreviousPosition = cameraTransformTracker.position;
 		transform.hasChanged = false;
-		LastPageLoader = lastPage;
-			if (isGoingBack == true) {
-				sceneindex = LastPageLoader;
-				SetToLastPosition ();
-			}
+		//LastPageLoader = lastPage;
+
+
+		if (isGoingBack == true) {
+            sceneindex = lastPage;
+            Debug.Log(sceneindex);
+			SetToLastPosition ();
+            GetComponent<PageManager>().GoToPage(lastPage);  
+		}
 	}
 
 	public void ChapterskipSetCharacters (int StartingPosition)
@@ -220,6 +224,7 @@ public class PageManager : Singleton<PageManager>
     public void GotoPrevious()
     {
         sceneindex--;
+        Debug.Log(sceneindex);
         if (sceneindex < 0)
         {// if the player has reached the end of a bookmark. 
             if (StoryManager.GetComponent<StoryManager>().isFirstscene == true)
@@ -231,6 +236,8 @@ public class PageManager : Singleton<PageManager>
 	            {//otherwise, go to the last scene
 	                isGoingBack = true;
 	                ChapterSkipToTheEnd(StoryManager.GetComponent<StoryManager>().LastScene);
+                    
+                    Debug.Log("Loading a new Level");
 	            }
         }
 	        else
@@ -279,8 +286,6 @@ public class PageManager : Singleton<PageManager>
 		//Canvas Positions
 		Vector3 OGPosition = text.transform.position;
 		Vector3 Position = text.transform.position;
-		//GoToPage(2);
-		//currentPage.audioObjects.Count + "///" + currentStory.pageObjects.Count;
 		for (int languageCount = 0; languageCount < DataManager.languageManager.Length; languageCount++) {
 			GameObject LanguageButton = Instantiate (text) as GameObject;
 			//Attributes
@@ -303,7 +308,6 @@ public class PageManager : Singleton<PageManager>
 	{//when the player clicks a button
 		Debug.Log ("OnUIButtonClick_Menu: " + button.gameObject.GetComponentInChildren<Text> ().text);
 		int Page = int.Parse (button.gameObject.GetComponentInChildren<Text> ().text);
-		//GoToPage (Page);
 	}
 
 	void TaskOnClick ()
@@ -349,13 +353,10 @@ public class PageManager : Singleton<PageManager>
 
 	public void GoToPage (int i)
 	{
-		//Debug.Log(isGoingBack);
-
 		StopAllCoroutines ();
 		sentenceContainer.Clear ();
 		audioIndex = i;
-		StartCoroutine (RunSequence (currentPage.audioObjects [audioIndex]));
-
+        StartCoroutine(RunSequence(currentPage.audioObjects[audioIndex]));
 	}
 
 	void PreviousSentence (bool playFromLast)

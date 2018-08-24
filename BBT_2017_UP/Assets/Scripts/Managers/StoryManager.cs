@@ -54,13 +54,11 @@ public class StoryManager : MonoBehaviour {
 			} 
 				else 
 				{//If the player is going backwards
-				//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
-				//PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 				PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene-1);
-				PageManager.GetComponent<PageManager> ().GoToPage ((pagesPerScene)-1);	
+				
 				PageManager.GetComponent<PageManager> ().isGoingBack = false;
 				}
-	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;
+	//PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;
 	PageManager.GetComponent<PageManager> ().LoadingScreen.GetComponent<Image> ().enabled = false;
 	}
 
