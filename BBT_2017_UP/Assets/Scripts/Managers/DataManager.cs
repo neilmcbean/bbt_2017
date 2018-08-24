@@ -33,7 +33,7 @@ public class DataManager
 		CurrentAssetPackage = packageToLoad.ToString ();
 
 		//AssetStreamingCounter++;
-		Debug.Log ((currentLanguage.ToLower()+"_"+packageToLoad.ToString()).ToString());
+		//Debug.Log ((currentLanguage.ToLower()+"_"+packageToLoad.ToString()).ToString());
 			
         if (myLoadedAssetBundle == null)
         {
@@ -48,7 +48,7 @@ public class DataManager
 		foreach (string file in files)
         {
             AddFileToStory(story, file); 
-			Debug.Log (story+"//"+ file);
+			//.Log (story+"//"+ file);
         }
         UnloadAssetBundle();
         currentStory = story;

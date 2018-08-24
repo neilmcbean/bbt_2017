@@ -24,7 +24,7 @@ public class StoryManager : MonoBehaviour {
 		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
 
-        Debug.Log(StreamingAssetsCounter.ToString() + "////" + DataManager.CurrentAssetPackage.ToString());
+        //Debug.Log(StreamingAssetsCounter.ToString() + "////" + DataManager.CurrentAssetPackage.ToString());
 
 		if (isLoadingLevel == true) {//If this is going to load a different streaming package, load it here. 
 			
@@ -57,7 +57,7 @@ public class StoryManager : MonoBehaviour {
 				//Debug.Log ("isGoingBack="+PageManager.GetComponent<PageManager> ().isGoingBack);
 				//PageManager = GameObject.FindGameObjectWithTag ("PageManager");
 				PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName,pagesPerScene-1);
-				PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+(pagesPerScene)-1);	
+				PageManager.GetComponent<PageManager> ().GoToPage ((pagesPerScene)-1);	
 				PageManager.GetComponent<PageManager> ().isGoingBack = false;
 				}
 	PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;

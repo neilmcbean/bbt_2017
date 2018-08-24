@@ -91,7 +91,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 		if (AnimationDelayTracker < AnimationBool.Length-1) 
 		{
 			AnimationDelayTracker++;
-            Debug.Log(AnimToSet);
+            ///Debug.Log(AnimToSet);
 			if (AnimationBool [AnimationDelayTracker] == true) 
 			{
 				if (GetComponent<Camera> () != null) 
@@ -183,7 +183,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 						//GetComponent<Animator>().SetTrigger("goback");
 						GetComponent<Animator>().Play(AnimToSet, -1, 0f);
 					}
-					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <=CamPos.Length-1)
+					if(CamPos [AnimationDelayTracker] != new Vector3(0,0,0) && AnimationDelayTracker <CamPos.Length-1)
 					{gameObject.transform.position = CamPos [AnimationDelayTracker];}
 
 				} 
