@@ -112,14 +112,14 @@ public class PageManager : Singleton<PageManager>
 			}
 		cameraPreviousPosition = cameraTransformTracker.position;
 		transform.hasChanged = false;
-		//LastPageLoader = lastPage;
-
 
 		if (isGoingBack == true) {
             sceneindex = lastPage;
             Debug.Log(sceneindex);
-			SetToLastPosition ();
-            GetComponent<PageManager>().GoToPage(lastPage);  
+            SetToLastPosition();      
+            GetComponent<PageManager>().GoToPage(sceneindex);
+            //GetComponent<PageManager>().GotoPrevious();
+            //SetToLastPosition();      
 		}
 	}
 
@@ -138,18 +138,18 @@ public class PageManager : Singleton<PageManager>
 		LoadingScreen.GetComponent<LoadingScript> ().LoadingScreenAssigner ();
 		LoadingScreen.GetComponent<Image> ().enabled = true;
 		Resources.UnloadUnusedAssets ();
-		SceneManager.UnloadScene (EnvironmentTracker);
+        SceneManager.UnloadSceneAsync (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
 		//LoadingScreen.GetComponent<Image> ().enabled = false;
-		isGoingBack = false;
-		sceneindex = 0;
+		//isGoingBack = false;
+		//sceneindex = 0;
 	}
 
 	public void ChapterSkipToTheEnd (String LevelToLoad)
 	{
 
 		Resources.UnloadUnusedAssets ();
-		SceneManager.UnloadScene (EnvironmentTracker);
+        SceneManager.UnloadSceneAsync (EnvironmentTracker);
 		SceneManager.LoadScene (LevelToLoad, LoadSceneMode.Additive);
 
 	}
@@ -242,8 +242,9 @@ public class PageManager : Singleton<PageManager>
         }
 	        else
 	        {//If the player is still working their way backwards through the scene.
-            PreviousSentence(isForward);
-            isForward = false;
+            //isForward = false;
+            PreviousSentence(isGoingBack);
+           
             transform.hasChanged = false;
 	            foreach (GameObject Mesh in DynamicProps)
 				{//Go through all the dynamic meshes and see if there are any that need to be moved or activated. 
@@ -259,7 +260,14 @@ public class PageManager : Singleton<PageManager>
 	                }
 	            }
             UIDots.GetComponent<DotGenerator>().updateDots(sceneindex);
-	        }
+	        
+            /*if(isGoingBack == true)
+            {
+                isGoingBack = false; 
+
+            }*/
+
+        }
 	CharacterCoin.GetComponent<SpeakerUIAssign> ().ImageAssign (Speaker);
     }
 
@@ -378,9 +386,11 @@ public class PageManager : Singleton<PageManager>
 		}
 
 		PlayPreviousSentence ();
-
+        //Debug.Log(playFromLast);
 		if (playFromLast == true) {//If the player flips to a previous page after moving forward previously
 			PreviousSentence (false);
+            isGoingBack = false; 
+
 		}
 	}
 

@@ -42,7 +42,7 @@ public class DynamicStaticMeshSystem : MonoBehaviour {
 
 	void Meshedit()
 	{
-		
+		/*
 		gameObject.SetActive(AnimationBool [AnimationDelayTracker]);
 
 		if (MeshPos [AnimationDelayTracker] != new Vector3 (0, 0, 0)) {
@@ -51,7 +51,7 @@ public class DynamicStaticMeshSystem : MonoBehaviour {
 
 		if (MeshRot [AnimationDelayTracker] != new Quaternion (0, 0, 0,0)) {
 			transform.rotation = MeshRot [AnimationDelayTracker];
-		}
+		}*/
 	}
 
 }
