@@ -142,11 +142,13 @@ public class PageManager : Singleton<PageManager>
 
     public void ChapterSkip(String LevelToLoad)
     {//Launches when the player skips to a chapter through clicking on the book mark
-
+        GetComponent<AudioSource>().Stop();
+        StopAllCoroutines();
+        sentenceContainer.Clear();
         LoadingScreen.GetComponent<LoadingScript>().LoadingScreenAssigner();
         LoadingScreen.GetComponent<Image>().enabled = true;
         Resources.UnloadUnusedAssets();
-        SceneManager.UnloadSceneAsync(EnvironmentTracker);
+        SceneManager.UnloadScene(EnvironmentTracker);
         SceneManager.LoadScene(LevelToLoad, LoadSceneMode.Additive);
         //LoadingScreen.GetComponent<Image> ().enabled = false;
         //isGoingBack = false;
@@ -389,13 +391,6 @@ public class PageManager : Singleton<PageManager>
         }
 
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        foreach (TweenEvent evt in tweenEvents)
-        {
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
-            {
-                evt.OnDeactivate();
-            }
-        }
 
         PlayPreviousSentence();
         //Debug.Log(playFromLast);
@@ -409,22 +404,8 @@ public class PageManager : Singleton<PageManager>
 
     void PlayPreviousSentence()
     {
-
-
-
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        //Actiavte tweens
-        /*foreach (TweenEvent evt in tweenEvents) {
-            evt.OnNextStep ();
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) {
-                evt.OnActivate ();
-            }
-        }*/
-
         StartCoroutine(RunSequence(currentAudio));
-        //Debug.Log(audioIndex + "/" + pageIndex);
-        //Scenetext.GetComponent<Text> ().text =currentAudio.name;
-
         if (audioIndex > 0)
         {//reduce the passage book mark
             audioIndex--;
@@ -445,21 +426,13 @@ public class PageManager : Singleton<PageManager>
         }
 
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-        foreach (TweenEvent evt in tweenEvents)
-        {
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName)
-            {
-                evt.OnDeactivate();
-            }
-        }
+
 
         PlayCurrentSentence();
         if (playFromLast == false)
         {
             NextSentence(true);
         }
-        //Debug.Log(audioIndex + "/" + pageIndex);
-        //Scenetext.GetComponent<Text>().text = currentAudio.name;
     }
 
 
@@ -467,19 +440,7 @@ public class PageManager : Singleton<PageManager>
     {
         audioIndex++;
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
-
-
-        /*
-        //Actiavte tweens
-        foreach (TweenEvent evt in tweenEvents) {
-            evt.OnNextStep ();
-            if (currentPage.name == evt.pageName && currentAudio.name == evt.audioName) {
-                evt.OnActivate ();               
-            }
-        }*/
         StartCoroutine(RunSequence(currentAudio));
-
-        //Scenetext.GetComponent<Text> ().text =currentAudio.name;
     }
 
     IEnumerator RunSequence(AudioObject obj)
