@@ -25,7 +25,9 @@ public class DataManager
 
 
 	public static StoryObject LoadStory(string storyName, string packageToLoad)
-    {        
+    {
+
+        Debug.Log("Story loaded");
 		SceneRefCounter = 0;
  		myLoadedAssetBundle = AssetBundle.LoadFromFile(CombinePaths(
 			Application.streamingAssetsPath,storyName,currentLanguage.ToLower()+"_"+packageToLoad.ToString()));
@@ -53,6 +55,8 @@ public class DataManager
         UnloadAssetBundle();
         currentStory = story;
         return currentStory;
+
+       
     }
 		
 
@@ -144,6 +148,8 @@ public class DataManager
                 return;
             }
         }
+
+        Debug.Log("Done");
     }
 
     private static SentenceObject GetSentence(string dataString)

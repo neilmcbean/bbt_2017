@@ -17,24 +17,32 @@ public class StoryManager : MonoBehaviour {
 	public GameObject PageManager;
 	private GameObject Canvas;
 
+
+    void Awake()
+    {
+        //Set references 
+        PageManager = GameObject.FindGameObjectWithTag("PageManager");
+        Canvas = GameObject.FindGameObjectWithTag("Canvas");
+
+        if (isLoadingLevel == true)
+        {//If this is going to load a different streaming package, load it here. 
+
+            PageManager.GetComponent<PageManager>().audioIndex = 0;
+            DataManager.LoadStory(DataManager.currentStoryName, StreamingAssetsCounter.ToString());
+        }
+        else if (StreamingAssetsCounter.ToString() != DataManager.CurrentAssetPackage.ToString())
+        {//this condition will trigger when the player loads a level from the menu that requires a streaming asset that is not currently loaded.
+            DataManager.LoadStory(DataManager.currentStoryName, StreamingAssetsCounter.ToString());
+        }
+    }
+
 	// Use this for initialization
 	void Start () {
 
-		//Set references 
-		PageManager = GameObject.FindGameObjectWithTag ("PageManager");
-		Canvas = GameObject.FindGameObjectWithTag ("Canvas");
+
 
         //Debug.Log(StreamingAssetsCounter.ToString() + "////" + DataManager.CurrentAssetPackage.ToString());
 
-		if (isLoadingLevel == true) {//If this is going to load a different streaming package, load it here. 
-			
-			PageManager.GetComponent<PageManager>().audioIndex = 0;
-			DataManager.LoadStory (DataManager.currentStoryName, StreamingAssetsCounter.ToString());
-		}
-			else if (StreamingAssetsCounter.ToString() != DataManager.CurrentAssetPackage.ToString()) 
-			{//this condition will trigger when the player loads a level from the menu that requires a streaming asset that is not currently loaded.
-			DataManager.LoadStory (DataManager.currentStoryName, StreamingAssetsCounter.ToString());
-			}
 
 		//This variable loads the offset from the page manager so that the level starts off at the right passage.
 		int chapterOffset = PageManager.GetComponent<PageManager> ().ChapterOffSet;

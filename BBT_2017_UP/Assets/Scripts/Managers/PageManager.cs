@@ -93,7 +93,7 @@ public class PageManager : Singleton<PageManager>
     IEnumerator Start()
     {//Initiage the story
      //AssetAssigner (DataManager.currentStoryName + "_start", 11);
-        DataManager.LoadStory(DataManager.currentStoryName, "0");
+        //DataManager.LoadStory(DataManager.currentStoryName, "0");
         OG_PostitionTextBody = TextBody.gameObject.transform.position;
         yield return null;
     }
@@ -142,17 +142,16 @@ public class PageManager : Singleton<PageManager>
 
     public void ChapterSkip(String LevelToLoad)
     {//Launches when the player skips to a chapter through clicking on the book mark
-        GetComponent<AudioSource>().Stop();
         StopAllCoroutines();
         sentenceContainer.Clear();
+
         LoadingScreen.GetComponent<LoadingScript>().LoadingScreenAssigner();
         LoadingScreen.GetComponent<Image>().enabled = true;
         Resources.UnloadUnusedAssets();
         SceneManager.UnloadScene(EnvironmentTracker);
+        AssetBundle.UnloadAllAssetBundles(true);
         SceneManager.LoadScene(LevelToLoad, LoadSceneMode.Additive);
-        //LoadingScreen.GetComponent<Image> ().enabled = false;
-        //isGoingBack = false;
-        //sceneindex = 0;
+
     }
 
     public void ChapterSkipToTheEnd(String LevelToLoad)
