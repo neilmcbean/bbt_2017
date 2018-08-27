@@ -26,7 +26,7 @@ public class StoryManager : MonoBehaviour {
         //Set references 
         PageManager = GameObject.FindGameObjectWithTag("PageManager");
         Canvas = GameObject.FindGameObjectWithTag("Canvas");
-
+        PageManager.GetComponent<PageManager>().LoadingScreen.GetComponent<Image>().enabled = true;
         if (isLoadingLevel == true)
         {//If this is going to load a different streaming package, load it here. 
 
@@ -62,7 +62,7 @@ public class StoryManager : MonoBehaviour {
 			/*PageManager.GetComponent<PageManager> ().AssetAssigner (LevelName, AudioIndexPosition+chapterOffset);
 			PageManager.GetComponent<PageManager> ().GoToPage (AudioIndexPosition+chapterOffset);
 			PageManager.GetComponent<PageManager> ().ChapterskipSetCharacters(chapterOffset);*/
-            coroutine = WaitGoingForward(0.2f);
+            coroutine = WaitGoingForward(0.05f);
             StartCoroutine(coroutine);
 			} 
 				else 
@@ -72,11 +72,11 @@ public class StoryManager : MonoBehaviour {
                 PageManager.GetComponent<PageManager>().GetComponent<PageManager>().GoToPage(pagesPerScene - 1);
 				PageManager.GetComponent<PageManager>().isGoingBack = false;*/
 
-                coroutine = WaitGoingBack(0.2f);
+                coroutine = WaitGoingBack(0.05f);
                 StartCoroutine(coroutine);
 				}
 	//PageManager.GetComponent<PageManager> ().ChapterOffSet = 0;
-	PageManager.GetComponent<PageManager> ().LoadingScreen.GetComponent<Image> ().enabled = false;
+	//PageManager.GetComponent<PageManager> ().LoadingScreen.GetComponent<Image> ().enabled = false;
 	}
 
     private IEnumerator WaitGoingBack(float waitTime)
@@ -96,6 +96,7 @@ public class StoryManager : MonoBehaviour {
             {
                 PageManager.GetComponent<PageManager>().GetComponent<PageManager>().GoToPage(pagesPerScene - 1);
                 PageManager.GetComponent<PageManager>().isGoingBack = false;
+                PageManager.GetComponent<PageManager>().LoadingScreen.GetComponent<Image>().enabled = false;
                 StopCoroutine(coroutine);
             }
             else
@@ -123,6 +124,7 @@ public class StoryManager : MonoBehaviour {
             else if (Counter == 2)
             {
                 PageManager.GetComponent<PageManager>().ChapterskipSetCharacters(0);
+                PageManager.GetComponent<PageManager>().LoadingScreen.GetComponent<Image>().enabled = false;
                 StopCoroutine(coroutine);
             }
             else
