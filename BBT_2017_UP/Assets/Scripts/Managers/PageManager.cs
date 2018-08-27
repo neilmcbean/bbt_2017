@@ -42,8 +42,10 @@ public class PageManager : Singleton<PageManager>
     private SentenceRowContainer sentenceContainer;
     private bool isForward = true;
     private List<TweenEvent> tweenEvents = new List<TweenEvent>();
-    public GameObject[] Characters;
-    public GameObject[] DynamicProps;
+    [SerializeField]
+    private GameObject[] Characters;
+    [SerializeField]
+    private GameObject[] DynamicProps;
 
     //Narrative Manager vars
     public GameObject StoryManager;
@@ -122,8 +124,8 @@ public class PageManager : Singleton<PageManager>
         {
             sceneindex = lastPage;
             Debug.Log(sceneindex);
-            SetToLastPosition();
-            GetComponent<PageManager>().GoToPage(sceneindex);
+            ///SetToLastPosition();
+            //GetComponent<PageManager>().GoToPage(sceneindex);
             //GetComponent<PageManager>().GotoPrevious();
             //SetToLastPosition();      
         }
@@ -280,7 +282,7 @@ public class PageManager : Singleton<PageManager>
         CharacterCoin.GetComponent<SpeakerUIAssign>().ImageAssign(Speaker);
     }
 
-    private void SetToLastPosition()
+    public void SetToLastPosition()
     {//This function goes through all the dynamic instances in the scene and sets their location to the last memeber of the array
         Characters = GameObject.FindGameObjectsWithTag("Characters");
         foreach (GameObject Child in Characters)

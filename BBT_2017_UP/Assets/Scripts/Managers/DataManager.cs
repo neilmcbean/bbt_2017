@@ -21,7 +21,6 @@ public class DataManager
 	private static int NarrativeCounterEnd = 12;
 	private static AssetBundle myLoadedAssetBundle;
 	private static int SceneRefCounter = 0;
-	//private static int AssetStreamingCounter = 0;
 
 
 	public static StoryObject LoadStory(string storyName, string packageToLoad)

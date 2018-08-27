@@ -9,8 +9,10 @@ public class CharacterAnimationSystems : MonoBehaviour
 	public int AnimationDelayTracker = 0;
 	//public int AnimationDelay;
 	public int InstancesToActivate;
-	public bool[] AnimationBool;
-	public Vector3[] CamPos;
+    [SerializeField]
+    private bool[] AnimationBool;
+    [SerializeField]
+    private Vector3[] CamPos;
 	public string LastAnimation;
 	// Use this for initialization
 
