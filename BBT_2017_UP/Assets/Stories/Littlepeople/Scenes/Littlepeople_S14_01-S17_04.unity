@@ -804,7 +804,17 @@ Prefab:
     - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
         type: 2}
       propertyPath: AudioIndexPosition
-      value: 37
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: StreamingAssetsCounter
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267208457450752, guid: ffb969bfb20bf48c093e791703b74b05,
+        type: 2}
+      propertyPath: isLoadingLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffb969bfb20bf48c093e791703b74b05, type: 2}
