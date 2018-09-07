@@ -344,6 +344,7 @@ public class PageManager : Singleton<PageManager>
         DataManager.currentLanguage = newLanguage;
         DataManager.LoadStory(DataManager.currentStoryName, DataManager.CurrentAssetPackage);
         //PreviousSentence (true);
+        Debug.Log(currentPage.audioObjects[audioIndex].name);
         AudioObject currentAudio = currentPage.audioObjects[audioIndex];
         StartCoroutine(RunSequence(currentAudio));
         Debug.Log(audioIndex + "/" + pageIndex);
