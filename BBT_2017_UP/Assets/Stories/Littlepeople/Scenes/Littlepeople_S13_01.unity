@@ -814,6 +814,7 @@ GameObject:
   - component: {fileID: 672060893}
   - component: {fileID: 672060891}
   - component: {fileID: 672060894}
+  - component: {fileID: 672060895}
   m_Layer: 0
   m_Name: S13_01_Cam
   m_TagString: Characters
@@ -899,6 +900,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &672060895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672060890}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c7c8f000901a7418cafb32adc9fcf882, type: 2}
 --- !u!4 &688724567 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400008, guid: 933d02c072b044b309ed125a997dac95, type: 3}

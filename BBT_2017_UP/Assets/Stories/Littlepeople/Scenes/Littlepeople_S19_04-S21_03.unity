@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 985051808}
   - component: {fileID: 985051806}
   - component: {fileID: 985051809}
+  - component: {fileID: 985051810}
   m_Layer: 0
   m_Name: S19_04_Cam
   m_TagString: Characters
@@ -1229,6 +1230,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37958dcd5706e4a5286811061b5514a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &985051810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985051805}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: c7c8f000901a7418cafb32adc9fcf882, type: 2}
 --- !u!4 &993942482 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a528300109d1e4fa2b9263f29ca28c81, type: 3}

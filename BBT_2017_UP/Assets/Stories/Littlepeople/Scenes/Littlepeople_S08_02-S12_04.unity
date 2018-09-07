@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 1251913288}
   - component: {fileID: 1251913285}
   - component: {fileID: 1251913291}
-  - component: {fileID: 1251913294}
+  - component: {fileID: 1251913293}
   m_Layer: 0
   m_Name: S11_01_Cam
   m_TagString: Characters
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 1251913290}
   - component: {fileID: 1251913286}
   - component: {fileID: 1251913292}
-  - component: {fileID: 1251913293}
+  - component: {fileID: 1251913294}
   m_Layer: 0
   m_Name: S05_01_Cam
   m_TagString: Characters
@@ -600,25 +600,25 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1251913284}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1251913283}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: c7c8f000901a7418cafb32adc9fcf882, type: 2}
 --- !u!114 &1251913294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1251913283}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1251913284}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: c7c8f000901a7418cafb32adc9fcf882, type: 2}
 --- !u!1 &1764124382
 GameObject:
   m_ObjectHideFlags: 0
