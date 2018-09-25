@@ -46,7 +46,8 @@ public class PageManager : Singleton<PageManager>
     private GameObject[] Characters;
     [SerializeField]
     private GameObject[] DynamicProps;
-
+    [SerializeField]
+    private Sprite[] EndingSlides;
     //Narrative Manager vars
     public GameObject StoryManager;
     private string EnvironmentTracker;
@@ -225,6 +226,15 @@ public class PageManager : Singleton<PageManager>
             {//If this is the last scene in the story
              //Canvas.GetComponent<MainStoryScreen>().OnQuitButton();
                 GameObject EndindCard = GameObject.FindGameObjectWithTag("EndingCard");
+                //sort through the various various ending slides. 
+                if(DataManager.currentStoryName == "sasquatch")
+                {
+                    EndindCard.GetComponentInChildren<Image>().sprite = EndingSlides[0];
+                }
+                else if(DataManager.currentStoryName == "littlepeople")
+                {
+                    EndindCard.GetComponentInChildren<Image>().sprite = EndingSlides[1];
+                }
                 EndindCard.GetComponentInChildren<FadeScript>().enabled = true;
                 EndindCard.GetComponentInChildren<Image>().raycastTarget = true;
             }
