@@ -93,7 +93,7 @@ public class CharacterAnimationSystems : MonoBehaviour
 		if (AnimationDelayTracker < AnimationBool.Length-1) 
 		{
 			AnimationDelayTracker++;
-            ///Debug.Log(AnimToSet);
+            Debug.Log(AnimToSet);
 			if (AnimationBool [AnimationDelayTracker] == true) 
 			{
 				if (GetComponent<Camera> () != null) 
